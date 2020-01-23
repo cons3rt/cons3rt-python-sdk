@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created_at** | **int** |  | [optional] 
+**created_at** | **datetime** |  | [optional] 
 **default_power_schedule** | [**PowerSchedule**](PowerSchedule.md) |  | [optional] 
 **default_virtualization_realm** | [**VirtualizationRealm**](VirtualizationRealm.md) |  | [optional] 
 **description** | **str** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **trusted_projects** | [**list[Project]**](Project.md) |  | [optional] 
 **resource_usage** | [**ResourceUsage**](ResourceUsage.md) |  | [optional] 
 **submission_services** | [**list[SubmissionService]**](SubmissionService.md) |  | [optional] 
-**updated_at** | **int** |  | [optional] 
+**updated_at** | **datetime** |  | [optional] 
 **members** | [**list[User]**](User.md) |  | [optional] 
 **virtualization_realms** | [**list[VirtualizationRealm]**](VirtualizationRealm.md) |  | [optional] 
 

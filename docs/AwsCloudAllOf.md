@@ -4,8 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_key** | **str** |  | [optional] 
-**nat_image_id** | **str** |  | [optional] 
-**nat_instance_type** | **str** |  | [optional] 
 **owner_id** | **str** |  | [optional] 
 **region_name** | **str** |  | [optional] 
 **secret_access_key** | **str** |  | [optional] 

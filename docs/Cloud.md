@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | 
 **name** | **str** |  | 
 **external_ip_addresses** | **list[str]** |  | [optional] 
+**external_ip_source** | **str** |  | 
 **features** | [**CloudFeatures**](CloudFeatures.md) |  | [optional] 
 **id** | **int** |  | [optional] 
 **linux_repository_url** | **str** |  | [optional] 

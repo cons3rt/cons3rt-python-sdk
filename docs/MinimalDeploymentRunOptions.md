@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **deployment_to_submit** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 
 **end_state** | **str** |  | [optional] 
-**earliest_start_time** | **int** |  | [optional] 
+**earliest_start_time** | **datetime** |  | [optional] 
 **end_existing** | **bool** |  | [optional] 
 **host_options** | [**list[HostOption]**](HostOption.md) |  | [optional] 
 **locked** | **bool** |  | [optional] 

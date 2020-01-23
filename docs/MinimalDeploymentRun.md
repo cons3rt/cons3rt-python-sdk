@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] 
 **project** | [**MinimalProject**](MinimalProject.md) |  | [optional] 
 **result** | **str** |  | [optional] 
-**start_time** | **int** |  | [optional] 
+**start_time** | **datetime** |  | [optional] 
 **canceled** | **bool** |  | [optional] 
 **deployment_run_status** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 

@@ -19,15 +19,15 @@ Name | Type | Description | Notes
 **build_order** | **int** |  | [optional] 
 **id** | **int** |  | [optional] 
 **snapshot_available** | **bool** |  | [optional] 
-**snapshot_date** | **int** |  | [optional] 
+**snapshot_date** | **datetime** |  | [optional] 
 **system_role** | **str** |  | [optional] 
 **physical_machine_data_or_template_uuid** | **str** |  | [optional] 
 **physical_machine_or_template_name** | **str** |  | [optional] 
 **installations** | [**list[AbstractInstallation]**](AbstractInstallation.md) |  | [optional] 
 **system_module_id** | **int** |  | [optional] 
 **system_module_type** | **str** |  | [optional] 
-**provisionable** | **bool** |  | [optional] 
 **virtual** | **bool** |  | [optional] 
+**provisionable** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
