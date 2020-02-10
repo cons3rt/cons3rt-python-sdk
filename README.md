@@ -35,7 +35,7 @@ Uploading the artifacts to the local repository is done via `twine`:
 
 ```sh
 pipenv shell
-twine upload --repository-url https://nexus.jackpinetech.com/repository/pypi-internal dist/*
+twine upload --repository-url https://nexus.jackpinetech.com/repository/pypi-internal/ dist/*
 ```
 
 Enter your nexus credentials when prompted
