@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **build_order** | **int** |  | [optional] 
 **id** | **int** |  | [optional] 
 **snapshot_available** | **bool** |  | [optional] 
-**snapshot_date** | **datetime** |  | [optional] 
+**snapshot_date** | **int** |  | [optional] 
 **system_role** | **str** |  | [optional] 
 **physical_machine_data_or_template_uuid** | **str** |  | [optional] 
 **physical_machine_or_template_name** | **str** |  | [optional] 

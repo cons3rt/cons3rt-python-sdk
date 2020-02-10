@@ -34,60 +34,39 @@ class MultipartFormDataInput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'form_data': 'dict(str, InputPart)',
         'form_data_map': 'dict(str, list[InputPart])',
-        'preamble': 'str',
-        'parts': 'list[InputPart]'
+        'form_data': 'dict(str, InputPart)',
+        'parts': 'list[InputPart]',
+        'preamble': 'str'
     }
 
     attribute_map = {
-        'form_data': 'formData',
         'form_data_map': 'formDataMap',
-        'preamble': 'preamble',
-        'parts': 'parts'
+        'form_data': 'formData',
+        'parts': 'parts',
+        'preamble': 'preamble'
     }
 
-    def __init__(self, form_data=None, form_data_map=None, preamble=None, parts=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, form_data_map=None, form_data=None, parts=None, preamble=None, local_vars_configuration=None):  # noqa: E501
         """MultipartFormDataInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._form_data = None
         self._form_data_map = None
-        self._preamble = None
+        self._form_data = None
         self._parts = None
+        self._preamble = None
         self.discriminator = None
 
-        if form_data is not None:
-            self.form_data = form_data
         if form_data_map is not None:
             self.form_data_map = form_data_map
-        if preamble is not None:
-            self.preamble = preamble
+        if form_data is not None:
+            self.form_data = form_data
         if parts is not None:
             self.parts = parts
-
-    @property
-    def form_data(self):
-        """Gets the form_data of this MultipartFormDataInput.  # noqa: E501
-
-
-        :return: The form_data of this MultipartFormDataInput.  # noqa: E501
-        :rtype: dict(str, InputPart)
-        """
-        return self._form_data
-
-    @form_data.setter
-    def form_data(self, form_data):
-        """Sets the form_data of this MultipartFormDataInput.
-
-
-        :param form_data: The form_data of this MultipartFormDataInput.  # noqa: E501
-        :type: dict(str, InputPart)
-        """
-
-        self._form_data = form_data
+        if preamble is not None:
+            self.preamble = preamble
 
     @property
     def form_data_map(self):
@@ -111,25 +90,25 @@ class MultipartFormDataInput(object):
         self._form_data_map = form_data_map
 
     @property
-    def preamble(self):
-        """Gets the preamble of this MultipartFormDataInput.  # noqa: E501
+    def form_data(self):
+        """Gets the form_data of this MultipartFormDataInput.  # noqa: E501
 
 
-        :return: The preamble of this MultipartFormDataInput.  # noqa: E501
-        :rtype: str
+        :return: The form_data of this MultipartFormDataInput.  # noqa: E501
+        :rtype: dict(str, InputPart)
         """
-        return self._preamble
+        return self._form_data
 
-    @preamble.setter
-    def preamble(self, preamble):
-        """Sets the preamble of this MultipartFormDataInput.
+    @form_data.setter
+    def form_data(self, form_data):
+        """Sets the form_data of this MultipartFormDataInput.
 
 
-        :param preamble: The preamble of this MultipartFormDataInput.  # noqa: E501
-        :type: str
+        :param form_data: The form_data of this MultipartFormDataInput.  # noqa: E501
+        :type: dict(str, InputPart)
         """
 
-        self._preamble = preamble
+        self._form_data = form_data
 
     @property
     def parts(self):
@@ -151,6 +130,27 @@ class MultipartFormDataInput(object):
         """
 
         self._parts = parts
+
+    @property
+    def preamble(self):
+        """Gets the preamble of this MultipartFormDataInput.  # noqa: E501
+
+
+        :return: The preamble of this MultipartFormDataInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._preamble
+
+    @preamble.setter
+    def preamble(self, preamble):
+        """Sets the preamble of this MultipartFormDataInput.
+
+
+        :param preamble: The preamble of this MultipartFormDataInput.  # noqa: E501
+        :type: str
+        """
+
+        self._preamble = preamble
 
     def to_dict(self):
         """Returns the model properties as a dict"""

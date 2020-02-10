@@ -62,7 +62,7 @@ class FullTeam(object):
         'rdp_client_session_duration': 'int',
         'snapshot_enabled': 'bool',
         'state': 'str',
-        'valid_util': 'datetime'
+        'valid_util': 'int'
     }
 
     attribute_map = {
@@ -822,7 +822,7 @@ class FullTeam(object):
 
 
         :return: The valid_util of this FullTeam.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._valid_util
 
@@ -832,7 +832,7 @@ class FullTeam(object):
 
 
         :param valid_util: The valid_util of this FullTeam.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._valid_util = valid_util

@@ -42,7 +42,7 @@ class InputDeploymentRunOptions(object):
         'retain_on_error': 'bool',
         'username': 'str',
         'password': 'str',
-        'earliest_start_time': 'datetime',
+        'earliest_start_time': 'int',
         'end_existing': 'bool',
         'duration': 'int',
         'properties': 'list[InputProperty]',
@@ -50,7 +50,8 @@ class InputDeploymentRunOptions(object):
         'power_schedule': 'PowerSchedule',
         'virt_realm_binding': 'InputVirtualizationRealmBinding',
         'id': 'int',
-        'end_date': 'datetime',
+        'debug': 'bool',
+        'end_date': 'int',
         'windows_domain_name': 'str'
     }
 
@@ -71,11 +72,12 @@ class InputDeploymentRunOptions(object):
         'power_schedule': 'powerSchedule',
         'virt_realm_binding': 'virtRealmBinding',
         'id': 'id',
+        'debug': 'debug',
         'end_date': 'endDate',
         'windows_domain_name': 'windowsDomainName'
     }
 
-    def __init__(self, deployment_run_name=None, end_state=None, description=None, virtualization_realm_id=None, locked=None, retain_on_error=None, username=None, password=None, earliest_start_time=None, end_existing=None, duration=None, properties=None, host_options=None, power_schedule=None, virt_realm_binding=None, id=None, end_date=None, windows_domain_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, deployment_run_name=None, end_state=None, description=None, virtualization_realm_id=None, locked=None, retain_on_error=None, username=None, password=None, earliest_start_time=None, end_existing=None, duration=None, properties=None, host_options=None, power_schedule=None, virt_realm_binding=None, id=None, debug=None, end_date=None, windows_domain_name=None, local_vars_configuration=None):  # noqa: E501
         """InputDeploymentRunOptions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -97,6 +99,7 @@ class InputDeploymentRunOptions(object):
         self._power_schedule = None
         self._virt_realm_binding = None
         self._id = None
+        self._debug = None
         self._end_date = None
         self._windows_domain_name = None
         self.discriminator = None
@@ -130,6 +133,8 @@ class InputDeploymentRunOptions(object):
             self.virt_realm_binding = virt_realm_binding
         if id is not None:
             self.id = id
+        if debug is not None:
+            self.debug = debug
         if end_date is not None:
             self.end_date = end_date
         if windows_domain_name is not None:
@@ -321,7 +326,7 @@ class InputDeploymentRunOptions(object):
 
 
         :return: The earliest_start_time of this InputDeploymentRunOptions.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._earliest_start_time
 
@@ -331,7 +336,7 @@ class InputDeploymentRunOptions(object):
 
 
         :param earliest_start_time: The earliest_start_time of this InputDeploymentRunOptions.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._earliest_start_time = earliest_start_time
@@ -484,12 +489,33 @@ class InputDeploymentRunOptions(object):
         self._id = id
 
     @property
+    def debug(self):
+        """Gets the debug of this InputDeploymentRunOptions.  # noqa: E501
+
+
+        :return: The debug of this InputDeploymentRunOptions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._debug
+
+    @debug.setter
+    def debug(self, debug):
+        """Sets the debug of this InputDeploymentRunOptions.
+
+
+        :param debug: The debug of this InputDeploymentRunOptions.  # noqa: E501
+        :type: bool
+        """
+
+        self._debug = debug
+
+    @property
     def end_date(self):
         """Gets the end_date of this InputDeploymentRunOptions.  # noqa: E501
 
 
         :return: The end_date of this InputDeploymentRunOptions.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._end_date
 
@@ -499,7 +525,7 @@ class InputDeploymentRunOptions(object):
 
 
         :param end_date: The end_date of this InputDeploymentRunOptions.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._end_date = end_date

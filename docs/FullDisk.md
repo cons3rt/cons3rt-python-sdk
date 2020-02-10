@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **mount_point** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
-**is_additional_disk** | **bool** |  | [optional] 
 **is_boot_disk** | **bool** |  | [optional] 
+**is_additional_disk** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -50,7 +50,7 @@ class MinimalDeploymentRunHost(object):
         'build_order': 'int',
         'id': 'int',
         'snapshot_available': 'bool',
-        'snapshot_date': 'datetime',
+        'snapshot_date': 'int',
         'system_role': 'str',
         'physical_machine_data_or_template_uuid': 'str',
         'physical_machine_or_template_name': 'str',
@@ -527,7 +527,7 @@ class MinimalDeploymentRunHost(object):
 
 
         :return: The snapshot_date of this MinimalDeploymentRunHost.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._snapshot_date
 
@@ -537,7 +537,7 @@ class MinimalDeploymentRunHost(object):
 
 
         :param snapshot_date: The snapshot_date of this MinimalDeploymentRunHost.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._snapshot_date = snapshot_date

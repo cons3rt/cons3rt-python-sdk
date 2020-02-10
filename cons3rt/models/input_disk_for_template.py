@@ -34,64 +34,43 @@ class InputDiskForTemplate(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'additional_disk': 'bool',
         'boot_disk': 'bool',
+        'additional_disk': 'bool',
         'capacity_in_megabytes': 'int',
         'is_additional_disk': 'bool',
         'is_boot_disk': 'bool'
     }
 
     attribute_map = {
-        'additional_disk': 'additionalDisk',
         'boot_disk': 'bootDisk',
+        'additional_disk': 'additionalDisk',
         'capacity_in_megabytes': 'capacityInMegabytes',
         'is_additional_disk': 'isAdditionalDisk',
         'is_boot_disk': 'isBootDisk'
     }
 
-    def __init__(self, additional_disk=None, boot_disk=None, capacity_in_megabytes=None, is_additional_disk=None, is_boot_disk=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, boot_disk=None, additional_disk=None, capacity_in_megabytes=None, is_additional_disk=None, is_boot_disk=None, local_vars_configuration=None):  # noqa: E501
         """InputDiskForTemplate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._additional_disk = None
         self._boot_disk = None
+        self._additional_disk = None
         self._capacity_in_megabytes = None
         self._is_additional_disk = None
         self._is_boot_disk = None
         self.discriminator = None
 
-        if additional_disk is not None:
-            self.additional_disk = additional_disk
         if boot_disk is not None:
             self.boot_disk = boot_disk
+        if additional_disk is not None:
+            self.additional_disk = additional_disk
         self.capacity_in_megabytes = capacity_in_megabytes
         if is_additional_disk is not None:
             self.is_additional_disk = is_additional_disk
         if is_boot_disk is not None:
             self.is_boot_disk = is_boot_disk
-
-    @property
-    def additional_disk(self):
-        """Gets the additional_disk of this InputDiskForTemplate.  # noqa: E501
-
-
-        :return: The additional_disk of this InputDiskForTemplate.  # noqa: E501
-        :rtype: bool
-        """
-        return self._additional_disk
-
-    @additional_disk.setter
-    def additional_disk(self, additional_disk):
-        """Sets the additional_disk of this InputDiskForTemplate.
-
-
-        :param additional_disk: The additional_disk of this InputDiskForTemplate.  # noqa: E501
-        :type: bool
-        """
-
-        self._additional_disk = additional_disk
 
     @property
     def boot_disk(self):
@@ -113,6 +92,27 @@ class InputDiskForTemplate(object):
         """
 
         self._boot_disk = boot_disk
+
+    @property
+    def additional_disk(self):
+        """Gets the additional_disk of this InputDiskForTemplate.  # noqa: E501
+
+
+        :return: The additional_disk of this InputDiskForTemplate.  # noqa: E501
+        :rtype: bool
+        """
+        return self._additional_disk
+
+    @additional_disk.setter
+    def additional_disk(self, additional_disk):
+        """Sets the additional_disk of this InputDiskForTemplate.
+
+
+        :param additional_disk: The additional_disk of this InputDiskForTemplate.  # noqa: E501
+        :type: bool
+        """
+
+        self._additional_disk = additional_disk
 
     @property
     def capacity_in_megabytes(self):

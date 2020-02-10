@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**create_scenario1**](SystemsApi.md#create_scenario1) | **PUT** /api/systems/{id}/createscenario | Create Scenario from System
 [**create_software_bundle_from_system_module**](SystemsApi.md#create_software_bundle_from_system_module) | **POST** /api/systems/{id}/softwarebundle | Create Software Bundle
 [**create_system_entire**](SystemsApi.md#create_system_entire) | **PUT** /api/systems/createsystem | Create System
-[**delete_asset**](SystemsApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete Asset
+[**delete_asset**](SystemsApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete asset
 [**get_system**](SystemsApi.md#get_system) | **GET** /api/systems/{id} | Retrieve System
 [**get_systems**](SystemsApi.md#get_systems) | **GET** /api/systems | List Systems
 [**get_systems_expanded**](SystemsApi.md#get_systems_expanded) | **GET** /api/systems/expanded | List all Systems, including Project Assets
@@ -555,9 +555,9 @@ Name | Type | Description  | Notes
 # **delete_asset**
 > bool delete_asset(id, force=force)
 
-Delete Asset
+Delete asset
 
-Deletes a single Asset with the given ID.<br> <br> Optionally, this call can delete the Asset in question even if that Asset has dependents.
+Delete a single Asset with the given ID.<br/> <br/> <em>Optionally, this call be allowed to delete if the asset has dependent assets.</em>
 
 ### Example
 
@@ -587,7 +587,7 @@ id = 'id_example' # str | ID of asset to delete
 force = False # bool | Allow delete if there are dependent assets (optional) (default to False)
 
 try:
-    # Delete Asset
+    # Delete asset
     api_response = api_instance.delete_asset(id, force=force)
     pprint(api_response)
 except ApiException as e:
@@ -620,7 +620,7 @@ id = 'id_example' # str | ID of asset to delete
 force = False # bool | Allow delete if there are dependent assets (optional) (default to False)
 
 try:
-    # Delete Asset
+    # Delete asset
     api_response = api_instance.delete_asset(id, force=force)
     pprint(api_response)
 except ApiException as e:

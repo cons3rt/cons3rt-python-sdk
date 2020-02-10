@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **retain_on_error** | **bool** |  | [optional] 
 **username** | **str** |  | 
 **password** | **str** |  | 
-**earliest_start_time** | **datetime** |  | [optional] 
+**earliest_start_time** | **int** |  | [optional] 
 **end_existing** | **bool** |  | [optional] 
 **duration** | **int** |  | [optional] 
 **properties** | [**list[InputProperty]**](InputProperty.md) |  | [optional] 
@@ -19,7 +19,8 @@ Name | Type | Description | Notes
 **power_schedule** | [**PowerSchedule**](PowerSchedule.md) |  | [optional] 
 **virt_realm_binding** | [**InputVirtualizationRealmBinding**](InputVirtualizationRealmBinding.md) |  | [optional] 
 **id** | **int** |  | [optional] 
-**end_date** | **datetime** |  | [optional] 
+**debug** | **bool** |  | [optional] 
+**end_date** | **int** |  | [optional] 
 **windows_domain_name** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

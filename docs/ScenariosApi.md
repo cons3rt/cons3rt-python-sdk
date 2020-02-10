@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**clone_scenario**](ScenariosApi.md#clone_scenario) | **PUT** /api/scenarios/{id}/clone | Clone Scenario
 [**create_scenario**](ScenariosApi.md#create_scenario) | **PUT** /api/scenarios/createscenario | Create Scenario
 [**create_system_entire**](ScenariosApi.md#create_system_entire) | **PUT** /api/systems/createsystem | Create System
-[**delete_asset**](ScenariosApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete Asset
+[**delete_asset**](ScenariosApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete asset
 [**get_scenario**](ScenariosApi.md#get_scenario) | **GET** /api/scenarios/{id} | Retrieve Scenario
 [**get_scenarios**](ScenariosApi.md#get_scenarios) | **GET** /api/scenarios | List Scenarios
 [**get_scenarios_expanded**](ScenariosApi.md#get_scenarios_expanded) | **GET** /api/scenarios/expanded | List all Scenarios, including Project Assets
@@ -437,9 +437,9 @@ Name | Type | Description  | Notes
 # **delete_asset**
 > bool delete_asset(id, force=force)
 
-Delete Asset
+Delete asset
 
-Deletes a single Asset with the given ID.<br> <br> Optionally, this call can delete the Asset in question even if that Asset has dependents.
+Delete a single Asset with the given ID.<br/> <br/> <em>Optionally, this call be allowed to delete if the asset has dependent assets.</em>
 
 ### Example
 
@@ -469,7 +469,7 @@ id = 'id_example' # str | ID of asset to delete
 force = False # bool | Allow delete if there are dependent assets (optional) (default to False)
 
 try:
-    # Delete Asset
+    # Delete asset
     api_response = api_instance.delete_asset(id, force=force)
     pprint(api_response)
 except ApiException as e:
@@ -502,7 +502,7 @@ id = 'id_example' # str | ID of asset to delete
 force = False # bool | Allow delete if there are dependent assets (optional) (default to False)
 
 try:
-    # Delete Asset
+    # Delete asset
     api_response = api_instance.delete_asset(id, force=force)
     pprint(api_response)
 except ApiException as e:

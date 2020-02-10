@@ -3,11 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**debug** | **bool** |  | [optional] 
 **deployment_run_name** | **str** |  | [optional] 
 **deployment_to_submit** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 
 **end_state** | **str** |  | [optional] 
-**earliest_start_time** | **datetime** |  | [optional] 
+**earliest_start_time** | **int** |  | [optional] 
 **end_existing** | **bool** |  | [optional] 
 **host_options** | [**list[HostOption]**](HostOption.md) |  | [optional] 
 **id** | **int** |  | [optional] 
@@ -18,7 +19,7 @@ Name | Type | Description | Notes
 **properties** | [**list[ModelProperty]**](ModelProperty.md) |  | [optional] 
 **quick_build_cleanup_overridden** | **bool** |  | [optional] 
 **duration** | **int** |  | [optional] 
-**end_date** | **datetime** |  | [optional] 
+**end_date** | **int** |  | [optional] 
 **retain_on_error** | **bool** |  | [optional] 
 **task_group** | **str** |  | [optional] 
 **username** | **str** |  | 

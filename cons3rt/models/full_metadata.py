@@ -37,14 +37,14 @@ class FullMetadata(object):
         'asset_directory': 'str',
         'version': 'int',
         'cloud': 'MinimalCloud',
-        'creation_date': 'datetime',
+        'creation_date': 'int',
         'documentation': 'str',
         'id': 'int',
         'instance_limit': 'int',
         'itar_restricted': 'bool',
         'license': 'str',
         'modifier': 'MinimalUser',
-        'modifier_date': 'datetime',
+        'modifier_date': 'int',
         'properties': 'list[ModelProperty]',
         'uri': 'str',
         'validated': 'bool',
@@ -192,7 +192,7 @@ class FullMetadata(object):
 
 
         :return: The creation_date of this FullMetadata.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._creation_date
 
@@ -202,7 +202,7 @@ class FullMetadata(object):
 
 
         :param creation_date: The creation_date of this FullMetadata.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._creation_date = creation_date
@@ -339,7 +339,7 @@ class FullMetadata(object):
 
 
         :return: The modifier_date of this FullMetadata.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._modifier_date
 
@@ -349,7 +349,7 @@ class FullMetadata(object):
 
 
         :param modifier_date: The modifier_date of this FullMetadata.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._modifier_date = modifier_date

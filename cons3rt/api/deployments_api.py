@@ -610,9 +610,9 @@ class DeploymentsApi(object):
             collection_formats=collection_formats)
 
     def delete_asset(self, id, **kwargs):  # noqa: E501
-        """Delete Asset  # noqa: E501
+        """Delete asset  # noqa: E501
 
-        Deletes a single Asset with the given ID.<br> <br> Optionally, this call can delete the Asset in question even if that Asset has dependents.  # noqa: E501
+        Delete a single Asset with the given ID.<br/> <br/> <em>Optionally, this call be allowed to delete if the asset has dependent assets.</em>  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_asset(id, async_req=True)
@@ -636,9 +636,9 @@ class DeploymentsApi(object):
         return self.delete_asset_with_http_info(id, **kwargs)  # noqa: E501
 
     def delete_asset_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Delete Asset  # noqa: E501
+        """Delete asset  # noqa: E501
 
-        Deletes a single Asset with the given ID.<br> <br> Optionally, this call can delete the Asset in question even if that Asset has dependents.  # noqa: E501
+        Delete a single Asset with the given ID.<br/> <br/> <em>Optionally, this call be allowed to delete if the asset has dependent assets.</em>  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_asset_with_http_info(id, async_req=True)

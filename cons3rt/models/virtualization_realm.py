@@ -43,8 +43,8 @@ class VirtualizationRealm(object):
         'allocated': 'bool',
         'cidr': 'str',
         'cloud': 'Cloud',
-        'created_at': 'datetime',
-        'date_last_reachable': 'datetime',
+        'created_at': 'int',
+        'date_last_reachable': 'int',
         'default_windows_domain_name': 'str',
         'description': 'str',
         'id': 'int',
@@ -70,7 +70,7 @@ class VirtualizationRealm(object):
         'template_registrations': 'list[TemplateRegistration]',
         'templates': 'list[Cons3rtTemplateData]',
         'template_subscriptions': 'list[TemplateSubscription]',
-        'updated_at': 'datetime',
+        'updated_at': 'int',
         'username': 'str',
         'zone_count': 'int'
     }
@@ -455,7 +455,7 @@ class VirtualizationRealm(object):
 
 
         :return: The created_at of this VirtualizationRealm.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._created_at
 
@@ -465,7 +465,7 @@ class VirtualizationRealm(object):
 
 
         :param created_at: The created_at of this VirtualizationRealm.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._created_at = created_at
@@ -476,7 +476,7 @@ class VirtualizationRealm(object):
 
 
         :return: The date_last_reachable of this VirtualizationRealm.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._date_last_reachable
 
@@ -486,7 +486,7 @@ class VirtualizationRealm(object):
 
 
         :param date_last_reachable: The date_last_reachable of this VirtualizationRealm.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._date_last_reachable = date_last_reachable
@@ -1072,7 +1072,7 @@ class VirtualizationRealm(object):
 
 
         :return: The updated_at of this VirtualizationRealm.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._updated_at
 
@@ -1082,7 +1082,7 @@ class VirtualizationRealm(object):
 
 
         :param updated_at: The updated_at of this VirtualizationRealm.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._updated_at = updated_at

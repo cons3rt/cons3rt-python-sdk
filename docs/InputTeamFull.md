@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **rdp_client_session_duration** | **int** |  | [optional] 
 **snapshot_enabled** | **bool** |  | [optional] 
 **state** | **str** |  | 
-**valid_until** | **datetime** |  | 
+**valid_until** | **int** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

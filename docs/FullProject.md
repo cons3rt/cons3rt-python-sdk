@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | 
 **name** | **str** |  | [optional] 
 **itar_restricted** | **bool** |  | [optional] 
-**created_at** | **datetime** |  | [optional] 
+**created_at** | **int** |  | [optional] 
 **default_power_schedule** | [**PowerSchedule**](PowerSchedule.md) |  | [optional] 
 **default_virtualization_realm** | [**MinimalVirtualizationRealm**](MinimalVirtualizationRealm.md) |  | [optional] 
 **description** | **str** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **trusted_projects** | [**list[MinimalProject]**](MinimalProject.md) |  | [optional] 
 **resource_usage** | [**ResourceUsage**](ResourceUsage.md) |  | [optional] 
 **submission_services** | [**list[SubmissionService]**](SubmissionService.md) |  | [optional] 
-**updated_at** | **datetime** |  | [optional] 
+**updated_at** | **int** |  | [optional] 
 **members** | [**list[MinimalUser]**](MinimalUser.md) |  | [optional] 
 **virtualization_realms** | [**list[MinimalVirtualizationRealm]**](MinimalVirtualizationRealm.md) |  | [optional] 
 

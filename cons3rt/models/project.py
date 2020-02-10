@@ -34,7 +34,7 @@ class Project(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'created_at': 'datetime',
+        'created_at': 'int',
         'default_power_schedule': 'PowerSchedule',
         'default_virtualization_realm': 'VirtualizationRealm',
         'description': 'str',
@@ -49,7 +49,7 @@ class Project(object):
         'trusted_projects': 'list[Project]',
         'resource_usage': 'ResourceUsage',
         'submission_services': 'list[SubmissionService]',
-        'updated_at': 'datetime',
+        'updated_at': 'int',
         'members': 'list[User]',
         'virtualization_realms': 'list[VirtualizationRealm]'
     }
@@ -142,7 +142,7 @@ class Project(object):
 
 
         :return: The created_at of this Project.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._created_at
 
@@ -152,7 +152,7 @@ class Project(object):
 
 
         :param created_at: The created_at of this Project.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._created_at = created_at
@@ -461,7 +461,7 @@ class Project(object):
 
 
         :return: The updated_at of this Project.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._updated_at
 
@@ -471,7 +471,7 @@ class Project(object):
 
 
         :param updated_at: The updated_at of this Project.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._updated_at = updated_at

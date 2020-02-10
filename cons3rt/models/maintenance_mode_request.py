@@ -34,7 +34,7 @@ class MaintenanceModeRequest(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'end_date': 'datetime',
+        'end_date': 'int',
         'message': 'str',
         'timeout': 'int'
     }
@@ -69,7 +69,7 @@ class MaintenanceModeRequest(object):
 
 
         :return: The end_date of this MaintenanceModeRequest.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._end_date
 
@@ -79,7 +79,7 @@ class MaintenanceModeRequest(object):
 
 
         :param end_date: The end_date of this MaintenanceModeRequest.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._end_date = end_date

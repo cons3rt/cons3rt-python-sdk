@@ -36,7 +36,7 @@ class RecurringSchedule(object):
     openapi_types = {
         'id': 'int',
         'complete': 'bool',
-        'end_date': 'datetime',
+        'end_date': 'int',
         'max_iterations': 'int',
         'deployment_run_options': 'DeploymentRunOptions',
         'remaining_iterations': 'int',
@@ -133,7 +133,7 @@ class RecurringSchedule(object):
 
 
         :return: The end_date of this RecurringSchedule.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._end_date
 
@@ -143,7 +143,7 @@ class RecurringSchedule(object):
 
 
         :param end_date: The end_date of this RecurringSchedule.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._end_date = end_date

@@ -34,66 +34,69 @@ class MinimalDeploymentRunOptions(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'id': 'int',
+        'debug': 'bool',
         'deployment_run_name': 'str',
         'deployment_to_submit': 'int',
         'description': 'str',
         'end_state': 'str',
-        'earliest_start_time': 'datetime',
+        'duration': 'int',
+        'earliest_start_time': 'int',
         'end_existing': 'bool',
         'host_options': 'list[HostOption]',
+        'id': 'int',
         'locked': 'bool',
         'virtualization_realm_id': 'int',
         'properties': 'list[ModelProperty]',
         'retain_on_error': 'bool',
-        'creator': 'MinimalUser',
         'root_password': 'str',
-        'duration': 'int'
+        'creator': 'MinimalUser'
     }
 
     attribute_map = {
-        'id': 'id',
+        'debug': 'debug',
         'deployment_run_name': 'deploymentRunName',
         'deployment_to_submit': 'deploymentToSubmit',
         'description': 'description',
         'end_state': 'endState',
+        'duration': 'duration',
         'earliest_start_time': 'earliestStartTime',
         'end_existing': 'endExisting',
         'host_options': 'hostOptions',
+        'id': 'id',
         'locked': 'locked',
         'virtualization_realm_id': 'virtualizationRealmId',
         'properties': 'properties',
         'retain_on_error': 'retainOnError',
-        'creator': 'creator',
         'root_password': 'rootPassword',
-        'duration': 'duration'
+        'creator': 'creator'
     }
 
-    def __init__(self, id=None, deployment_run_name=None, deployment_to_submit=None, description=None, end_state=None, earliest_start_time=None, end_existing=None, host_options=None, locked=None, virtualization_realm_id=None, properties=None, retain_on_error=None, creator=None, root_password=None, duration=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, debug=None, deployment_run_name=None, deployment_to_submit=None, description=None, end_state=None, duration=None, earliest_start_time=None, end_existing=None, host_options=None, id=None, locked=None, virtualization_realm_id=None, properties=None, retain_on_error=None, root_password=None, creator=None, local_vars_configuration=None):  # noqa: E501
         """MinimalDeploymentRunOptions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._id = None
+        self._debug = None
         self._deployment_run_name = None
         self._deployment_to_submit = None
         self._description = None
         self._end_state = None
+        self._duration = None
         self._earliest_start_time = None
         self._end_existing = None
         self._host_options = None
+        self._id = None
         self._locked = None
         self._virtualization_realm_id = None
         self._properties = None
         self._retain_on_error = None
-        self._creator = None
         self._root_password = None
-        self._duration = None
+        self._creator = None
         self.discriminator = None
 
-        if id is not None:
-            self.id = id
+        if debug is not None:
+            self.debug = debug
         if deployment_run_name is not None:
             self.deployment_run_name = deployment_run_name
         if deployment_to_submit is not None:
@@ -102,12 +105,16 @@ class MinimalDeploymentRunOptions(object):
             self.description = description
         if end_state is not None:
             self.end_state = end_state
+        if duration is not None:
+            self.duration = duration
         if earliest_start_time is not None:
             self.earliest_start_time = earliest_start_time
         if end_existing is not None:
             self.end_existing = end_existing
         if host_options is not None:
             self.host_options = host_options
+        if id is not None:
+            self.id = id
         if locked is not None:
             self.locked = locked
         if virtualization_realm_id is not None:
@@ -116,33 +123,31 @@ class MinimalDeploymentRunOptions(object):
             self.properties = properties
         if retain_on_error is not None:
             self.retain_on_error = retain_on_error
-        if creator is not None:
-            self.creator = creator
         if root_password is not None:
             self.root_password = root_password
-        if duration is not None:
-            self.duration = duration
+        if creator is not None:
+            self.creator = creator
 
     @property
-    def id(self):
-        """Gets the id of this MinimalDeploymentRunOptions.  # noqa: E501
+    def debug(self):
+        """Gets the debug of this MinimalDeploymentRunOptions.  # noqa: E501
 
 
-        :return: The id of this MinimalDeploymentRunOptions.  # noqa: E501
-        :rtype: int
+        :return: The debug of this MinimalDeploymentRunOptions.  # noqa: E501
+        :rtype: bool
         """
-        return self._id
+        return self._debug
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this MinimalDeploymentRunOptions.
+    @debug.setter
+    def debug(self, debug):
+        """Sets the debug of this MinimalDeploymentRunOptions.
 
 
-        :param id: The id of this MinimalDeploymentRunOptions.  # noqa: E501
-        :type: int
+        :param debug: The debug of this MinimalDeploymentRunOptions.  # noqa: E501
+        :type: bool
         """
 
-        self._id = id
+        self._debug = debug
 
     @property
     def deployment_run_name(self):
@@ -235,12 +240,33 @@ class MinimalDeploymentRunOptions(object):
         self._end_state = end_state
 
     @property
+    def duration(self):
+        """Gets the duration of this MinimalDeploymentRunOptions.  # noqa: E501
+
+
+        :return: The duration of this MinimalDeploymentRunOptions.  # noqa: E501
+        :rtype: int
+        """
+        return self._duration
+
+    @duration.setter
+    def duration(self, duration):
+        """Sets the duration of this MinimalDeploymentRunOptions.
+
+
+        :param duration: The duration of this MinimalDeploymentRunOptions.  # noqa: E501
+        :type: int
+        """
+
+        self._duration = duration
+
+    @property
     def earliest_start_time(self):
         """Gets the earliest_start_time of this MinimalDeploymentRunOptions.  # noqa: E501
 
 
         :return: The earliest_start_time of this MinimalDeploymentRunOptions.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._earliest_start_time
 
@@ -250,7 +276,7 @@ class MinimalDeploymentRunOptions(object):
 
 
         :param earliest_start_time: The earliest_start_time of this MinimalDeploymentRunOptions.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._earliest_start_time = earliest_start_time
@@ -296,6 +322,27 @@ class MinimalDeploymentRunOptions(object):
         """
 
         self._host_options = host_options
+
+    @property
+    def id(self):
+        """Gets the id of this MinimalDeploymentRunOptions.  # noqa: E501
+
+
+        :return: The id of this MinimalDeploymentRunOptions.  # noqa: E501
+        :rtype: int
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this MinimalDeploymentRunOptions.
+
+
+        :param id: The id of this MinimalDeploymentRunOptions.  # noqa: E501
+        :type: int
+        """
+
+        self._id = id
 
     @property
     def locked(self):
@@ -382,27 +429,6 @@ class MinimalDeploymentRunOptions(object):
         self._retain_on_error = retain_on_error
 
     @property
-    def creator(self):
-        """Gets the creator of this MinimalDeploymentRunOptions.  # noqa: E501
-
-
-        :return: The creator of this MinimalDeploymentRunOptions.  # noqa: E501
-        :rtype: MinimalUser
-        """
-        return self._creator
-
-    @creator.setter
-    def creator(self, creator):
-        """Sets the creator of this MinimalDeploymentRunOptions.
-
-
-        :param creator: The creator of this MinimalDeploymentRunOptions.  # noqa: E501
-        :type: MinimalUser
-        """
-
-        self._creator = creator
-
-    @property
     def root_password(self):
         """Gets the root_password of this MinimalDeploymentRunOptions.  # noqa: E501
 
@@ -424,25 +450,25 @@ class MinimalDeploymentRunOptions(object):
         self._root_password = root_password
 
     @property
-    def duration(self):
-        """Gets the duration of this MinimalDeploymentRunOptions.  # noqa: E501
+    def creator(self):
+        """Gets the creator of this MinimalDeploymentRunOptions.  # noqa: E501
 
 
-        :return: The duration of this MinimalDeploymentRunOptions.  # noqa: E501
-        :rtype: int
+        :return: The creator of this MinimalDeploymentRunOptions.  # noqa: E501
+        :rtype: MinimalUser
         """
-        return self._duration
+        return self._creator
 
-    @duration.setter
-    def duration(self, duration):
-        """Sets the duration of this MinimalDeploymentRunOptions.
+    @creator.setter
+    def creator(self, creator):
+        """Sets the creator of this MinimalDeploymentRunOptions.
 
 
-        :param duration: The duration of this MinimalDeploymentRunOptions.  # noqa: E501
-        :type: int
+        :param creator: The creator of this MinimalDeploymentRunOptions.  # noqa: E501
+        :type: MinimalUser
         """
 
-        self._duration = duration
+        self._creator = creator
 
     def to_dict(self):
         """Returns the model properties as a dict"""

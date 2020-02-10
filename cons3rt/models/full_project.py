@@ -37,7 +37,7 @@ class FullProject(object):
         'id': 'int',
         'name': 'str',
         'itar_restricted': 'bool',
-        'created_at': 'datetime',
+        'created_at': 'int',
         'default_power_schedule': 'PowerSchedule',
         'default_virtualization_realm': 'MinimalVirtualizationRealm',
         'description': 'str',
@@ -49,7 +49,7 @@ class FullProject(object):
         'trusted_projects': 'list[MinimalProject]',
         'resource_usage': 'ResourceUsage',
         'submission_services': 'list[SubmissionService]',
-        'updated_at': 'datetime',
+        'updated_at': 'int',
         'members': 'list[MinimalUser]',
         'virtualization_realms': 'list[MinimalVirtualizationRealm]'
     }
@@ -208,7 +208,7 @@ class FullProject(object):
 
 
         :return: The created_at of this FullProject.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._created_at
 
@@ -218,7 +218,7 @@ class FullProject(object):
 
 
         :param created_at: The created_at of this FullProject.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._created_at = created_at
@@ -460,7 +460,7 @@ class FullProject(object):
 
 
         :return: The updated_at of this FullProject.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._updated_at
 
@@ -470,7 +470,7 @@ class FullProject(object):
 
 
         :param updated_at: The updated_at of this FullProject.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._updated_at = updated_at

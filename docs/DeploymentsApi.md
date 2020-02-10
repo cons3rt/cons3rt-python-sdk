@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**clone_deployment**](DeploymentsApi.md#clone_deployment) | **PUT** /api/deployments/{id}/clone | Clone Deployment
 [**clone_system**](DeploymentsApi.md#clone_system) | **PUT** /api/systems/{id}/clone | Clone System
 [**create_deployment_entire**](DeploymentsApi.md#create_deployment_entire) | **PUT** /api/deployments/createdeployment | Create Deployment
-[**delete_asset**](DeploymentsApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete Asset
+[**delete_asset**](DeploymentsApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete asset
 [**determine_valid_virtualization_realms**](DeploymentsApi.md#determine_valid_virtualization_realms) | **GET** /api/deployments/{id}/validrealms | List Valid Virtualization Realms
 [**get_bindings_for_deployment**](DeploymentsApi.md#get_bindings_for_deployment) | **GET** /api/deployments/{id}/bindings | List Bindings
 [**get_deployment**](DeploymentsApi.md#get_deployment) | **GET** /api/deployments/{id} | Retrieve Deployment
@@ -555,9 +555,9 @@ Name | Type | Description  | Notes
 # **delete_asset**
 > bool delete_asset(id, force=force)
 
-Delete Asset
+Delete asset
 
-Deletes a single Asset with the given ID.<br> <br> Optionally, this call can delete the Asset in question even if that Asset has dependents.
+Delete a single Asset with the given ID.<br/> <br/> <em>Optionally, this call be allowed to delete if the asset has dependent assets.</em>
 
 ### Example
 
@@ -587,7 +587,7 @@ id = 'id_example' # str | ID of asset to delete
 force = False # bool | Allow delete if there are dependent assets (optional) (default to False)
 
 try:
-    # Delete Asset
+    # Delete asset
     api_response = api_instance.delete_asset(id, force=force)
     pprint(api_response)
 except ApiException as e:
@@ -620,7 +620,7 @@ id = 'id_example' # str | ID of asset to delete
 force = False # bool | Allow delete if there are dependent assets (optional) (default to False)
 
 try:
-    # Delete Asset
+    # Delete asset
     api_response = api_instance.delete_asset(id, force=force)
     pprint(api_response)
 except ApiException as e:

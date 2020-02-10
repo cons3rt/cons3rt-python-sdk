@@ -34,11 +34,12 @@ class DeploymentRunOptions(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'debug': 'bool',
         'deployment_run_name': 'str',
         'deployment_to_submit': 'int',
         'description': 'str',
         'end_state': 'str',
-        'earliest_start_time': 'datetime',
+        'earliest_start_time': 'int',
         'end_existing': 'bool',
         'host_options': 'list[HostOption]',
         'id': 'int',
@@ -49,7 +50,7 @@ class DeploymentRunOptions(object):
         'properties': 'list[ModelProperty]',
         'quick_build_cleanup_overridden': 'bool',
         'duration': 'int',
-        'end_date': 'datetime',
+        'end_date': 'int',
         'retain_on_error': 'bool',
         'task_group': 'str',
         'username': 'str',
@@ -58,6 +59,7 @@ class DeploymentRunOptions(object):
     }
 
     attribute_map = {
+        'debug': 'debug',
         'deployment_run_name': 'deploymentRunName',
         'deployment_to_submit': 'deploymentToSubmit',
         'description': 'description',
@@ -81,12 +83,13 @@ class DeploymentRunOptions(object):
         'windows_domain_name': 'windowsDomainName'
     }
 
-    def __init__(self, deployment_run_name=None, deployment_to_submit=None, description=None, end_state=None, earliest_start_time=None, end_existing=None, host_options=None, id=None, locked=None, password=None, power_schedule=None, virtualization_realm_id=None, properties=None, quick_build_cleanup_overridden=None, duration=None, end_date=None, retain_on_error=None, task_group=None, username=None, virt_realm_binding=None, windows_domain_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, debug=None, deployment_run_name=None, deployment_to_submit=None, description=None, end_state=None, earliest_start_time=None, end_existing=None, host_options=None, id=None, locked=None, password=None, power_schedule=None, virtualization_realm_id=None, properties=None, quick_build_cleanup_overridden=None, duration=None, end_date=None, retain_on_error=None, task_group=None, username=None, virt_realm_binding=None, windows_domain_name=None, local_vars_configuration=None):  # noqa: E501
         """DeploymentRunOptions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._debug = None
         self._deployment_run_name = None
         self._deployment_to_submit = None
         self._description = None
@@ -110,6 +113,8 @@ class DeploymentRunOptions(object):
         self._windows_domain_name = None
         self.discriminator = None
 
+        if debug is not None:
+            self.debug = debug
         if deployment_run_name is not None:
             self.deployment_run_name = deployment_run_name
         if deployment_to_submit is not None:
@@ -150,6 +155,27 @@ class DeploymentRunOptions(object):
             self.virt_realm_binding = virt_realm_binding
         if windows_domain_name is not None:
             self.windows_domain_name = windows_domain_name
+
+    @property
+    def debug(self):
+        """Gets the debug of this DeploymentRunOptions.  # noqa: E501
+
+
+        :return: The debug of this DeploymentRunOptions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._debug
+
+    @debug.setter
+    def debug(self, debug):
+        """Sets the debug of this DeploymentRunOptions.
+
+
+        :param debug: The debug of this DeploymentRunOptions.  # noqa: E501
+        :type: bool
+        """
+
+        self._debug = debug
 
     @property
     def deployment_run_name(self):
@@ -247,7 +273,7 @@ class DeploymentRunOptions(object):
 
 
         :return: The earliest_start_time of this DeploymentRunOptions.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._earliest_start_time
 
@@ -257,7 +283,7 @@ class DeploymentRunOptions(object):
 
 
         :param earliest_start_time: The earliest_start_time of this DeploymentRunOptions.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._earliest_start_time = earliest_start_time
@@ -486,7 +512,7 @@ class DeploymentRunOptions(object):
 
 
         :return: The end_date of this DeploymentRunOptions.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._end_date
 
@@ -496,7 +522,7 @@ class DeploymentRunOptions(object):
 
 
         :param end_date: The end_date of this DeploymentRunOptions.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._end_date = end_date

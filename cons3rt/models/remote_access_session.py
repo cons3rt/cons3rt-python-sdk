@@ -34,10 +34,10 @@ class RemoteAccessSession(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'end_date': 'datetime',
+        'end_date': 'int',
         'id': 'int',
         'low_bandwidth': 'bool',
-        'start_date': 'datetime',
+        'start_date': 'int',
         'username': 'str',
         'type': 'str'
     }
@@ -84,7 +84,7 @@ class RemoteAccessSession(object):
 
 
         :return: The end_date of this RemoteAccessSession.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._end_date
 
@@ -94,7 +94,7 @@ class RemoteAccessSession(object):
 
 
         :param end_date: The end_date of this RemoteAccessSession.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._end_date = end_date
@@ -147,7 +147,7 @@ class RemoteAccessSession(object):
 
 
         :return: The start_date of this RemoteAccessSession.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._start_date
 
@@ -157,7 +157,7 @@ class RemoteAccessSession(object):
 
 
         :param start_date: The start_date of this RemoteAccessSession.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._start_date = start_date

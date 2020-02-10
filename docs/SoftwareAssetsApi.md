@@ -5,7 +5,7 @@ All URIs are relative to *https://api.dev.cons3rt.io/rest*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_trusted_project**](SoftwareAssetsApi.md#add_trusted_project) | **PUT** /api/assets/{id}/addtrustedproject | Assign Trusted Project to Asset
-[**delete_asset**](SoftwareAssetsApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete Asset
+[**delete_asset**](SoftwareAssetsApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete asset
 [**download**](SoftwareAssetsApi.md#download) | **GET** /api/assets/{id}/download | Download Asset
 [**get_software**](SoftwareAssetsApi.md#get_software) | **GET** /api/software/{id} | Retrieve Software Asset
 [**get_software_set**](SoftwareAssetsApi.md#get_software_set) | **GET** /api/software | List Software Assets
@@ -130,9 +130,9 @@ Name | Type | Description  | Notes
 # **delete_asset**
 > bool delete_asset(id, force=force)
 
-Delete Asset
+Delete asset
 
-Deletes a single Asset with the given ID.<br> <br> Optionally, this call can delete the Asset in question even if that Asset has dependents.
+Delete a single Asset with the given ID.<br/> <br/> <em>Optionally, this call be allowed to delete if the asset has dependent assets.</em>
 
 ### Example
 
@@ -162,7 +162,7 @@ id = 'id_example' # str | ID of asset to delete
 force = False # bool | Allow delete if there are dependent assets (optional) (default to False)
 
 try:
-    # Delete Asset
+    # Delete asset
     api_response = api_instance.delete_asset(id, force=force)
     pprint(api_response)
 except ApiException as e:
@@ -195,7 +195,7 @@ id = 'id_example' # str | ID of asset to delete
 force = False # bool | Allow delete if there are dependent assets (optional) (default to False)
 
 try:
-    # Delete Asset
+    # Delete asset
     api_response = api_instance.delete_asset(id, force=force)
     pprint(api_response)
 except ApiException as e:

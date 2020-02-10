@@ -38,7 +38,7 @@ class MinimalTestRunTask(object):
         'id': 'int',
         'project': 'MinimalProject',
         'result': 'str',
-        'start_time': 'datetime',
+        'start_time': 'int',
         'report_uri': 'str',
         'test_bundle': 'MinimalTestBundle',
         'test_manager_status': 'str',
@@ -183,7 +183,7 @@ class MinimalTestRunTask(object):
 
 
         :return: The start_time of this MinimalTestRunTask.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._start_time
 
@@ -193,7 +193,7 @@ class MinimalTestRunTask(object):
 
 
         :param start_time: The start_time of this MinimalTestRunTask.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._start_time = start_time
