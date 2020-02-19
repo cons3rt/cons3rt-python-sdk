@@ -12,34 +12,6 @@ For more information, please visit [https://www.cons3rt.com/](https://www.cons3r
 
 Python 2.7 and 3.4+
 
-## Development
-### Using pipenv
-
-`pipenv` combines virtual environments and pip package management to define a consistent development environment across a team. All third-party packages should be installed from the pypi proxy repository as defined in `Pipfile`. To install the development environment:
-
-```sh
-pip install pipenv
-PYPI_CREDENTIALS=[nexus_username]:[nexus_password] pipenv install
-```
-
-### Publishing updates
-To publish updates to the local pypi repository, you need to enter the virtual development environment and build both a python `sdist` and a `wheel` for distribution:
-
-```sh
-pipenv shell
-python setup.py sdist
-python setup.py bdist_wheel --universal
-```
-
-Uploading the artifacts to the local repository is done via `twine`:
-
-```sh
-pipenv shell
-twine upload --repository-url https://nexus.jackpinetech.com/repository/pypi-internal/ dist/*
-```
-
-Enter your nexus credentials when prompted
-
 ## Installation & Usage
 ### pip install
 
