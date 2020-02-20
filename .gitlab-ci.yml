@@ -1,11 +1,10 @@
-image: python:3.7-alpine
+image: python:3.7-slim
 
 stages:
   - build
   - deploy
 
 before_script:
-  - apk add py-cryptography
   - pip install pipenv
   - pip install twine
    
