@@ -28,6 +28,9 @@ wheels:
   stage: deploy
   script:
     - pipenv run python setup.py sdist bdist_wheel --universal
+  artifacts:
+    paths:
+      - dist/*
 
 deploy_staging:
   stage: deploy
