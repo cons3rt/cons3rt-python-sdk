@@ -40,7 +40,6 @@ deploy_staging:
     TWINE_PASSWORD: $STAGING_PASSWORD
   script:
     - pip install twine
-    - ls dist
     - twine upload --repository-url $STAGING_URL dist/*
   except:
     - tags
