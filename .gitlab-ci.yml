@@ -19,7 +19,7 @@ cache:
 before_script:
   - python -V  # Print out python version for debugging
   - pip install pipenv
-  - pipenv install --ignore-pipfile
+  - pipenv install --dev --ignore-pipfile
 
 stages:
   - build
