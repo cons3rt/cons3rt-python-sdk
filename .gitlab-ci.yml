@@ -22,10 +22,11 @@ before_script:
   - pipenv sync
 
 stages:
+  - build
   - deploy
 
 wheels:
-  stage: deploy
+  stage: build
   script:
     - pipenv run python setup.py sdist bdist_wheel --universal
   artifacts:
