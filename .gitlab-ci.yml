@@ -5,9 +5,7 @@ stages:
   - deploy
 
 before_script:
-  - apk add --no-cache --virtual .build-deps gcc musl-dev
-  - pip install cython
-  - apk del .build-deps gcc musl-dev
+  - apk add py-cryptography
   - pip install pipenv
   - pip install twine
    
