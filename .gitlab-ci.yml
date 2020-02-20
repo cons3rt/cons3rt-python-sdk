@@ -19,7 +19,7 @@ cache:
 before_script:
   - python -V  # Print out python version for debugging
   - pip install pipenv
-  - pipenv install --dev --ignore-pipfile
+  - pipenv sync
 
 stages:
   - deploy
@@ -30,7 +30,7 @@ wheels:
     - pipenv run python setup.py sdist bdist_wheel --universal
   artifacts:
     paths:
-      - dist/*
+      - dist/
 
 deploy_staging:
   stage: deploy
