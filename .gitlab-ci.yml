@@ -6,6 +6,7 @@ stages:
 
 before_script:
   - pip install pipenv
+  - pip install twine
    
 prepare:
   stage: build
@@ -14,8 +15,6 @@ prepare:
     TWINE_PASSWORD: farts
   script:
     - pipenv install --ignore-pipfile
-  except:
-    - tags
 
 source_wheel:
   stage: deploy
@@ -26,9 +25,6 @@ binary_wheel:
   stage: deploy
   script:
     - pipenv run python setup.py bdist_wheel --universal
-
-before_script:
-  - pip install twine
 
 deploy_staging:
   stage: deploy
