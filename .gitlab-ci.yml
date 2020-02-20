@@ -22,7 +22,6 @@ before_script:
   - pipenv install --dev --ignore-pipfile
 
 stages:
-  - build
   - deploy
 
 wheels:
@@ -36,6 +35,7 @@ deploy_staging:
     TWINE_USERNAME: $STAGING_USERNAME
     TWINE_PASSWORD: $STAGING_PASSWORD
   script:
+    - pip install twine
     - twine upload --repository-url $STAGING_URL dist/*
   except:
     - tags
@@ -46,6 +46,7 @@ deploy_production:
     TWINE_USERNAME: $PRODUCTION_USERNAME
     TWINE_PASSWORD: $PRODUCTION_PASSWORD
   script:
+    - pip install twine
     - twine upload dist/*
   only:
     - tags
