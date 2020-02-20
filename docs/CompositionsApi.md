@@ -1,6 +1,6 @@
 # cons3rt.CompositionsApi
 
-All URIs are relative to *https://api.dev.cons3rt.io/rest*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,29 +28,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CompositionsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of composition to delete
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Delete Composition
-    api_response = api_instance.delete_composition(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CompositionsApi->delete_composition: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CompositionsApi(api_client)
+    id = 'id_example' # str | ID of composition to delete
+
+    try:
+        # Delete Composition
+        api_response = api_instance.delete_composition(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CompositionsApi->delete_composition: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -60,29 +69,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CompositionsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of composition to delete
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Delete Composition
-    api_response = api_instance.delete_composition(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CompositionsApi->delete_composition: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CompositionsApi(api_client)
+    id = 'id_example' # str | ID of composition to delete
+
+    try:
+        # Delete Composition
+        api_response = api_instance.delete_composition(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CompositionsApi->delete_composition: %s\n" % e)
 ```
 
 ### Parameters
@@ -129,29 +147,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CompositionsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of composition to return
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve Composition
-    api_response = api_instance.get_composition(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CompositionsApi->get_composition: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CompositionsApi(api_client)
+    id = 'id_example' # str | ID of composition to return
+
+    try:
+        # Retrieve Composition
+        api_response = api_instance.get_composition(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CompositionsApi->get_composition: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -161,29 +188,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CompositionsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of composition to return
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve Composition
-    api_response = api_instance.get_composition(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CompositionsApi->get_composition: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CompositionsApi(api_client)
+    id = 'id_example' # str | ID of composition to return
+
+    try:
+        # Retrieve Composition
+        api_response = api_instance.get_composition(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CompositionsApi->get_composition: %s\n" % e)
 ```
 
 ### Parameters
@@ -230,30 +266,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CompositionsApi(cons3rt.ApiClient(configuration))
-maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CompositionsApi(api_client)
+    maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List all Compositions
-    api_response = api_instance.list_compositions(maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CompositionsApi->list_compositions: %s\n" % e)
+    try:
+        # List all Compositions
+        api_response = api_instance.list_compositions(maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CompositionsApi->list_compositions: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -263,30 +308,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CompositionsApi(cons3rt.ApiClient(configuration))
-maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CompositionsApi(api_client)
+    maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List all Compositions
-    api_response = api_instance.list_compositions(maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CompositionsApi->list_compositions: %s\n" % e)
+    try:
+        # List all Compositions
+        api_response = api_instance.list_compositions(maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CompositionsApi->list_compositions: %s\n" % e)
 ```
 
 ### Parameters
@@ -333,30 +387,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CompositionsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CompositionsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 input_composition_for_deployment_run = cons3rt.InputCompositionForDeploymentRun() # InputCompositionForDeploymentRun | The composition definition (optional)
 
-try:
-    # Publish Deployment Run
-    api_response = api_instance.publish_deployment_run(id, input_composition_for_deployment_run=input_composition_for_deployment_run)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CompositionsApi->publish_deployment_run: %s\n" % e)
+    try:
+        # Publish Deployment Run
+        api_response = api_instance.publish_deployment_run(id, input_composition_for_deployment_run=input_composition_for_deployment_run)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CompositionsApi->publish_deployment_run: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -366,30 +429,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CompositionsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CompositionsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 input_composition_for_deployment_run = cons3rt.InputCompositionForDeploymentRun() # InputCompositionForDeploymentRun | The composition definition (optional)
 
-try:
-    # Publish Deployment Run
-    api_response = api_instance.publish_deployment_run(id, input_composition_for_deployment_run=input_composition_for_deployment_run)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CompositionsApi->publish_deployment_run: %s\n" % e)
+    try:
+        # Publish Deployment Run
+        api_response = api_instance.publish_deployment_run(id, input_composition_for_deployment_run=input_composition_for_deployment_run)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CompositionsApi->publish_deployment_run: %s\n" % e)
 ```
 
 ### Parameters
@@ -437,30 +509,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CompositionsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | 
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CompositionsApi(api_client)
+    id = 'id_example' # str | 
 input_composition = cons3rt.InputComposition() # InputComposition | The composition definition used when launching the deployment (optional)
 
-try:
-    # Publish Scenario
-    api_response = api_instance.publish_scenario_to_composition(id, input_composition=input_composition)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CompositionsApi->publish_scenario_to_composition: %s\n" % e)
+    try:
+        # Publish Scenario
+        api_response = api_instance.publish_scenario_to_composition(id, input_composition=input_composition)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CompositionsApi->publish_scenario_to_composition: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -470,30 +551,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CompositionsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | 
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CompositionsApi(api_client)
+    id = 'id_example' # str | 
 input_composition = cons3rt.InputComposition() # InputComposition | The composition definition used when launching the deployment (optional)
 
-try:
-    # Publish Scenario
-    api_response = api_instance.publish_scenario_to_composition(id, input_composition=input_composition)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CompositionsApi->publish_scenario_to_composition: %s\n" % e)
+    try:
+        # Publish Scenario
+        api_response = api_instance.publish_scenario_to_composition(id, input_composition=input_composition)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CompositionsApi->publish_scenario_to_composition: %s\n" % e)
 ```
 
 ### Parameters
@@ -541,30 +631,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CompositionsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of Composition to update
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CompositionsApi(api_client)
+    id = 'id_example' # str | ID of Composition to update
 input_composition = cons3rt.InputComposition() # InputComposition | The modified Composition definition (optional)
 
-try:
-    # Update Composition
-    api_response = api_instance.update_composition(id, input_composition=input_composition)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CompositionsApi->update_composition: %s\n" % e)
+    try:
+        # Update Composition
+        api_response = api_instance.update_composition(id, input_composition=input_composition)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CompositionsApi->update_composition: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -574,30 +673,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CompositionsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of Composition to update
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CompositionsApi(api_client)
+    id = 'id_example' # str | ID of Composition to update
 input_composition = cons3rt.InputComposition() # InputComposition | The modified Composition definition (optional)
 
-try:
-    # Update Composition
-    api_response = api_instance.update_composition(id, input_composition=input_composition)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CompositionsApi->update_composition: %s\n" % e)
+    try:
+        # Update Composition
+        api_response = api_instance.update_composition(id, input_composition=input_composition)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CompositionsApi->update_composition: %s\n" % e)
 ```
 
 ### Parameters

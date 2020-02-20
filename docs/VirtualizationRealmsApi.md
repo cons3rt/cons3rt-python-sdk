@@ -1,6 +1,6 @@
 # cons3rt.VirtualizationRealmsApi
 
-All URIs are relative to *https://api.dev.cons3rt.io/rest*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -60,30 +60,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 abstract_add_network_cloud_space_request = cons3rt.AbstractAddNetworkCloudSpaceRequest() # AbstractAddNetworkCloudSpaceRequest | The network allocation information
 
-try:
-    # Allocate Network
-    api_response = api_instance.add_network(id, abstract_add_network_cloud_space_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->add_network: %s\n" % e)
+    try:
+        # Allocate Network
+        api_response = api_instance.add_network(id, abstract_add_network_cloud_space_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->add_network: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -93,30 +102,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 abstract_add_network_cloud_space_request = cons3rt.AbstractAddNetworkCloudSpaceRequest() # AbstractAddNetworkCloudSpaceRequest | The network allocation information
 
-try:
-    # Allocate Network
-    api_response = api_instance.add_network(id, abstract_add_network_cloud_space_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->add_network: %s\n" % e)
+    try:
+        # Allocate Network
+        api_response = api_instance.add_network(id, abstract_add_network_cloud_space_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->add_network: %s\n" % e)
 ```
 
 ### Parameters
@@ -164,30 +182,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 project_id = 'project_id_example' # str | ID of project to assign
 
-try:
-    # Assign Project
-    api_response = api_instance.add_project(id, project_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->add_project: %s\n" % e)
+    try:
+        # Assign Project
+        api_response = api_instance.add_project(id, project_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->add_project: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -197,30 +224,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 project_id = 'project_id_example' # str | ID of project to assign
 
-try:
-    # Assign Project
-    api_response = api_instance.add_project(id, project_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->add_project: %s\n" % e)
+    try:
+        # Assign Project
+        api_response = api_instance.add_project(id, project_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->add_project: %s\n" % e)
 ```
 
 ### Parameters
@@ -268,30 +304,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 registration_id = 56 # int | ID of template registration
 
-try:
-    # Create Template Subscription
-    api_response = api_instance.create_template_subsciption(id, registration_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->create_template_subsciption: %s\n" % e)
+    try:
+        # Create Template Subscription
+        api_response = api_instance.create_template_subsciption(id, registration_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->create_template_subsciption: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -301,30 +346,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 registration_id = 56 # int | ID of template registration
 
-try:
-    # Create Template Subscription
-    api_response = api_instance.create_template_subsciption(id, registration_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->create_template_subsciption: %s\n" % e)
+    try:
+        # Create Template Subscription
+        api_response = api_instance.create_template_subsciption(id, registration_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->create_template_subsciption: %s\n" % e)
 ```
 
 ### Parameters
@@ -372,31 +426,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 network_id = 56 # int | ID of network
 deallocate = False # bool | Attempt to delete all back-end resources (optional) (default to False)
 
-try:
-    # Delete Network
-    api_response = api_instance.delete_network(id, network_id, deallocate=deallocate)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->delete_network: %s\n" % e)
+    try:
+        # Delete Network
+        api_response = api_instance.delete_network(id, network_id, deallocate=deallocate)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->delete_network: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -406,31 +469,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 network_id = 56 # int | ID of network
 deallocate = False # bool | Attempt to delete all back-end resources (optional) (default to False)
 
-try:
-    # Delete Network
-    api_response = api_instance.delete_network(id, network_id, deallocate=deallocate)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->delete_network: %s\n" % e)
+    try:
+        # Delete Network
+        api_response = api_instance.delete_network(id, network_id, deallocate=deallocate)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->delete_network: %s\n" % e)
 ```
 
 ### Parameters
@@ -479,30 +551,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 subscription_id = 56 # int | ID of template subscription
 
-try:
-    # Delete Template Subscription
-    api_response = api_instance.delete_template_subscription(id, subscription_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->delete_template_subscription: %s\n" % e)
+    try:
+        # Delete Template Subscription
+        api_response = api_instance.delete_template_subscription(id, subscription_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->delete_template_subscription: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -512,30 +593,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 subscription_id = 56 # int | ID of template subscription
 
-try:
-    # Delete Template Subscription
-    api_response = api_instance.delete_template_subscription(id, subscription_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->delete_template_subscription: %s\n" % e)
+    try:
+        # Delete Template Subscription
+        api_response = api_instance.delete_template_subscription(id, subscription_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->delete_template_subscription: %s\n" % e)
 ```
 
 ### Parameters
@@ -583,29 +673,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Disable Remote Access
-    api_response = api_instance.disable_virt_realm_remote_access(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->disable_virt_realm_remote_access: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
+
+    try:
+        # Disable Remote Access
+        api_response = api_instance.disable_virt_realm_remote_access(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->disable_virt_realm_remote_access: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -615,29 +714,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Disable Remote Access
-    api_response = api_instance.disable_virt_realm_remote_access(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->disable_virt_realm_remote_access: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
+
+    try:
+        # Disable Remote Access
+        api_response = api_instance.disable_virt_realm_remote_access(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->disable_virt_realm_remote_access: %s\n" % e)
 ```
 
 ### Parameters
@@ -684,31 +792,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 enable = True # bool | Enable or disable maintenance mode (optional)
 maintenance_mode_request = cons3rt.MaintenanceModeRequest() # MaintenanceModeRequest | The maintenance mode request, when enabling maintenance mode (optional)
 
-try:
-    # Update Maintenance Mode
-    api_response = api_instance.enable_maintence_mode1(id, enable=enable, maintenance_mode_request=maintenance_mode_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->enable_maintence_mode1: %s\n" % e)
+    try:
+        # Update Maintenance Mode
+        api_response = api_instance.enable_maintence_mode1(id, enable=enable, maintenance_mode_request=maintenance_mode_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->enable_maintence_mode1: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -718,31 +835,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 enable = True # bool | Enable or disable maintenance mode (optional)
 maintenance_mode_request = cons3rt.MaintenanceModeRequest() # MaintenanceModeRequest | The maintenance mode request, when enabling maintenance mode (optional)
 
-try:
-    # Update Maintenance Mode
-    api_response = api_instance.enable_maintence_mode1(id, enable=enable, maintenance_mode_request=maintenance_mode_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->enable_maintence_mode1: %s\n" % e)
+    try:
+        # Update Maintenance Mode
+        api_response = api_instance.enable_maintence_mode1(id, enable=enable, maintenance_mode_request=maintenance_mode_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->enable_maintence_mode1: %s\n" % e)
 ```
 
 ### Parameters
@@ -791,30 +917,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 instance_type = 'instance_type_example' # str | Remote access server instance type (optional)
 
-try:
-    # Enable Remote Access
-    api_response = api_instance.enable_virt_realm_remote_access(id, instance_type=instance_type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->enable_virt_realm_remote_access: %s\n" % e)
+    try:
+        # Enable Remote Access
+        api_response = api_instance.enable_virt_realm_remote_access(id, instance_type=instance_type)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->enable_virt_realm_remote_access: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -824,30 +959,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 instance_type = 'instance_type_example' # str | Remote access server instance type (optional)
 
-try:
-    # Enable Remote Access
-    api_response = api_instance.enable_virt_realm_remote_access(id, instance_type=instance_type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->enable_virt_realm_remote_access: %s\n" % e)
+    try:
+        # Enable Remote Access
+        api_response = api_instance.enable_virt_realm_remote_access(id, instance_type=instance_type)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->enable_virt_realm_remote_access: %s\n" % e)
 ```
 
 ### Parameters
@@ -895,32 +1039,41 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 search_type = 'SEARCH_ALL' # str | Deployment run status type (default to 'SEARCH_ALL')
 maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Deployment Runs
-    api_response = api_instance.get_deployment_runs_in_virtualization_realm(id, search_type, maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_deployment_runs_in_virtualization_realm: %s\n" % e)
+    try:
+        # List Deployment Runs
+        api_response = api_instance.get_deployment_runs_in_virtualization_realm(id, search_type, maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_deployment_runs_in_virtualization_realm: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -930,32 +1083,41 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 search_type = 'SEARCH_ALL' # str | Deployment run status type (default to 'SEARCH_ALL')
 maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Deployment Runs
-    api_response = api_instance.get_deployment_runs_in_virtualization_realm(id, search_type, maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_deployment_runs_in_virtualization_realm: %s\n" % e)
+    try:
+        # List Deployment Runs
+        api_response = api_instance.get_deployment_runs_in_virtualization_realm(id, search_type, maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_deployment_runs_in_virtualization_realm: %s\n" % e)
 ```
 
 ### Parameters
@@ -1005,33 +1167,42 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 start = 56 # int | Interval start time, specified in seconds since epoch
 end = 56 # int | Interval end time, specified in seconds since epoch
 interval = 1 # int | Number of intervals (optional) (default to 1)
 interval_unit = 'HOURS' # str | Interval unit (optional) (default to 'HOURS')
 
-try:
-    # Retrieve Metrics
-    api_response = api_instance.get_host_configuration_metrics1(id, start, end, interval=interval, interval_unit=interval_unit)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_host_configuration_metrics1: %s\n" % e)
+    try:
+        # Retrieve Metrics
+        api_response = api_instance.get_host_configuration_metrics1(id, start, end, interval=interval, interval_unit=interval_unit)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_host_configuration_metrics1: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1041,33 +1212,42 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 start = 56 # int | Interval start time, specified in seconds since epoch
 end = 56 # int | Interval end time, specified in seconds since epoch
 interval = 1 # int | Number of intervals (optional) (default to 1)
 interval_unit = 'HOURS' # str | Interval unit (optional) (default to 'HOURS')
 
-try:
-    # Retrieve Metrics
-    api_response = api_instance.get_host_configuration_metrics1(id, start, end, interval=interval, interval_unit=interval_unit)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_host_configuration_metrics1: %s\n" % e)
+    try:
+        # Retrieve Metrics
+        api_response = api_instance.get_host_configuration_metrics1(id, start, end, interval=interval, interval_unit=interval_unit)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_host_configuration_metrics1: %s\n" % e)
 ```
 
 ### Parameters
@@ -1118,30 +1298,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 network_id = 56 # int | ID of network
 
-try:
-    # Retrieve Network
-    api_response = api_instance.get_network(id, network_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_network: %s\n" % e)
+    try:
+        # Retrieve Network
+        api_response = api_instance.get_network(id, network_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_network: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1151,30 +1340,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 network_id = 56 # int | ID of network
 
-try:
-    # Retrieve Network
-    api_response = api_instance.get_network(id, network_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_network: %s\n" % e)
+    try:
+        # Retrieve Network
+        api_response = api_instance.get_network(id, network_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_network: %s\n" % e)
 ```
 
 ### Parameters
@@ -1222,29 +1420,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Networks
-    api_response = api_instance.get_networks(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_networks: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
+
+    try:
+        # List Networks
+        api_response = api_instance.get_networks(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_networks: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1254,29 +1461,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Networks
-    api_response = api_instance.get_networks(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_networks: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
+
+    try:
+        # List Networks
+        api_response = api_instance.get_networks(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_networks: %s\n" % e)
 ```
 
 ### Parameters
@@ -1323,30 +1539,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 subscription_id = 56 # int | ID of template subscription
 
-try:
-    # Retrieve Template Subscription
-    api_response = api_instance.get_template_subscription(id, subscription_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_template_subscription: %s\n" % e)
+    try:
+        # Retrieve Template Subscription
+        api_response = api_instance.get_template_subscription(id, subscription_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_template_subscription: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1356,30 +1581,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 subscription_id = 56 # int | ID of template subscription
 
-try:
-    # Retrieve Template Subscription
-    api_response = api_instance.get_template_subscription(id, subscription_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_template_subscription: %s\n" % e)
+    try:
+        # Retrieve Template Subscription
+        api_response = api_instance.get_template_subscription(id, subscription_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_template_subscription: %s\n" % e)
 ```
 
 ### Parameters
@@ -1427,31 +1661,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 include_registrations = True # bool | Include templates registered to the virtualization realm (optional) (default to True)
 include_subscriptions = False # bool | Include templates subscribed to by the virtualization realm (optional) (default to False)
 
-try:
-    # List Templates
-    api_response = api_instance.get_templates_in_virtualization_realm(id, include_registrations=include_registrations, include_subscriptions=include_subscriptions)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_templates_in_virtualization_realm: %s\n" % e)
+    try:
+        # List Templates
+        api_response = api_instance.get_templates_in_virtualization_realm(id, include_registrations=include_registrations, include_subscriptions=include_subscriptions)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_templates_in_virtualization_realm: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1461,31 +1704,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 include_registrations = True # bool | Include templates registered to the virtualization realm (optional) (default to True)
 include_subscriptions = False # bool | Include templates subscribed to by the virtualization realm (optional) (default to False)
 
-try:
-    # List Templates
-    api_response = api_instance.get_templates_in_virtualization_realm(id, include_registrations=include_registrations, include_subscriptions=include_subscriptions)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_templates_in_virtualization_realm: %s\n" % e)
+    try:
+        # List Templates
+        api_response = api_instance.get_templates_in_virtualization_realm(id, include_registrations=include_registrations, include_subscriptions=include_subscriptions)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_templates_in_virtualization_realm: %s\n" % e)
 ```
 
 ### Parameters
@@ -1534,29 +1786,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Unregistered Networks
-    api_response = api_instance.get_unregistered_networks(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_unregistered_networks: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
+
+    try:
+        # List Unregistered Networks
+        api_response = api_instance.get_unregistered_networks(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_unregistered_networks: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1566,29 +1827,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Unregistered Networks
-    api_response = api_instance.get_unregistered_networks(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_unregistered_networks: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
+
+    try:
+        # List Unregistered Networks
+        api_response = api_instance.get_unregistered_networks(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_unregistered_networks: %s\n" % e)
 ```
 
 ### Parameters
@@ -1635,33 +1905,42 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 start = 56 # int | Interval start time, specified in seconds since epoch
 end = 56 # int | Interval end time, specified in seconds since epoch
 interval = 1 # int | Number of intervals (optional) (default to 1)
 interval_unit = 'HOURS' # str | Interval unit (optional) (default to 'HOURS')
 
-try:
-    # Retrieve Virtual Machine Metrics
-    api_response = api_instance.get_virtual_machine_count_metrics1(id, start, end, interval=interval, interval_unit=interval_unit)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_virtual_machine_count_metrics1: %s\n" % e)
+    try:
+        # Retrieve Virtual Machine Metrics
+        api_response = api_instance.get_virtual_machine_count_metrics1(id, start, end, interval=interval, interval_unit=interval_unit)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_virtual_machine_count_metrics1: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1671,33 +1950,42 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 start = 56 # int | Interval start time, specified in seconds since epoch
 end = 56 # int | Interval end time, specified in seconds since epoch
 interval = 1 # int | Number of intervals (optional) (default to 1)
 interval_unit = 'HOURS' # str | Interval unit (optional) (default to 'HOURS')
 
-try:
-    # Retrieve Virtual Machine Metrics
-    api_response = api_instance.get_virtual_machine_count_metrics1(id, start, end, interval=interval, interval_unit=interval_unit)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_virtual_machine_count_metrics1: %s\n" % e)
+    try:
+        # Retrieve Virtual Machine Metrics
+        api_response = api_instance.get_virtual_machine_count_metrics1(id, start, end, interval=interval, interval_unit=interval_unit)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_virtual_machine_count_metrics1: %s\n" % e)
 ```
 
 ### Parameters
@@ -1748,29 +2036,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve Virtualization Realm
-    api_response = api_instance.get_virtualization_realm(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_virtualization_realm: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
+
+    try:
+        # Retrieve Virtualization Realm
+        api_response = api_instance.get_virtualization_realm(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_virtualization_realm: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1780,29 +2077,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve Virtualization Realm
-    api_response = api_instance.get_virtualization_realm(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_virtualization_realm: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
+
+    try:
+        # Retrieve Virtualization Realm
+        api_response = api_instance.get_virtualization_realm(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_virtualization_realm: %s\n" % e)
 ```
 
 ### Parameters
@@ -1849,29 +2155,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve Virtualization Realm Resources
-    api_response = api_instance.get_virtualization_realm_resources(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_virtualization_realm_resources: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
+
+    try:
+        # Retrieve Virtualization Realm Resources
+        api_response = api_instance.get_virtualization_realm_resources(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_virtualization_realm_resources: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1881,29 +2196,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve Virtualization Realm Resources
-    api_response = api_instance.get_virtualization_realm_resources(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_virtualization_realm_resources: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
+
+    try:
+        # Retrieve Virtualization Realm Resources
+        api_response = api_instance.get_virtualization_realm_resources(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_virtualization_realm_resources: %s\n" % e)
 ```
 
 ### Parameters
@@ -1950,30 +2274,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Virtualization Realms
-    api_response = api_instance.get_virtualization_realms(maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_virtualization_realms: %s\n" % e)
+    try:
+        # List Virtualization Realms
+        api_response = api_instance.get_virtualization_realms(maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_virtualization_realms: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1983,30 +2316,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Virtualization Realms
-    api_response = api_instance.get_virtualization_realms(maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->get_virtualization_realms: %s\n" % e)
+    try:
+        # List Virtualization Realms
+        api_response = api_instance.get_virtualization_realms(maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->get_virtualization_realms: %s\n" % e)
 ```
 
 ### Parameters
@@ -2052,29 +2394,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Refresh Template Cache
-    api_response = api_instance.invalidate_template_cache_in_virtualization_realm(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->invalidate_template_cache_in_virtualization_realm: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
+
+    try:
+        # Refresh Template Cache
+        api_response = api_instance.invalidate_template_cache_in_virtualization_realm(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->invalidate_template_cache_in_virtualization_realm: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -2084,29 +2435,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Refresh Template Cache
-    api_response = api_instance.invalidate_template_cache_in_virtualization_realm(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->invalidate_template_cache_in_virtualization_realm: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
+
+    try:
+        # Refresh Template Cache
+        api_response = api_instance.invalidate_template_cache_in_virtualization_realm(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->invalidate_template_cache_in_virtualization_realm: %s\n" % e)
 ```
 
 ### Parameters
@@ -2153,29 +2513,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Pending Subscriptions
-    api_response = api_instance.list_pending_template_subscriptions(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->list_pending_template_subscriptions: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
+
+    try:
+        # List Pending Subscriptions
+        api_response = api_instance.list_pending_template_subscriptions(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->list_pending_template_subscriptions: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -2185,29 +2554,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Pending Subscriptions
-    api_response = api_instance.list_pending_template_subscriptions(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->list_pending_template_subscriptions: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
+
+    try:
+        # List Pending Subscriptions
+        api_response = api_instance.list_pending_template_subscriptions(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->list_pending_template_subscriptions: %s\n" % e)
 ```
 
 ### Parameters
@@ -2254,31 +2632,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Projects
-    api_response = api_instance.list_projects(id, maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->list_projects: %s\n" % e)
+    try:
+        # List Projects
+        api_response = api_instance.list_projects(id, maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->list_projects: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -2288,31 +2675,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Projects
-    api_response = api_instance.list_projects(id, maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->list_projects: %s\n" % e)
+    try:
+        # List Projects
+        api_response = api_instance.list_projects(id, maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->list_projects: %s\n" % e)
 ```
 
 ### Parameters
@@ -2361,29 +2757,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Template Registrations
-    api_response = api_instance.list_template_registrations(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->list_template_registrations: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
+
+    try:
+        # List Template Registrations
+        api_response = api_instance.list_template_registrations(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->list_template_registrations: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -2393,29 +2798,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Template Registrations
-    api_response = api_instance.list_template_registrations(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->list_template_registrations: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
+
+    try:
+        # List Template Registrations
+        api_response = api_instance.list_template_registrations(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->list_template_registrations: %s\n" % e)
 ```
 
 ### Parameters
@@ -2462,29 +2876,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Template Subscriptions
-    api_response = api_instance.list_template_subscriptions(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->list_template_subscriptions: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
+
+    try:
+        # List Template Subscriptions
+        api_response = api_instance.list_template_subscriptions(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->list_template_subscriptions: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -2494,29 +2917,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Template Subscriptions
-    api_response = api_instance.list_template_subscriptions(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->list_template_subscriptions: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
+
+    try:
+        # List Template Subscriptions
+        api_response = api_instance.list_template_subscriptions(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->list_template_subscriptions: %s\n" % e)
 ```
 
 ### Parameters
@@ -2563,29 +2995,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Unregistered Templates
-    api_response = api_instance.list_unregistered_templates(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->list_unregistered_templates: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
+
+    try:
+        # List Unregistered Templates
+        api_response = api_instance.list_unregistered_templates(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->list_unregistered_templates: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -2595,29 +3036,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Unregistered Templates
-    api_response = api_instance.list_unregistered_templates(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->list_unregistered_templates: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
+
+    try:
+        # List Unregistered Templates
+        api_response = api_instance.list_unregistered_templates(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->list_unregistered_templates: %s\n" % e)
 ```
 
 ### Parameters
@@ -2664,29 +3114,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Re-deploy Network Edge Devices
-    api_response = api_instance.redeploy_edges(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->redeploy_edges: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
+
+    try:
+        # Re-deploy Network Edge Devices
+        api_response = api_instance.redeploy_edges(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->redeploy_edges: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -2696,29 +3155,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Re-deploy Network Edge Devices
-    api_response = api_instance.redeploy_edges(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->redeploy_edges: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
+
+    try:
+        # Re-deploy Network Edge Devices
+        api_response = api_instance.redeploy_edges(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->redeploy_edges: %s\n" % e)
 ```
 
 ### Parameters
@@ -2765,30 +3233,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 network_identifier = 'network_identifier_example' # str | Back-end network identifier
 
-try:
-    # Register Network
-    api_response = api_instance.register_network(id, network_identifier)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->register_network: %s\n" % e)
+    try:
+        # Register Network
+        api_response = api_instance.register_network(id, network_identifier)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->register_network: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -2798,30 +3275,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 network_identifier = 'network_identifier_example' # str | Back-end network identifier
 
-try:
-    # Register Network
-    api_response = api_instance.register_network(id, network_identifier)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->register_network: %s\n" % e)
+    try:
+        # Register Network
+        api_response = api_instance.register_network(id, network_identifier)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->register_network: %s\n" % e)
 ```
 
 ### Parameters
@@ -2869,30 +3355,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 input_register_template_object = cons3rt.InputRegisterTemplateObject() # InputRegisterTemplateObject | The template registration data (optional)
 
-try:
-    # Register Template
-    api_response = api_instance.register_template(id, input_register_template_object=input_register_template_object)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->register_template: %s\n" % e)
+    try:
+        # Register Template
+        api_response = api_instance.register_template(id, input_register_template_object=input_register_template_object)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->register_template: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -2902,30 +3397,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 input_register_template_object = cons3rt.InputRegisterTemplateObject() # InputRegisterTemplateObject | The template registration data (optional)
 
-try:
-    # Register Template
-    api_response = api_instance.register_template(id, input_register_template_object=input_register_template_object)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->register_template: %s\n" % e)
+    try:
+        # Register Template
+        api_response = api_instance.register_template(id, input_register_template_object=input_register_template_object)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->register_template: %s\n" % e)
 ```
 
 ### Parameters
@@ -2973,30 +3477,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 project_id = 'project_id_example' # str | ID of project to unassign
 
-try:
-    # Unassign Project
-    api_response = api_instance.remove_project(id, project_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->remove_project: %s\n" % e)
+    try:
+        # Unassign Project
+        api_response = api_instance.remove_project(id, project_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->remove_project: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -3006,30 +3519,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 project_id = 'project_id_example' # str | ID of project to unassign
 
-try:
-    # Unassign Project
-    api_response = api_instance.remove_project(id, project_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->remove_project: %s\n" % e)
+    try:
+        # Unassign Project
+        api_response = api_instance.remove_project(id, project_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->remove_project: %s\n" % e)
 ```
 
 ### Parameters
@@ -3077,30 +3599,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 registration_id = 56 # int | ID of template registration
 
-try:
-    # Retrieve Template Registration
-    api_response = api_instance.retrieve_template_registration(id, registration_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->retrieve_template_registration: %s\n" % e)
+    try:
+        # Retrieve Template Registration
+        api_response = api_instance.retrieve_template_registration(id, registration_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->retrieve_template_registration: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -3110,30 +3641,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 registration_id = 56 # int | ID of template registration
 
-try:
-    # Retrieve Template Registration
-    api_response = api_instance.retrieve_template_registration(id, registration_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->retrieve_template_registration: %s\n" % e)
+    try:
+        # Retrieve Template Registration
+        api_response = api_instance.retrieve_template_registration(id, registration_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->retrieve_template_registration: %s\n" % e)
 ```
 
 ### Parameters
@@ -3181,30 +3721,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 activate = True # bool | Activate or deactivate virtualization realm
 
-try:
-    # Update State
-    api_response = api_instance.set_virtualization_realm_active(id, activate)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->set_virtualization_realm_active: %s\n" % e)
+    try:
+        # Update State
+        api_response = api_instance.set_virtualization_realm_active(id, activate)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->set_virtualization_realm_active: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -3214,30 +3763,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 activate = True # bool | Activate or deactivate virtualization realm
 
-try:
-    # Update State
-    api_response = api_instance.set_virtualization_realm_active(id, activate)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->set_virtualization_realm_active: %s\n" % e)
+    try:
+        # Update State
+        api_response = api_instance.set_virtualization_realm_active(id, activate)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->set_virtualization_realm_active: %s\n" % e)
 ```
 
 ### Parameters
@@ -3285,31 +3843,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 registration_id = 56 # int | ID of template registration
 target_realm_ids = [56] # list[int] | ID(s) of external virtualization realms to share template registration with
 
-try:
-    # Share Template
-    api_response = api_instance.share_template_registration(id, registration_id, target_realm_ids)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->share_template_registration: %s\n" % e)
+    try:
+        # Share Template
+        api_response = api_instance.share_template_registration(id, registration_id, target_realm_ids)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->share_template_registration: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -3319,31 +3886,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 registration_id = 56 # int | ID of template registration
 target_realm_ids = [56] # list[int] | ID(s) of external virtualization realms to share template registration with
 
-try:
-    # Share Template
-    api_response = api_instance.share_template_registration(id, registration_id, target_realm_ids)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->share_template_registration: %s\n" % e)
+    try:
+        # Share Template
+        api_response = api_instance.share_template_registration(id, registration_id, target_realm_ids)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->share_template_registration: %s\n" % e)
 ```
 
 ### Parameters
@@ -3392,31 +3968,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 registration_id = 56 # int | ID of template registration
 input_unregister_template_object = cons3rt.InputUnregisterTemplateObject() # InputUnregisterTemplateObject | The deletion settings
 
-try:
-    # Delete Template Registration
-    api_response = api_instance.unregister_template(id, registration_id, input_unregister_template_object)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->unregister_template: %s\n" % e)
+    try:
+        # Delete Template Registration
+        api_response = api_instance.unregister_template(id, registration_id, input_unregister_template_object)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->unregister_template: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -3426,31 +4011,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 registration_id = 56 # int | ID of template registration
 input_unregister_template_object = cons3rt.InputUnregisterTemplateObject() # InputUnregisterTemplateObject | The deletion settings
 
-try:
-    # Delete Template Registration
-    api_response = api_instance.unregister_template(id, registration_id, input_unregister_template_object)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->unregister_template: %s\n" % e)
+    try:
+        # Delete Template Registration
+        api_response = api_instance.unregister_template(id, registration_id, input_unregister_template_object)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->unregister_template: %s\n" % e)
 ```
 
 ### Parameters
@@ -3499,31 +4093,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 registration_id = 56 # int | ID of template registration
 target_realm_id = 56 # int | ID of external virtualization realm to revoke template registration access for
 
-try:
-    # Unshare Template
-    api_response = api_instance.unshare_template_registration(id, registration_id, target_realm_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->unshare_template_registration: %s\n" % e)
+    try:
+        # Unshare Template
+        api_response = api_instance.unshare_template_registration(id, registration_id, target_realm_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->unshare_template_registration: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -3533,31 +4136,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 registration_id = 56 # int | ID of template registration
 target_realm_id = 56 # int | ID of external virtualization realm to revoke template registration access for
 
-try:
-    # Unshare Template
-    api_response = api_instance.unshare_template_registration(id, registration_id, target_realm_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->unshare_template_registration: %s\n" % e)
+    try:
+        # Unshare Template
+        api_response = api_instance.unshare_template_registration(id, registration_id, target_realm_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->unshare_template_registration: %s\n" % e)
 ```
 
 ### Parameters
@@ -3606,32 +4218,41 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 registration_id = 56 # int | ID of template registration
 input_cons3rt_template_data = cons3rt.InputCons3rtTemplateData() # InputCons3rtTemplateData | The modified template registration data
 offline = False # bool | The desired template registration state (optional) (default to False)
 
-try:
-    # Update Template Registration
-    api_response = api_instance.update_template_registration(id, registration_id, input_cons3rt_template_data, offline=offline)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->update_template_registration: %s\n" % e)
+    try:
+        # Update Template Registration
+        api_response = api_instance.update_template_registration(id, registration_id, input_cons3rt_template_data, offline=offline)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->update_template_registration: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -3641,32 +4262,41 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 registration_id = 56 # int | ID of template registration
 input_cons3rt_template_data = cons3rt.InputCons3rtTemplateData() # InputCons3rtTemplateData | The modified template registration data
 offline = False # bool | The desired template registration state (optional) (default to False)
 
-try:
-    # Update Template Registration
-    api_response = api_instance.update_template_registration(id, registration_id, input_cons3rt_template_data, offline=offline)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->update_template_registration: %s\n" % e)
+    try:
+        # Update Template Registration
+        api_response = api_instance.update_template_registration(id, registration_id, input_cons3rt_template_data, offline=offline)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->update_template_registration: %s\n" % e)
 ```
 
 ### Parameters
@@ -3716,32 +4346,41 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 subscription_id = 56 # int | ID of template subscription
 input_template_subscription = cons3rt.InputTemplateSubscription() # InputTemplateSubscription | The modified template subscription data
 offline = False # bool | The desired template subscription state (optional) (default to False)
 
-try:
-    # Update Template Subscription
-    api_response = api_instance.update_template_subscription(id, subscription_id, input_template_subscription, offline=offline)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->update_template_subscription: %s\n" % e)
+    try:
+        # Update Template Subscription
+        api_response = api_instance.update_template_subscription(id, subscription_id, input_template_subscription, offline=offline)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->update_template_subscription: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -3751,32 +4390,41 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 56 # int | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 56 # int | ID of virtualization realm
 subscription_id = 56 # int | ID of template subscription
 input_template_subscription = cons3rt.InputTemplateSubscription() # InputTemplateSubscription | The modified template subscription data
 offline = False # bool | The desired template subscription state (optional) (default to False)
 
-try:
-    # Update Template Subscription
-    api_response = api_instance.update_template_subscription(id, subscription_id, input_template_subscription, offline=offline)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->update_template_subscription: %s\n" % e)
+    try:
+        # Update Template Subscription
+        api_response = api_instance.update_template_subscription(id, subscription_id, input_template_subscription, offline=offline)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->update_template_subscription: %s\n" % e)
 ```
 
 ### Parameters
@@ -3826,30 +4474,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 remote_access_config = cons3rt.RemoteAccessConfig() # RemoteAccessConfig | The updated remote access configuration
 
-try:
-    # Update Remote Access
-    api_response = api_instance.update_virt_realm_remote_access_config(id, remote_access_config)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->update_virt_realm_remote_access_config: %s\n" % e)
+    try:
+        # Update Remote Access
+        api_response = api_instance.update_virt_realm_remote_access_config(id, remote_access_config)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->update_virt_realm_remote_access_config: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -3859,30 +4516,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 remote_access_config = cons3rt.RemoteAccessConfig() # RemoteAccessConfig | The updated remote access configuration
 
-try:
-    # Update Remote Access
-    api_response = api_instance.update_virt_realm_remote_access_config(id, remote_access_config)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->update_virt_realm_remote_access_config: %s\n" % e)
+    try:
+        # Update Remote Access
+        api_response = api_instance.update_virt_realm_remote_access_config(id, remote_access_config)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->update_virt_realm_remote_access_config: %s\n" % e)
 ```
 
 ### Parameters
@@ -3930,30 +4596,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 input_vr_admin_virtualization_realm = cons3rt.InputVRAdminVirtualizationRealm() # InputVRAdminVirtualizationRealm | The updated Virtualization Realm data (optional)
 
-try:
-    # Update Virtualization Realm
-    api_response = api_instance.update_virtualization_realm(id, input_vr_admin_virtualization_realm=input_vr_admin_virtualization_realm)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->update_virtualization_realm: %s\n" % e)
+    try:
+        # Update Virtualization Realm
+        api_response = api_instance.update_virtualization_realm(id, input_vr_admin_virtualization_realm=input_vr_admin_virtualization_realm)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->update_virtualization_realm: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -3963,30 +4638,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.VirtualizationRealmsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 input_vr_admin_virtualization_realm = cons3rt.InputVRAdminVirtualizationRealm() # InputVRAdminVirtualizationRealm | The updated Virtualization Realm data (optional)
 
-try:
-    # Update Virtualization Realm
-    api_response = api_instance.update_virtualization_realm(id, input_vr_admin_virtualization_realm=input_vr_admin_virtualization_realm)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling VirtualizationRealmsApi->update_virtualization_realm: %s\n" % e)
+    try:
+        # Update Virtualization Realm
+        api_response = api_instance.update_virtualization_realm(id, input_vr_admin_virtualization_realm=input_vr_admin_virtualization_realm)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->update_virtualization_realm: %s\n" % e)
 ```
 
 ### Parameters

@@ -1,6 +1,6 @@
 # cons3rt.SystemAssetsApi
 
-All URIs are relative to *https://api.dev.cons3rt.io/rest*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,29 +28,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.SystemAssetsApi(cons3rt.ApiClient(configuration))
-input_system_asset = cons3rt.InputSystemAsset() # InputSystemAsset | The System Asset definition (optional)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Create System Asset
-    api_response = api_instance.create_system_asset(input_system_asset=input_system_asset)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SystemAssetsApi->create_system_asset: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.SystemAssetsApi(api_client)
+    input_system_asset = cons3rt.InputSystemAsset() # InputSystemAsset | The System Asset definition (optional)
+
+    try:
+        # Create System Asset
+        api_response = api_instance.create_system_asset(input_system_asset=input_system_asset)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SystemAssetsApi->create_system_asset: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -60,29 +69,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.SystemAssetsApi(cons3rt.ApiClient(configuration))
-input_system_asset = cons3rt.InputSystemAsset() # InputSystemAsset | The System Asset definition (optional)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Create System Asset
-    api_response = api_instance.create_system_asset(input_system_asset=input_system_asset)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SystemAssetsApi->create_system_asset: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.SystemAssetsApi(api_client)
+    input_system_asset = cons3rt.InputSystemAsset() # InputSystemAsset | The System Asset definition (optional)
+
+    try:
+        # Create System Asset
+        api_response = api_instance.create_system_asset(input_system_asset=input_system_asset)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SystemAssetsApi->create_system_asset: %s\n" % e)
 ```
 
 ### Parameters
@@ -127,29 +145,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.SystemAssetsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of system asset to delete
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Delete System Asset
-    api_response = api_instance.delete_system_asset(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SystemAssetsApi->delete_system_asset: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.SystemAssetsApi(api_client)
+    id = 'id_example' # str | ID of system asset to delete
+
+    try:
+        # Delete System Asset
+        api_response = api_instance.delete_system_asset(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SystemAssetsApi->delete_system_asset: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -159,29 +186,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.SystemAssetsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of system asset to delete
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Delete System Asset
-    api_response = api_instance.delete_system_asset(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SystemAssetsApi->delete_system_asset: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.SystemAssetsApi(api_client)
+    id = 'id_example' # str | ID of system asset to delete
+
+    try:
+        # Delete System Asset
+        api_response = api_instance.delete_system_asset(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SystemAssetsApi->delete_system_asset: %s\n" % e)
 ```
 
 ### Parameters
@@ -228,29 +264,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.SystemAssetsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of system asset to import
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Import System Asset
-    api_response = api_instance.import_system_asset(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SystemAssetsApi->import_system_asset: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.SystemAssetsApi(api_client)
+    id = 'id_example' # str | ID of system asset to import
+
+    try:
+        # Import System Asset
+        api_response = api_instance.import_system_asset(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SystemAssetsApi->import_system_asset: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -260,29 +305,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.SystemAssetsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of system asset to import
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Import System Asset
-    api_response = api_instance.import_system_asset(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SystemAssetsApi->import_system_asset: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.SystemAssetsApi(api_client)
+    id = 'id_example' # str | ID of system asset to import
+
+    try:
+        # Import System Asset
+        api_response = api_instance.import_system_asset(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SystemAssetsApi->import_system_asset: %s\n" % e)
 ```
 
 ### Parameters
@@ -329,28 +383,37 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.SystemAssetsApi(cons3rt.ApiClient(configuration))
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List System Assets
-    api_response = api_instance.list_system_assets()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SystemAssetsApi->list_system_assets: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.SystemAssetsApi(api_client)
+    
+    try:
+        # List System Assets
+        api_response = api_instance.list_system_assets()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SystemAssetsApi->list_system_assets: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -360,28 +423,37 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.SystemAssetsApi(cons3rt.ApiClient(configuration))
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List System Assets
-    api_response = api_instance.list_system_assets()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SystemAssetsApi->list_system_assets: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.SystemAssetsApi(api_client)
+    
+    try:
+        # List System Assets
+        api_response = api_instance.list_system_assets()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SystemAssetsApi->list_system_assets: %s\n" % e)
 ```
 
 ### Parameters
@@ -423,29 +495,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.SystemAssetsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of System Asset
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve System Asset
-    api_response = api_instance.retrieve_system_asset(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SystemAssetsApi->retrieve_system_asset: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.SystemAssetsApi(api_client)
+    id = 'id_example' # str | ID of System Asset
+
+    try:
+        # Retrieve System Asset
+        api_response = api_instance.retrieve_system_asset(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SystemAssetsApi->retrieve_system_asset: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -455,29 +536,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.SystemAssetsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of System Asset
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve System Asset
-    api_response = api_instance.retrieve_system_asset(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SystemAssetsApi->retrieve_system_asset: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.SystemAssetsApi(api_client)
+    id = 'id_example' # str | ID of System Asset
+
+    try:
+        # Retrieve System Asset
+        api_response = api_instance.retrieve_system_asset(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SystemAssetsApi->retrieve_system_asset: %s\n" % e)
 ```
 
 ### Parameters
@@ -524,30 +614,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.SystemAssetsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of System Asset to update
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.SystemAssetsApi(api_client)
+    id = 'id_example' # str | ID of System Asset to update
 input_system_asset = cons3rt.InputSystemAsset() # InputSystemAsset | The modified System Asset definition (optional)
 
-try:
-    # Update System Asset
-    api_response = api_instance.update_system_asset(id, input_system_asset=input_system_asset)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SystemAssetsApi->update_system_asset: %s\n" % e)
+    try:
+        # Update System Asset
+        api_response = api_instance.update_system_asset(id, input_system_asset=input_system_asset)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SystemAssetsApi->update_system_asset: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -557,30 +656,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.SystemAssetsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of System Asset to update
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.SystemAssetsApi(api_client)
+    id = 'id_example' # str | ID of System Asset to update
 input_system_asset = cons3rt.InputSystemAsset() # InputSystemAsset | The modified System Asset definition (optional)
 
-try:
-    # Update System Asset
-    api_response = api_instance.update_system_asset(id, input_system_asset=input_system_asset)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SystemAssetsApi->update_system_asset: %s\n" % e)
+    try:
+        # Update System Asset
+        api_response = api_instance.update_system_asset(id, input_system_asset=input_system_asset)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SystemAssetsApi->update_system_asset: %s\n" % e)
 ```
 
 ### Parameters

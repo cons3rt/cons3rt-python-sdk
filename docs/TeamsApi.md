@@ -1,6 +1,6 @@
 # cons3rt.TeamsApi
 
-All URIs are relative to *https://api.dev.cons3rt.io/rest*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -33,30 +33,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of team
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    id = 'id_example' # str | ID of team
 username = 'username_example' # str | Username of desired manager
 
-try:
-    # Assign Manager
-    api_response = api_instance.add_team_manager_to_team(id, username)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->add_team_manager_to_team: %s\n" % e)
+    try:
+        # Assign Manager
+        api_response = api_instance.add_team_manager_to_team(id, username)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->add_team_manager_to_team: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -66,30 +75,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of team
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    id = 'id_example' # str | ID of team
 username = 'username_example' # str | Username of desired manager
 
-try:
-    # Assign Manager
-    api_response = api_instance.add_team_manager_to_team(id, username)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->add_team_manager_to_team: %s\n" % e)
+    try:
+        # Assign Manager
+        api_response = api_instance.add_team_manager_to_team(id, username)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->add_team_manager_to_team: %s\n" % e)
 ```
 
 ### Parameters
@@ -137,29 +155,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-input_team_full = cons3rt.InputTeamFull() # InputTeamFull | The Team to create (optional)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Create Team
-    api_response = api_instance.create_team(input_team_full=input_team_full)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->create_team: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    input_team_full = cons3rt.InputTeamFull() # InputTeamFull | The Team to create (optional)
+
+    try:
+        # Create Team
+        api_response = api_instance.create_team(input_team_full=input_team_full)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->create_team: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -169,29 +196,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-input_team_full = cons3rt.InputTeamFull() # InputTeamFull | The Team to create (optional)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Create Team
-    api_response = api_instance.create_team(input_team_full=input_team_full)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->create_team: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    input_team_full = cons3rt.InputTeamFull() # InputTeamFull | The Team to create (optional)
+
+    try:
+        # Create Team
+        api_response = api_instance.create_team(input_team_full=input_team_full)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->create_team: %s\n" % e)
 ```
 
 ### Parameters
@@ -237,29 +273,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of team
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Delete Team
-    api_response = api_instance.delete_team(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->delete_team: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    id = 'id_example' # str | ID of team
+
+    try:
+        # Delete Team
+        api_response = api_instance.delete_team(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->delete_team: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -269,29 +314,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of team
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Delete Team
-    api_response = api_instance.delete_team(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->delete_team: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    id = 'id_example' # str | ID of team
+
+    try:
+        # Delete Team
+        api_response = api_instance.delete_team(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->delete_team: %s\n" % e)
 ```
 
 ### Parameters
@@ -338,31 +392,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of team
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    id = 'id_example' # str | ID of team
 maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Clouds
-    api_response = api_instance.get_team_owned_clouds(id, maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->get_team_owned_clouds: %s\n" % e)
+    try:
+        # List Clouds
+        api_response = api_instance.get_team_owned_clouds(id, maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->get_team_owned_clouds: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -372,31 +435,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of team
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    id = 'id_example' # str | ID of team
 maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Clouds
-    api_response = api_instance.get_team_owned_clouds(id, maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->get_team_owned_clouds: %s\n" % e)
+    try:
+        # List Clouds
+        api_response = api_instance.get_team_owned_clouds(id, maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->get_team_owned_clouds: %s\n" % e)
 ```
 
 ### Parameters
@@ -445,31 +517,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of team
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    id = 'id_example' # str | ID of team
 maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Virtualization Realms
-    api_response = api_instance.get_team_owned_or_managed_virtualization_realms(id, maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->get_team_owned_or_managed_virtualization_realms: %s\n" % e)
+    try:
+        # List Virtualization Realms
+        api_response = api_instance.get_team_owned_or_managed_virtualization_realms(id, maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->get_team_owned_or_managed_virtualization_realms: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -479,31 +560,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of team
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    id = 'id_example' # str | ID of team
 maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Virtualization Realms
-    api_response = api_instance.get_team_owned_or_managed_virtualization_realms(id, maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->get_team_owned_or_managed_virtualization_realms: %s\n" % e)
+    try:
+        # List Virtualization Realms
+        api_response = api_instance.get_team_owned_or_managed_virtualization_realms(id, maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->get_team_owned_or_managed_virtualization_realms: %s\n" % e)
 ```
 
 ### Parameters
@@ -552,30 +642,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Teams
-    api_response = api_instance.get_teams(maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->get_teams: %s\n" % e)
+    try:
+        # List Teams
+        api_response = api_instance.get_teams(maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->get_teams: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -585,30 +684,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Teams
-    api_response = api_instance.get_teams(maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->get_teams: %s\n" % e)
+    try:
+        # List Teams
+        api_response = api_instance.get_teams(maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->get_teams: %s\n" % e)
 ```
 
 ### Parameters
@@ -655,30 +763,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of team
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    id = 'id_example' # str | ID of team
 username = 'username_example' # str | Username of manager to remove
 
-try:
-    # Unassign Manager from Team
-    api_response = api_instance.remove_team_manager_from_team(id, username)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->remove_team_manager_from_team: %s\n" % e)
+    try:
+        # Unassign Manager from Team
+        api_response = api_instance.remove_team_manager_from_team(id, username)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->remove_team_manager_from_team: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -688,30 +805,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of team
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    id = 'id_example' # str | ID of team
 username = 'username_example' # str | Username of manager to remove
 
-try:
-    # Unassign Manager from Team
-    api_response = api_instance.remove_team_manager_from_team(id, username)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->remove_team_manager_from_team: %s\n" % e)
+    try:
+        # Unassign Manager from Team
+        api_response = api_instance.remove_team_manager_from_team(id, username)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->remove_team_manager_from_team: %s\n" % e)
 ```
 
 ### Parameters
@@ -759,29 +885,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of team
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve Team
-    api_response = api_instance.retrieve_team(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->retrieve_team: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    id = 'id_example' # str | ID of team
+
+    try:
+        # Retrieve Team
+        api_response = api_instance.retrieve_team(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->retrieve_team: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -791,29 +926,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of team
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve Team
-    api_response = api_instance.retrieve_team(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->retrieve_team: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    id = 'id_example' # str | ID of team
+
+    try:
+        # Retrieve Team
+        api_response = api_instance.retrieve_team(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->retrieve_team: %s\n" % e)
 ```
 
 ### Parameters
@@ -860,31 +1004,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of team
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    id = 'id_example' # str | ID of team
 project_id = 'project_id_example' # str | ID of project
 project_limits = cons3rt.ProjectLimits() # ProjectLimits | The desired project limits
 
-try:
-    # Update Project Limits
-    api_response = api_instance.set_project_limits(id, project_id, project_limits)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->set_project_limits: %s\n" % e)
+    try:
+        # Update Project Limits
+        api_response = api_instance.set_project_limits(id, project_id, project_limits)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->set_project_limits: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -894,31 +1047,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of team
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    id = 'id_example' # str | ID of team
 project_id = 'project_id_example' # str | ID of project
 project_limits = cons3rt.ProjectLimits() # ProjectLimits | The desired project limits
 
-try:
-    # Update Project Limits
-    api_response = api_instance.set_project_limits(id, project_id, project_limits)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->set_project_limits: %s\n" % e)
+    try:
+        # Update Project Limits
+        api_response = api_instance.set_project_limits(id, project_id, project_limits)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->set_project_limits: %s\n" % e)
 ```
 
 ### Parameters
@@ -967,30 +1129,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of team
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    id = 'id_example' # str | ID of team
 input_team_full = cons3rt.InputTeamFull() # InputTeamFull | The modified team definition (optional)
 
-try:
-    # Update Team
-    api_response = api_instance.update_team(id, input_team_full=input_team_full)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->update_team: %s\n" % e)
+    try:
+        # Update Team
+        api_response = api_instance.update_team(id, input_team_full=input_team_full)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->update_team: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1000,30 +1171,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of team
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    id = 'id_example' # str | ID of team
 input_team_full = cons3rt.InputTeamFull() # InputTeamFull | The modified team definition (optional)
 
-try:
-    # Update Team
-    api_response = api_instance.update_team(id, input_team_full=input_team_full)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->update_team: %s\n" % e)
+    try:
+        # Update Team
+        api_response = api_instance.update_team(id, input_team_full=input_team_full)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->update_team: %s\n" % e)
 ```
 
 ### Parameters
@@ -1071,30 +1251,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of team
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    id = 'id_example' # str | ID of team
 state = 'state_example' # str | Updated team state type
 
-try:
-    # Update State
-    api_response = api_instance.update_team_state(id, state)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->update_team_state: %s\n" % e)
+    try:
+        # Update State
+        api_response = api_instance.update_team_state(id, state)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->update_team_state: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1104,30 +1293,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.TeamsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of team
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.TeamsApi(api_client)
+    id = 'id_example' # str | ID of team
 state = 'state_example' # str | Updated team state type
 
-try:
-    # Update State
-    api_response = api_instance.update_team_state(id, state)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TeamsApi->update_team_state: %s\n" % e)
+    try:
+        # Update State
+        api_response = api_instance.update_team_state(id, state)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TeamsApi->update_team_state: %s\n" % e)
 ```
 
 ### Parameters

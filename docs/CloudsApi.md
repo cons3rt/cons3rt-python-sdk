@@ -1,6 +1,6 @@
 # cons3rt.CloudsApi
 
-All URIs are relative to *https://api.dev.cons3rt.io/rest*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -42,30 +42,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 project_id = 'project_id_example' # str | ID of project to assign
 
-try:
-    # Assign Project
-    api_response = api_instance.add_project(id, project_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->add_project: %s\n" % e)
+    try:
+        # Assign Project
+        api_response = api_instance.add_project(id, project_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->add_project: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -75,30 +84,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 project_id = 'project_id_example' # str | ID of project to assign
 
-try:
-    # Assign Project
-    api_response = api_instance.add_project(id, project_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->add_project: %s\n" % e)
+    try:
+        # Assign Project
+        api_response = api_instance.add_project(id, project_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->add_project: %s\n" % e)
 ```
 
 ### Parameters
@@ -146,30 +164,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 abstract_cloud_space_request = cons3rt.AbstractCloudSpaceRequest() # AbstractCloudSpaceRequest | The virtualization realm allocation information
 
-try:
-    # Allocate Virtualization Realm
-    api_response = api_instance.allocate_virtualization_realm(id, abstract_cloud_space_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->allocate_virtualization_realm: %s\n" % e)
+    try:
+        # Allocate Virtualization Realm
+        api_response = api_instance.allocate_virtualization_realm(id, abstract_cloud_space_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->allocate_virtualization_realm: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -179,30 +206,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 abstract_cloud_space_request = cons3rt.AbstractCloudSpaceRequest() # AbstractCloudSpaceRequest | The virtualization realm allocation information
 
-try:
-    # Allocate Virtualization Realm
-    api_response = api_instance.allocate_virtualization_realm(id, abstract_cloud_space_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->allocate_virtualization_realm: %s\n" % e)
+    try:
+        # Allocate Virtualization Realm
+        api_response = api_instance.allocate_virtualization_realm(id, abstract_cloud_space_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->allocate_virtualization_realm: %s\n" % e)
 ```
 
 ### Parameters
@@ -250,31 +286,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 virtualization_realm_id = 'virtualization_realm_id_example' # str | ID of virtualization realm
 team_id = 56 # int | ID of team to assign
 
-try:
-    # Assign Virtualization Realm-managing Team
-    api_response = api_instance.assign_managing_team(id, virtualization_realm_id, team_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->assign_managing_team: %s\n" % e)
+    try:
+        # Assign Virtualization Realm-managing Team
+        api_response = api_instance.assign_managing_team(id, virtualization_realm_id, team_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->assign_managing_team: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -284,31 +329,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 virtualization_realm_id = 'virtualization_realm_id_example' # str | ID of virtualization realm
 team_id = 56 # int | ID of team to assign
 
-try:
-    # Assign Virtualization Realm-managing Team
-    api_response = api_instance.assign_managing_team(id, virtualization_realm_id, team_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->assign_managing_team: %s\n" % e)
+    try:
+        # Assign Virtualization Realm-managing Team
+        api_response = api_instance.assign_managing_team(id, virtualization_realm_id, team_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->assign_managing_team: %s\n" % e)
 ```
 
 ### Parameters
@@ -357,30 +411,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 virt_realm_id = 'virt_realm_id_example' # str | ID of virtualization realm
 
-try:
-    # De-allocate Virtualization Realm
-    api_response = api_instance.deallocate_virt_realm(id, virt_realm_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->deallocate_virt_realm: %s\n" % e)
+    try:
+        # De-allocate Virtualization Realm
+        api_response = api_instance.deallocate_virt_realm(id, virt_realm_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->deallocate_virt_realm: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -390,30 +453,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 virt_realm_id = 'virt_realm_id_example' # str | ID of virtualization realm
 
-try:
-    # De-allocate Virtualization Realm
-    api_response = api_instance.deallocate_virt_realm(id, virt_realm_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->deallocate_virt_realm: %s\n" % e)
+    try:
+        # De-allocate Virtualization Realm
+        api_response = api_instance.deallocate_virt_realm(id, virt_realm_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->deallocate_virt_realm: %s\n" % e)
 ```
 
 ### Parameters
@@ -461,29 +533,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Delete Cloud
-    api_response = api_instance.delete_cloud(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->delete_cloud: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
+
+    try:
+        # Delete Cloud
+        api_response = api_instance.delete_cloud(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->delete_cloud: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -493,29 +574,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Delete Cloud
-    api_response = api_instance.delete_cloud(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->delete_cloud: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
+
+    try:
+        # Delete Cloud
+        api_response = api_instance.delete_cloud(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->delete_cloud: %s\n" % e)
 ```
 
 ### Parameters
@@ -562,31 +652,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 enable = True # bool | Enable or disable maintenance mode (optional)
 maintenance_mode_request = cons3rt.MaintenanceModeRequest() # MaintenanceModeRequest | The maintenance mode request, when enabling maintenance mode (optional)
 
-try:
-    # Update Maintenance Mode
-    api_response = api_instance.enable_maintence_mode(id, enable=enable, maintenance_mode_request=maintenance_mode_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->enable_maintence_mode: %s\n" % e)
+    try:
+        # Update Maintenance Mode
+        api_response = api_instance.enable_maintence_mode(id, enable=enable, maintenance_mode_request=maintenance_mode_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->enable_maintence_mode: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -596,31 +695,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 enable = True # bool | Enable or disable maintenance mode (optional)
 maintenance_mode_request = cons3rt.MaintenanceModeRequest() # MaintenanceModeRequest | The maintenance mode request, when enabling maintenance mode (optional)
 
-try:
-    # Update Maintenance Mode
-    api_response = api_instance.enable_maintence_mode(id, enable=enable, maintenance_mode_request=maintenance_mode_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->enable_maintence_mode: %s\n" % e)
+    try:
+        # Update Maintenance Mode
+        api_response = api_instance.enable_maintence_mode(id, enable=enable, maintenance_mode_request=maintenance_mode_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->enable_maintence_mode: %s\n" % e)
 ```
 
 ### Parameters
@@ -669,29 +777,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve Cloud
-    api_response = api_instance.get_cloud(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->get_cloud: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
+
+    try:
+        # Retrieve Cloud
+        api_response = api_instance.get_cloud(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->get_cloud: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -701,29 +818,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve Cloud
-    api_response = api_instance.get_cloud(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->get_cloud: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
+
+    try:
+        # Retrieve Cloud
+        api_response = api_instance.get_cloud(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->get_cloud: %s\n" % e)
 ```
 
 ### Parameters
@@ -770,29 +896,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve Cloud Resources
-    api_response = api_instance.get_cloud_resources(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->get_cloud_resources: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
+
+    try:
+        # Retrieve Cloud Resources
+        api_response = api_instance.get_cloud_resources(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->get_cloud_resources: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -802,29 +937,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve Cloud Resources
-    api_response = api_instance.get_cloud_resources(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->get_cloud_resources: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
+
+    try:
+        # Retrieve Cloud Resources
+        api_response = api_instance.get_cloud_resources(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->get_cloud_resources: %s\n" % e)
 ```
 
 ### Parameters
@@ -871,30 +1015,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Clouds
-    api_response = api_instance.get_clouds(maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->get_clouds: %s\n" % e)
+    try:
+        # List Clouds
+        api_response = api_instance.get_clouds(maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->get_clouds: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -904,30 +1057,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Clouds
-    api_response = api_instance.get_clouds(maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->get_clouds: %s\n" % e)
+    try:
+        # List Clouds
+        api_response = api_instance.get_clouds(maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->get_clouds: %s\n" % e)
 ```
 
 ### Parameters
@@ -973,28 +1135,37 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve Default Network
-    api_response = api_instance.get_default_network()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->get_default_network: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    
+    try:
+        # Retrieve Default Network
+        api_response = api_instance.get_default_network()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->get_default_network: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1004,28 +1175,37 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve Default Network
-    api_response = api_instance.get_default_network()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->get_default_network: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    
+    try:
+        # Retrieve Default Network
+        api_response = api_instance.get_default_network()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->get_default_network: %s\n" % e)
 ```
 
 ### Parameters
@@ -1067,29 +1247,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Edge Gateways
-    api_response = api_instance.get_edge_gateway_i_ps(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->get_edge_gateway_i_ps: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
+
+    try:
+        # List Edge Gateways
+        api_response = api_instance.get_edge_gateway_i_ps(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->get_edge_gateway_i_ps: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1099,29 +1288,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Edge Gateways
-    api_response = api_instance.get_edge_gateway_i_ps(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->get_edge_gateway_i_ps: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
+
+    try:
+        # List Edge Gateways
+        api_response = api_instance.get_edge_gateway_i_ps(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->get_edge_gateway_i_ps: %s\n" % e)
 ```
 
 ### Parameters
@@ -1168,31 +1366,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Virtualization Realms
-    api_response = api_instance.list_virt_realms_in_cloud(id, maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->list_virt_realms_in_cloud: %s\n" % e)
+    try:
+        # List Virtualization Realms
+        api_response = api_instance.list_virt_realms_in_cloud(id, maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->list_virt_realms_in_cloud: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1202,31 +1409,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Virtualization Realms
-    api_response = api_instance.list_virt_realms_in_cloud(id, maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->list_virt_realms_in_cloud: %s\n" % e)
+    try:
+        # List Virtualization Realms
+        api_response = api_instance.list_virt_realms_in_cloud(id, maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->list_virt_realms_in_cloud: %s\n" % e)
 ```
 
 ### Parameters
@@ -1275,30 +1491,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-cloud_ato_consent = False # bool | Cloud ATO consent (optional) (default to False)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    cloud_ato_consent = False # bool | Cloud ATO consent (optional) (default to False)
 input_cloud = cons3rt.InputCloud() # InputCloud | The Cloud to create (optional)
 
-try:
-    # Create Cloud
-    api_response = api_instance.register_cloud(cloud_ato_consent=cloud_ato_consent, input_cloud=input_cloud)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->register_cloud: %s\n" % e)
+    try:
+        # Create Cloud
+        api_response = api_instance.register_cloud(cloud_ato_consent=cloud_ato_consent, input_cloud=input_cloud)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->register_cloud: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1308,30 +1533,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-cloud_ato_consent = False # bool | Cloud ATO consent (optional) (default to False)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    cloud_ato_consent = False # bool | Cloud ATO consent (optional) (default to False)
 input_cloud = cons3rt.InputCloud() # InputCloud | The Cloud to create (optional)
 
-try:
-    # Create Cloud
-    api_response = api_instance.register_cloud(cloud_ato_consent=cloud_ato_consent, input_cloud=input_cloud)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->register_cloud: %s\n" % e)
+    try:
+        # Create Cloud
+        api_response = api_instance.register_cloud(cloud_ato_consent=cloud_ato_consent, input_cloud=input_cloud)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->register_cloud: %s\n" % e)
 ```
 
 ### Parameters
@@ -1378,30 +1612,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 abstract_register_cloud_space_request = cons3rt.AbstractRegisterCloudSpaceRequest() # AbstractRegisterCloudSpaceRequest | The virtualization realm registration information
 
-try:
-    # Register Virtualization Realm
-    api_response = api_instance.register_virtualization_realm(id, abstract_register_cloud_space_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->register_virtualization_realm: %s\n" % e)
+    try:
+        # Register Virtualization Realm
+        api_response = api_instance.register_virtualization_realm(id, abstract_register_cloud_space_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->register_virtualization_realm: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1411,30 +1654,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 abstract_register_cloud_space_request = cons3rt.AbstractRegisterCloudSpaceRequest() # AbstractRegisterCloudSpaceRequest | The virtualization realm registration information
 
-try:
-    # Register Virtualization Realm
-    api_response = api_instance.register_virtualization_realm(id, abstract_register_cloud_space_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->register_virtualization_realm: %s\n" % e)
+    try:
+        # Register Virtualization Realm
+        api_response = api_instance.register_virtualization_realm(id, abstract_register_cloud_space_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->register_virtualization_realm: %s\n" % e)
 ```
 
 ### Parameters
@@ -1482,30 +1734,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 virt_realm_id = 'virt_realm_id_example' # str | ID of virtualization realm
 
-try:
-    # Unregister Virtualization Realm
-    api_response = api_instance.remove_virt_realm(id, virt_realm_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->remove_virt_realm: %s\n" % e)
+    try:
+        # Unregister Virtualization Realm
+        api_response = api_instance.remove_virt_realm(id, virt_realm_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->remove_virt_realm: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1515,30 +1776,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 virt_realm_id = 'virt_realm_id_example' # str | ID of virtualization realm
 
-try:
-    # Unregister Virtualization Realm
-    api_response = api_instance.remove_virt_realm(id, virt_realm_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->remove_virt_realm: %s\n" % e)
+    try:
+        # Unregister Virtualization Realm
+        api_response = api_instance.remove_virt_realm(id, virt_realm_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->remove_virt_realm: %s\n" % e)
 ```
 
 ### Parameters
@@ -1586,31 +1856,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 virtualization_realm_id = 'virtualization_realm_id_example' # str | ID of virtualization realm
 team_id = 56 # int | ID of team to unassign
 
-try:
-    # Unassign Manager from Team
-    api_response = api_instance.unassign_managing_team(id, virtualization_realm_id, team_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->unassign_managing_team: %s\n" % e)
+    try:
+        # Unassign Manager from Team
+        api_response = api_instance.unassign_managing_team(id, virtualization_realm_id, team_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->unassign_managing_team: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1620,31 +1899,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 virtualization_realm_id = 'virtualization_realm_id_example' # str | ID of virtualization realm
 team_id = 56 # int | ID of team to unassign
 
-try:
-    # Unassign Manager from Team
-    api_response = api_instance.unassign_managing_team(id, virtualization_realm_id, team_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->unassign_managing_team: %s\n" % e)
+    try:
+        # Unassign Manager from Team
+        api_response = api_instance.unassign_managing_team(id, virtualization_realm_id, team_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->unassign_managing_team: %s\n" % e)
 ```
 
 ### Parameters
@@ -1693,30 +1981,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 input_cloud = cons3rt.InputCloud() # InputCloud | The modified Cloud data (optional)
 
-try:
-    # Update Cloud Content
-    api_response = api_instance.update_cloud(id, input_cloud=input_cloud)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->update_cloud: %s\n" % e)
+    try:
+        # Update Cloud Content
+        api_response = api_instance.update_cloud(id, input_cloud=input_cloud)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->update_cloud: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1726,30 +2023,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 input_cloud = cons3rt.InputCloud() # InputCloud | The modified Cloud data (optional)
 
-try:
-    # Update Cloud Content
-    api_response = api_instance.update_cloud(id, input_cloud=input_cloud)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->update_cloud: %s\n" % e)
+    try:
+        # Update Cloud Content
+        api_response = api_instance.update_cloud(id, input_cloud=input_cloud)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->update_cloud: %s\n" % e)
 ```
 
 ### Parameters
@@ -1797,31 +2103,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 virt_realm_id = 'virt_realm_id_example' # str | ID of virtualization realm
 input_virtualization_realm = cons3rt.InputVirtualizationRealm() # InputVirtualizationRealm | The modified virtualization realm information
 
-try:
-    # Update Virtualization Realm
-    api_response = api_instance.update_virt_realm(id, virt_realm_id, input_virtualization_realm)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->update_virt_realm: %s\n" % e)
+    try:
+        # Update Virtualization Realm
+        api_response = api_instance.update_virt_realm(id, virt_realm_id, input_virtualization_realm)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->update_virt_realm: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1831,31 +2146,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 virt_realm_id = 'virt_realm_id_example' # str | ID of virtualization realm
 input_virtualization_realm = cons3rt.InputVirtualizationRealm() # InputVirtualizationRealm | The modified virtualization realm information
 
-try:
-    # Update Virtualization Realm
-    api_response = api_instance.update_virt_realm(id, virt_realm_id, input_virtualization_realm)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->update_virt_realm: %s\n" % e)
+    try:
+        # Update Virtualization Realm
+        api_response = api_instance.update_virt_realm(id, virt_realm_id, input_virtualization_realm)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->update_virt_realm: %s\n" % e)
 ```
 
 ### Parameters
@@ -1904,30 +2228,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 input_vr_admin_virtualization_realm = cons3rt.InputVRAdminVirtualizationRealm() # InputVRAdminVirtualizationRealm | The updated Virtualization Realm data (optional)
 
-try:
-    # Update Virtualization Realm
-    api_response = api_instance.update_virtualization_realm(id, input_vr_admin_virtualization_realm=input_vr_admin_virtualization_realm)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->update_virtualization_realm: %s\n" % e)
+    try:
+        # Update Virtualization Realm
+        api_response = api_instance.update_virtualization_realm(id, input_vr_admin_virtualization_realm=input_vr_admin_virtualization_realm)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->update_virtualization_realm: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1937,30 +2270,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of virtualization realm
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
 input_vr_admin_virtualization_realm = cons3rt.InputVRAdminVirtualizationRealm() # InputVRAdminVirtualizationRealm | The updated Virtualization Realm data (optional)
 
-try:
-    # Update Virtualization Realm
-    api_response = api_instance.update_virtualization_realm(id, input_vr_admin_virtualization_realm=input_vr_admin_virtualization_realm)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->update_virtualization_realm: %s\n" % e)
+    try:
+        # Update Virtualization Realm
+        api_response = api_instance.update_virtualization_realm(id, input_vr_admin_virtualization_realm=input_vr_admin_virtualization_realm)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->update_virtualization_realm: %s\n" % e)
 ```
 
 ### Parameters
@@ -2008,30 +2350,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 maximumimpactlevel = 'maximumimpactlevel_example' # str | The maximum impact level type.
 
-try:
-    # Update Impact Level
-    api_response = api_instance.update_virtualization_realm_maximum_impact_level(id, maximumimpactlevel)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->update_virtualization_realm_maximum_impact_level: %s\n" % e)
+    try:
+        # Update Impact Level
+        api_response = api_instance.update_virtualization_realm_maximum_impact_level(id, maximumimpactlevel)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->update_virtualization_realm_maximum_impact_level: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -2041,30 +2392,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CloudsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of cloud
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
 maximumimpactlevel = 'maximumimpactlevel_example' # str | The maximum impact level type.
 
-try:
-    # Update Impact Level
-    api_response = api_instance.update_virtualization_realm_maximum_impact_level(id, maximumimpactlevel)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudsApi->update_virtualization_realm_maximum_impact_level: %s\n" % e)
+    try:
+        # Update Impact Level
+        api_response = api_instance.update_virtualization_realm_maximum_impact_level(id, maximumimpactlevel)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->update_virtualization_realm_maximum_impact_level: %s\n" % e)
 ```
 
 ### Parameters

@@ -1,6 +1,6 @@
 # cons3rt.CategoriesApi
 
-All URIs are relative to *https://api.dev.cons3rt.io/rest*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,30 +29,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CategoriesApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of category
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CategoriesApi(api_client)
+    id = 'id_example' # str | ID of category
 assetid = 'assetid_example' # str | ID of asset to assign
 
-try:
-    # Assign Category to Asset
-    api_response = api_instance.add_category_to_asset(id, assetid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->add_category_to_asset: %s\n" % e)
+    try:
+        # Assign Category to Asset
+        api_response = api_instance.add_category_to_asset(id, assetid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CategoriesApi->add_category_to_asset: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -62,30 +71,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CategoriesApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of category
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CategoriesApi(api_client)
+    id = 'id_example' # str | ID of category
 assetid = 'assetid_example' # str | ID of asset to assign
 
-try:
-    # Assign Category to Asset
-    api_response = api_instance.add_category_to_asset(id, assetid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->add_category_to_asset: %s\n" % e)
+    try:
+        # Assign Category to Asset
+        api_response = api_instance.add_category_to_asset(id, assetid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CategoriesApi->add_category_to_asset: %s\n" % e)
 ```
 
 ### Parameters
@@ -133,29 +151,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CategoriesApi(cons3rt.ApiClient(configuration))
-input_category = cons3rt.InputCategory() # InputCategory | The Category to create (optional)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Create a Category
-    api_response = api_instance.create_category(input_category=input_category)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->create_category: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CategoriesApi(api_client)
+    input_category = cons3rt.InputCategory() # InputCategory | The Category to create (optional)
+
+    try:
+        # Create a Category
+        api_response = api_instance.create_category(input_category=input_category)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CategoriesApi->create_category: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -165,29 +192,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CategoriesApi(cons3rt.ApiClient(configuration))
-input_category = cons3rt.InputCategory() # InputCategory | The Category to create (optional)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Create a Category
-    api_response = api_instance.create_category(input_category=input_category)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->create_category: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CategoriesApi(api_client)
+    input_category = cons3rt.InputCategory() # InputCategory | The Category to create (optional)
+
+    try:
+        # Create a Category
+        api_response = api_instance.create_category(input_category=input_category)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CategoriesApi->create_category: %s\n" % e)
 ```
 
 ### Parameters
@@ -233,29 +269,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CategoriesApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of category to delete
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Delete Category
-    api_response = api_instance.delete_category(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->delete_category: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CategoriesApi(api_client)
+    id = 'id_example' # str | ID of category to delete
+
+    try:
+        # Delete Category
+        api_response = api_instance.delete_category(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CategoriesApi->delete_category: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -265,29 +310,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CategoriesApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of category to delete
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Delete Category
-    api_response = api_instance.delete_category(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->delete_category: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CategoriesApi(api_client)
+    id = 'id_example' # str | ID of category to delete
+
+    try:
+        # Delete Category
+        api_response = api_instance.delete_category(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CategoriesApi->delete_category: %s\n" % e)
 ```
 
 ### Parameters
@@ -334,28 +388,37 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CategoriesApi(cons3rt.ApiClient(configuration))
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List all Categories
-    api_response = api_instance.get_categories()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->get_categories: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CategoriesApi(api_client)
+    
+    try:
+        # List all Categories
+        api_response = api_instance.get_categories()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CategoriesApi->get_categories: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -365,28 +428,37 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CategoriesApi(cons3rt.ApiClient(configuration))
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List all Categories
-    api_response = api_instance.get_categories()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->get_categories: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CategoriesApi(api_client)
+    
+    try:
+        # List all Categories
+        api_response = api_instance.get_categories()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CategoriesApi->get_categories: %s\n" % e)
 ```
 
 ### Parameters
@@ -428,30 +500,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CategoriesApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of category
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CategoriesApi(api_client)
+    id = 'id_example' # str | ID of category
 assetid = 'assetid_example' # str | ID of asset to unassign
 
-try:
-    # Unassign Category from Asset
-    api_response = api_instance.remove_category_from_asset(id, assetid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->remove_category_from_asset: %s\n" % e)
+    try:
+        # Unassign Category from Asset
+        api_response = api_instance.remove_category_from_asset(id, assetid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CategoriesApi->remove_category_from_asset: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -461,30 +542,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CategoriesApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of category
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CategoriesApi(api_client)
+    id = 'id_example' # str | ID of category
 assetid = 'assetid_example' # str | ID of asset to unassign
 
-try:
-    # Unassign Category from Asset
-    api_response = api_instance.remove_category_from_asset(id, assetid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->remove_category_from_asset: %s\n" % e)
+    try:
+        # Unassign Category from Asset
+        api_response = api_instance.remove_category_from_asset(id, assetid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CategoriesApi->remove_category_from_asset: %s\n" % e)
 ```
 
 ### Parameters
@@ -532,30 +622,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CategoriesApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of category to modify
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CategoriesApi(api_client)
+    id = 'id_example' # str | ID of category to modify
 parentid = 'parentid_example' # str | ID of desired parent category
 
-try:
-    # Set Parent Category
-    api_response = api_instance.set_category_parent(id, parentid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->set_category_parent: %s\n" % e)
+    try:
+        # Set Parent Category
+        api_response = api_instance.set_category_parent(id, parentid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CategoriesApi->set_category_parent: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -565,30 +664,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CategoriesApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of category to modify
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CategoriesApi(api_client)
+    id = 'id_example' # str | ID of category to modify
 parentid = 'parentid_example' # str | ID of desired parent category
 
-try:
-    # Set Parent Category
-    api_response = api_instance.set_category_parent(id, parentid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->set_category_parent: %s\n" % e)
+    try:
+        # Set Parent Category
+        api_response = api_instance.set_category_parent(id, parentid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CategoriesApi->set_category_parent: %s\n" % e)
 ```
 
 ### Parameters
@@ -636,30 +744,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CategoriesApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of Category to update
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CategoriesApi(api_client)
+    id = 'id_example' # str | ID of Category to update
 input_category = cons3rt.InputCategory() # InputCategory | The modified Category definition (optional)
 
-try:
-    # Update Category
-    api_response = api_instance.update_category(id, input_category=input_category)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->update_category: %s\n" % e)
+    try:
+        # Update Category
+        api_response = api_instance.update_category(id, input_category=input_category)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CategoriesApi->update_category: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -669,30 +786,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.CategoriesApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of Category to update
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CategoriesApi(api_client)
+    id = 'id_example' # str | ID of Category to update
 input_category = cons3rt.InputCategory() # InputCategory | The modified Category definition (optional)
 
-try:
-    # Update Category
-    api_response = api_instance.update_category(id, input_category=input_category)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->update_category: %s\n" % e)
+    try:
+        # Update Category
+        api_response = api_instance.update_category(id, input_category=input_category)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CategoriesApi->update_category: %s\n" % e)
 ```
 
 ### Parameters

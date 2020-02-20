@@ -1,6 +1,6 @@
 # cons3rt.DeploymentRunsApi
 
-All URIs are relative to *https://api.dev.cons3rt.io/rest*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -40,30 +40,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 purge = False # bool | Delete all dependencies of the deployment run (optional) (default to False)
 
-try:
-    # Delete Deployment Run
-    api_response = api_instance.delete_deployment_run(id, purge=purge)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->delete_deployment_run: %s\n" % e)
+    try:
+        # Delete Deployment Run
+        api_response = api_instance.delete_deployment_run(id, purge=purge)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->delete_deployment_run: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -73,30 +82,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 purge = False # bool | Delete all dependencies of the deployment run (optional) (default to False)
 
-try:
-    # Delete Deployment Run
-    api_response = api_instance.delete_deployment_run(id, purge=purge)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->delete_deployment_run: %s\n" % e)
+    try:
+        # Delete Deployment Run
+        api_response = api_instance.delete_deployment_run(id, purge=purge)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->delete_deployment_run: %s\n" % e)
 ```
 
 ### Parameters
@@ -144,30 +162,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 file = 'file_example' # str | Report file name (optional)
 number = 'number_example' # str | Report number (optional)
 
-try:
-    # Download Report
-    api_instance.download_deployment_run_test_report(id, file=file, number=number)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->download_deployment_run_test_report: %s\n" % e)
+    try:
+        # Download Report
+        api_instance.download_deployment_run_test_report(id, file=file, number=number)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->download_deployment_run_test_report: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -177,30 +204,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 file = 'file_example' # str | Report file name (optional)
 number = 'number_example' # str | Report number (optional)
 
-try:
-    # Download Report
-    api_instance.download_deployment_run_test_report(id, file=file, number=number)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->download_deployment_run_test_report: %s\n" % e)
+    try:
+        # Download Report
+        api_instance.download_deployment_run_test_report(id, file=file, number=number)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->download_deployment_run_test_report: %s\n" % e)
 ```
 
 ### Parameters
@@ -249,30 +285,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 role = 'role_example' # str | Name of host to bundle for download
 background = False # bool | Force the download to happen in the background (optional) (default to False)
 
-try:
-    # Download Host
-    api_instance.download_host(id, role, background=background)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->download_host: %s\n" % e)
+    try:
+        # Download Host
+        api_instance.download_host(id, role, background=background)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->download_host: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -282,30 +327,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 role = 'role_example' # str | Name of host to bundle for download
 background = False # bool | Force the download to happen in the background (optional) (default to False)
 
-try:
-    # Download Host
-    api_instance.download_host(id, role, background=background)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->download_host: %s\n" % e)
+    try:
+        # Download Host
+        api_instance.download_host(id, role, background=background)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->download_host: %s\n" % e)
 ```
 
 ### Parameters
@@ -355,29 +409,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve Deployment Run
-    api_response = api_instance.get_deployment_run(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->get_deployment_run: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+
+    try:
+        # Retrieve Deployment Run
+        api_response = api_instance.get_deployment_run(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_deployment_run: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -387,29 +450,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve Deployment Run
-    api_response = api_instance.get_deployment_run(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->get_deployment_run: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+
+    try:
+        # Retrieve Deployment Run
+        api_response = api_instance.get_deployment_run(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_deployment_run: %s\n" % e)
 ```
 
 ### Parameters
@@ -456,29 +528,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Reports
-    api_response = api_instance.get_deployment_run_reports(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->get_deployment_run_reports: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+
+    try:
+        # List Reports
+        api_response = api_instance.get_deployment_run_reports(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_deployment_run_reports: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -488,29 +569,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Reports
-    api_response = api_instance.get_deployment_run_reports(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->get_deployment_run_reports: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+
+    try:
+        # List Reports
+        api_response = api_instance.get_deployment_run_reports(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_deployment_run_reports: %s\n" % e)
 ```
 
 ### Parameters
@@ -557,29 +647,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Deployment Runs
-    api_response = api_instance.get_deployment_runs(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->get_deployment_runs: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment
+
+    try:
+        # List Deployment Runs
+        api_response = api_instance.get_deployment_runs(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_deployment_runs: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -589,29 +688,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Deployment Runs
-    api_response = api_instance.get_deployment_runs(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->get_deployment_runs: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment
+
+    try:
+        # List Deployment Runs
+        api_response = api_instance.get_deployment_runs(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_deployment_runs: %s\n" % e)
 ```
 
 ### Parameters
@@ -658,32 +766,41 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-search_type = 'search_type_example' # str | Deployment run status
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    search_type = 'search_type_example' # str | Deployment run status
 in_project = False # bool | Include project runs (optional) (default to False)
 maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Deployment Runs
-    api_response = api_instance.get_deployment_runs1(search_type, in_project=in_project, maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->get_deployment_runs1: %s\n" % e)
+    try:
+        # List Deployment Runs
+        api_response = api_instance.get_deployment_runs1(search_type, in_project=in_project, maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_deployment_runs1: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -693,32 +810,41 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-search_type = 'search_type_example' # str | Deployment run status
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    search_type = 'search_type_example' # str | Deployment run status
 in_project = False # bool | Include project runs (optional) (default to False)
 maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Deployment Runs
-    api_response = api_instance.get_deployment_runs1(search_type, in_project=in_project, maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->get_deployment_runs1: %s\n" % e)
+    try:
+        # List Deployment Runs
+        api_response = api_instance.get_deployment_runs1(search_type, in_project=in_project, maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_deployment_runs1: %s\n" % e)
 ```
 
 ### Parameters
@@ -767,30 +893,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 hostid = 'hostid_example' # str | ID of host
 
-try:
-    # Retrieve Host
-    api_response = api_instance.get_host(id, hostid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->get_host: %s\n" % e)
+    try:
+        # Retrieve Host
+        api_response = api_instance.get_host(id, hostid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_host: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -800,30 +935,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 hostid = 'hostid_example' # str | ID of host
 
-try:
-    # Retrieve Host
-    api_response = api_instance.get_host(id, hostid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->get_host: %s\n" % e)
+    try:
+        # Retrieve Host
+        api_response = api_instance.get_host(id, hostid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_host: %s\n" % e)
 ```
 
 ### Parameters
@@ -871,32 +1015,41 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 hostid = 'hostid_example' # str | ID of host
 maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Host Access Logs
-    api_response = api_instance.get_host_access(id, hostid, maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->get_host_access: %s\n" % e)
+    try:
+        # List Host Access Logs
+        api_response = api_instance.get_host_access(id, hostid, maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_host_access: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -906,32 +1059,41 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 hostid = 'hostid_example' # str | ID of host
 maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Host Access Logs
-    api_response = api_instance.get_host_access(id, hostid, maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->get_host_access: %s\n" % e)
+    try:
+        # List Host Access Logs
+        api_response = api_instance.get_host_access(id, hostid, maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_host_access: %s\n" % e)
 ```
 
 ### Parameters
@@ -981,33 +1143,42 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of project
 start = 56 # int | Interval start time, specified in seconds since epoch
 end = 56 # int | Interval end time, specified in seconds since epoch
 interval = 1 # int | Number of intervals (optional) (default to 1)
 interval_unit = 'HOURS' # str | Interval unit (optional) (default to 'HOURS')
 
-try:
-    # Retrieve Metrics
-    api_response = api_instance.get_host_configuration_metrics(id, start, end, interval=interval, interval_unit=interval_unit)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->get_host_configuration_metrics: %s\n" % e)
+    try:
+        # Retrieve Metrics
+        api_response = api_instance.get_host_configuration_metrics(id, start, end, interval=interval, interval_unit=interval_unit)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_host_configuration_metrics: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1017,33 +1188,42 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of project
 start = 56 # int | Interval start time, specified in seconds since epoch
 end = 56 # int | Interval end time, specified in seconds since epoch
 interval = 1 # int | Number of intervals (optional) (default to 1)
 interval_unit = 'HOURS' # str | Interval unit (optional) (default to 'HOURS')
 
-try:
-    # Retrieve Metrics
-    api_response = api_instance.get_host_configuration_metrics(id, start, end, interval=interval, interval_unit=interval_unit)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->get_host_configuration_metrics: %s\n" % e)
+    try:
+        # Retrieve Metrics
+        api_response = api_instance.get_host_configuration_metrics(id, start, end, interval=interval, interval_unit=interval_unit)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_host_configuration_metrics: %s\n" % e)
 ```
 
 ### Parameters
@@ -1094,33 +1274,42 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 deploymentrunhostid = 'deploymentrunhostid_example' # str | ID of host
 action = 'action_example' # str | Action to perform
 cpu = 56 # int | Desired number of CPUs, if resizing host (optional)
 ram = 56 # int | Desired amount of RAM in Mebibytes, if resizing host (optional)
 
-try:
-    # Execute Host Action
-    api_response = api_instance.perform_host_action(id, deploymentrunhostid, action, cpu=cpu, ram=ram)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->perform_host_action: %s\n" % e)
+    try:
+        # Execute Host Action
+        api_response = api_instance.perform_host_action(id, deploymentrunhostid, action, cpu=cpu, ram=ram)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->perform_host_action: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1130,33 +1319,42 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 deploymentrunhostid = 'deploymentrunhostid_example' # str | ID of host
 action = 'action_example' # str | Action to perform
 cpu = 56 # int | Desired number of CPUs, if resizing host (optional)
 ram = 56 # int | Desired amount of RAM in Mebibytes, if resizing host (optional)
 
-try:
-    # Execute Host Action
-    api_response = api_instance.perform_host_action(id, deploymentrunhostid, action, cpu=cpu, ram=ram)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->perform_host_action: %s\n" % e)
+    try:
+        # Execute Host Action
+        api_response = api_instance.perform_host_action(id, deploymentrunhostid, action, cpu=cpu, ram=ram)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->perform_host_action: %s\n" % e)
 ```
 
 ### Parameters
@@ -1207,30 +1405,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 input_composition_for_deployment_run = cons3rt.InputCompositionForDeploymentRun() # InputCompositionForDeploymentRun | The composition definition (optional)
 
-try:
-    # Publish Deployment Run
-    api_response = api_instance.publish_deployment_run(id, input_composition_for_deployment_run=input_composition_for_deployment_run)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->publish_deployment_run: %s\n" % e)
+    try:
+        # Publish Deployment Run
+        api_response = api_instance.publish_deployment_run(id, input_composition_for_deployment_run=input_composition_for_deployment_run)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->publish_deployment_run: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1240,30 +1447,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 input_composition_for_deployment_run = cons3rt.InputCompositionForDeploymentRun() # InputCompositionForDeploymentRun | The composition definition (optional)
 
-try:
-    # Publish Deployment Run
-    api_response = api_instance.publish_deployment_run(id, input_composition_for_deployment_run=input_composition_for_deployment_run)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->publish_deployment_run: %s\n" % e)
+    try:
+        # Publish Deployment Run
+        api_response = api_instance.publish_deployment_run(id, input_composition_for_deployment_run=input_composition_for_deployment_run)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->publish_deployment_run: %s\n" % e)
 ```
 
 ### Parameters
@@ -1311,32 +1527,41 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 hostid = 'hostid_example' # str | ID of host
 installationid = 'installationid_example' # str | ID of container asset installation
 input_container_component = cons3rt.InputContainerComponent() # InputContainerComponent | The updated Container Component definition (optional)
 
-try:
-    # Re-deploy Container Asset
-    api_response = api_instance.redeploy_container_asset(id, hostid, installationid, input_container_component=input_container_component)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->redeploy_container_asset: %s\n" % e)
+    try:
+        # Re-deploy Container Asset
+        api_response = api_instance.redeploy_container_asset(id, hostid, installationid, input_container_component=input_container_component)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->redeploy_container_asset: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1346,32 +1571,41 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 hostid = 'hostid_example' # str | ID of host
 installationid = 'installationid_example' # str | ID of container asset installation
 input_container_component = cons3rt.InputContainerComponent() # InputContainerComponent | The updated Container Component definition (optional)
 
-try:
-    # Re-deploy Container Asset
-    api_response = api_instance.redeploy_container_asset(id, hostid, installationid, input_container_component=input_container_component)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->redeploy_container_asset: %s\n" % e)
+    try:
+        # Re-deploy Container Asset
+        api_response = api_instance.redeploy_container_asset(id, hostid, installationid, input_container_component=input_container_component)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->redeploy_container_asset: %s\n" % e)
 ```
 
 ### Parameters
@@ -1421,29 +1655,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Relaunch Deployment Run
-    api_response = api_instance.relaunch_deployment_run(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->relaunch_deployment_run: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+
+    try:
+        # Relaunch Deployment Run
+        api_response = api_instance.relaunch_deployment_run(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->relaunch_deployment_run: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1453,29 +1696,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Relaunch Deployment Run
-    api_response = api_instance.relaunch_deployment_run(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->relaunch_deployment_run: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+
+    try:
+        # Relaunch Deployment Run
+        api_response = api_instance.relaunch_deployment_run(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->relaunch_deployment_run: %s\n" % e)
 ```
 
 ### Parameters
@@ -1522,30 +1774,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 force = False # bool | Force the release of this run (optional) (default to False)
 
-try:
-    # Release Deployment Run
-    api_response = api_instance.release_deployment_run(id, force=force)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->release_deployment_run: %s\n" % e)
+    try:
+        # Release Deployment Run
+        api_response = api_instance.release_deployment_run(id, force=force)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->release_deployment_run: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1555,30 +1816,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 force = False # bool | Force the release of this run (optional) (default to False)
 
-try:
-    # Release Deployment Run
-    api_response = api_instance.release_deployment_run(id, force=force)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->release_deployment_run: %s\n" % e)
+    try:
+        # Release Deployment Run
+        api_response = api_instance.release_deployment_run(id, force=force)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->release_deployment_run: %s\n" % e)
 ```
 
 ### Parameters
@@ -1626,29 +1896,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Re-test Deployment Run
-    api_response = api_instance.retest_deployment_run(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->retest_deployment_run: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+
+    try:
+        # Re-test Deployment Run
+        api_response = api_instance.retest_deployment_run(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->retest_deployment_run: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1658,29 +1937,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Re-test Deployment Run
-    api_response = api_instance.retest_deployment_run(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->retest_deployment_run: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+
+    try:
+        # Re-test Deployment Run
+        api_response = api_instance.retest_deployment_run(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->retest_deployment_run: %s\n" % e)
 ```
 
 ### Parameters
@@ -1727,30 +2015,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 lock = True # bool | The desired lock state
 
-try:
-    # Update Lock
-    api_response = api_instance.set_deployment_run_lock(id, lock)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->set_deployment_run_lock: %s\n" % e)
+    try:
+        # Update Lock
+        api_response = api_instance.set_deployment_run_lock(id, lock)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->set_deployment_run_lock: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1760,30 +2057,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 lock = True # bool | The desired lock state
 
-try:
-    # Update Lock
-    api_response = api_instance.set_deployment_run_lock(id, lock)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->set_deployment_run_lock: %s\n" % e)
+    try:
+        # Update Lock
+        api_response = api_instance.set_deployment_run_lock(id, lock)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->set_deployment_run_lock: %s\n" % e)
 ```
 
 ### Parameters
@@ -1831,30 +2137,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 power_schedule = cons3rt.PowerSchedule() # PowerSchedule | The desired power schedule (optional)
 
-try:
-    # Update Power Schedule
-    api_response = api_instance.set_power_schedule_for_deployment_run(id, power_schedule=power_schedule)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->set_power_schedule_for_deployment_run: %s\n" % e)
+    try:
+        # Update Power Schedule
+        api_response = api_instance.set_power_schedule_for_deployment_run(id, power_schedule=power_schedule)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->set_power_schedule_for_deployment_run: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1864,30 +2179,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.DeploymentRunsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of deployment run
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
 power_schedule = cons3rt.PowerSchedule() # PowerSchedule | The desired power schedule (optional)
 
-try:
-    # Update Power Schedule
-    api_response = api_instance.set_power_schedule_for_deployment_run(id, power_schedule=power_schedule)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling DeploymentRunsApi->set_power_schedule_for_deployment_run: %s\n" % e)
+    try:
+        # Update Power Schedule
+        api_response = api_instance.set_power_schedule_for_deployment_run(id, power_schedule=power_schedule)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->set_power_schedule_for_deployment_run: %s\n" % e)
 ```
 
 ### Parameters

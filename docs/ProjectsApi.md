@@ -1,6 +1,6 @@
 # cons3rt.ProjectsApi
 
-All URIs are relative to *https://api.dev.cons3rt.io/rest*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -46,30 +46,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-username = 'username_example' # str | Username of desired member
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    username = 'username_example' # str | Username of desired member
 id = 'id_example' # str | ID of project
 
-try:
-    # Assign Project Member
-    api_response = api_instance.add_project_member(username, id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->add_project_member: %s\n" % e)
+    try:
+        # Assign Project Member
+        api_response = api_instance.add_project_member(username, id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->add_project_member: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -79,30 +88,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-username = 'username_example' # str | Username of desired member
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    username = 'username_example' # str | Username of desired member
 id = 'id_example' # str | ID of project
 
-try:
-    # Assign Project Member
-    api_response = api_instance.add_project_member(username, id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->add_project_member: %s\n" % e)
+    try:
+        # Assign Project Member
+        api_response = api_instance.add_project_member(username, id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->add_project_member: %s\n" % e)
 ```
 
 ### Parameters
@@ -150,31 +168,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 username = 'username_example' # str | Username of project member
 role = 'role_example' # str | Project role to add
 
-try:
-    # Assign Role to Member
-    api_response = api_instance.add_role_to_project_member(id, username, role)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->add_role_to_project_member: %s\n" % e)
+    try:
+        # Assign Role to Member
+        api_response = api_instance.add_role_to_project_member(id, username, role)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->add_role_to_project_member: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -184,31 +211,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 username = 'username_example' # str | Username of project member
 role = 'role_example' # str | Project role to add
 
-try:
-    # Assign Role to Member
-    api_response = api_instance.add_role_to_project_member(id, username, role)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->add_role_to_project_member: %s\n" % e)
+    try:
+        # Assign Role to Member
+        api_response = api_instance.add_role_to_project_member(id, username, role)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->add_role_to_project_member: %s\n" % e)
 ```
 
 ### Parameters
@@ -257,30 +293,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 input_submission_service_for_project = cons3rt.InputSubmissionServiceForProject() # InputSubmissionServiceForProject | The submission service
 
-try:
-    # Add Submission Service
-    api_response = api_instance.add_submission_service_to_project(id, input_submission_service_for_project)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->add_submission_service_to_project: %s\n" % e)
+    try:
+        # Add Submission Service
+        api_response = api_instance.add_submission_service_to_project(id, input_submission_service_for_project)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->add_submission_service_to_project: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -290,30 +335,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 input_submission_service_for_project = cons3rt.InputSubmissionServiceForProject() # InputSubmissionServiceForProject | The submission service
 
-try:
-    # Add Submission Service
-    api_response = api_instance.add_submission_service_to_project(id, input_submission_service_for_project)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->add_submission_service_to_project: %s\n" % e)
+    try:
+        # Add Submission Service
+        api_response = api_instance.add_submission_service_to_project(id, input_submission_service_for_project)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->add_submission_service_to_project: %s\n" % e)
 ```
 
 ### Parameters
@@ -361,30 +415,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 trustedid = 'trustedid_example' # str | ID of trusted project
 
-try:
-    # Assign Trusted Project to Project
-    api_response = api_instance.add_trusted_project1(id, trustedid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->add_trusted_project1: %s\n" % e)
+    try:
+        # Assign Trusted Project to Project
+        api_response = api_instance.add_trusted_project1(id, trustedid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->add_trusted_project1: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -394,30 +457,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 trustedid = 'trustedid_example' # str | ID of trusted project
 
-try:
-    # Assign Trusted Project to Project
-    api_response = api_instance.add_trusted_project1(id, trustedid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->add_trusted_project1: %s\n" % e)
+    try:
+        # Assign Trusted Project to Project
+        api_response = api_instance.add_trusted_project1(id, trustedid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->add_trusted_project1: %s\n" % e)
 ```
 
 ### Parameters
@@ -465,29 +537,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-input_project_full = cons3rt.InputProjectFull() # InputProjectFull | The Project to create (optional)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Create a Project
-    api_response = api_instance.create_project(input_project_full=input_project_full)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->create_project: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    input_project_full = cons3rt.InputProjectFull() # InputProjectFull | The Project to create (optional)
+
+    try:
+        # Create a Project
+        api_response = api_instance.create_project(input_project_full=input_project_full)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->create_project: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -497,29 +578,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-input_project_full = cons3rt.InputProjectFull() # InputProjectFull | The Project to create (optional)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Create a Project
-    api_response = api_instance.create_project(input_project_full=input_project_full)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->create_project: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    input_project_full = cons3rt.InputProjectFull() # InputProjectFull | The Project to create (optional)
+
+    try:
+        # Create a Project
+        api_response = api_instance.create_project(input_project_full=input_project_full)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->create_project: %s\n" % e)
 ```
 
 ### Parameters
@@ -565,30 +655,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 force = False # bool | Delete all dependencies (optional) (default to False)
 
-try:
-    # Delete Project
-    api_response = api_instance.delete_project(id, force=force)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->delete_project: %s\n" % e)
+    try:
+        # Delete Project
+        api_response = api_instance.delete_project(id, force=force)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->delete_project: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -598,30 +697,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 force = False # bool | Delete all dependencies (optional) (default to False)
 
-try:
-    # Delete Project
-    api_response = api_instance.delete_project(id, force=force)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->delete_project: %s\n" % e)
+    try:
+        # Delete Project
+        api_response = api_instance.delete_project(id, force=force)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->delete_project: %s\n" % e)
 ```
 
 ### Parameters
@@ -669,33 +777,42 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 start = 56 # int | Interval start time, specified in seconds since epoch
 end = 56 # int | Interval end time, specified in seconds since epoch
 interval = 1 # int | Number of intervals (optional) (default to 1)
 interval_unit = 'HOURS' # str | Interval unit (optional) (default to 'HOURS')
 
-try:
-    # Retrieve Metrics
-    api_response = api_instance.get_host_configuration_metrics(id, start, end, interval=interval, interval_unit=interval_unit)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->get_host_configuration_metrics: %s\n" % e)
+    try:
+        # Retrieve Metrics
+        api_response = api_instance.get_host_configuration_metrics(id, start, end, interval=interval, interval_unit=interval_unit)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->get_host_configuration_metrics: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -705,33 +822,42 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 start = 56 # int | Interval start time, specified in seconds since epoch
 end = 56 # int | Interval end time, specified in seconds since epoch
 interval = 1 # int | Number of intervals (optional) (default to 1)
 interval_unit = 'HOURS' # str | Interval unit (optional) (default to 'HOURS')
 
-try:
-    # Retrieve Metrics
-    api_response = api_instance.get_host_configuration_metrics(id, start, end, interval=interval, interval_unit=interval_unit)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->get_host_configuration_metrics: %s\n" % e)
+    try:
+        # Retrieve Metrics
+        api_response = api_instance.get_host_configuration_metrics(id, start, end, interval=interval, interval_unit=interval_unit)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->get_host_configuration_metrics: %s\n" % e)
 ```
 
 ### Parameters
@@ -782,29 +908,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve Project
-    api_response = api_instance.get_project(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->get_project: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
+
+    try:
+        # Retrieve Project
+        api_response = api_instance.get_project(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->get_project: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -814,29 +949,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # Retrieve Project
-    api_response = api_instance.get_project(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->get_project: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
+
+    try:
+        # Retrieve Project
+        api_response = api_instance.get_project(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->get_project: %s\n" % e)
 ```
 
 ### Parameters
@@ -883,29 +1027,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Virtualization Realms
-    api_response = api_instance.get_project_virt_realms(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->get_project_virt_realms: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
+
+    try:
+        # List Virtualization Realms
+        api_response = api_instance.get_project_virt_realms(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->get_project_virt_realms: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -915,29 +1068,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Virtualization Realms
-    api_response = api_instance.get_project_virt_realms(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->get_project_virt_realms: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
+
+    try:
+        # List Virtualization Realms
+        api_response = api_instance.get_project_virt_realms(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->get_project_virt_realms: %s\n" % e)
 ```
 
 ### Parameters
@@ -984,30 +1146,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Joined Projects
-    api_response = api_instance.get_projects(maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->get_projects: %s\n" % e)
+    try:
+        # List Joined Projects
+        api_response = api_instance.get_projects(maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->get_projects: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1017,30 +1188,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Joined Projects
-    api_response = api_instance.get_projects(maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->get_projects: %s\n" % e)
+    try:
+        # List Joined Projects
+        api_response = api_instance.get_projects(maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->get_projects: %s\n" % e)
 ```
 
 ### Parameters
@@ -1087,30 +1267,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Unjoined Projects
-    api_response = api_instance.get_projects_expanded(maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->get_projects_expanded: %s\n" % e)
+    try:
+        # List Unjoined Projects
+        api_response = api_instance.get_projects_expanded(maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->get_projects_expanded: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1120,30 +1309,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Unjoined Projects
-    api_response = api_instance.get_projects_expanded(maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->get_projects_expanded: %s\n" % e)
+    try:
+        # List Unjoined Projects
+        api_response = api_instance.get_projects_expanded(maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->get_projects_expanded: %s\n" % e)
 ```
 
 ### Parameters
@@ -1190,33 +1388,42 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 start = 56 # int | Interval start time, specified in seconds since epoch
 end = 56 # int | Interval end time, specified in seconds since epoch
 interval = 1 # int | Number of intervals (optional) (default to 1)
 interval_unit = 'HOURS' # str | Interval unit (optional) (default to 'HOURS')
 
-try:
-    # Retrieve Virtual Machine Metrics
-    api_response = api_instance.get_virtual_machine_count_metrics(id, start, end, interval=interval, interval_unit=interval_unit)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->get_virtual_machine_count_metrics: %s\n" % e)
+    try:
+        # Retrieve Virtual Machine Metrics
+        api_response = api_instance.get_virtual_machine_count_metrics(id, start, end, interval=interval, interval_unit=interval_unit)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->get_virtual_machine_count_metrics: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1226,33 +1433,42 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 start = 56 # int | Interval start time, specified in seconds since epoch
 end = 56 # int | Interval end time, specified in seconds since epoch
 interval = 1 # int | Number of intervals (optional) (default to 1)
 interval_unit = 'HOURS' # str | Interval unit (optional) (default to 'HOURS')
 
-try:
-    # Retrieve Virtual Machine Metrics
-    api_response = api_instance.get_virtual_machine_count_metrics(id, start, end, interval=interval, interval_unit=interval_unit)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->get_virtual_machine_count_metrics: %s\n" % e)
+    try:
+        # Retrieve Virtual Machine Metrics
+        api_response = api_instance.get_virtual_machine_count_metrics(id, start, end, interval=interval, interval_unit=interval_unit)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->get_virtual_machine_count_metrics: %s\n" % e)
 ```
 
 ### Parameters
@@ -1303,34 +1519,43 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 membership_state = 'membership_state_example' # str | Project membership state type (optional)
 role = 'role_example' # str | Project member role type (optional)
 name = 'name_example' # str | User name to search for (optional)
 maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Members
-    api_response = api_instance.list_members(id, membership_state=membership_state, role=role, name=name, maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->list_members: %s\n" % e)
+    try:
+        # List Members
+        api_response = api_instance.list_members(id, membership_state=membership_state, role=role, name=name, maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->list_members: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1340,34 +1565,43 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 membership_state = 'membership_state_example' # str | Project membership state type (optional)
 role = 'role_example' # str | Project member role type (optional)
 name = 'name_example' # str | User name to search for (optional)
 maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
 page = 0 # int | Requested page number (optional) (default to 0)
 
-try:
-    # List Members
-    api_response = api_instance.list_members(id, membership_state=membership_state, role=role, name=name, maxresults=maxresults, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->list_members: %s\n" % e)
+    try:
+        # List Members
+        api_response = api_instance.list_members(id, membership_state=membership_state, role=role, name=name, maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->list_members: %s\n" % e)
 ```
 
 ### Parameters
@@ -1419,29 +1653,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Submission Services
-    api_response = api_instance.list_submission_serivces_for_project(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->list_submission_serivces_for_project: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
+
+    try:
+        # List Submission Services
+        api_response = api_instance.list_submission_serivces_for_project(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->list_submission_serivces_for_project: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1451,29 +1694,38 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
 
-try:
-    # List Submission Services
-    api_response = api_instance.list_submission_serivces_for_project(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->list_submission_serivces_for_project: %s\n" % e)
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
+
+    try:
+        # List Submission Services
+        api_response = api_instance.list_submission_serivces_for_project(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->list_submission_serivces_for_project: %s\n" % e)
 ```
 
 ### Parameters
@@ -1520,30 +1772,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-username = 'username_example' # str | Username of desired member
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    username = 'username_example' # str | Username of desired member
 id = 'id_example' # str | ID of project
 
-try:
-    # Unassign Member from Project
-    api_response = api_instance.remove_project_member(username, id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->remove_project_member: %s\n" % e)
+    try:
+        # Unassign Member from Project
+        api_response = api_instance.remove_project_member(username, id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->remove_project_member: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1553,30 +1814,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-username = 'username_example' # str | Username of desired member
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    username = 'username_example' # str | Username of desired member
 id = 'id_example' # str | ID of project
 
-try:
-    # Unassign Member from Project
-    api_response = api_instance.remove_project_member(username, id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->remove_project_member: %s\n" % e)
+    try:
+        # Unassign Member from Project
+        api_response = api_instance.remove_project_member(username, id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->remove_project_member: %s\n" % e)
 ```
 
 ### Parameters
@@ -1624,31 +1894,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 username = 'username_example' # str | Username of project member
 role = 'role_example' # str | Project role to remove
 
-try:
-    # Unassign Role from Member
-    api_response = api_instance.remove_role_from_project_member(id, username, role)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->remove_role_from_project_member: %s\n" % e)
+    try:
+        # Unassign Role from Member
+        api_response = api_instance.remove_role_from_project_member(id, username, role)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->remove_role_from_project_member: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1658,31 +1937,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 username = 'username_example' # str | Username of project member
 role = 'role_example' # str | Project role to remove
 
-try:
-    # Unassign Role from Member
-    api_response = api_instance.remove_role_from_project_member(id, username, role)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->remove_role_from_project_member: %s\n" % e)
+    try:
+        # Unassign Role from Member
+        api_response = api_instance.remove_role_from_project_member(id, username, role)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->remove_role_from_project_member: %s\n" % e)
 ```
 
 ### Parameters
@@ -1731,30 +2019,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 submission_service_id = 'submission_service_id_example' # str | ID of submission service
 
-try:
-    # Remove Submission Service
-    api_response = api_instance.remove_submission_service_from_project(id, submission_service_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->remove_submission_service_from_project: %s\n" % e)
+    try:
+        # Remove Submission Service
+        api_response = api_instance.remove_submission_service_from_project(id, submission_service_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->remove_submission_service_from_project: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1764,30 +2061,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 submission_service_id = 'submission_service_id_example' # str | ID of submission service
 
-try:
-    # Remove Submission Service
-    api_response = api_instance.remove_submission_service_from_project(id, submission_service_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->remove_submission_service_from_project: %s\n" % e)
+    try:
+        # Remove Submission Service
+        api_response = api_instance.remove_submission_service_from_project(id, submission_service_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->remove_submission_service_from_project: %s\n" % e)
 ```
 
 ### Parameters
@@ -1835,30 +2141,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 trustedid = 'trustedid_example' # str | ID of trusted project
 
-try:
-    # Unassign Trusted Project from Project
-    api_response = api_instance.remove_trusted_project1(id, trustedid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->remove_trusted_project1: %s\n" % e)
+    try:
+        # Unassign Trusted Project from Project
+        api_response = api_instance.remove_trusted_project1(id, trustedid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->remove_trusted_project1: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1868,30 +2183,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 trustedid = 'trustedid_example' # str | ID of trusted project
 
-try:
-    # Unassign Trusted Project from Project
-    api_response = api_instance.remove_trusted_project1(id, trustedid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->remove_trusted_project1: %s\n" % e)
+    try:
+        # Unassign Trusted Project from Project
+        api_response = api_instance.remove_trusted_project1(id, trustedid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->remove_trusted_project1: %s\n" % e)
 ```
 
 ### Parameters
@@ -1939,30 +2263,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 email = 'email_example' # str | Email address of invitee
 
-try:
-    # Create Invitation Code
-    api_response = api_instance.request_project_invitation(id, email)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->request_project_invitation: %s\n" % e)
+    try:
+        # Create Invitation Code
+        api_response = api_instance.request_project_invitation(id, email)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->request_project_invitation: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -1972,30 +2305,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 email = 'email_example' # str | Email address of invitee
 
-try:
-    # Create Invitation Code
-    api_response = api_instance.request_project_invitation(id, email)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->request_project_invitation: %s\n" % e)
+    try:
+        # Create Invitation Code
+        api_response = api_instance.request_project_invitation(id, email)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->request_project_invitation: %s\n" % e)
 ```
 
 ### Parameters
@@ -2043,30 +2385,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 power_schedule = cons3rt.PowerSchedule() # PowerSchedule | The desired power schedule (optional)
 
-try:
-    # Update Default Power Schedule
-    api_response = api_instance.set_project_default_power_schedule(id, power_schedule=power_schedule)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->set_project_default_power_schedule: %s\n" % e)
+    try:
+        # Update Default Power Schedule
+        api_response = api_instance.set_project_default_power_schedule(id, power_schedule=power_schedule)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->set_project_default_power_schedule: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -2076,30 +2427,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 power_schedule = cons3rt.PowerSchedule() # PowerSchedule | The desired power schedule (optional)
 
-try:
-    # Update Default Power Schedule
-    api_response = api_instance.set_project_default_power_schedule(id, power_schedule=power_schedule)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->set_project_default_power_schedule: %s\n" % e)
+    try:
+        # Update Default Power Schedule
+        api_response = api_instance.set_project_default_power_schedule(id, power_schedule=power_schedule)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->set_project_default_power_schedule: %s\n" % e)
 ```
 
 ### Parameters
@@ -2147,30 +2507,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 virtualizationrealmid = 'virtualizationrealmid_example' # str | ID of virtualization realm
 
-try:
-    # Update Default Virtualization Realm
-    api_response = api_instance.set_project_default_virtualization_realm(id, virtualizationrealmid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->set_project_default_virtualization_realm: %s\n" % e)
+    try:
+        # Update Default Virtualization Realm
+        api_response = api_instance.set_project_default_virtualization_realm(id, virtualizationrealmid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->set_project_default_virtualization_realm: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -2180,30 +2549,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 virtualizationrealmid = 'virtualizationrealmid_example' # str | ID of virtualization realm
 
-try:
-    # Update Default Virtualization Realm
-    api_response = api_instance.set_project_default_virtualization_realm(id, virtualizationrealmid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->set_project_default_virtualization_realm: %s\n" % e)
+    try:
+        # Update Default Virtualization Realm
+        api_response = api_instance.set_project_default_virtualization_realm(id, virtualizationrealmid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->set_project_default_virtualization_realm: %s\n" % e)
 ```
 
 ### Parameters
@@ -2251,30 +2629,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 message = 'message_example' # str | Additional information about the export restriction (optional)
 
-try:
-    # Set Asset Export Restriction
-    api_response = api_instance.set_project_itar_information(id, message=message)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->set_project_itar_information: %s\n" % e)
+    try:
+        # Set Asset Export Restriction
+        api_response = api_instance.set_project_itar_information(id, message=message)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->set_project_itar_information: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -2284,30 +2671,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 message = 'message_example' # str | Additional information about the export restriction (optional)
 
-try:
-    # Set Asset Export Restriction
-    api_response = api_instance.set_project_itar_information(id, message=message)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->set_project_itar_information: %s\n" % e)
+    try:
+        # Set Asset Export Restriction
+        api_response = api_instance.set_project_itar_information(id, message=message)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->set_project_itar_information: %s\n" % e)
 ```
 
 ### Parameters
@@ -2355,30 +2751,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 input_project_update = cons3rt.InputProjectUpdate() # InputProjectUpdate | The modified Project (optional)
 
-try:
-    # Update Project
-    api_response = api_instance.update_project(id, input_project_update=input_project_update)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->update_project: %s\n" % e)
+    try:
+        # Update Project
+        api_response = api_instance.update_project(id, input_project_update=input_project_update)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->update_project: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -2388,30 +2793,39 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 input_project_update = cons3rt.InputProjectUpdate() # InputProjectUpdate | The modified Project (optional)
 
-try:
-    # Update Project
-    api_response = api_instance.update_project(id, input_project_update=input_project_update)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->update_project: %s\n" % e)
+    try:
+        # Update Project
+        api_response = api_instance.update_project(id, input_project_update=input_project_update)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->update_project: %s\n" % e)
 ```
 
 ### Parameters
@@ -2459,31 +2873,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 submission_service_id = 'submission_service_id_example' # str | ID of submission service
 input_submission_service_for_project = cons3rt.InputSubmissionServiceForProject() # InputSubmissionServiceForProject | The submission service
 
-try:
-    # Update Submission Service
-    api_response = api_instance.update_submission_service(id, submission_service_id, input_submission_service_for_project)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->update_submission_service: %s\n" % e)
+    try:
+        # Update Submission Service
+        api_response = api_instance.update_submission_service(id, submission_service_id, input_submission_service_for_project)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->update_submission_service: %s\n" % e)
 ```
 
 * Api Key Authentication (Username):
@@ -2493,31 +2916,40 @@ import time
 import cons3rt
 from cons3rt.rest import ApiException
 from pprint import pprint
-configuration = cons3rt.Configuration()
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_API_KEY'
+configuration.api_key['token'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['token'] = 'Bearer'
-configuration = cons3rt.Configuration()
 # Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_API_KEY'
+configuration.api_key['username'] = 'YOUR_VALUE'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['username'] = 'Bearer'
 
-# Defining host is optional and default to https://api.dev.cons3rt.io/rest
-configuration.host = "https://api.dev.cons3rt.io/rest"
-# Create an instance of the API class
-api_instance = cons3rt.ProjectsApi(cons3rt.ApiClient(configuration))
-id = 'id_example' # str | ID of project
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ProjectsApi(api_client)
+    id = 'id_example' # str | ID of project
 submission_service_id = 'submission_service_id_example' # str | ID of submission service
 input_submission_service_for_project = cons3rt.InputSubmissionServiceForProject() # InputSubmissionServiceForProject | The submission service
 
-try:
-    # Update Submission Service
-    api_response = api_instance.update_submission_service(id, submission_service_id, input_submission_service_for_project)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProjectsApi->update_submission_service: %s\n" % e)
+    try:
+        # Update Submission Service
+        api_response = api_instance.update_submission_service(id, submission_service_id, input_submission_service_for_project)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ProjectsApi->update_submission_service: %s\n" % e)
 ```
 
 ### Parameters
