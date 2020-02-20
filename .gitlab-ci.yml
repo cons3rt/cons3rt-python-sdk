@@ -1,18 +1,17 @@
 image: python:3.7-alpine
 
 stages:
-  - deploy
+  - build
 
 before_script:
-   - pip install twine
-   - python setup.py sdist
+   - pip install pipenv
    
 deploy_staging:
-  stage: deploy
+  stage: build
   variables:
     TWINE_USERNAME: banana
     TWINE_PASSWORD: farts
   script:
-    - twine upload --repository-url https://nexus.jackpinetech.com/repository/pypi-group/simple dist/*
+    - pipenv install --ignore-pipfile
   except:
     - tags
