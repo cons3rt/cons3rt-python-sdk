@@ -20,7 +20,6 @@ before_script:
   - python -V  # Print out python version for debugging
   - pip install pipenv
   - pipenv install --ignore-pipfile
-  - pipenv shell
 
 stages:
   - build
@@ -29,7 +28,7 @@ stages:
 wheels:
   stage: deploy
   script:
-    - python setup.py sdist bdist_wheel --universal
+    - pipenv run python setup.py sdist bdist_wheel --universal
 
 deploy_staging:
   stage: deploy
