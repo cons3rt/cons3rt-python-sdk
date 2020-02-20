@@ -2,11 +2,12 @@ image: python:3.7-alpine
 
 stages:
   - build
+  - deploy
 
 before_script:
-   - pip install pipenv
+  - pip install pipenv
    
-deploy_staging:
+prepare:
   stage: build
   variables:
     TWINE_USERNAME: banana
@@ -14,4 +15,37 @@ deploy_staging:
   script:
     - pipenv install --ignore-pipfile
   except:
+    - tags
+
+source_wheel:
+  stage: deploy
+  script:
+    - pipenv run python setup.py sdist
+
+binary_wheel:
+  stage: deploy
+  script:
+    - pipenv run python setup.py bdist_wheel --universal
+
+before_script:
+  - pip install twine
+
+deploy_staging:
+  stage: deploy
+  variables:
+    TWINE_USERNAME: $STAGING_USERNAME
+    TWINE_PASSWORD: $STAGING_PASSWORD
+  script:
+    - twine upload --repository-url $STAGING_URL dist/*
+  except:
+    - tags
+
+deploy_production:
+  stage: deploy
+  variables:
+    TWINE_USERNAME: $PRODUCTION_USERNAME
+    TWINE_PASSWORD: $PRODUCTION_PASSWORD
+  script:
+    - twine upload dist/*
+  only:
     - tags
