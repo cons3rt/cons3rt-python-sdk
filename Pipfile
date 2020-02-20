@@ -1,10 +1,9 @@
 [[source]]
-name = "jackpine"
-url = "https://${PYPI_CREDENTIALS}@nexus.jackpinetech.com/repository/pypi-group/simple"
+name = "pypi"
+url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-twine = "*"
 
 [packages]
 cons3rt = {editable = true,path = "."}
