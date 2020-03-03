@@ -64,3 +64,12 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+.openapi-generator-ignore
+.openapi-generator/
+.travis.yml
+git_push.sh
+requirements.txt
+test-requirements.txt
+test/
+tox.ini

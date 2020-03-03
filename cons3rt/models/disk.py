@@ -1,3 +1,18 @@
+"""
+   Copyright 2020 Jackpine Technologies Corporation
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+"""
 # coding: utf-8
 
 """
@@ -14,6 +29,13 @@ import six
 
 from cons3rt.configuration import Configuration
 
+__author__ = 'Jackpine Technologies Corporation'
+__copyright__ = 'Copyright 2020, Jackpine Technologies Corporation'
+__license__ = 'Apache 2.0',
+__version__ = '1.0.0'
+__maintainer__ = 'API Support'
+__email__ = 'support@cons3rt.com'
+
 
 class Disk(object):
     """NOTE: This class is auto-generated. Do not edit the class manually.
@@ -27,8 +49,8 @@ class Disk(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'boot_disk': 'bool',
         'additional_disk': 'bool',
+        'boot_disk': 'bool',
         'capacity_in_megabytes': 'int',
         'create_order': 'int',
         'is_additional_disk': 'bool',
@@ -37,8 +59,8 @@ class Disk(object):
     }
 
     attribute_map = {
-        'boot_disk': 'bootDisk',
         'additional_disk': 'additionalDisk',
+        'boot_disk': 'bootDisk',
         'capacity_in_megabytes': 'capacityInMegabytes',
         'create_order': 'createOrder',
         'is_additional_disk': 'isAdditionalDisk',
@@ -46,14 +68,14 @@ class Disk(object):
         'id': 'id'
     }
 
-    def __init__(self, boot_disk=None, additional_disk=None, capacity_in_megabytes=None, create_order=None, is_additional_disk=None, is_boot_disk=None, id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, additional_disk=None, boot_disk=None, capacity_in_megabytes=None, create_order=None, is_additional_disk=None, is_boot_disk=None, id=None, local_vars_configuration=None):  # noqa: E501
         """Disk - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._boot_disk = None
         self._additional_disk = None
+        self._boot_disk = None
         self._capacity_in_megabytes = None
         self._create_order = None
         self._is_additional_disk = None
@@ -61,10 +83,10 @@ class Disk(object):
         self._id = None
         self.discriminator = None
 
-        if boot_disk is not None:
-            self.boot_disk = boot_disk
         if additional_disk is not None:
             self.additional_disk = additional_disk
+        if boot_disk is not None:
+            self.boot_disk = boot_disk
         self.capacity_in_megabytes = capacity_in_megabytes
         if create_order is not None:
             self.create_order = create_order
@@ -74,27 +96,6 @@ class Disk(object):
             self.is_boot_disk = is_boot_disk
         if id is not None:
             self.id = id
-
-    @property
-    def boot_disk(self):
-        """Gets the boot_disk of this Disk.  # noqa: E501
-
-
-        :return: The boot_disk of this Disk.  # noqa: E501
-        :rtype: bool
-        """
-        return self._boot_disk
-
-    @boot_disk.setter
-    def boot_disk(self, boot_disk):
-        """Sets the boot_disk of this Disk.
-
-
-        :param boot_disk: The boot_disk of this Disk.  # noqa: E501
-        :type: bool
-        """
-
-        self._boot_disk = boot_disk
 
     @property
     def additional_disk(self):
@@ -116,6 +117,27 @@ class Disk(object):
         """
 
         self._additional_disk = additional_disk
+
+    @property
+    def boot_disk(self):
+        """Gets the boot_disk of this Disk.  # noqa: E501
+
+
+        :return: The boot_disk of this Disk.  # noqa: E501
+        :rtype: bool
+        """
+        return self._boot_disk
+
+    @boot_disk.setter
+    def boot_disk(self, boot_disk):
+        """Sets the boot_disk of this Disk.
+
+
+        :param boot_disk: The boot_disk of this Disk.  # noqa: E501
+        :type: bool
+        """
+
+        self._boot_disk = boot_disk
 
     @property
     def capacity_in_megabytes(self):

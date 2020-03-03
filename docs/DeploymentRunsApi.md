@@ -22,6 +22,7 @@ Method | HTTP request | Description
 [**retest_deployment_run**](DeploymentRunsApi.md#retest_deployment_run) | **PUT** /api/drs/{id}/retest | Re-test Deployment Run
 [**set_deployment_run_lock**](DeploymentRunsApi.md#set_deployment_run_lock) | **PUT** /api/drs/{id}/setlock | Update Lock
 [**set_power_schedule_for_deployment_run**](DeploymentRunsApi.md#set_power_schedule_for_deployment_run) | **PUT** /api/drs/{id}/powerschedule | Update Power Schedule
+[**unpublish_deployment_run**](DeploymentRunsApi.md#unpublish_deployment_run) | **DELETE** /api/drs/{id}/publish | Unpublish Deployment Run
 
 
 # **delete_deployment_run**
@@ -1390,11 +1391,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **publish_deployment_run**
-> str publish_deployment_run(id, input_composition_for_deployment_run=input_composition_for_deployment_run)
+> bool publish_deployment_run(id)
 
 Publish Deployment Run
 
-Publishes the specified Deployment as a Composition, with the provided name and description.<br> <br> The Composition will have the same Deployment Run configuration.
+Publishes the specified Deployment as a Composition.<br> <br> Consumers will be able to connect to the run, but will not be able to manage the composition.
 
 ### Example
 
@@ -1430,11 +1431,10 @@ with cons3rt.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cons3rt.DeploymentRunsApi(api_client)
     id = 'id_example' # str | ID of deployment run
-input_composition_for_deployment_run = cons3rt.InputCompositionForDeploymentRun() # InputCompositionForDeploymentRun | The composition definition (optional)
 
     try:
         # Publish Deployment Run
-        api_response = api_instance.publish_deployment_run(id, input_composition_for_deployment_run=input_composition_for_deployment_run)
+        api_response = api_instance.publish_deployment_run(id)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling DeploymentRunsApi->publish_deployment_run: %s\n" % e)
@@ -1472,11 +1472,10 @@ with cons3rt.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cons3rt.DeploymentRunsApi(api_client)
     id = 'id_example' # str | ID of deployment run
-input_composition_for_deployment_run = cons3rt.InputCompositionForDeploymentRun() # InputCompositionForDeploymentRun | The composition definition (optional)
 
     try:
         # Publish Deployment Run
-        api_response = api_instance.publish_deployment_run(id, input_composition_for_deployment_run=input_composition_for_deployment_run)
+        api_response = api_instance.publish_deployment_run(id)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling DeploymentRunsApi->publish_deployment_run: %s\n" % e)
@@ -1487,11 +1486,10 @@ input_composition_for_deployment_run = cons3rt.InputCompositionForDeploymentRun(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| ID of deployment run | 
- **input_composition_for_deployment_run** | [**InputCompositionForDeploymentRun**](InputCompositionForDeploymentRun.md)| The composition definition | [optional] 
 
 ### Return type
 
-**str**
+**bool**
 
 ### Authorization
 
@@ -1499,7 +1497,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/xml
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details
@@ -2239,6 +2237,125 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 **400** | Invalid ID or data supplied |  -  |
+**404** | Deployment run not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **unpublish_deployment_run**
+> bool unpublish_deployment_run(id)
+
+Unpublish Deployment Run
+
+Unpublishes the specified Deployment as a Composition.<br> <br> Consumers will no longer be able to connect to the run, and the run will no longer appear to consumers.
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+
+    try:
+        # Unpublish Deployment Run
+        api_response = api_instance.unpublish_deployment_run(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->unpublish_deployment_run: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+
+    try:
+        # Unpublish Deployment Run
+        api_response = api_instance.unpublish_deployment_run(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->unpublish_deployment_run: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of deployment run | 
+
+### Return type
+
+**bool**
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Invalid deployment run ID or data supplied |  -  |
 **404** | Deployment run not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

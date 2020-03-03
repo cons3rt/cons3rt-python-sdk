@@ -1,3 +1,18 @@
+"""
+   Copyright 2020 Jackpine Technologies Corporation
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+"""
 # coding: utf-8
 
 # flake8: noqa
@@ -95,6 +110,9 @@ from cons3rt.models.dnat_rule import DnatRule
 from cons3rt.models.docker_registry_submission_endpoint import DockerRegistrySubmissionEndpoint
 from cons3rt.models.docker_registry_submission_endpoint_all_of import DockerRegistrySubmissionEndpointAllOf
 from cons3rt.models.firewall_rule import FirewallRule
+from cons3rt.models.full_appliance import FullAppliance
+from cons3rt.models.full_appliance_all_of import FullApplianceAllOf
+from cons3rt.models.full_asset import FullAsset
 from cons3rt.models.full_aws_cloud import FullAwsCloud
 from cons3rt.models.full_aws_cloud_all_of import FullAwsCloudAllOf
 from cons3rt.models.full_aws_virtualization_realm import FullAwsVirtualizationRealm
@@ -108,14 +126,22 @@ from cons3rt.models.full_composition import FullComposition
 from cons3rt.models.full_cons3rt_template_data import FullCons3rtTemplateData
 from cons3rt.models.full_container_asset import FullContainerAsset
 from cons3rt.models.full_deployment import FullDeployment
+from cons3rt.models.full_deployment_all_of import FullDeploymentAllOf
 from cons3rt.models.full_deployment_run import FullDeploymentRun
+from cons3rt.models.full_device import FullDevice
+from cons3rt.models.full_device_all_of import FullDeviceAllOf
 from cons3rt.models.full_disk import FullDisk
 from cons3rt.models.full_metadata import FullMetadata
 from cons3rt.models.full_open_stack_cloud import FullOpenStackCloud
 from cons3rt.models.full_open_stack_cloud_all_of import FullOpenStackCloudAllOf
 from cons3rt.models.full_open_stack_virtualization_realm import FullOpenStackVirtualizationRealm
+from cons3rt.models.full_physical_host import FullPhysicalHost
+from cons3rt.models.full_physical_host_all_of import FullPhysicalHostAllOf
+from cons3rt.models.full_physical_machine import FullPhysicalMachine
+from cons3rt.models.full_physical_machine_all_of import FullPhysicalMachineAllOf
 from cons3rt.models.full_project import FullProject
 from cons3rt.models.full_scenario import FullScenario
+from cons3rt.models.full_scenario_all_of import FullScenarioAllOf
 from cons3rt.models.full_software_asset import FullSoftwareAsset
 from cons3rt.models.full_software_asset_bundle import FullSoftwareAssetBundle
 from cons3rt.models.full_system_asset import FullSystemAsset
@@ -128,7 +154,12 @@ from cons3rt.models.full_test_asset import FullTestAsset
 from cons3rt.models.full_v_cloud_cloud import FullVCloudCloud
 from cons3rt.models.full_v_cloud_cloud_all_of import FullVCloudCloudAllOf
 from cons3rt.models.full_v_cloud_virtualization_realm import FullVCloudVirtualizationRealm
+from cons3rt.models.full_virtual_host import FullVirtualHost
+from cons3rt.models.full_virtual_host_all_of import FullVirtualHostAllOf
+from cons3rt.models.full_virtual_service import FullVirtualService
+from cons3rt.models.full_virtual_service_all_of import FullVirtualServiceAllOf
 from cons3rt.models.full_virtualization_realm import FullVirtualizationRealm
+from cons3rt.models.general_physical_machine import GeneralPhysicalMachine
 from cons3rt.models.general_scenario import GeneralScenario
 from cons3rt.models.host_option import HostOption
 from cons3rt.models.image_reference_dto import ImageReferenceDTO
@@ -149,7 +180,6 @@ from cons3rt.models.input_azure_virtualization_realm_all_of import InputAzureVir
 from cons3rt.models.input_category import InputCategory
 from cons3rt.models.input_cloud import InputCloud
 from cons3rt.models.input_composition import InputComposition
-from cons3rt.models.input_composition_for_deployment_run import InputCompositionForDeploymentRun
 from cons3rt.models.input_composition_run_options import InputCompositionRunOptions
 from cons3rt.models.input_configuration import InputConfiguration
 from cons3rt.models.input_cons3rt_template_data import InputCons3rtTemplateData
@@ -260,6 +290,7 @@ from cons3rt.models.minimal_scenario_host import MinimalScenarioHost
 from cons3rt.models.minimal_software_asset import MinimalSoftwareAsset
 from cons3rt.models.minimal_software_asset_bundle import MinimalSoftwareAssetBundle
 from cons3rt.models.minimal_software_component import MinimalSoftwareComponent
+from cons3rt.models.minimal_software_component_all_of import MinimalSoftwareComponentAllOf
 from cons3rt.models.minimal_system_asset import MinimalSystemAsset
 from cons3rt.models.minimal_system_module import MinimalSystemModule
 from cons3rt.models.minimal_team import MinimalTeam
@@ -306,7 +337,6 @@ from cons3rt.models.scenario import Scenario
 from cons3rt.models.scenario_host import ScenarioHost
 from cons3rt.models.security_group import SecurityGroup
 from cons3rt.models.software_component import SoftwareComponent
-from cons3rt.models.software_component_all_of import SoftwareComponentAllOf
 from cons3rt.models.software_installation import SoftwareInstallation
 from cons3rt.models.software_installation_all_of import SoftwareInstallationAllOf
 from cons3rt.models.submission_endpoint import SubmissionEndpoint
@@ -342,3 +372,10 @@ from cons3rt.models.virtual_host import VirtualHost
 from cons3rt.models.virtualization_realm import VirtualizationRealm
 from cons3rt.models.virtualization_realm_binding import VirtualizationRealmBinding
 from cons3rt.models.virtualization_realm_client import VirtualizationRealmClient
+
+__author__ = 'Jackpine Technologies Corporation'
+__copyright__ = 'Copyright 2020, Jackpine Technologies Corporation'
+__license__ = 'Apache 2.0',
+__version__ = '1.0.0'
+__maintainer__ = 'API Support'
+__email__ = 'support@cons3rt.com'

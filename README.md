@@ -151,6 +151,7 @@ Class | Method | HTTP request | Description
 *CompositionsApi* | [**list_compositions**](docs/CompositionsApi.md#list_compositions) | **GET** /api/compositions | List all Compositions
 *CompositionsApi* | [**publish_deployment_run**](docs/CompositionsApi.md#publish_deployment_run) | **POST** /api/drs/{id}/publish | Publish Deployment Run
 *CompositionsApi* | [**publish_scenario_to_composition**](docs/CompositionsApi.md#publish_scenario_to_composition) | **POST** /api/scenarios/{id}/publish | Publish Scenario
+*CompositionsApi* | [**unpublish_deployment_run**](docs/CompositionsApi.md#unpublish_deployment_run) | **DELETE** /api/drs/{id}/publish | Unpublish Deployment Run
 *CompositionsApi* | [**update_composition**](docs/CompositionsApi.md#update_composition) | **PUT** /api/compositions/{id} | Update Composition
 *ContainerAssetsApi* | [**add_trusted_project**](docs/ContainerAssetsApi.md#add_trusted_project) | **PUT** /api/assets/{id}/addtrustedproject | Assign Trusted Project to Asset
 *ContainerAssetsApi* | [**delete_asset**](docs/ContainerAssetsApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete asset
@@ -187,6 +188,7 @@ Class | Method | HTTP request | Description
 *DeploymentRunsApi* | [**retest_deployment_run**](docs/DeploymentRunsApi.md#retest_deployment_run) | **PUT** /api/drs/{id}/retest | Re-test Deployment Run
 *DeploymentRunsApi* | [**set_deployment_run_lock**](docs/DeploymentRunsApi.md#set_deployment_run_lock) | **PUT** /api/drs/{id}/setlock | Update Lock
 *DeploymentRunsApi* | [**set_power_schedule_for_deployment_run**](docs/DeploymentRunsApi.md#set_power_schedule_for_deployment_run) | **PUT** /api/drs/{id}/powerschedule | Update Power Schedule
+*DeploymentRunsApi* | [**unpublish_deployment_run**](docs/DeploymentRunsApi.md#unpublish_deployment_run) | **DELETE** /api/drs/{id}/publish | Unpublish Deployment Run
 *DeploymentsApi* | [**add_recurring_schedule**](docs/DeploymentsApi.md#add_recurring_schedule) | **PUT** /api/deployments/{id}/schedules | Add Recurring Schedule
 *DeploymentsApi* | [**add_trusted_project**](docs/DeploymentsApi.md#add_trusted_project) | **PUT** /api/assets/{id}/addtrustedproject | Assign Trusted Project to Asset
 *DeploymentsApi* | [**clone_deployment**](docs/DeploymentsApi.md#clone_deployment) | **PUT** /api/deployments/{id}/clone | Clone Deployment
@@ -484,6 +486,9 @@ Class | Method | HTTP request | Description
  - [DockerRegistrySubmissionEndpoint](docs/DockerRegistrySubmissionEndpoint.md)
  - [DockerRegistrySubmissionEndpointAllOf](docs/DockerRegistrySubmissionEndpointAllOf.md)
  - [FirewallRule](docs/FirewallRule.md)
+ - [FullAppliance](docs/FullAppliance.md)
+ - [FullApplianceAllOf](docs/FullApplianceAllOf.md)
+ - [FullAsset](docs/FullAsset.md)
  - [FullAwsCloud](docs/FullAwsCloud.md)
  - [FullAwsCloudAllOf](docs/FullAwsCloudAllOf.md)
  - [FullAwsVirtualizationRealm](docs/FullAwsVirtualizationRealm.md)
@@ -497,14 +502,22 @@ Class | Method | HTTP request | Description
  - [FullCons3rtTemplateData](docs/FullCons3rtTemplateData.md)
  - [FullContainerAsset](docs/FullContainerAsset.md)
  - [FullDeployment](docs/FullDeployment.md)
+ - [FullDeploymentAllOf](docs/FullDeploymentAllOf.md)
  - [FullDeploymentRun](docs/FullDeploymentRun.md)
+ - [FullDevice](docs/FullDevice.md)
+ - [FullDeviceAllOf](docs/FullDeviceAllOf.md)
  - [FullDisk](docs/FullDisk.md)
  - [FullMetadata](docs/FullMetadata.md)
  - [FullOpenStackCloud](docs/FullOpenStackCloud.md)
  - [FullOpenStackCloudAllOf](docs/FullOpenStackCloudAllOf.md)
  - [FullOpenStackVirtualizationRealm](docs/FullOpenStackVirtualizationRealm.md)
+ - [FullPhysicalHost](docs/FullPhysicalHost.md)
+ - [FullPhysicalHostAllOf](docs/FullPhysicalHostAllOf.md)
+ - [FullPhysicalMachine](docs/FullPhysicalMachine.md)
+ - [FullPhysicalMachineAllOf](docs/FullPhysicalMachineAllOf.md)
  - [FullProject](docs/FullProject.md)
  - [FullScenario](docs/FullScenario.md)
+ - [FullScenarioAllOf](docs/FullScenarioAllOf.md)
  - [FullSoftwareAsset](docs/FullSoftwareAsset.md)
  - [FullSoftwareAssetBundle](docs/FullSoftwareAssetBundle.md)
  - [FullSystemAsset](docs/FullSystemAsset.md)
@@ -517,7 +530,12 @@ Class | Method | HTTP request | Description
  - [FullVCloudCloud](docs/FullVCloudCloud.md)
  - [FullVCloudCloudAllOf](docs/FullVCloudCloudAllOf.md)
  - [FullVCloudVirtualizationRealm](docs/FullVCloudVirtualizationRealm.md)
+ - [FullVirtualHost](docs/FullVirtualHost.md)
+ - [FullVirtualHostAllOf](docs/FullVirtualHostAllOf.md)
+ - [FullVirtualService](docs/FullVirtualService.md)
+ - [FullVirtualServiceAllOf](docs/FullVirtualServiceAllOf.md)
  - [FullVirtualizationRealm](docs/FullVirtualizationRealm.md)
+ - [GeneralPhysicalMachine](docs/GeneralPhysicalMachine.md)
  - [GeneralScenario](docs/GeneralScenario.md)
  - [HostOption](docs/HostOption.md)
  - [ImageReferenceDTO](docs/ImageReferenceDTO.md)
@@ -538,7 +556,6 @@ Class | Method | HTTP request | Description
  - [InputCategory](docs/InputCategory.md)
  - [InputCloud](docs/InputCloud.md)
  - [InputComposition](docs/InputComposition.md)
- - [InputCompositionForDeploymentRun](docs/InputCompositionForDeploymentRun.md)
  - [InputCompositionRunOptions](docs/InputCompositionRunOptions.md)
  - [InputConfiguration](docs/InputConfiguration.md)
  - [InputCons3rtTemplateData](docs/InputCons3rtTemplateData.md)
@@ -649,6 +666,7 @@ Class | Method | HTTP request | Description
  - [MinimalSoftwareAsset](docs/MinimalSoftwareAsset.md)
  - [MinimalSoftwareAssetBundle](docs/MinimalSoftwareAssetBundle.md)
  - [MinimalSoftwareComponent](docs/MinimalSoftwareComponent.md)
+ - [MinimalSoftwareComponentAllOf](docs/MinimalSoftwareComponentAllOf.md)
  - [MinimalSystemAsset](docs/MinimalSystemAsset.md)
  - [MinimalSystemModule](docs/MinimalSystemModule.md)
  - [MinimalTeam](docs/MinimalTeam.md)
@@ -695,7 +713,6 @@ Class | Method | HTTP request | Description
  - [ScenarioHost](docs/ScenarioHost.md)
  - [SecurityGroup](docs/SecurityGroup.md)
  - [SoftwareComponent](docs/SoftwareComponent.md)
- - [SoftwareComponentAllOf](docs/SoftwareComponentAllOf.md)
  - [SoftwareInstallation](docs/SoftwareInstallation.md)
  - [SoftwareInstallationAllOf](docs/SoftwareInstallationAllOf.md)
  - [SubmissionEndpoint](docs/SubmissionEndpoint.md)

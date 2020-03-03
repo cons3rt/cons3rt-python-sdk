@@ -1,3 +1,18 @@
+"""
+   Copyright 2020 Jackpine Technologies Corporation
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+"""
 # coding: utf-8
 
 """
@@ -13,6 +28,13 @@ import re  # noqa: F401
 import six
 
 from cons3rt.configuration import Configuration
+
+__author__ = 'Jackpine Technologies Corporation'
+__copyright__ = 'Copyright 2020, Jackpine Technologies Corporation'
+__license__ = 'Apache 2.0',
+__version__ = '1.0.0'
+__maintainer__ = 'API Support'
+__email__ = 'support@cons3rt.com'
 
 
 class FullDisk(object):
@@ -33,8 +55,8 @@ class FullDisk(object):
         'mount_point': 'str',
         'name': 'str',
         'id': 'int',
-        'is_boot_disk': 'bool',
-        'is_additional_disk': 'bool'
+        'is_additional_disk': 'bool',
+        'is_boot_disk': 'bool'
     }
 
     attribute_map = {
@@ -44,11 +66,11 @@ class FullDisk(object):
         'mount_point': 'mountPoint',
         'name': 'name',
         'id': 'id',
-        'is_boot_disk': 'isBootDisk',
-        'is_additional_disk': 'isAdditionalDisk'
+        'is_additional_disk': 'isAdditionalDisk',
+        'is_boot_disk': 'isBootDisk'
     }
 
-    def __init__(self, create_order=None, capacity_in_megabytes=None, file_system_type=None, mount_point=None, name=None, id=None, is_boot_disk=None, is_additional_disk=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, create_order=None, capacity_in_megabytes=None, file_system_type=None, mount_point=None, name=None, id=None, is_additional_disk=None, is_boot_disk=None, local_vars_configuration=None):  # noqa: E501
         """FullDisk - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,8 +82,8 @@ class FullDisk(object):
         self._mount_point = None
         self._name = None
         self._id = None
-        self._is_boot_disk = None
         self._is_additional_disk = None
+        self._is_boot_disk = None
         self.discriminator = None
 
         if create_order is not None:
@@ -76,10 +98,10 @@ class FullDisk(object):
             self.name = name
         if id is not None:
             self.id = id
-        if is_boot_disk is not None:
-            self.is_boot_disk = is_boot_disk
         if is_additional_disk is not None:
             self.is_additional_disk = is_additional_disk
+        if is_boot_disk is not None:
+            self.is_boot_disk = is_boot_disk
 
     @property
     def create_order(self):
@@ -208,27 +230,6 @@ class FullDisk(object):
         self._id = id
 
     @property
-    def is_boot_disk(self):
-        """Gets the is_boot_disk of this FullDisk.  # noqa: E501
-
-
-        :return: The is_boot_disk of this FullDisk.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_boot_disk
-
-    @is_boot_disk.setter
-    def is_boot_disk(self, is_boot_disk):
-        """Sets the is_boot_disk of this FullDisk.
-
-
-        :param is_boot_disk: The is_boot_disk of this FullDisk.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_boot_disk = is_boot_disk
-
-    @property
     def is_additional_disk(self):
         """Gets the is_additional_disk of this FullDisk.  # noqa: E501
 
@@ -248,6 +249,27 @@ class FullDisk(object):
         """
 
         self._is_additional_disk = is_additional_disk
+
+    @property
+    def is_boot_disk(self):
+        """Gets the is_boot_disk of this FullDisk.  # noqa: E501
+
+
+        :return: The is_boot_disk of this FullDisk.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_boot_disk
+
+    @is_boot_disk.setter
+    def is_boot_disk(self, is_boot_disk):
+        """Sets the is_boot_disk of this FullDisk.
+
+
+        :param is_boot_disk: The is_boot_disk of this FullDisk.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_boot_disk = is_boot_disk
 
     def to_dict(self):
         """Returns the model properties as a dict"""
