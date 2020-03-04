@@ -57,6 +57,7 @@ class BasicTestAsset(object):
         'visibility': 'str',
         'creator': 'MinimalUser',
         'owning_project': 'MinimalProject',
+        'subtype': 'str',
         'type': 'str'
     }
 
@@ -69,10 +70,11 @@ class BasicTestAsset(object):
         'visibility': 'visibility',
         'creator': 'creator',
         'owning_project': 'owningProject',
+        'subtype': 'subtype',
         'type': 'type'
     }
 
-    def __init__(self, id=None, name=None, description=None, offline=None, state=None, visibility=None, creator=None, owning_project=None, type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, description=None, offline=None, state=None, visibility=None, creator=None, owning_project=None, subtype=None, type=None, local_vars_configuration=None):  # noqa: E501
         """BasicTestAsset - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,6 +88,7 @@ class BasicTestAsset(object):
         self._visibility = None
         self._creator = None
         self._owning_project = None
+        self._subtype = None
         self._type = None
         self.discriminator = None
 
@@ -105,6 +108,7 @@ class BasicTestAsset(object):
             self.creator = creator
         if owning_project is not None:
             self.owning_project = owning_project
+        self.subtype = subtype
         if type is not None:
             self.type = type
 
@@ -287,6 +291,29 @@ class BasicTestAsset(object):
         """
 
         self._owning_project = owning_project
+
+    @property
+    def subtype(self):
+        """Gets the subtype of this BasicTestAsset.  # noqa: E501
+
+
+        :return: The subtype of this BasicTestAsset.  # noqa: E501
+        :rtype: str
+        """
+        return self._subtype
+
+    @subtype.setter
+    def subtype(self, subtype):
+        """Sets the subtype of this BasicTestAsset.
+
+
+        :param subtype: The subtype of this BasicTestAsset.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
+            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
+
+        self._subtype = subtype
 
     @property
     def type(self):

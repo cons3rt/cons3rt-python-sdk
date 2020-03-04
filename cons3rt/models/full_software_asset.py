@@ -62,6 +62,7 @@ class FullSoftwareAsset(object):
         'metadata': 'FullMetadata',
         'impact_level': 'str',
         'categories': 'list[MinimalCategory]',
+        'subtype': 'str',
         'architecture': 'str',
         'bits': 'str',
         'dependencies': 'str',
@@ -102,6 +103,7 @@ class FullSoftwareAsset(object):
         'metadata': 'metadata',
         'impact_level': 'impactLevel',
         'categories': 'categories',
+        'subtype': 'subtype',
         'architecture': 'architecture',
         'bits': 'bits',
         'dependencies': 'dependencies',
@@ -128,7 +130,7 @@ class FullSoftwareAsset(object):
         'vendor': 'vendor'
     }
 
-    def __init__(self, id=None, name=None, description=None, offline=None, state=None, visibility=None, creator=None, owning_project=None, trusted_projects=None, dependent_asset_count=None, metadata=None, impact_level=None, categories=None, architecture=None, bits=None, dependencies=None, os_family=None, product_family=None, required_cpu=None, required_cpu_speed=None, application_type=None, vendor_message=None, build_engine=None, build_script=None, build_script_name=None, checkout_script=None, checkout_script_name=None, deploy_script=None, deploy_script_name=None, install_script=None, install_script_name=None, required_disk=None, required_ram=None, software_type=None, version=None, source_code_type=None, vendor=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, description=None, offline=None, state=None, visibility=None, creator=None, owning_project=None, trusted_projects=None, dependent_asset_count=None, metadata=None, impact_level=None, categories=None, subtype=None, architecture=None, bits=None, dependencies=None, os_family=None, product_family=None, required_cpu=None, required_cpu_speed=None, application_type=None, vendor_message=None, build_engine=None, build_script=None, build_script_name=None, checkout_script=None, checkout_script_name=None, deploy_script=None, deploy_script_name=None, install_script=None, install_script_name=None, required_disk=None, required_ram=None, software_type=None, version=None, source_code_type=None, vendor=None, local_vars_configuration=None):  # noqa: E501
         """FullSoftwareAsset - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -147,6 +149,7 @@ class FullSoftwareAsset(object):
         self._metadata = None
         self._impact_level = None
         self._categories = None
+        self._subtype = None
         self._architecture = None
         self._bits = None
         self._dependencies = None
@@ -199,6 +202,7 @@ class FullSoftwareAsset(object):
             self.impact_level = impact_level
         if categories is not None:
             self.categories = categories
+        self.subtype = subtype
         if architecture is not None:
             self.architecture = architecture
         if bits is not None:
@@ -538,6 +542,29 @@ class FullSoftwareAsset(object):
         """
 
         self._categories = categories
+
+    @property
+    def subtype(self):
+        """Gets the subtype of this FullSoftwareAsset.  # noqa: E501
+
+
+        :return: The subtype of this FullSoftwareAsset.  # noqa: E501
+        :rtype: str
+        """
+        return self._subtype
+
+    @subtype.setter
+    def subtype(self, subtype):
+        """Sets the subtype of this FullSoftwareAsset.
+
+
+        :param subtype: The subtype of this FullSoftwareAsset.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
+            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
+
+        self._subtype = subtype
 
     @property
     def architecture(self):

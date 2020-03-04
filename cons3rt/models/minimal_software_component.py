@@ -52,7 +52,6 @@ class MinimalSoftwareComponent(object):
         'asset': 'MinimalAsset',
         'id': 'int',
         'load_order': 'int',
-        'subtype': 'str',
         'reboot_delay': 'int',
         'reboot_required': 'bool'
     }
@@ -61,12 +60,11 @@ class MinimalSoftwareComponent(object):
         'asset': 'asset',
         'id': 'id',
         'load_order': 'loadOrder',
-        'subtype': 'subtype',
         'reboot_delay': 'rebootDelay',
         'reboot_required': 'rebootRequired'
     }
 
-    def __init__(self, asset=None, id=None, load_order=None, subtype=None, reboot_delay=None, reboot_required=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, asset=None, id=None, load_order=None, reboot_delay=None, reboot_required=None, local_vars_configuration=None):  # noqa: E501
         """MinimalSoftwareComponent - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,7 +73,6 @@ class MinimalSoftwareComponent(object):
         self._asset = None
         self._id = None
         self._load_order = None
-        self._subtype = None
         self._reboot_delay = None
         self._reboot_required = None
         self.discriminator = None
@@ -85,7 +82,6 @@ class MinimalSoftwareComponent(object):
             self.id = id
         if load_order is not None:
             self.load_order = load_order
-        self.subtype = subtype
         if reboot_delay is not None:
             self.reboot_delay = reboot_delay
         if reboot_required is not None:
@@ -158,29 +154,6 @@ class MinimalSoftwareComponent(object):
             raise ValueError("Invalid value for `load_order`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._load_order = load_order
-
-    @property
-    def subtype(self):
-        """Gets the subtype of this MinimalSoftwareComponent.  # noqa: E501
-
-
-        :return: The subtype of this MinimalSoftwareComponent.  # noqa: E501
-        :rtype: str
-        """
-        return self._subtype
-
-    @subtype.setter
-    def subtype(self, subtype):
-        """Sets the subtype of this MinimalSoftwareComponent.
-
-
-        :param subtype: The subtype of this MinimalSoftwareComponent.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
-            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
-
-        self._subtype = subtype
 
     @property
     def reboot_delay(self):

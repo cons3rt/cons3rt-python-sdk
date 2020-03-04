@@ -62,6 +62,7 @@ class FullTestAsset(object):
         'metadata': 'FullMetadata',
         'impact_level': 'str',
         'categories': 'list[MinimalCategory]',
+        'subtype': 'str',
         'type': 'str'
     }
 
@@ -79,10 +80,11 @@ class FullTestAsset(object):
         'metadata': 'metadata',
         'impact_level': 'impactLevel',
         'categories': 'categories',
+        'subtype': 'subtype',
         'type': 'type'
     }
 
-    def __init__(self, id=None, name=None, description=None, offline=None, state=None, visibility=None, creator=None, owning_project=None, trusted_projects=None, dependent_asset_count=None, metadata=None, impact_level=None, categories=None, type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, description=None, offline=None, state=None, visibility=None, creator=None, owning_project=None, trusted_projects=None, dependent_asset_count=None, metadata=None, impact_level=None, categories=None, subtype=None, type=None, local_vars_configuration=None):  # noqa: E501
         """FullTestAsset - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -101,6 +103,7 @@ class FullTestAsset(object):
         self._metadata = None
         self._impact_level = None
         self._categories = None
+        self._subtype = None
         self._type = None
         self.discriminator = None
 
@@ -130,6 +133,7 @@ class FullTestAsset(object):
             self.impact_level = impact_level
         if categories is not None:
             self.categories = categories
+        self.subtype = subtype
         if type is not None:
             self.type = type
 
@@ -423,6 +427,29 @@ class FullTestAsset(object):
         """
 
         self._categories = categories
+
+    @property
+    def subtype(self):
+        """Gets the subtype of this FullTestAsset.  # noqa: E501
+
+
+        :return: The subtype of this FullTestAsset.  # noqa: E501
+        :rtype: str
+        """
+        return self._subtype
+
+    @subtype.setter
+    def subtype(self, subtype):
+        """Sets the subtype of this FullTestAsset.
+
+
+        :param subtype: The subtype of this FullTestAsset.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
+            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
+
+        self._subtype = subtype
 
     @property
     def type(self):

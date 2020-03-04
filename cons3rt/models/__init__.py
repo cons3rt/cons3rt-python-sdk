@@ -85,9 +85,11 @@ from cons3rt.models.basic_physical_machine import BasicPhysicalMachine
 from cons3rt.models.basic_physical_machine_all_of import BasicPhysicalMachineAllOf
 from cons3rt.models.basic_scenario import BasicScenario
 from cons3rt.models.basic_software_asset import BasicSoftwareAsset
+from cons3rt.models.basic_software_asset_all_of import BasicSoftwareAssetAllOf
 from cons3rt.models.basic_software_asset_bundle import BasicSoftwareAssetBundle
 from cons3rt.models.basic_system_module import BasicSystemModule
 from cons3rt.models.basic_test_asset import BasicTestAsset
+from cons3rt.models.basic_test_asset_all_of import BasicTestAssetAllOf
 from cons3rt.models.basic_user import BasicUser
 from cons3rt.models.basic_virtual_host import BasicVirtualHost
 from cons3rt.models.category import Category
@@ -159,7 +161,9 @@ from cons3rt.models.full_project import FullProject
 from cons3rt.models.full_scenario import FullScenario
 from cons3rt.models.full_scenario_all_of import FullScenarioAllOf
 from cons3rt.models.full_software_asset import FullSoftwareAsset
+from cons3rt.models.full_software_asset_all_of import FullSoftwareAssetAllOf
 from cons3rt.models.full_software_asset_bundle import FullSoftwareAssetBundle
+from cons3rt.models.full_software_asset_bundle_all_of import FullSoftwareAssetBundleAllOf
 from cons3rt.models.full_system_asset import FullSystemAsset
 from cons3rt.models.full_system_module import FullSystemModule
 from cons3rt.models.full_team import FullTeam
@@ -316,7 +320,6 @@ from cons3rt.models.minimal_scenario_host import MinimalScenarioHost
 from cons3rt.models.minimal_software_asset import MinimalSoftwareAsset
 from cons3rt.models.minimal_software_asset_bundle import MinimalSoftwareAssetBundle
 from cons3rt.models.minimal_software_component import MinimalSoftwareComponent
-from cons3rt.models.minimal_software_component_all_of import MinimalSoftwareComponentAllOf
 from cons3rt.models.minimal_system_asset import MinimalSystemAsset
 from cons3rt.models.minimal_system_module import MinimalSystemModule
 from cons3rt.models.minimal_team import MinimalTeam

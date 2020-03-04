@@ -49,60 +49,39 @@ class MultipartFormDataInput(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'form_data_map': 'dict(str, list[InputPart])',
         'form_data': 'dict(str, InputPart)',
+        'form_data_map': 'dict(str, list[InputPart])',
         'parts': 'list[InputPart]',
         'preamble': 'str'
     }
 
     attribute_map = {
-        'form_data_map': 'formDataMap',
         'form_data': 'formData',
+        'form_data_map': 'formDataMap',
         'parts': 'parts',
         'preamble': 'preamble'
     }
 
-    def __init__(self, form_data_map=None, form_data=None, parts=None, preamble=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, form_data=None, form_data_map=None, parts=None, preamble=None, local_vars_configuration=None):  # noqa: E501
         """MultipartFormDataInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._form_data_map = None
         self._form_data = None
+        self._form_data_map = None
         self._parts = None
         self._preamble = None
         self.discriminator = None
 
-        if form_data_map is not None:
-            self.form_data_map = form_data_map
         if form_data is not None:
             self.form_data = form_data
+        if form_data_map is not None:
+            self.form_data_map = form_data_map
         if parts is not None:
             self.parts = parts
         if preamble is not None:
             self.preamble = preamble
-
-    @property
-    def form_data_map(self):
-        """Gets the form_data_map of this MultipartFormDataInput.  # noqa: E501
-
-
-        :return: The form_data_map of this MultipartFormDataInput.  # noqa: E501
-        :rtype: dict(str, list[InputPart])
-        """
-        return self._form_data_map
-
-    @form_data_map.setter
-    def form_data_map(self, form_data_map):
-        """Sets the form_data_map of this MultipartFormDataInput.
-
-
-        :param form_data_map: The form_data_map of this MultipartFormDataInput.  # noqa: E501
-        :type: dict(str, list[InputPart])
-        """
-
-        self._form_data_map = form_data_map
 
     @property
     def form_data(self):
@@ -124,6 +103,27 @@ class MultipartFormDataInput(object):
         """
 
         self._form_data = form_data
+
+    @property
+    def form_data_map(self):
+        """Gets the form_data_map of this MultipartFormDataInput.  # noqa: E501
+
+
+        :return: The form_data_map of this MultipartFormDataInput.  # noqa: E501
+        :rtype: dict(str, list[InputPart])
+        """
+        return self._form_data_map
+
+    @form_data_map.setter
+    def form_data_map(self, form_data_map):
+        """Sets the form_data_map of this MultipartFormDataInput.
+
+
+        :param form_data_map: The form_data_map of this MultipartFormDataInput.  # noqa: E501
+        :type: dict(str, list[InputPart])
+        """
+
+        self._form_data_map = form_data_map
 
     @property
     def parts(self):

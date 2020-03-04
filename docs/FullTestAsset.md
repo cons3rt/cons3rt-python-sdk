@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **metadata** | [**FullMetadata**](FullMetadata.md) |  | [optional] 
 **impact_level** | **str** |  | [optional] 
 **categories** | [**list[MinimalCategory]**](MinimalCategory.md) |  | [optional] 
+**subtype** | **str** |  | 
 **type** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
