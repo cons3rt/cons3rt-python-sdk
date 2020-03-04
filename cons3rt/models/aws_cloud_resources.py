@@ -49,6 +49,7 @@ class AwsCloudResources(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'subtype': 'str',
         'availability_zone_names': 'list[str]',
         'instance_type_names': 'list[str]',
         'nat_image_names': 'list[str]',
@@ -56,24 +57,27 @@ class AwsCloudResources(object):
     }
 
     attribute_map = {
+        'subtype': 'subtype',
         'availability_zone_names': 'availabilityZoneNames',
         'instance_type_names': 'instanceTypeNames',
         'nat_image_names': 'natImageNames',
         'region_names': 'regionNames'
     }
 
-    def __init__(self, availability_zone_names=None, instance_type_names=None, nat_image_names=None, region_names=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, subtype=None, availability_zone_names=None, instance_type_names=None, nat_image_names=None, region_names=None, local_vars_configuration=None):  # noqa: E501
         """AwsCloudResources - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._subtype = None
         self._availability_zone_names = None
         self._instance_type_names = None
         self._nat_image_names = None
         self._region_names = None
         self.discriminator = None
 
+        self.subtype = subtype
         if availability_zone_names is not None:
             self.availability_zone_names = availability_zone_names
         if instance_type_names is not None:
@@ -82,6 +86,29 @@ class AwsCloudResources(object):
             self.nat_image_names = nat_image_names
         if region_names is not None:
             self.region_names = region_names
+
+    @property
+    def subtype(self):
+        """Gets the subtype of this AwsCloudResources.  # noqa: E501
+
+
+        :return: The subtype of this AwsCloudResources.  # noqa: E501
+        :rtype: str
+        """
+        return self._subtype
+
+    @subtype.setter
+    def subtype(self, subtype):
+        """Sets the subtype of this AwsCloudResources.
+
+
+        :param subtype: The subtype of this AwsCloudResources.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
+            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
+
+        self._subtype = subtype
 
     @property
     def availability_zone_names(self):

@@ -3,6 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**host** | **str** |  | 
+**id** | **int** |  | [optional] 
+**port** | **int** |  | [optional] 
+**type** | **str** |  | [optional] 
+**subtype** | **str** |  | 
 **image_name** | **str** |  | 
 **image_tag** | **str** |  | 
 

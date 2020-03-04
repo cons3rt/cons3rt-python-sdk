@@ -49,8 +49,8 @@ class User(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'created_at': 'int',
-        'updated_at': 'int',
+        'created_at': 'datetime',
+        'updated_at': 'datetime',
         'administered_clouds': 'list[Cloud]',
         'administered_virt_realms': 'list[VirtualizationRealm]',
         'certificates': 'list[Certificate]',
@@ -149,7 +149,7 @@ class User(object):
 
 
         :return: The created_at of this User.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._created_at
 
@@ -159,7 +159,7 @@ class User(object):
 
 
         :param created_at: The created_at of this User.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._created_at = created_at
@@ -170,7 +170,7 @@ class User(object):
 
 
         :return: The updated_at of this User.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._updated_at
 
@@ -180,7 +180,7 @@ class User(object):
 
 
         :param updated_at: The updated_at of this User.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._updated_at = updated_at

@@ -67,10 +67,7 @@ class AbstractCloudSpaceRequest(object):
     }
 
     discriminator_value_class_map = {
-        'OpenStackCloudSpaceRequest': 'OpenStackCloudSpaceRequest',
-        'AwsCloudSpaceRequest': 'AwsCloudSpaceRequest',
-        'AzureCloudSpaceRequest': 'AzureCloudSpaceRequest',
-        'VCloudCloudSpaceRequest': 'VCloudCloudSpaceRequest'
+        
     }
 
     def __init__(self, cloud_space_name=None, maximum_virtual_machines=None, cidr=None, num_availability_zones=None, power_on_minimum_delay=None, subtype=None, local_vars_configuration=None):  # noqa: E501

@@ -49,23 +49,132 @@ class MinimalContainerComponent(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'asset': 'MinimalAsset',
+        'id': 'int',
+        'load_order': 'int',
+        'subtype': 'str',
         'configuration': 'MinimalContainerConfiguration'
     }
 
     attribute_map = {
+        'asset': 'asset',
+        'id': 'id',
+        'load_order': 'loadOrder',
+        'subtype': 'subtype',
         'configuration': 'configuration'
     }
 
-    def __init__(self, configuration=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, asset=None, id=None, load_order=None, subtype=None, configuration=None, local_vars_configuration=None):  # noqa: E501
         """MinimalContainerComponent - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._asset = None
+        self._id = None
+        self._load_order = None
+        self._subtype = None
         self._configuration = None
         self.discriminator = None
 
+        self.asset = asset
+        if id is not None:
+            self.id = id
+        if load_order is not None:
+            self.load_order = load_order
+        self.subtype = subtype
         self.configuration = configuration
+
+    @property
+    def asset(self):
+        """Gets the asset of this MinimalContainerComponent.  # noqa: E501
+
+
+        :return: The asset of this MinimalContainerComponent.  # noqa: E501
+        :rtype: MinimalAsset
+        """
+        return self._asset
+
+    @asset.setter
+    def asset(self, asset):
+        """Sets the asset of this MinimalContainerComponent.
+
+
+        :param asset: The asset of this MinimalContainerComponent.  # noqa: E501
+        :type: MinimalAsset
+        """
+        if self.local_vars_configuration.client_side_validation and asset is None:  # noqa: E501
+            raise ValueError("Invalid value for `asset`, must not be `None`")  # noqa: E501
+
+        self._asset = asset
+
+    @property
+    def id(self):
+        """Gets the id of this MinimalContainerComponent.  # noqa: E501
+
+
+        :return: The id of this MinimalContainerComponent.  # noqa: E501
+        :rtype: int
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this MinimalContainerComponent.
+
+
+        :param id: The id of this MinimalContainerComponent.  # noqa: E501
+        :type: int
+        """
+
+        self._id = id
+
+    @property
+    def load_order(self):
+        """Gets the load_order of this MinimalContainerComponent.  # noqa: E501
+
+
+        :return: The load_order of this MinimalContainerComponent.  # noqa: E501
+        :rtype: int
+        """
+        return self._load_order
+
+    @load_order.setter
+    def load_order(self, load_order):
+        """Sets the load_order of this MinimalContainerComponent.
+
+
+        :param load_order: The load_order of this MinimalContainerComponent.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                load_order is not None and load_order < 0):  # noqa: E501
+            raise ValueError("Invalid value for `load_order`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._load_order = load_order
+
+    @property
+    def subtype(self):
+        """Gets the subtype of this MinimalContainerComponent.  # noqa: E501
+
+
+        :return: The subtype of this MinimalContainerComponent.  # noqa: E501
+        :rtype: str
+        """
+        return self._subtype
+
+    @subtype.setter
+    def subtype(self, subtype):
+        """Sets the subtype of this MinimalContainerComponent.
+
+
+        :param subtype: The subtype of this MinimalContainerComponent.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
+            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
+
+        self._subtype = subtype
 
     @property
     def configuration(self):

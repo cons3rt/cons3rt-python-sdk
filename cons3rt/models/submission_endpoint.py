@@ -65,8 +65,7 @@ class SubmissionEndpoint(object):
     }
 
     discriminator_value_class_map = {
-        'SFTPSubmissionEndpoint': 'SFTPSubmissionEndpoint',
-        'DockerRegistrySubmissionEndpoint': 'DockerRegistrySubmissionEndpoint'
+        
     }
 
     def __init__(self, host=None, id=None, port=None, type=None, subtype=None, local_vars_configuration=None):  # noqa: E501

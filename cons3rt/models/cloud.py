@@ -85,11 +85,7 @@ class Cloud(object):
     }
 
     discriminator_value_class_map = {
-        'AwsCloud': 'AwsCloud',
-        'OpenStackCloud': 'OpenStackCloud',
-        'CloudStackCloud': 'CloudStackCloud',
-        'VCloudCloud': 'VCloudCloud',
-        'AzureCloud': 'AzureCloud'
+        
     }
 
     def __init__(self, cloud_type=None, description=None, name=None, external_ip_addresses=None, external_ip_source=None, features=None, id=None, linux_repository_url=None, maximum_impact_level=None, networks=None, owning_team=None, state=None, template_virtualization_realm=None, virtualization_realms=None, subtype=None, local_vars_configuration=None):  # noqa: E501

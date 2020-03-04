@@ -22,13 +22,13 @@ Name | Type | Description | Notes
 **published** | **bool** |  | [optional] 
 **ram** | **int** |  | [optional] 
 **snapshot_available** | **bool** |  | [optional] 
-**snapshot_date** | **int** |  | [optional] 
+**snapshot_date** | **datetime** |  | [optional] 
 **system_module_id** | **int** |  | [optional] 
 **system_module_type** | **str** |  | [optional] 
 **system_role** | **str** |  | [optional] 
 **virtualization_realm_status** | **str** |  | [optional] 
-**provisionable** | **bool** |  | [optional] 
 **virtual** | **bool** |  | [optional] 
+**provisionable** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

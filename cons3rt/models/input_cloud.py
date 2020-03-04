@@ -81,10 +81,7 @@ class InputCloud(object):
     }
 
     discriminator_value_class_map = {
-        'InputAwsCloud': 'InputAwsCloud',
-        'InputOpenStackCloud': 'InputOpenStackCloud',
-        'InputVCloudCloud': 'InputVCloudCloud',
-        'InputAzureCloud': 'InputAzureCloud'
+        
     }
 
     def __init__(self, name=None, description=None, external_ip_addresses=None, additional_networks=None, cons3rt_network=None, external_ip_source=None, features=None, linux_repository_url=None, maximum_impact_level=None, owning_team=None, state=None, template_virtualization_realm=None, subtype=None, local_vars_configuration=None):  # noqa: E501

@@ -71,9 +71,7 @@ class VirtualizationRealmClient(object):
     }
 
     discriminator_value_class_map = {
-        'OpenStackClient': 'OpenStackClient',
-        'VCloudClient': 'VCloudClient',
-        'AwsClient': 'AwsClient'
+        
     }
 
     def __init__(self, username=None, password=None, accept_all_certs=None, accept_self_signed_certs=None, host=None, port=None, protocol=None, subtype=None, local_vars_configuration=None):  # noqa: E501

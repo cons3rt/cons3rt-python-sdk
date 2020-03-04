@@ -49,27 +49,81 @@ class AddOpenStackNetworkRequest(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'network': 'Network',
+        'subtype': 'str',
         'nat_image_id': 'str',
         'nat_instance_flavor': 'str'
     }
 
     attribute_map = {
+        'network': 'network',
+        'subtype': 'subtype',
         'nat_image_id': 'natImageId',
         'nat_instance_flavor': 'natInstanceFlavor'
     }
 
-    def __init__(self, nat_image_id=None, nat_instance_flavor=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, network=None, subtype=None, nat_image_id=None, nat_instance_flavor=None, local_vars_configuration=None):  # noqa: E501
         """AddOpenStackNetworkRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._network = None
+        self._subtype = None
         self._nat_image_id = None
         self._nat_instance_flavor = None
         self.discriminator = None
 
+        self.network = network
+        self.subtype = subtype
         self.nat_image_id = nat_image_id
         self.nat_instance_flavor = nat_instance_flavor
+
+    @property
+    def network(self):
+        """Gets the network of this AddOpenStackNetworkRequest.  # noqa: E501
+
+
+        :return: The network of this AddOpenStackNetworkRequest.  # noqa: E501
+        :rtype: Network
+        """
+        return self._network
+
+    @network.setter
+    def network(self, network):
+        """Sets the network of this AddOpenStackNetworkRequest.
+
+
+        :param network: The network of this AddOpenStackNetworkRequest.  # noqa: E501
+        :type: Network
+        """
+        if self.local_vars_configuration.client_side_validation and network is None:  # noqa: E501
+            raise ValueError("Invalid value for `network`, must not be `None`")  # noqa: E501
+
+        self._network = network
+
+    @property
+    def subtype(self):
+        """Gets the subtype of this AddOpenStackNetworkRequest.  # noqa: E501
+
+
+        :return: The subtype of this AddOpenStackNetworkRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._subtype
+
+    @subtype.setter
+    def subtype(self, subtype):
+        """Sets the subtype of this AddOpenStackNetworkRequest.
+
+
+        :param subtype: The subtype of this AddOpenStackNetworkRequest.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
+            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
+
+        self._subtype = subtype
 
     @property
     def nat_image_id(self):

@@ -54,7 +54,7 @@ class LogEntry(object):
         'project_name': 'str',
         'severity': 'str',
         'source': 'str',
-        'time': 'int',
+        'time': 'datetime',
         'username': 'str'
     }
 
@@ -215,7 +215,7 @@ class LogEntry(object):
 
 
         :return: The time of this LogEntry.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._time
 
@@ -225,7 +225,7 @@ class LogEntry(object):
 
 
         :param time: The time of this LogEntry.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._time = time

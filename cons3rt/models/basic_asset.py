@@ -73,13 +73,7 @@ class BasicAsset(object):
     }
 
     discriminator_value_class_map = {
-        'BasicDeployment': 'BasicDeployment',
-        'BasicPhysicalHost': 'BasicPhysicalHost',
-        'BasicVirtualHost': 'BasicVirtualHost',
-        'BasicScenario': 'BasicScenario',
-        'BasicPhysicalMachine': 'BasicPhysicalMachine',
-        'BasicAppliance': 'BasicAppliance',
-        'BasicDevice': 'BasicDevice'
+        
     }
 
     def __init__(self, id=None, name=None, description=None, offline=None, state=None, visibility=None, creator=None, owning_project=None, subtype=None, local_vars_configuration=None):  # noqa: E501

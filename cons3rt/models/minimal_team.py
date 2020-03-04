@@ -53,7 +53,7 @@ class MinimalTeam(object):
         'name': 'str',
         'private': 'bool',
         'state': 'str',
-        'valid_util': 'int',
+        'valid_util': 'datetime',
         'contact_info': 'PocInfo'
     }
 
@@ -190,7 +190,7 @@ class MinimalTeam(object):
 
 
         :return: The valid_util of this MinimalTeam.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._valid_util
 
@@ -200,7 +200,7 @@ class MinimalTeam(object):
 
 
         :param valid_util: The valid_util of this MinimalTeam.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._valid_util = valid_util

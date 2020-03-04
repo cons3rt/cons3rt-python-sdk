@@ -1,10 +1,12 @@
-# InputCompositionForDeploymentRun
+# AwsCloudAllOf1
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** |  | 
-**description** | **str** |  | [optional] 
+**access_key** | **str** |  | [optional] 
+**owner_id** | **str** |  | [optional] 
+**region_name** | **str** |  | [optional] 
+**secret_access_key** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

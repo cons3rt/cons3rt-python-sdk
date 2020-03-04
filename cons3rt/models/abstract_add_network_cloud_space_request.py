@@ -59,10 +59,7 @@ class AbstractAddNetworkCloudSpaceRequest(object):
     }
 
     discriminator_value_class_map = {
-        'AddAzureNetworkRequest': 'AddAzureNetworkRequest',
-        'AddVcloudNetworkRequest': 'AddVcloudNetworkRequest',
-        'AddOpenStackNetworkRequest': 'AddOpenStackNetworkRequest',
-        'AddAwsNetworkRequest': 'AddAwsNetworkRequest'
+        
     }
 
     def __init__(self, network=None, subtype=None, local_vars_configuration=None):  # noqa: E501

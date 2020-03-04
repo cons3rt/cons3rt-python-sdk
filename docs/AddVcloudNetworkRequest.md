@@ -3,6 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**network** | [**Network**](Network.md) |  | 
+**subtype** | **str** |  | 
 **external_network_name** | **str** |  | 
 **vdc_network_pool_name** | **str** |  | 
 

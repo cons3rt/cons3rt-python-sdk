@@ -1,10 +1,10 @@
-# SoftwareComponentAllOf
+# AddAwsNetworkRequestAllOf1
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reboot_delay** | **int** |  | [optional] 
-**reboot_required** | **bool** |  | [optional] 
+**nat_instance_type** | **str** |  | [optional] 
+**nat_image_id** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

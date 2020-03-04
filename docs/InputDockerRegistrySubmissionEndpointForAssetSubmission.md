@@ -3,6 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**port** | **int** |  | [optional] 
+**subtype** | **str** |  | 
 **image_name** | **str** |  | 
 **image_tag** | **str** |  | 
 

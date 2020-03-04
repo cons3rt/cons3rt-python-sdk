@@ -37,7 +37,7 @@ __maintainer__ = 'API Support'
 __email__ = 'support@cons3rt.com'
 
 
-class BasicTestAssetAllOf(object):
+class MinimalContainerComponentAllOf1(object):
     """NOTE: This class is auto-generated. Do not edit the class manually.
     """
 
@@ -49,51 +49,45 @@ class BasicTestAssetAllOf(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'type': 'str'
+        'configuration': 'MinimalContainerConfiguration'
     }
 
     attribute_map = {
-        'type': 'type'
+        'configuration': 'configuration'
     }
 
-    def __init__(self, type=None, local_vars_configuration=None):  # noqa: E501
-        """BasicTestAssetAllOf - a model defined in OpenAPI"""  # noqa: E501
+    def __init__(self, configuration=None, local_vars_configuration=None):  # noqa: E501
+        """MinimalContainerComponentAllOf1 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._type = None
+        self._configuration = None
         self.discriminator = None
 
-        if type is not None:
-            self.type = type
+        if configuration is not None:
+            self.configuration = configuration
 
     @property
-    def type(self):
-        """Gets the type of this BasicTestAssetAllOf.  # noqa: E501
+    def configuration(self):
+        """Gets the configuration of this MinimalContainerComponentAllOf1.  # noqa: E501
 
 
-        :return: The type of this BasicTestAssetAllOf.  # noqa: E501
-        :rtype: str
+        :return: The configuration of this MinimalContainerComponentAllOf1.  # noqa: E501
+        :rtype: MinimalContainerConfiguration
         """
-        return self._type
+        return self._configuration
 
-    @type.setter
-    def type(self, type):
-        """Sets the type of this BasicTestAssetAllOf.
+    @configuration.setter
+    def configuration(self, configuration):
+        """Sets the configuration of this MinimalContainerComponentAllOf1.
 
 
-        :param type: The type of this BasicTestAssetAllOf.  # noqa: E501
-        :type: str
+        :param configuration: The configuration of this MinimalContainerComponentAllOf1.  # noqa: E501
+        :type: MinimalContainerConfiguration
         """
-        allowed_values = ["UNKNOWN", "LISA", "SOAPUI", "SELENIUM", "RETINA", "NESSUS", "CERTIFY", "SCRIPT", "WEBEXPLOITSUITE", "FORTIFY", "SONAR", "POWERSHELL", "MOCK"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
-                .format(type, allowed_values)
-            )
 
-        self._type = type
+        self._configuration = configuration
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -129,14 +123,14 @@ class BasicTestAssetAllOf(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, BasicTestAssetAllOf):
+        if not isinstance(other, MinimalContainerComponentAllOf1):
             return False
 
         return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        if not isinstance(other, BasicTestAssetAllOf):
+        if not isinstance(other, MinimalContainerComponentAllOf1):
             return True
 
         return self.to_dict() != other.to_dict()

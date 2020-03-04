@@ -37,7 +37,7 @@ __maintainer__ = 'API Support'
 __email__ = 'support@cons3rt.com'
 
 
-class SoftwareComponentAllOf(object):
+class ContainerInstallationAllOf1(object):
     """NOTE: This class is auto-generated. Do not edit the class manually.
     """
 
@@ -49,71 +49,77 @@ class SoftwareComponentAllOf(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'reboot_delay': 'int',
-        'reboot_required': 'bool'
+        'asset_type': 'str',
+        'run_arguments': 'str'
     }
 
     attribute_map = {
-        'reboot_delay': 'rebootDelay',
-        'reboot_required': 'rebootRequired'
+        'asset_type': 'assetType',
+        'run_arguments': 'runArguments'
     }
 
-    def __init__(self, reboot_delay=None, reboot_required=None, local_vars_configuration=None):  # noqa: E501
-        """SoftwareComponentAllOf - a model defined in OpenAPI"""  # noqa: E501
+    def __init__(self, asset_type=None, run_arguments=None, local_vars_configuration=None):  # noqa: E501
+        """ContainerInstallationAllOf1 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._reboot_delay = None
-        self._reboot_required = None
+        self._asset_type = None
+        self._run_arguments = None
         self.discriminator = None
 
-        if reboot_delay is not None:
-            self.reboot_delay = reboot_delay
-        if reboot_required is not None:
-            self.reboot_required = reboot_required
+        if asset_type is not None:
+            self.asset_type = asset_type
+        if run_arguments is not None:
+            self.run_arguments = run_arguments
 
     @property
-    def reboot_delay(self):
-        """Gets the reboot_delay of this SoftwareComponentAllOf.  # noqa: E501
+    def asset_type(self):
+        """Gets the asset_type of this ContainerInstallationAllOf1.  # noqa: E501
 
 
-        :return: The reboot_delay of this SoftwareComponentAllOf.  # noqa: E501
-        :rtype: int
+        :return: The asset_type of this ContainerInstallationAllOf1.  # noqa: E501
+        :rtype: str
         """
-        return self._reboot_delay
+        return self._asset_type
 
-    @reboot_delay.setter
-    def reboot_delay(self, reboot_delay):
-        """Sets the reboot_delay of this SoftwareComponentAllOf.
+    @asset_type.setter
+    def asset_type(self, asset_type):
+        """Sets the asset_type of this ContainerInstallationAllOf1.
 
 
-        :param reboot_delay: The reboot_delay of this SoftwareComponentAllOf.  # noqa: E501
-        :type: int
+        :param asset_type: The asset_type of this ContainerInstallationAllOf1.  # noqa: E501
+        :type: str
         """
+        allowed_values = ["DOCKER", "OCI"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and asset_type not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `asset_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(asset_type, allowed_values)
+            )
 
-        self._reboot_delay = reboot_delay
+        self._asset_type = asset_type
 
     @property
-    def reboot_required(self):
-        """Gets the reboot_required of this SoftwareComponentAllOf.  # noqa: E501
+    def run_arguments(self):
+        """Gets the run_arguments of this ContainerInstallationAllOf1.  # noqa: E501
 
 
-        :return: The reboot_required of this SoftwareComponentAllOf.  # noqa: E501
-        :rtype: bool
+        :return: The run_arguments of this ContainerInstallationAllOf1.  # noqa: E501
+        :rtype: str
         """
-        return self._reboot_required
+        return self._run_arguments
 
-    @reboot_required.setter
-    def reboot_required(self, reboot_required):
-        """Sets the reboot_required of this SoftwareComponentAllOf.
+    @run_arguments.setter
+    def run_arguments(self, run_arguments):
+        """Sets the run_arguments of this ContainerInstallationAllOf1.
 
 
-        :param reboot_required: The reboot_required of this SoftwareComponentAllOf.  # noqa: E501
-        :type: bool
+        :param run_arguments: The run_arguments of this ContainerInstallationAllOf1.  # noqa: E501
+        :type: str
         """
 
-        self._reboot_required = reboot_required
+        self._run_arguments = run_arguments
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -149,14 +155,14 @@ class SoftwareComponentAllOf(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, SoftwareComponentAllOf):
+        if not isinstance(other, ContainerInstallationAllOf1):
             return False
 
         return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        if not isinstance(other, SoftwareComponentAllOf):
+        if not isinstance(other, ContainerInstallationAllOf1):
             return True
 
         return self.to_dict() != other.to_dict()

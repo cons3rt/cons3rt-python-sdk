@@ -49,6 +49,12 @@ class VCloudCloudSpaceRequest(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'cloud_space_name': 'str',
+        'maximum_virtual_machines': 'int',
+        'cidr': 'str',
+        'num_availability_zones': 'int',
+        'power_on_minimum_delay': 'int',
+        'subtype': 'str',
         'provider_vdc_name': 'str',
         'vdc_network_pool_name': 'str',
         'username': 'str',
@@ -61,6 +67,12 @@ class VCloudCloudSpaceRequest(object):
     }
 
     attribute_map = {
+        'cloud_space_name': 'cloudSpaceName',
+        'maximum_virtual_machines': 'maximumVirtualMachines',
+        'cidr': 'cidr',
+        'num_availability_zones': 'numAvailabilityZones',
+        'power_on_minimum_delay': 'powerOnMinimumDelay',
+        'subtype': 'subtype',
         'provider_vdc_name': 'providerVdcName',
         'vdc_network_pool_name': 'vdcNetworkPoolName',
         'username': 'username',
@@ -72,12 +84,18 @@ class VCloudCloudSpaceRequest(object):
         'vdc_network_quota': 'vdcNetworkQuota'
     }
 
-    def __init__(self, provider_vdc_name=None, vdc_network_pool_name=None, username=None, password=None, email_address=None, external_network_name=None, maximum_cpu_mhz=None, local_catalog_name=None, vdc_network_quota=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cloud_space_name=None, maximum_virtual_machines=None, cidr=None, num_availability_zones=None, power_on_minimum_delay=None, subtype=None, provider_vdc_name=None, vdc_network_pool_name=None, username=None, password=None, email_address=None, external_network_name=None, maximum_cpu_mhz=None, local_catalog_name=None, vdc_network_quota=None, local_vars_configuration=None):  # noqa: E501
         """VCloudCloudSpaceRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._cloud_space_name = None
+        self._maximum_virtual_machines = None
+        self._cidr = None
+        self._num_availability_zones = None
+        self._power_on_minimum_delay = None
+        self._subtype = None
         self._provider_vdc_name = None
         self._vdc_network_pool_name = None
         self._username = None
@@ -89,6 +107,15 @@ class VCloudCloudSpaceRequest(object):
         self._vdc_network_quota = None
         self.discriminator = None
 
+        self.cloud_space_name = cloud_space_name
+        if maximum_virtual_machines is not None:
+            self.maximum_virtual_machines = maximum_virtual_machines
+        self.cidr = cidr
+        if num_availability_zones is not None:
+            self.num_availability_zones = num_availability_zones
+        if power_on_minimum_delay is not None:
+            self.power_on_minimum_delay = power_on_minimum_delay
+        self.subtype = subtype
         self.provider_vdc_name = provider_vdc_name
         self.vdc_network_pool_name = vdc_network_pool_name
         self.username = username
@@ -99,6 +126,153 @@ class VCloudCloudSpaceRequest(object):
         if local_catalog_name is not None:
             self.local_catalog_name = local_catalog_name
         self.vdc_network_quota = vdc_network_quota
+
+    @property
+    def cloud_space_name(self):
+        """Gets the cloud_space_name of this VCloudCloudSpaceRequest.  # noqa: E501
+
+
+        :return: The cloud_space_name of this VCloudCloudSpaceRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._cloud_space_name
+
+    @cloud_space_name.setter
+    def cloud_space_name(self, cloud_space_name):
+        """Sets the cloud_space_name of this VCloudCloudSpaceRequest.
+
+
+        :param cloud_space_name: The cloud_space_name of this VCloudCloudSpaceRequest.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and cloud_space_name is None:  # noqa: E501
+            raise ValueError("Invalid value for `cloud_space_name`, must not be `None`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                cloud_space_name is not None and len(cloud_space_name) > 25):
+            raise ValueError("Invalid value for `cloud_space_name`, length must be less than or equal to `25`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                cloud_space_name is not None and len(cloud_space_name) < 1):
+            raise ValueError("Invalid value for `cloud_space_name`, length must be greater than or equal to `1`")  # noqa: E501
+
+        self._cloud_space_name = cloud_space_name
+
+    @property
+    def maximum_virtual_machines(self):
+        """Gets the maximum_virtual_machines of this VCloudCloudSpaceRequest.  # noqa: E501
+
+
+        :return: The maximum_virtual_machines of this VCloudCloudSpaceRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._maximum_virtual_machines
+
+    @maximum_virtual_machines.setter
+    def maximum_virtual_machines(self, maximum_virtual_machines):
+        """Sets the maximum_virtual_machines of this VCloudCloudSpaceRequest.
+
+
+        :param maximum_virtual_machines: The maximum_virtual_machines of this VCloudCloudSpaceRequest.  # noqa: E501
+        :type: int
+        """
+
+        self._maximum_virtual_machines = maximum_virtual_machines
+
+    @property
+    def cidr(self):
+        """Gets the cidr of this VCloudCloudSpaceRequest.  # noqa: E501
+
+
+        :return: The cidr of this VCloudCloudSpaceRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._cidr
+
+    @cidr.setter
+    def cidr(self, cidr):
+        """Sets the cidr of this VCloudCloudSpaceRequest.
+
+
+        :param cidr: The cidr of this VCloudCloudSpaceRequest.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and cidr is None:  # noqa: E501
+            raise ValueError("Invalid value for `cidr`, must not be `None`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                cidr is not None and len(cidr) > 16):
+            raise ValueError("Invalid value for `cidr`, length must be less than or equal to `16`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                cidr is not None and len(cidr) < 10):
+            raise ValueError("Invalid value for `cidr`, length must be greater than or equal to `10`")  # noqa: E501
+
+        self._cidr = cidr
+
+    @property
+    def num_availability_zones(self):
+        """Gets the num_availability_zones of this VCloudCloudSpaceRequest.  # noqa: E501
+
+
+        :return: The num_availability_zones of this VCloudCloudSpaceRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._num_availability_zones
+
+    @num_availability_zones.setter
+    def num_availability_zones(self, num_availability_zones):
+        """Sets the num_availability_zones of this VCloudCloudSpaceRequest.
+
+
+        :param num_availability_zones: The num_availability_zones of this VCloudCloudSpaceRequest.  # noqa: E501
+        :type: int
+        """
+
+        self._num_availability_zones = num_availability_zones
+
+    @property
+    def power_on_minimum_delay(self):
+        """Gets the power_on_minimum_delay of this VCloudCloudSpaceRequest.  # noqa: E501
+
+
+        :return: The power_on_minimum_delay of this VCloudCloudSpaceRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._power_on_minimum_delay
+
+    @power_on_minimum_delay.setter
+    def power_on_minimum_delay(self, power_on_minimum_delay):
+        """Sets the power_on_minimum_delay of this VCloudCloudSpaceRequest.
+
+
+        :param power_on_minimum_delay: The power_on_minimum_delay of this VCloudCloudSpaceRequest.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                power_on_minimum_delay is not None and power_on_minimum_delay < 0):  # noqa: E501
+            raise ValueError("Invalid value for `power_on_minimum_delay`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._power_on_minimum_delay = power_on_minimum_delay
+
+    @property
+    def subtype(self):
+        """Gets the subtype of this VCloudCloudSpaceRequest.  # noqa: E501
+
+
+        :return: The subtype of this VCloudCloudSpaceRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._subtype
+
+    @subtype.setter
+    def subtype(self, subtype):
+        """Sets the subtype of this VCloudCloudSpaceRequest.
+
+
+        :param subtype: The subtype of this VCloudCloudSpaceRequest.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
+            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
+
+        self._subtype = subtype
 
     @property
     def provider_vdc_name(self):

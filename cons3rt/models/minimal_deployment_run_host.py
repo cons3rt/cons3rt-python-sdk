@@ -68,13 +68,13 @@ class MinimalDeploymentRunHost(object):
         'published': 'bool',
         'ram': 'int',
         'snapshot_available': 'bool',
-        'snapshot_date': 'int',
+        'snapshot_date': 'datetime',
         'system_module_id': 'int',
         'system_module_type': 'str',
         'system_role': 'str',
         'virtualization_realm_status': 'str',
-        'provisionable': 'bool',
-        'virtual': 'bool'
+        'virtual': 'bool',
+        'provisionable': 'bool'
     }
 
     attribute_map = {
@@ -102,11 +102,11 @@ class MinimalDeploymentRunHost(object):
         'system_module_type': 'systemModuleType',
         'system_role': 'systemRole',
         'virtualization_realm_status': 'VirtualizationRealmStatus',
-        'provisionable': 'provisionable',
-        'virtual': 'virtual'
+        'virtual': 'virtual',
+        'provisionable': 'provisionable'
     }
 
-    def __init__(self, build_order=None, created_password=None, created_username=None, default_password=None, default_username=None, disks=None, fap_status=None, host_action_in_process=None, hostname=None, id=None, installations=None, nested_virtualization=None, network_interfaces=None, num_cpus=None, physical_machine_data_or_template_uuid=None, physical_machine_or_template_name=None, published=None, ram=None, snapshot_available=None, snapshot_date=None, system_module_id=None, system_module_type=None, system_role=None, virtualization_realm_status=None, provisionable=None, virtual=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, build_order=None, created_password=None, created_username=None, default_password=None, default_username=None, disks=None, fap_status=None, host_action_in_process=None, hostname=None, id=None, installations=None, nested_virtualization=None, network_interfaces=None, num_cpus=None, physical_machine_data_or_template_uuid=None, physical_machine_or_template_name=None, published=None, ram=None, snapshot_available=None, snapshot_date=None, system_module_id=None, system_module_type=None, system_role=None, virtualization_realm_status=None, virtual=None, provisionable=None, local_vars_configuration=None):  # noqa: E501
         """MinimalDeploymentRunHost - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -136,8 +136,8 @@ class MinimalDeploymentRunHost(object):
         self._system_module_type = None
         self._system_role = None
         self._virtualization_realm_status = None
-        self._provisionable = None
         self._virtual = None
+        self._provisionable = None
         self.discriminator = None
 
         if build_order is not None:
@@ -188,10 +188,10 @@ class MinimalDeploymentRunHost(object):
             self.system_role = system_role
         if virtualization_realm_status is not None:
             self.virtualization_realm_status = virtualization_realm_status
-        if provisionable is not None:
-            self.provisionable = provisionable
         if virtual is not None:
             self.virtual = virtual
+        if provisionable is not None:
+            self.provisionable = provisionable
 
     @property
     def build_order(self):
@@ -604,7 +604,7 @@ class MinimalDeploymentRunHost(object):
 
 
         :return: The snapshot_date of this MinimalDeploymentRunHost.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._snapshot_date
 
@@ -614,7 +614,7 @@ class MinimalDeploymentRunHost(object):
 
 
         :param snapshot_date: The snapshot_date of this MinimalDeploymentRunHost.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._snapshot_date = snapshot_date
@@ -716,27 +716,6 @@ class MinimalDeploymentRunHost(object):
         self._virtualization_realm_status = virtualization_realm_status
 
     @property
-    def provisionable(self):
-        """Gets the provisionable of this MinimalDeploymentRunHost.  # noqa: E501
-
-
-        :return: The provisionable of this MinimalDeploymentRunHost.  # noqa: E501
-        :rtype: bool
-        """
-        return self._provisionable
-
-    @provisionable.setter
-    def provisionable(self, provisionable):
-        """Sets the provisionable of this MinimalDeploymentRunHost.
-
-
-        :param provisionable: The provisionable of this MinimalDeploymentRunHost.  # noqa: E501
-        :type: bool
-        """
-
-        self._provisionable = provisionable
-
-    @property
     def virtual(self):
         """Gets the virtual of this MinimalDeploymentRunHost.  # noqa: E501
 
@@ -756,6 +735,27 @@ class MinimalDeploymentRunHost(object):
         """
 
         self._virtual = virtual
+
+    @property
+    def provisionable(self):
+        """Gets the provisionable of this MinimalDeploymentRunHost.  # noqa: E501
+
+
+        :return: The provisionable of this MinimalDeploymentRunHost.  # noqa: E501
+        :rtype: bool
+        """
+        return self._provisionable
+
+    @provisionable.setter
+    def provisionable(self, provisionable):
+        """Sets the provisionable of this MinimalDeploymentRunHost.
+
+
+        :param provisionable: The provisionable of this MinimalDeploymentRunHost.  # noqa: E501
+        :type: bool
+        """
+
+        self._provisionable = provisionable
 
     def to_dict(self):
         """Returns the model properties as a dict"""

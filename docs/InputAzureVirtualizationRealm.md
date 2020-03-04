@@ -3,6 +3,28 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**virtualization_realm_type** | **str** |  | [optional] 
+**access_point** | **str** |  | [optional] 
+**account_id** | **str** |  | 
+**cidr** | **str** |  | 
+**default_windows_domain_name** | **str** |  | [optional] 
+**description** | **str** |  | 
+**id** | **int** |  | [optional] 
+**local_storage_name** | **str** |  | [optional] 
+**maximum_num_cpus** | **int** |  | [optional] 
+**maximum_num_gpus** | **int** |  | [optional] 
+**maximum_ram_in_megabytes** | **int** |  | [optional] 
+**maximum_storage_in_megabytes** | **int** |  | [optional] 
+**maximum_virtual_machines** | **int** |  | [optional] 
+**name** | **str** |  | 
+**password** | **str** |  | 
+**power_on_delay_base** | **int** |  | [optional] 
+**power_on_initial_delay_base** | **int** |  | [optional] 
+**power_on_minimum_delay** | **int** |  | [optional] 
+**remote_access_config** | [**RemoteAccessConfig**](RemoteAccessConfig.md) |  | [optional] 
+**state** | **str** |  | [optional] 
+**username** | **str** |  | 
+**zone_count** | **int** |  | [optional] 
 **public_container_url** | **str** |  | [optional] 
 **resource_group_name** | **str** |  | 
 **tenant_id** | **str** |  | 

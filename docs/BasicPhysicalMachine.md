@@ -3,6 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
+**offline** | **bool** |  | [optional] 
+**state** | **str** |  | [optional] 
+**visibility** | **str** |  | [optional] 
+**creator** | [**MinimalUser**](MinimalUser.md) |  | [optional] 
+**owning_project** | [**MinimalProject**](MinimalProject.md) |  | [optional] 
+**subtype** | **str** |  | 
 **architecture** | **str** |  | [optional] 
 **bits** | **str** |  | [optional] 
 **operating_system** | **str** |  | [optional] 

@@ -83,14 +83,7 @@ class FullAsset(object):
     }
 
     discriminator_value_class_map = {
-        'FullPhysicalHost': 'FullPhysicalHost',
-        'FullDevice': 'FullDevice',
-        'FullDeployment': 'FullDeployment',
-        'FullVirtualService': 'FullVirtualService',
-        'FullPhysicalMachine': 'FullPhysicalMachine',
-        'FullScenario': 'FullScenario',
-        'FullAppliance': 'FullAppliance',
-        'FullVirtualHost': 'FullVirtualHost'
+        
     }
 
     def __init__(self, id=None, name=None, description=None, offline=None, state=None, visibility=None, creator=None, owning_project=None, trusted_projects=None, dependent_asset_count=None, metadata=None, impact_level=None, categories=None, subtype=None, local_vars_configuration=None):  # noqa: E501

@@ -91,8 +91,7 @@ class AbstractRegisterCloudSpaceRequest(object):
     }
 
     discriminator_value_class_map = {
-        'VCloudRegisterCloudSpaceRequest': 'VCloudRegisterCloudSpaceRequest',
-        'AwsRegisterCloudSpaceRequest': 'AwsRegisterCloudSpaceRequest'
+        
     }
 
     def __init__(self, virtualization_realm_type=None, name=None, description=None, access_point=None, active_after_registration=None, additional_network_names=None, cons3rt_network_name=None, maximum_num_cpus=None, maximum_num_gpus=None, maximum_ram_in_megabytes=None, maximum_storage_in_megabytes=None, maximum_virtual_machines=None, power_on_minimum_delay=None, password=None, power_on_initial_delay_base=None, primary_network_name=None, remote_access_config=None, username=None, local_vars_configuration=None):  # noqa: E501

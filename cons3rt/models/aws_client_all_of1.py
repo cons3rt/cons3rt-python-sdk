@@ -37,7 +37,7 @@ __maintainer__ = 'API Support'
 __email__ = 'support@cons3rt.com'
 
 
-class FullSoftwareAssetBundleAllOf(object):
+class AwsClientAllOf1(object):
     """NOTE: This class is auto-generated. Do not edit the class manually.
     """
 
@@ -49,45 +49,45 @@ class FullSoftwareAssetBundleAllOf(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'software_components': 'list[MinimalSoftwareComponent]'
+        'region': 'str'
     }
 
     attribute_map = {
-        'software_components': 'softwareComponents'
+        'region': 'region'
     }
 
-    def __init__(self, software_components=None, local_vars_configuration=None):  # noqa: E501
-        """FullSoftwareAssetBundleAllOf - a model defined in OpenAPI"""  # noqa: E501
+    def __init__(self, region=None, local_vars_configuration=None):  # noqa: E501
+        """AwsClientAllOf1 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._software_components = None
+        self._region = None
         self.discriminator = None
 
-        if software_components is not None:
-            self.software_components = software_components
+        if region is not None:
+            self.region = region
 
     @property
-    def software_components(self):
-        """Gets the software_components of this FullSoftwareAssetBundleAllOf.  # noqa: E501
+    def region(self):
+        """Gets the region of this AwsClientAllOf1.  # noqa: E501
 
 
-        :return: The software_components of this FullSoftwareAssetBundleAllOf.  # noqa: E501
-        :rtype: list[MinimalSoftwareComponent]
+        :return: The region of this AwsClientAllOf1.  # noqa: E501
+        :rtype: str
         """
-        return self._software_components
+        return self._region
 
-    @software_components.setter
-    def software_components(self, software_components):
-        """Sets the software_components of this FullSoftwareAssetBundleAllOf.
+    @region.setter
+    def region(self, region):
+        """Sets the region of this AwsClientAllOf1.
 
 
-        :param software_components: The software_components of this FullSoftwareAssetBundleAllOf.  # noqa: E501
-        :type: list[MinimalSoftwareComponent]
+        :param region: The region of this AwsClientAllOf1.  # noqa: E501
+        :type: str
         """
 
-        self._software_components = software_components
+        self._region = region
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -123,14 +123,14 @@ class FullSoftwareAssetBundleAllOf(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, FullSoftwareAssetBundleAllOf):
+        if not isinstance(other, AwsClientAllOf1):
             return False
 
         return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        if not isinstance(other, FullSoftwareAssetBundleAllOf):
+        if not isinstance(other, AwsClientAllOf1):
             return True
 
         return self.to_dict() != other.to_dict()

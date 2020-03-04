@@ -3,6 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**port** | **int** |  | [optional] 
+**subtype** | **str** |  | 
 **remote_path** | **str** |  | [optional] 
 **use_user_directory_as_root** | **bool** |  | [optional] 
 

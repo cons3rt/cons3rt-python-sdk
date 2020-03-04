@@ -57,10 +57,7 @@ class AbstractCloudResources(object):
     }
 
     discriminator_value_class_map = {
-        'OpenStackCloudResources': 'OpenStackCloudResources',
-        'AzureCloudResources': 'AzureCloudResources',
-        'VCloudCloudResources': 'VCloudCloudResources',
-        'AwsCloudResources': 'AwsCloudResources'
+        
     }
 
     def __init__(self, subtype=None, local_vars_configuration=None):  # noqa: E501

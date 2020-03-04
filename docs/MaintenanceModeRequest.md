@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**end_date** | **int** |  | [optional] 
+**end_date** | **datetime** |  | [optional] 
 **message** | **str** |  | [optional] 
 **timeout** | **int** |  | [optional] 
 

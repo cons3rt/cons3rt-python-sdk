@@ -52,7 +52,7 @@ class InputRecurringSchedule(object):
         'timezone': 'str',
         'schedule': 'str',
         'max_iterations': 'int',
-        'end_date': 'int',
+        'end_date': 'datetime',
         'deployment_run_options': 'InputDeploymentRunOptions'
     }
 
@@ -161,7 +161,7 @@ class InputRecurringSchedule(object):
 
 
         :return: The end_date of this InputRecurringSchedule.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._end_date
 
@@ -171,7 +171,7 @@ class InputRecurringSchedule(object):
 
 
         :param end_date: The end_date of this InputRecurringSchedule.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._end_date = end_date

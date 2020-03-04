@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**subtype** | **str** |  | 
 **name** | **str** |  | [optional] 
 **physical_machine** | [**InputPhysicalMachine**](InputPhysicalMachine.md) |  | [optional] 
 **components** | [**list[InputAbstractComponent]**](InputAbstractComponent.md) |  | [optional] 

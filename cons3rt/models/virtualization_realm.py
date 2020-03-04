@@ -58,8 +58,8 @@ class VirtualizationRealm(object):
         'allocated': 'bool',
         'cidr': 'str',
         'cloud': 'Cloud',
-        'created_at': 'int',
-        'date_last_reachable': 'int',
+        'created_at': 'datetime',
+        'date_last_reachable': 'datetime',
         'default_windows_domain_name': 'str',
         'description': 'str',
         'id': 'int',
@@ -85,7 +85,7 @@ class VirtualizationRealm(object):
         'template_registrations': 'list[TemplateRegistration]',
         'templates': 'list[Cons3rtTemplateData]',
         'template_subscriptions': 'list[TemplateSubscription]',
-        'updated_at': 'int',
+        'updated_at': 'datetime',
         'username': 'str',
         'zone_count': 'int'
     }
@@ -133,10 +133,7 @@ class VirtualizationRealm(object):
     }
 
     discriminator_value_class_map = {
-        'AwsVirtualizationRealm': 'AwsVirtualizationRealm',
-        'VCloudVirtualizationRealm': 'VCloudVirtualizationRealm',
-        'OpenStackVirtualizationRealm': 'OpenStackVirtualizationRealm',
-        'AzureVirtualizationRealm': 'AzureVirtualizationRealm'
+        
     }
 
     def __init__(self, virtualization_realm_type=None, access_point=None, account_id=None, active_virtual_machines=None, networks=None, admin_users=None, allocated=None, cidr=None, cloud=None, created_at=None, date_last_reachable=None, default_windows_domain_name=None, description=None, id=None, local_storage_name=None, maximum_num_cpus=None, maximum_num_gpus=None, maximum_ram_in_megabytes=None, maximum_storage_in_megabytes=None, maximum_virtual_machines=None, name=None, password=None, power_on_delay_base=None, power_on_initial_delay_base=None, power_on_minimum_delay=None, projects=None, reachable=None, remote_access_config=None, remote_access_deployment_id=None, remote_access_deployment_run_status=None, remote_access_status=None, state=None, supported_features=None, template_registrations=None, templates=None, template_subscriptions=None, updated_at=None, username=None, zone_count=None, local_vars_configuration=None):  # noqa: E501
@@ -470,7 +467,7 @@ class VirtualizationRealm(object):
 
 
         :return: The created_at of this VirtualizationRealm.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._created_at
 
@@ -480,7 +477,7 @@ class VirtualizationRealm(object):
 
 
         :param created_at: The created_at of this VirtualizationRealm.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._created_at = created_at
@@ -491,7 +488,7 @@ class VirtualizationRealm(object):
 
 
         :return: The date_last_reachable of this VirtualizationRealm.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._date_last_reachable
 
@@ -501,7 +498,7 @@ class VirtualizationRealm(object):
 
 
         :param date_last_reachable: The date_last_reachable of this VirtualizationRealm.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._date_last_reachable = date_last_reachable
@@ -1087,7 +1084,7 @@ class VirtualizationRealm(object):
 
 
         :return: The updated_at of this VirtualizationRealm.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._updated_at
 
@@ -1097,7 +1094,7 @@ class VirtualizationRealm(object):
 
 
         :param updated_at: The updated_at of this VirtualizationRealm.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._updated_at = updated_at

@@ -49,27 +49,165 @@ class DockerRegistrySubmissionEndpoint(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'host': 'str',
+        'id': 'int',
+        'port': 'int',
+        'type': 'str',
+        'subtype': 'str',
         'image_name': 'str',
         'image_tag': 'str'
     }
 
     attribute_map = {
+        'host': 'host',
+        'id': 'id',
+        'port': 'port',
+        'type': 'type',
+        'subtype': 'subtype',
         'image_name': 'imageName',
         'image_tag': 'imageTag'
     }
 
-    def __init__(self, image_name=None, image_tag=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, host=None, id=None, port=None, type=None, subtype=None, image_name=None, image_tag=None, local_vars_configuration=None):  # noqa: E501
         """DockerRegistrySubmissionEndpoint - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._host = None
+        self._id = None
+        self._port = None
+        self._type = None
+        self._subtype = None
         self._image_name = None
         self._image_tag = None
         self.discriminator = None
 
+        self.host = host
+        if id is not None:
+            self.id = id
+        if port is not None:
+            self.port = port
+        if type is not None:
+            self.type = type
+        self.subtype = subtype
         self.image_name = image_name
         self.image_tag = image_tag
+
+    @property
+    def host(self):
+        """Gets the host of this DockerRegistrySubmissionEndpoint.  # noqa: E501
+
+
+        :return: The host of this DockerRegistrySubmissionEndpoint.  # noqa: E501
+        :rtype: str
+        """
+        return self._host
+
+    @host.setter
+    def host(self, host):
+        """Sets the host of this DockerRegistrySubmissionEndpoint.
+
+
+        :param host: The host of this DockerRegistrySubmissionEndpoint.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and host is None:  # noqa: E501
+            raise ValueError("Invalid value for `host`, must not be `None`")  # noqa: E501
+
+        self._host = host
+
+    @property
+    def id(self):
+        """Gets the id of this DockerRegistrySubmissionEndpoint.  # noqa: E501
+
+
+        :return: The id of this DockerRegistrySubmissionEndpoint.  # noqa: E501
+        :rtype: int
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this DockerRegistrySubmissionEndpoint.
+
+
+        :param id: The id of this DockerRegistrySubmissionEndpoint.  # noqa: E501
+        :type: int
+        """
+
+        self._id = id
+
+    @property
+    def port(self):
+        """Gets the port of this DockerRegistrySubmissionEndpoint.  # noqa: E501
+
+
+        :return: The port of this DockerRegistrySubmissionEndpoint.  # noqa: E501
+        :rtype: int
+        """
+        return self._port
+
+    @port.setter
+    def port(self, port):
+        """Sets the port of this DockerRegistrySubmissionEndpoint.
+
+
+        :param port: The port of this DockerRegistrySubmissionEndpoint.  # noqa: E501
+        :type: int
+        """
+
+        self._port = port
+
+    @property
+    def type(self):
+        """Gets the type of this DockerRegistrySubmissionEndpoint.  # noqa: E501
+
+
+        :return: The type of this DockerRegistrySubmissionEndpoint.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this DockerRegistrySubmissionEndpoint.
+
+
+        :param type: The type of this DockerRegistrySubmissionEndpoint.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["DockerRegistryEndpoint", "SFTPEndpoint"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                .format(type, allowed_values)
+            )
+
+        self._type = type
+
+    @property
+    def subtype(self):
+        """Gets the subtype of this DockerRegistrySubmissionEndpoint.  # noqa: E501
+
+
+        :return: The subtype of this DockerRegistrySubmissionEndpoint.  # noqa: E501
+        :rtype: str
+        """
+        return self._subtype
+
+    @subtype.setter
+    def subtype(self, subtype):
+        """Sets the subtype of this DockerRegistrySubmissionEndpoint.
+
+
+        :param subtype: The subtype of this DockerRegistrySubmissionEndpoint.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
+            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
+
+        self._subtype = subtype
 
     @property
     def image_name(self):

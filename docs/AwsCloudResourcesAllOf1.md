@@ -1,9 +1,12 @@
-# BasicSoftwareAssetAllOf
+# AwsCloudResourcesAllOf1
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**software_type** | **str** |  | [optional] 
+**availability_zone_names** | **list[str]** |  | [optional] 
+**instance_type_names** | **list[str]** |  | [optional] 
+**nat_image_names** | **list[str]** |  | [optional] 
+**region_names** | **list[str]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

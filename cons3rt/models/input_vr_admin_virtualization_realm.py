@@ -71,10 +71,7 @@ class InputVRAdminVirtualizationRealm(object):
     }
 
     discriminator_value_class_map = {
-        'InputVRAdminVCloudVirtualizationRealm': 'InputVRAdminVCloudVirtualizationRealm',
-        'InputVRAdminAwsVirtualizationRealm': 'InputVRAdminAwsVirtualizationRealm',
-        'InputVRAdminAzureVirtualizationRealm': 'InputVRAdminAzureVirtualizationRealm',
-        'InputVRAdminOpenStackVirtualizationRealm': 'InputVRAdminOpenStackVirtualizationRealm'
+        
     }
 
     def __init__(self, virtualization_realm_type=None, id=None, additional_networks=None, cidr=None, cons3rt_network=None, default_windows_domain_name=None, description=None, name=None, local_vars_configuration=None):  # noqa: E501

@@ -37,7 +37,7 @@ __maintainer__ = 'API Support'
 __email__ = 'support@cons3rt.com'
 
 
-class BasicSoftwareAssetAllOf(object):
+class ContainerComponentAllOf1(object):
     """NOTE: This class is auto-generated. Do not edit the class manually.
     """
 
@@ -49,51 +49,45 @@ class BasicSoftwareAssetAllOf(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'software_type': 'str'
+        'configuration': 'ContainerConfiguration'
     }
 
     attribute_map = {
-        'software_type': 'softwareType'
+        'configuration': 'configuration'
     }
 
-    def __init__(self, software_type=None, local_vars_configuration=None):  # noqa: E501
-        """BasicSoftwareAssetAllOf - a model defined in OpenAPI"""  # noqa: E501
+    def __init__(self, configuration=None, local_vars_configuration=None):  # noqa: E501
+        """ContainerComponentAllOf1 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._software_type = None
+        self._configuration = None
         self.discriminator = None
 
-        if software_type is not None:
-            self.software_type = software_type
+        if configuration is not None:
+            self.configuration = configuration
 
     @property
-    def software_type(self):
-        """Gets the software_type of this BasicSoftwareAssetAllOf.  # noqa: E501
+    def configuration(self):
+        """Gets the configuration of this ContainerComponentAllOf1.  # noqa: E501
 
 
-        :return: The software_type of this BasicSoftwareAssetAllOf.  # noqa: E501
-        :rtype: str
+        :return: The configuration of this ContainerComponentAllOf1.  # noqa: E501
+        :rtype: ContainerConfiguration
         """
-        return self._software_type
+        return self._configuration
 
-    @software_type.setter
-    def software_type(self, software_type):
-        """Sets the software_type of this BasicSoftwareAssetAllOf.
+    @configuration.setter
+    def configuration(self, configuration):
+        """Sets the configuration of this ContainerComponentAllOf1.
 
 
-        :param software_type: The software_type of this BasicSoftwareAssetAllOf.  # noqa: E501
-        :type: str
+        :param configuration: The configuration of this ContainerComponentAllOf1.  # noqa: E501
+        :type: ContainerConfiguration
         """
-        allowed_values = ["APPLICATION", "SOURCE_CODE", "TEST_TOOL"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and software_type not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `software_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(software_type, allowed_values)
-            )
 
-        self._software_type = software_type
+        self._configuration = configuration
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -129,14 +123,14 @@ class BasicSoftwareAssetAllOf(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, BasicSoftwareAssetAllOf):
+        if not isinstance(other, ContainerComponentAllOf1):
             return False
 
         return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        if not isinstance(other, BasicSoftwareAssetAllOf):
+        if not isinstance(other, ContainerComponentAllOf1):
             return True
 
         return self.to_dict() != other.to_dict()

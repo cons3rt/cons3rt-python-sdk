@@ -99,10 +99,7 @@ class InputVirtualizationRealm(object):
     }
 
     discriminator_value_class_map = {
-        'InputOpenStackVirtualizationRealm': 'InputOpenStackVirtualizationRealm',
-        'InputAzureVirtualizationRealm': 'InputAzureVirtualizationRealm',
-        'InputVCloudVirtualizationRealm': 'InputVCloudVirtualizationRealm',
-        'InputAwsVirtualizationRealm': 'InputAwsVirtualizationRealm'
+        
     }
 
     def __init__(self, virtualization_realm_type=None, access_point=None, account_id=None, cidr=None, default_windows_domain_name=None, description=None, id=None, local_storage_name=None, maximum_num_cpus=None, maximum_num_gpus=None, maximum_ram_in_megabytes=None, maximum_storage_in_megabytes=None, maximum_virtual_machines=None, name=None, password=None, power_on_delay_base=None, power_on_initial_delay_base=None, power_on_minimum_delay=None, remote_access_config=None, state=None, username=None, zone_count=None, local_vars_configuration=None):  # noqa: E501

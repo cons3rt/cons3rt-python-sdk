@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**subtype** | **str** |  | 
 **external_network_names** | **list[str]** |  | [optional] 
 **provider_vdc_names** | **list[str]** |  | [optional] 
 **vdc_network_pool_names** | **list[str]** |  | [optional] 

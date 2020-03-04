@@ -49,27 +49,80 @@ class InputDockerRegistrySubmissionEndpointForAssetSubmission(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'port': 'int',
+        'subtype': 'str',
         'image_name': 'str',
         'image_tag': 'str'
     }
 
     attribute_map = {
+        'port': 'port',
+        'subtype': 'subtype',
         'image_name': 'imageName',
         'image_tag': 'imageTag'
     }
 
-    def __init__(self, image_name=None, image_tag=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, port=None, subtype=None, image_name=None, image_tag=None, local_vars_configuration=None):  # noqa: E501
         """InputDockerRegistrySubmissionEndpointForAssetSubmission - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._port = None
+        self._subtype = None
         self._image_name = None
         self._image_tag = None
         self.discriminator = None
 
+        if port is not None:
+            self.port = port
+        self.subtype = subtype
         self.image_name = image_name
         self.image_tag = image_tag
+
+    @property
+    def port(self):
+        """Gets the port of this InputDockerRegistrySubmissionEndpointForAssetSubmission.  # noqa: E501
+
+
+        :return: The port of this InputDockerRegistrySubmissionEndpointForAssetSubmission.  # noqa: E501
+        :rtype: int
+        """
+        return self._port
+
+    @port.setter
+    def port(self, port):
+        """Sets the port of this InputDockerRegistrySubmissionEndpointForAssetSubmission.
+
+
+        :param port: The port of this InputDockerRegistrySubmissionEndpointForAssetSubmission.  # noqa: E501
+        :type: int
+        """
+
+        self._port = port
+
+    @property
+    def subtype(self):
+        """Gets the subtype of this InputDockerRegistrySubmissionEndpointForAssetSubmission.  # noqa: E501
+
+
+        :return: The subtype of this InputDockerRegistrySubmissionEndpointForAssetSubmission.  # noqa: E501
+        :rtype: str
+        """
+        return self._subtype
+
+    @subtype.setter
+    def subtype(self, subtype):
+        """Sets the subtype of this InputDockerRegistrySubmissionEndpointForAssetSubmission.
+
+
+        :param subtype: The subtype of this InputDockerRegistrySubmissionEndpointForAssetSubmission.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
+            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
+
+        self._subtype = subtype
 
     @property
     def image_name(self):

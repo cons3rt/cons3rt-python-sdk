@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**subtype** | **str** |  | 
 **images** | [**list[ImageReferenceDTO]**](ImageReferenceDTO.md) |  | [optional] 
 **instance_types** | **list[str]** |  | [optional] 
 

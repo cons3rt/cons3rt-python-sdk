@@ -57,9 +57,7 @@ class InputSystemModule(object):
     }
 
     discriminator_value_class_map = {
-        'InputPhysicalHost': 'InputPhysicalHost',
-        'InputAppliance': 'InputAppliance',
-        'InputVirtualHost': 'InputVirtualHost'
+        
     }
 
     def __init__(self, subtype=None, local_vars_configuration=None):  # noqa: E501
