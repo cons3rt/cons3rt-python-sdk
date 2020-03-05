@@ -54,7 +54,7 @@ class ProjectLimits(object):
         'max_ram_in_megabytes': 'int',
         'max_storage_in_megabytes': 'int',
         'max_virtual_machines': 'int',
-        'valid_until': 'datetime'
+        'valid_until': 'int'
     }
 
     attribute_map = {
@@ -224,7 +224,7 @@ class ProjectLimits(object):
 
 
         :return: The valid_until of this ProjectLimits.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._valid_until
 
@@ -234,7 +234,7 @@ class ProjectLimits(object):
 
 
         :param valid_until: The valid_until of this ProjectLimits.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._valid_until = valid_until

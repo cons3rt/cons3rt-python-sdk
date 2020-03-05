@@ -60,8 +60,8 @@ class FullAwsVirtualizationRealmAllOf(object):
         'admin_users': 'list[MinimalUser]',
         'allocated': 'bool',
         'cloud': 'MinimalCloud',
-        'created_at': 'datetime',
-        'date_last_reachable': 'datetime',
+        'created_at': 'int',
+        'date_last_reachable': 'int',
         'description': 'str',
         'default_windows_domain_name': 'str',
         'local_storage_name': 'str',
@@ -84,7 +84,7 @@ class FullAwsVirtualizationRealmAllOf(object):
         'template_registrations': 'list[MinimalTemplateRegistration]',
         'templates': 'list[MinimalCons3rtTemplateData]',
         'template_subscriptions': 'list[MinimalTemplateSubscription]',
-        'updated_at': 'datetime',
+        'updated_at': 'int',
         'username': 'str',
         'zone_count': 'int'
     }
@@ -503,7 +503,7 @@ class FullAwsVirtualizationRealmAllOf(object):
 
 
         :return: The created_at of this FullAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._created_at
 
@@ -513,7 +513,7 @@ class FullAwsVirtualizationRealmAllOf(object):
 
 
         :param created_at: The created_at of this FullAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._created_at = created_at
@@ -524,7 +524,7 @@ class FullAwsVirtualizationRealmAllOf(object):
 
 
         :return: The date_last_reachable of this FullAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._date_last_reachable
 
@@ -534,7 +534,7 @@ class FullAwsVirtualizationRealmAllOf(object):
 
 
         :param date_last_reachable: The date_last_reachable of this FullAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._date_last_reachable = date_last_reachable
@@ -1053,7 +1053,7 @@ class FullAwsVirtualizationRealmAllOf(object):
 
 
         :return: The updated_at of this FullAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._updated_at
 
@@ -1063,7 +1063,7 @@ class FullAwsVirtualizationRealmAllOf(object):
 
 
         :param updated_at: The updated_at of this FullAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._updated_at = updated_at

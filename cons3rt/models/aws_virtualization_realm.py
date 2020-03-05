@@ -58,8 +58,8 @@ class AwsVirtualizationRealm(object):
         'allocated': 'bool',
         'cidr': 'str',
         'cloud': 'Cloud',
-        'created_at': 'datetime',
-        'date_last_reachable': 'datetime',
+        'created_at': 'int',
+        'date_last_reachable': 'int',
         'default_windows_domain_name': 'str',
         'description': 'str',
         'id': 'int',
@@ -85,7 +85,7 @@ class AwsVirtualizationRealm(object):
         'template_registrations': 'list[TemplateRegistration]',
         'templates': 'list[Cons3rtTemplateData]',
         'template_subscriptions': 'list[TemplateSubscription]',
-        'updated_at': 'datetime',
+        'updated_at': 'int',
         'username': 'str',
         'zone_count': 'int',
         'nat_image_id': 'str',
@@ -518,7 +518,7 @@ class AwsVirtualizationRealm(object):
 
 
         :return: The created_at of this AwsVirtualizationRealm.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._created_at
 
@@ -528,7 +528,7 @@ class AwsVirtualizationRealm(object):
 
 
         :param created_at: The created_at of this AwsVirtualizationRealm.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._created_at = created_at
@@ -539,7 +539,7 @@ class AwsVirtualizationRealm(object):
 
 
         :return: The date_last_reachable of this AwsVirtualizationRealm.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._date_last_reachable
 
@@ -549,7 +549,7 @@ class AwsVirtualizationRealm(object):
 
 
         :param date_last_reachable: The date_last_reachable of this AwsVirtualizationRealm.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._date_last_reachable = date_last_reachable
@@ -1135,7 +1135,7 @@ class AwsVirtualizationRealm(object):
 
 
         :return: The updated_at of this AwsVirtualizationRealm.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._updated_at
 
@@ -1145,7 +1145,7 @@ class AwsVirtualizationRealm(object):
 
 
         :param updated_at: The updated_at of this AwsVirtualizationRealm.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._updated_at = updated_at

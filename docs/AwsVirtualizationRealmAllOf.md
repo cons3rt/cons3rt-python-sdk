@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **allocated** | **bool** |  | [optional] 
 **cidr** | **str** |  | 
 **cloud** | [**Cloud**](Cloud.md) |  | [optional] 
-**created_at** | **datetime** |  | [optional] 
-**date_last_reachable** | **datetime** |  | [optional] 
+**created_at** | **int** |  | [optional] 
+**date_last_reachable** | **int** |  | [optional] 
 **default_windows_domain_name** | **str** |  | [optional] 
 **description** | **str** |  | 
 **id** | **int** |  | [optional] 
@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 **template_registrations** | [**list[TemplateRegistration]**](TemplateRegistration.md) |  | [optional] 
 **templates** | [**list[Cons3rtTemplateData]**](Cons3rtTemplateData.md) |  | [optional] 
 **template_subscriptions** | [**list[TemplateSubscription]**](TemplateSubscription.md) |  | [optional] 
-**updated_at** | **datetime** |  | [optional] 
+**updated_at** | **int** |  | [optional] 
 **username** | **str** |  | 
 **zone_count** | **int** |  | [optional] 
 

@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **admin_users** | [**list[MinimalUser]**](MinimalUser.md) |  | [optional] 
 **allocated** | **bool** |  | [optional] 
 **cloud** | [**MinimalCloud**](MinimalCloud.md) |  | [optional] 
-**created_at** | **datetime** |  | [optional] 
-**date_last_reachable** | **datetime** |  | [optional] 
+**created_at** | **int** |  | [optional] 
+**date_last_reachable** | **int** |  | [optional] 
 **description** | **str** |  | 
 **default_windows_domain_name** | **str** |  | [optional] 
 **local_storage_name** | **str** |  | [optional] 
@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 **template_registrations** | [**list[MinimalTemplateRegistration]**](MinimalTemplateRegistration.md) |  | [optional] 
 **templates** | [**list[MinimalCons3rtTemplateData]**](MinimalCons3rtTemplateData.md) |  | [optional] 
 **template_subscriptions** | [**list[MinimalTemplateSubscription]**](MinimalTemplateSubscription.md) |  | [optional] 
-**updated_at** | **datetime** |  | [optional] 
+**updated_at** | **int** |  | [optional] 
 **username** | **str** |  | 
 **zone_count** | **int** |  | [optional] 
 **nat_image_id** | **str** |  | [optional] 

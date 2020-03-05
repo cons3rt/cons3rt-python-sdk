@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created_at** | **datetime** |  | [optional] 
-**updated_at** | **datetime** |  | [optional] 
+**created_at** | **int** |  | [optional] 
+**updated_at** | **int** |  | [optional] 
 **administered_clouds** | [**list[Cloud]**](Cloud.md) |  | [optional] 
 **administered_virt_realms** | [**list[VirtualizationRealm]**](VirtualizationRealm.md) |  | [optional] 
 **certificates** | [**list[Certificate]**](Certificate.md) |  | [optional] 

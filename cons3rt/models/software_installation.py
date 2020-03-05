@@ -52,11 +52,11 @@ class SoftwareInstallation(object):
         'asset_id': 'int',
         'asset_name': 'str',
         'average_installation_time': 'int',
-        'end_date': 'datetime',
+        'end_date': 'int',
         'error': 'str',
         'id': 'int',
         'load_order': 'int',
-        'start_date': 'datetime',
+        'start_date': 'int',
         'status': 'str',
         'subtype': 'str',
         'asset_type': 'str',
@@ -196,7 +196,7 @@ class SoftwareInstallation(object):
 
 
         :return: The end_date of this SoftwareInstallation.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._end_date
 
@@ -206,7 +206,7 @@ class SoftwareInstallation(object):
 
 
         :param end_date: The end_date of this SoftwareInstallation.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._end_date = end_date
@@ -280,7 +280,7 @@ class SoftwareInstallation(object):
 
 
         :return: The start_date of this SoftwareInstallation.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._start_date
 
@@ -290,7 +290,7 @@ class SoftwareInstallation(object):
 
 
         :param start_date: The start_date of this SoftwareInstallation.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._start_date = start_date

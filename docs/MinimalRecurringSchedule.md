@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
 **complete** | **bool** |  | [optional] 
-**end_date** | **datetime** |  | [optional] 
+**end_date** | **int** |  | [optional] 
 **max_iterations** | **int** |  | [optional] 
 **deployment_run_options** | [**MinimalDeploymentRunOptions**](MinimalDeploymentRunOptions.md) |  | 
 **remaining_iterations** | **int** |  | [optional] 
