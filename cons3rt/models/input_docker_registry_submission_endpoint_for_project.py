@@ -49,17 +49,109 @@ class InputDockerRegistrySubmissionEndpointForProject(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'host': 'str',
+        'port': 'int',
+        'subtype': 'str'
     }
 
     attribute_map = {
+        'host': 'host',
+        'port': 'port',
+        'subtype': 'subtype'
     }
 
-    def __init__(self, local_vars_configuration=None):  # noqa: E501
+    discriminator_value_class_map = {
+        
+    }
+
+    def __init__(self, host=None, port=None, subtype=None, local_vars_configuration=None):  # noqa: E501
         """InputDockerRegistrySubmissionEndpointForProject - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
-        self.discriminator = None
+
+        self._host = None
+        self._port = None
+        self._subtype = None
+        self.discriminator = 'subtype'
+
+        self.host = host
+        if port is not None:
+            self.port = port
+        self.subtype = subtype
+
+    @property
+    def host(self):
+        """Gets the host of this InputDockerRegistrySubmissionEndpointForProject.  # noqa: E501
+
+
+        :return: The host of this InputDockerRegistrySubmissionEndpointForProject.  # noqa: E501
+        :rtype: str
+        """
+        return self._host
+
+    @host.setter
+    def host(self, host):
+        """Sets the host of this InputDockerRegistrySubmissionEndpointForProject.
+
+
+        :param host: The host of this InputDockerRegistrySubmissionEndpointForProject.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and host is None:  # noqa: E501
+            raise ValueError("Invalid value for `host`, must not be `None`")  # noqa: E501
+
+        self._host = host
+
+    @property
+    def port(self):
+        """Gets the port of this InputDockerRegistrySubmissionEndpointForProject.  # noqa: E501
+
+
+        :return: The port of this InputDockerRegistrySubmissionEndpointForProject.  # noqa: E501
+        :rtype: int
+        """
+        return self._port
+
+    @port.setter
+    def port(self, port):
+        """Sets the port of this InputDockerRegistrySubmissionEndpointForProject.
+
+
+        :param port: The port of this InputDockerRegistrySubmissionEndpointForProject.  # noqa: E501
+        :type: int
+        """
+
+        self._port = port
+
+    @property
+    def subtype(self):
+        """Gets the subtype of this InputDockerRegistrySubmissionEndpointForProject.  # noqa: E501
+
+
+        :return: The subtype of this InputDockerRegistrySubmissionEndpointForProject.  # noqa: E501
+        :rtype: str
+        """
+        return self._subtype
+
+    @subtype.setter
+    def subtype(self, subtype):
+        """Sets the subtype of this InputDockerRegistrySubmissionEndpointForProject.
+
+
+        :param subtype: The subtype of this InputDockerRegistrySubmissionEndpointForProject.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
+            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
+
+        self._subtype = subtype
+
+    def get_real_child_model(self, data):
+        """Returns the real base class specified by the discriminator"""
+        discriminator_key = self.attribute_map[self.discriminator]
+        discriminator_value = data[discriminator_key]
+        return self.discriminator_value_class_map.get(discriminator_value)
 
     def to_dict(self):
         """Returns the model properties as a dict"""

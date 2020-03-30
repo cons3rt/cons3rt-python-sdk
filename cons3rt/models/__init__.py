@@ -46,7 +46,6 @@ from cons3rt.models.add_open_stack_network_request_all_of import AddOpenStackNet
 from cons3rt.models.add_vcloud_network_request import AddVcloudNetworkRequest
 from cons3rt.models.add_vcloud_network_request_all_of import AddVcloudNetworkRequestAllOf
 from cons3rt.models.appliance import Appliance
-from cons3rt.models.appliance_all_of import ApplianceAllOf
 from cons3rt.models.asset import Asset
 from cons3rt.models.aws_client import AwsClient
 from cons3rt.models.aws_client_all_of import AwsClientAllOf
@@ -75,7 +74,6 @@ from cons3rt.models.azure_cloud_space_request_all_of import AzureCloudSpaceReque
 from cons3rt.models.azure_virtualization_realm import AzureVirtualizationRealm
 from cons3rt.models.azure_virtualization_realm_all_of import AzureVirtualizationRealmAllOf
 from cons3rt.models.basic_appliance import BasicAppliance
-from cons3rt.models.basic_appliance_all_of import BasicApplianceAllOf
 from cons3rt.models.basic_asset import BasicAsset
 from cons3rt.models.basic_container_asset import BasicContainerAsset
 from cons3rt.models.basic_deployment import BasicDeployment
@@ -83,6 +81,7 @@ from cons3rt.models.basic_device import BasicDevice
 from cons3rt.models.basic_physical_host import BasicPhysicalHost
 from cons3rt.models.basic_physical_machine import BasicPhysicalMachine
 from cons3rt.models.basic_physical_machine_all_of import BasicPhysicalMachineAllOf
+from cons3rt.models.basic_physical_machine_all_of1 import BasicPhysicalMachineAllOf1
 from cons3rt.models.basic_scenario import BasicScenario
 from cons3rt.models.basic_software_asset import BasicSoftwareAsset
 from cons3rt.models.basic_software_asset_all_of import BasicSoftwareAssetAllOf
@@ -119,6 +118,7 @@ from cons3rt.models.deployment_host import DeploymentHost
 from cons3rt.models.deployment_run_options import DeploymentRunOptions
 from cons3rt.models.device import Device
 from cons3rt.models.device_all_of import DeviceAllOf
+from cons3rt.models.device_all_of1 import DeviceAllOf1
 from cons3rt.models.disk import Disk
 from cons3rt.models.dnat_rule import DnatRule
 from cons3rt.models.docker_registry_submission_endpoint import DockerRegistrySubmissionEndpoint
@@ -185,13 +185,13 @@ from cons3rt.models.host_option import HostOption
 from cons3rt.models.image_reference_dto import ImageReferenceDTO
 from cons3rt.models.inactive_composition_status import InactiveCompositionStatus
 from cons3rt.models.inactive_composition_status_all_of import InactiveCompositionStatusAllOf
+from cons3rt.models.inline_object import InlineObject
 from cons3rt.models.input_abstract_component import InputAbstractComponent
 from cons3rt.models.input_appliance import InputAppliance
 from cons3rt.models.input_appliance_all_of import InputApplianceAllOf
 from cons3rt.models.input_asset import InputAsset
 from cons3rt.models.input_asset_for_update import InputAssetForUpdate
 from cons3rt.models.input_aws_client import InputAwsClient
-from cons3rt.models.input_aws_client_all_of import InputAwsClientAllOf
 from cons3rt.models.input_aws_cloud import InputAwsCloud
 from cons3rt.models.input_aws_cloud_all_of import InputAwsCloudAllOf
 from cons3rt.models.input_aws_virtualization_realm import InputAwsVirtualizationRealm
@@ -221,7 +221,6 @@ from cons3rt.models.input_disk_for_template import InputDiskForTemplate
 from cons3rt.models.input_docker_registry_submission_endpoint_for_asset_submission import InputDockerRegistrySubmissionEndpointForAssetSubmission
 from cons3rt.models.input_docker_registry_submission_endpoint_for_asset_submission_all_of import InputDockerRegistrySubmissionEndpointForAssetSubmissionAllOf
 from cons3rt.models.input_docker_registry_submission_endpoint_for_project import InputDockerRegistrySubmissionEndpointForProject
-from cons3rt.models.input_docker_registry_submission_endpoint_for_project_all_of import InputDockerRegistrySubmissionEndpointForProjectAllOf
 from cons3rt.models.input_file_form import InputFileForm
 from cons3rt.models.input_host_option import InputHostOption
 from cons3rt.models.input_metadata import InputMetadata
@@ -247,6 +246,7 @@ from cons3rt.models.input_remote_access_template import InputRemoteAccessTemplat
 from cons3rt.models.input_sftp_submission_endpoint_for_asset_submission import InputSFTPSubmissionEndpointForAssetSubmission
 from cons3rt.models.input_sftp_submission_endpoint_for_asset_submission_all_of import InputSFTPSubmissionEndpointForAssetSubmissionAllOf
 from cons3rt.models.input_sftp_submission_endpoint_for_project import InputSFTPSubmissionEndpointForProject
+from cons3rt.models.input_sftp_submission_endpoint_for_project_all_of import InputSFTPSubmissionEndpointForProjectAllOf
 from cons3rt.models.input_scenario import InputScenario
 from cons3rt.models.input_scenario_full import InputScenarioFull
 from cons3rt.models.input_scenario_host import InputScenarioHost
@@ -271,7 +271,6 @@ from cons3rt.models.input_v_cloud_client import InputVCloudClient
 from cons3rt.models.input_v_cloud_cloud import InputVCloudCloud
 from cons3rt.models.input_v_cloud_virtualization_realm import InputVCloudVirtualizationRealm
 from cons3rt.models.input_vr_admin_aws_virtualization_realm import InputVRAdminAwsVirtualizationRealm
-from cons3rt.models.input_vr_admin_aws_virtualization_realm_all_of import InputVRAdminAwsVirtualizationRealmAllOf
 from cons3rt.models.input_vr_admin_azure_virtualization_realm import InputVRAdminAzureVirtualizationRealm
 from cons3rt.models.input_vr_admin_open_stack_virtualization_realm import InputVRAdminOpenStackVirtualizationRealm
 from cons3rt.models.input_vr_admin_v_cloud_virtualization_realm import InputVRAdminVCloudVirtualizationRealm
@@ -290,7 +289,6 @@ from cons3rt.models.metadata import Metadata
 from cons3rt.models.metadata_docs_license import MetadataDocsLicense
 from cons3rt.models.minimal_abstract_component import MinimalAbstractComponent
 from cons3rt.models.minimal_appliance import MinimalAppliance
-from cons3rt.models.minimal_appliance_all_of import MinimalApplianceAllOf
 from cons3rt.models.minimal_asset import MinimalAsset
 from cons3rt.models.minimal_category import MinimalCategory
 from cons3rt.models.minimal_cloud import MinimalCloud

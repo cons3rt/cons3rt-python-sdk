@@ -37,7 +37,7 @@ __maintainer__ = 'API Support'
 __email__ = 'support@cons3rt.com'
 
 
-class InputDockerRegistrySubmissionEndpointForProjectAllOf(object):
+class InlineObject(object):
     """NOTE: This class is auto-generated. Do not edit the class manually.
     """
 
@@ -49,99 +49,71 @@ class InputDockerRegistrySubmissionEndpointForProjectAllOf(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'host': 'str',
-        'port': 'int',
-        'subtype': 'str'
+        'filename': 'str',
+        'file': 'file'
     }
 
     attribute_map = {
-        'host': 'host',
-        'port': 'port',
-        'subtype': 'subtype'
+        'filename': 'filename',
+        'file': 'file'
     }
 
-    def __init__(self, host=None, port=None, subtype=None, local_vars_configuration=None):  # noqa: E501
-        """InputDockerRegistrySubmissionEndpointForProjectAllOf - a model defined in OpenAPI"""  # noqa: E501
+    def __init__(self, filename=None, file=None, local_vars_configuration=None):  # noqa: E501
+        """InlineObject - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._host = None
-        self._port = None
-        self._subtype = None
+        self._filename = None
+        self._file = None
         self.discriminator = None
 
-        self.host = host
-        if port is not None:
-            self.port = port
-        self.subtype = subtype
+        if filename is not None:
+            self.filename = filename
+        if file is not None:
+            self.file = file
 
     @property
-    def host(self):
-        """Gets the host of this InputDockerRegistrySubmissionEndpointForProjectAllOf.  # noqa: E501
+    def filename(self):
+        """Gets the filename of this InlineObject.  # noqa: E501
 
 
-        :return: The host of this InputDockerRegistrySubmissionEndpointForProjectAllOf.  # noqa: E501
+        :return: The filename of this InlineObject.  # noqa: E501
         :rtype: str
         """
-        return self._host
+        return self._filename
 
-    @host.setter
-    def host(self, host):
-        """Sets the host of this InputDockerRegistrySubmissionEndpointForProjectAllOf.
+    @filename.setter
+    def filename(self, filename):
+        """Sets the filename of this InlineObject.
 
 
-        :param host: The host of this InputDockerRegistrySubmissionEndpointForProjectAllOf.  # noqa: E501
+        :param filename: The filename of this InlineObject.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and host is None:  # noqa: E501
-            raise ValueError("Invalid value for `host`, must not be `None`")  # noqa: E501
 
-        self._host = host
+        self._filename = filename
 
     @property
-    def port(self):
-        """Gets the port of this InputDockerRegistrySubmissionEndpointForProjectAllOf.  # noqa: E501
+    def file(self):
+        """Gets the file of this InlineObject.  # noqa: E501
 
 
-        :return: The port of this InputDockerRegistrySubmissionEndpointForProjectAllOf.  # noqa: E501
-        :rtype: int
+        :return: The file of this InlineObject.  # noqa: E501
+        :rtype: file
         """
-        return self._port
+        return self._file
 
-    @port.setter
-    def port(self, port):
-        """Sets the port of this InputDockerRegistrySubmissionEndpointForProjectAllOf.
+    @file.setter
+    def file(self, file):
+        """Sets the file of this InlineObject.
 
 
-        :param port: The port of this InputDockerRegistrySubmissionEndpointForProjectAllOf.  # noqa: E501
-        :type: int
+        :param file: The file of this InlineObject.  # noqa: E501
+        :type: file
         """
 
-        self._port = port
-
-    @property
-    def subtype(self):
-        """Gets the subtype of this InputDockerRegistrySubmissionEndpointForProjectAllOf.  # noqa: E501
-
-
-        :return: The subtype of this InputDockerRegistrySubmissionEndpointForProjectAllOf.  # noqa: E501
-        :rtype: str
-        """
-        return self._subtype
-
-    @subtype.setter
-    def subtype(self, subtype):
-        """Sets the subtype of this InputDockerRegistrySubmissionEndpointForProjectAllOf.
-
-
-        :param subtype: The subtype of this InputDockerRegistrySubmissionEndpointForProjectAllOf.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
-            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
-
-        self._subtype = subtype
+        self._file = file
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -177,14 +149,14 @@ class InputDockerRegistrySubmissionEndpointForProjectAllOf(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, InputDockerRegistrySubmissionEndpointForProjectAllOf):
+        if not isinstance(other, InlineObject):
             return False
 
         return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        if not isinstance(other, InputDockerRegistrySubmissionEndpointForProjectAllOf):
+        if not isinstance(other, InlineObject):
             return True
 
         return self.to_dict() != other.to_dict()

@@ -37,7 +37,7 @@ __maintainer__ = 'API Support'
 __email__ = 'support@cons3rt.com'
 
 
-class InputAwsClientAllOf(object):
+class DeviceAllOf1(object):
     """NOTE: This class is auto-generated. Do not edit the class manually.
     """
 
@@ -49,100 +49,97 @@ class InputAwsClientAllOf(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'username': 'str',
-        'password': 'str',
-        'subtype': 'str'
+        'hostname': 'str',
+        'ip_address': 'str',
+        'mac_address': 'str'
     }
 
     attribute_map = {
-        'username': 'username',
-        'password': 'password',
-        'subtype': 'subtype'
+        'hostname': 'hostname',
+        'ip_address': 'ipAddress',
+        'mac_address': 'macAddress'
     }
 
-    def __init__(self, username=None, password=None, subtype=None, local_vars_configuration=None):  # noqa: E501
-        """InputAwsClientAllOf - a model defined in OpenAPI"""  # noqa: E501
+    def __init__(self, hostname=None, ip_address=None, mac_address=None, local_vars_configuration=None):  # noqa: E501
+        """DeviceAllOf1 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._username = None
-        self._password = None
-        self._subtype = None
+        self._hostname = None
+        self._ip_address = None
+        self._mac_address = None
         self.discriminator = None
 
-        self.username = username
-        self.password = password
-        self.subtype = subtype
+        if hostname is not None:
+            self.hostname = hostname
+        if ip_address is not None:
+            self.ip_address = ip_address
+        if mac_address is not None:
+            self.mac_address = mac_address
 
     @property
-    def username(self):
-        """Gets the username of this InputAwsClientAllOf.  # noqa: E501
+    def hostname(self):
+        """Gets the hostname of this DeviceAllOf1.  # noqa: E501
 
 
-        :return: The username of this InputAwsClientAllOf.  # noqa: E501
+        :return: The hostname of this DeviceAllOf1.  # noqa: E501
         :rtype: str
         """
-        return self._username
+        return self._hostname
 
-    @username.setter
-    def username(self, username):
-        """Sets the username of this InputAwsClientAllOf.
+    @hostname.setter
+    def hostname(self, hostname):
+        """Sets the hostname of this DeviceAllOf1.
 
 
-        :param username: The username of this InputAwsClientAllOf.  # noqa: E501
+        :param hostname: The hostname of this DeviceAllOf1.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and username is None:  # noqa: E501
-            raise ValueError("Invalid value for `username`, must not be `None`")  # noqa: E501
 
-        self._username = username
+        self._hostname = hostname
 
     @property
-    def password(self):
-        """Gets the password of this InputAwsClientAllOf.  # noqa: E501
+    def ip_address(self):
+        """Gets the ip_address of this DeviceAllOf1.  # noqa: E501
 
 
-        :return: The password of this InputAwsClientAllOf.  # noqa: E501
+        :return: The ip_address of this DeviceAllOf1.  # noqa: E501
         :rtype: str
         """
-        return self._password
+        return self._ip_address
 
-    @password.setter
-    def password(self, password):
-        """Sets the password of this InputAwsClientAllOf.
+    @ip_address.setter
+    def ip_address(self, ip_address):
+        """Sets the ip_address of this DeviceAllOf1.
 
 
-        :param password: The password of this InputAwsClientAllOf.  # noqa: E501
+        :param ip_address: The ip_address of this DeviceAllOf1.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and password is None:  # noqa: E501
-            raise ValueError("Invalid value for `password`, must not be `None`")  # noqa: E501
 
-        self._password = password
+        self._ip_address = ip_address
 
     @property
-    def subtype(self):
-        """Gets the subtype of this InputAwsClientAllOf.  # noqa: E501
+    def mac_address(self):
+        """Gets the mac_address of this DeviceAllOf1.  # noqa: E501
 
 
-        :return: The subtype of this InputAwsClientAllOf.  # noqa: E501
+        :return: The mac_address of this DeviceAllOf1.  # noqa: E501
         :rtype: str
         """
-        return self._subtype
+        return self._mac_address
 
-    @subtype.setter
-    def subtype(self, subtype):
-        """Sets the subtype of this InputAwsClientAllOf.
+    @mac_address.setter
+    def mac_address(self, mac_address):
+        """Sets the mac_address of this DeviceAllOf1.
 
 
-        :param subtype: The subtype of this InputAwsClientAllOf.  # noqa: E501
+        :param mac_address: The mac_address of this DeviceAllOf1.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
-            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
 
-        self._subtype = subtype
+        self._mac_address = mac_address
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -178,14 +175,14 @@ class InputAwsClientAllOf(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, InputAwsClientAllOf):
+        if not isinstance(other, DeviceAllOf1):
             return False
 
         return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        if not isinstance(other, InputAwsClientAllOf):
+        if not isinstance(other, DeviceAllOf1):
             return True
 
         return self.to_dict() != other.to_dict()

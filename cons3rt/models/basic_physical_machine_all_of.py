@@ -49,115 +49,266 @@ class BasicPhysicalMachineAllOf(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'architecture': 'str',
-        'bits': 'str',
-        'operating_system': 'str'
+        'id': 'str',
+        'name': 'str',
+        'description': 'str',
+        'offline': 'bool',
+        'state': 'str',
+        'visibility': 'str',
+        'creator': 'MinimalUser',
+        'owning_project': 'MinimalProject',
+        'subtype': 'str'
     }
 
     attribute_map = {
-        'architecture': 'architecture',
-        'bits': 'bits',
-        'operating_system': 'operatingSystem'
+        'id': 'id',
+        'name': 'name',
+        'description': 'description',
+        'offline': 'offline',
+        'state': 'state',
+        'visibility': 'visibility',
+        'creator': 'creator',
+        'owning_project': 'owningProject',
+        'subtype': 'subtype'
     }
 
-    def __init__(self, architecture=None, bits=None, operating_system=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, description=None, offline=None, state=None, visibility=None, creator=None, owning_project=None, subtype=None, local_vars_configuration=None):  # noqa: E501
         """BasicPhysicalMachineAllOf - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._architecture = None
-        self._bits = None
-        self._operating_system = None
+        self._id = None
+        self._name = None
+        self._description = None
+        self._offline = None
+        self._state = None
+        self._visibility = None
+        self._creator = None
+        self._owning_project = None
+        self._subtype = None
         self.discriminator = None
 
-        if architecture is not None:
-            self.architecture = architecture
-        if bits is not None:
-            self.bits = bits
-        if operating_system is not None:
-            self.operating_system = operating_system
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if description is not None:
+            self.description = description
+        if offline is not None:
+            self.offline = offline
+        if state is not None:
+            self.state = state
+        if visibility is not None:
+            self.visibility = visibility
+        if creator is not None:
+            self.creator = creator
+        if owning_project is not None:
+            self.owning_project = owning_project
+        self.subtype = subtype
 
     @property
-    def architecture(self):
-        """Gets the architecture of this BasicPhysicalMachineAllOf.  # noqa: E501
+    def id(self):
+        """Gets the id of this BasicPhysicalMachineAllOf.  # noqa: E501
 
 
-        :return: The architecture of this BasicPhysicalMachineAllOf.  # noqa: E501
+        :return: The id of this BasicPhysicalMachineAllOf.  # noqa: E501
         :rtype: str
         """
-        return self._architecture
+        return self._id
 
-    @architecture.setter
-    def architecture(self, architecture):
-        """Sets the architecture of this BasicPhysicalMachineAllOf.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this BasicPhysicalMachineAllOf.
 
 
-        :param architecture: The architecture of this BasicPhysicalMachineAllOf.  # noqa: E501
+        :param id: The id of this BasicPhysicalMachineAllOf.  # noqa: E501
         :type: str
         """
-        allowed_values = ["X86", "X64", "ARM", "SPARC", "PPCLE"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and architecture not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `architecture` ({0}), must be one of {1}"  # noqa: E501
-                .format(architecture, allowed_values)
-            )
 
-        self._architecture = architecture
+        self._id = id
 
     @property
-    def bits(self):
-        """Gets the bits of this BasicPhysicalMachineAllOf.  # noqa: E501
+    def name(self):
+        """Gets the name of this BasicPhysicalMachineAllOf.  # noqa: E501
 
 
-        :return: The bits of this BasicPhysicalMachineAllOf.  # noqa: E501
+        :return: The name of this BasicPhysicalMachineAllOf.  # noqa: E501
         :rtype: str
         """
-        return self._bits
+        return self._name
 
-    @bits.setter
-    def bits(self, bits):
-        """Sets the bits of this BasicPhysicalMachineAllOf.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this BasicPhysicalMachineAllOf.
 
 
-        :param bits: The bits of this BasicPhysicalMachineAllOf.  # noqa: E501
+        :param name: The name of this BasicPhysicalMachineAllOf.  # noqa: E501
         :type: str
         """
-        allowed_values = ["BITS32", "BITS64"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and bits not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `bits` ({0}), must be one of {1}"  # noqa: E501
-                .format(bits, allowed_values)
-            )
 
-        self._bits = bits
+        self._name = name
 
     @property
-    def operating_system(self):
-        """Gets the operating_system of this BasicPhysicalMachineAllOf.  # noqa: E501
+    def description(self):
+        """Gets the description of this BasicPhysicalMachineAllOf.  # noqa: E501
 
 
-        :return: The operating_system of this BasicPhysicalMachineAllOf.  # noqa: E501
+        :return: The description of this BasicPhysicalMachineAllOf.  # noqa: E501
         :rtype: str
         """
-        return self._operating_system
+        return self._description
 
-    @operating_system.setter
-    def operating_system(self, operating_system):
-        """Sets the operating_system of this BasicPhysicalMachineAllOf.
+    @description.setter
+    def description(self, description):
+        """Sets the description of this BasicPhysicalMachineAllOf.
 
 
-        :param operating_system: The operating_system of this BasicPhysicalMachineAllOf.  # noqa: E501
+        :param description: The description of this BasicPhysicalMachineAllOf.  # noqa: E501
         :type: str
         """
-        allowed_values = ["AMAZON_LINUX_LATEST_X64", "CENTOS_6_X64", "CENTOS_6_X86", "CENTOS_7_X64", "CORE_OS_1221_X64", "F5_BIGIP_X64", "FORTISIEM", "PALO_ALTO_NETWORKS_PAN_OS_X64", "FEDORA_23_X64", "GENERIC_LINUX_X64", "GENERIC_WINDOWS_X64", "KALI_ROLLING_X64", "ORACLE_LINUX_6_X64", "ORACLE_LINUX_7_X64", "OS_X_10", "OS_X_11", "RASPBIAN", "RHEL_5_X64", "RHEL_5_X86", "RHEL_6_X64", "RHEL_6_X86", "RHEL_7_ATOMIC_HOST", "RHEL_7_PPCLE", "RHEL_7_X64", "SOLARIS_11_X64", "UBUNTU_12_X64", "UBUNTU_14_X64", "UBUNTU_16_X64", "UBUNTU_18_X64", "UBUNTU_CORE", "VYOS_117_X64", "VYOS_118_X64", "WINDOWS_10_X64", "WINDOWS_7_X64", "WINDOWS_7_X86", "WINDOWS_8_X64", "WINDOWS_SERVER_2008_R2_X64", "WINDOWS_SERVER_2008_X64", "WINDOWS_SERVER_2012_R2_X64", "WINDOWS_SERVER_2012_X64", "WINDOWS_SERVER_2016_X64", "WINDOWS_SERVER_2019_X64", "WINDOWS_XP_X86"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and operating_system not in allowed_values:  # noqa: E501
+
+        self._description = description
+
+    @property
+    def offline(self):
+        """Gets the offline of this BasicPhysicalMachineAllOf.  # noqa: E501
+
+
+        :return: The offline of this BasicPhysicalMachineAllOf.  # noqa: E501
+        :rtype: bool
+        """
+        return self._offline
+
+    @offline.setter
+    def offline(self, offline):
+        """Sets the offline of this BasicPhysicalMachineAllOf.
+
+
+        :param offline: The offline of this BasicPhysicalMachineAllOf.  # noqa: E501
+        :type: bool
+        """
+
+        self._offline = offline
+
+    @property
+    def state(self):
+        """Gets the state of this BasicPhysicalMachineAllOf.  # noqa: E501
+
+
+        :return: The state of this BasicPhysicalMachineAllOf.  # noqa: E501
+        :rtype: str
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state):
+        """Sets the state of this BasicPhysicalMachineAllOf.
+
+
+        :param state: The state of this BasicPhysicalMachineAllOf.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["IN_DEVELOPMENT", "CERTIFIED", "DEPRECATED", "RETIRED"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and state not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `operating_system` ({0}), must be one of {1}"  # noqa: E501
-                .format(operating_system, allowed_values)
+                "Invalid value for `state` ({0}), must be one of {1}"  # noqa: E501
+                .format(state, allowed_values)
             )
 
-        self._operating_system = operating_system
+        self._state = state
+
+    @property
+    def visibility(self):
+        """Gets the visibility of this BasicPhysicalMachineAllOf.  # noqa: E501
+
+
+        :return: The visibility of this BasicPhysicalMachineAllOf.  # noqa: E501
+        :rtype: str
+        """
+        return self._visibility
+
+    @visibility.setter
+    def visibility(self, visibility):
+        """Sets the visibility of this BasicPhysicalMachineAllOf.
+
+
+        :param visibility: The visibility of this BasicPhysicalMachineAllOf.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["OWNER", "OWNING_PROJECT", "TRUSTED_PROJECTS", "COMMUNITY"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and visibility not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `visibility` ({0}), must be one of {1}"  # noqa: E501
+                .format(visibility, allowed_values)
+            )
+
+        self._visibility = visibility
+
+    @property
+    def creator(self):
+        """Gets the creator of this BasicPhysicalMachineAllOf.  # noqa: E501
+
+
+        :return: The creator of this BasicPhysicalMachineAllOf.  # noqa: E501
+        :rtype: MinimalUser
+        """
+        return self._creator
+
+    @creator.setter
+    def creator(self, creator):
+        """Sets the creator of this BasicPhysicalMachineAllOf.
+
+
+        :param creator: The creator of this BasicPhysicalMachineAllOf.  # noqa: E501
+        :type: MinimalUser
+        """
+
+        self._creator = creator
+
+    @property
+    def owning_project(self):
+        """Gets the owning_project of this BasicPhysicalMachineAllOf.  # noqa: E501
+
+
+        :return: The owning_project of this BasicPhysicalMachineAllOf.  # noqa: E501
+        :rtype: MinimalProject
+        """
+        return self._owning_project
+
+    @owning_project.setter
+    def owning_project(self, owning_project):
+        """Sets the owning_project of this BasicPhysicalMachineAllOf.
+
+
+        :param owning_project: The owning_project of this BasicPhysicalMachineAllOf.  # noqa: E501
+        :type: MinimalProject
+        """
+
+        self._owning_project = owning_project
+
+    @property
+    def subtype(self):
+        """Gets the subtype of this BasicPhysicalMachineAllOf.  # noqa: E501
+
+
+        :return: The subtype of this BasicPhysicalMachineAllOf.  # noqa: E501
+        :rtype: str
+        """
+        return self._subtype
+
+    @subtype.setter
+    def subtype(self, subtype):
+        """Sets the subtype of this BasicPhysicalMachineAllOf.
+
+
+        :param subtype: The subtype of this BasicPhysicalMachineAllOf.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
+            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
+
+        self._subtype = subtype
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **upload_file**
-> int upload_file(file=file, filename=filename)
+> int upload_file(filename=filename, file=file)
 
 Import a New Asset
 
@@ -47,12 +47,12 @@ configuration.key_password='keyfile_password' # optional
 with cons3rt.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cons3rt.ImportApi(api_client)
-    file = 'file_example' # list[str] |  (optional)
-filename = 'filename_example' # str |  (optional)
+    filename = 'filename_example' # str |  (optional)
+file = '/path/to/file' # file |  (optional)
 
     try:
         # Import a New Asset
-        api_response = api_instance.upload_file(file=file, filename=filename)
+        api_response = api_instance.upload_file(filename=filename, file=file)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ImportApi->upload_file: %s\n" % e)
@@ -89,12 +89,12 @@ configuration.key_password='keyfile_password' # optional
 with cons3rt.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cons3rt.ImportApi(api_client)
-    file = 'file_example' # list[str] |  (optional)
-filename = 'filename_example' # str |  (optional)
+    filename = 'filename_example' # str |  (optional)
+file = '/path/to/file' # file |  (optional)
 
     try:
         # Import a New Asset
-        api_response = api_instance.upload_file(file=file, filename=filename)
+        api_response = api_instance.upload_file(filename=filename, file=file)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ImportApi->upload_file: %s\n" % e)
@@ -104,8 +104,8 @@ filename = 'filename_example' # str |  (optional)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | [**list[str]**](str.md)|  | [optional] 
  **filename** | **str**|  | [optional] 
+ **file** | **file**|  | [optional] 
 
 ### Return type
 

@@ -1,4 +1,4 @@
-# InputDockerRegistrySubmissionEndpointForProject
+# InputSFTPSubmissionEndpointForProjectAllOf
 
 ## Properties
 Name | Type | Description | Notes

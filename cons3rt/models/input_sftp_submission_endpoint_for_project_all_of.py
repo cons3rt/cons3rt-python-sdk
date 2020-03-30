@@ -37,7 +37,7 @@ __maintainer__ = 'API Support'
 __email__ = 'support@cons3rt.com'
 
 
-class MinimalSoftwareComponentAllOf(object):
+class InputSFTPSubmissionEndpointForProjectAllOf(object):
     """NOTE: This class is auto-generated. Do not edit the class manually.
     """
 
@@ -49,71 +49,99 @@ class MinimalSoftwareComponentAllOf(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'reboot_delay': 'int',
-        'reboot_required': 'bool'
+        'host': 'str',
+        'port': 'int',
+        'subtype': 'str'
     }
 
     attribute_map = {
-        'reboot_delay': 'rebootDelay',
-        'reboot_required': 'rebootRequired'
+        'host': 'host',
+        'port': 'port',
+        'subtype': 'subtype'
     }
 
-    def __init__(self, reboot_delay=None, reboot_required=None, local_vars_configuration=None):  # noqa: E501
-        """MinimalSoftwareComponentAllOf - a model defined in OpenAPI"""  # noqa: E501
+    def __init__(self, host=None, port=None, subtype=None, local_vars_configuration=None):  # noqa: E501
+        """InputSFTPSubmissionEndpointForProjectAllOf - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._reboot_delay = None
-        self._reboot_required = None
+        self._host = None
+        self._port = None
+        self._subtype = None
         self.discriminator = None
 
-        if reboot_delay is not None:
-            self.reboot_delay = reboot_delay
-        if reboot_required is not None:
-            self.reboot_required = reboot_required
+        self.host = host
+        if port is not None:
+            self.port = port
+        self.subtype = subtype
 
     @property
-    def reboot_delay(self):
-        """Gets the reboot_delay of this MinimalSoftwareComponentAllOf.  # noqa: E501
+    def host(self):
+        """Gets the host of this InputSFTPSubmissionEndpointForProjectAllOf.  # noqa: E501
 
 
-        :return: The reboot_delay of this MinimalSoftwareComponentAllOf.  # noqa: E501
+        :return: The host of this InputSFTPSubmissionEndpointForProjectAllOf.  # noqa: E501
+        :rtype: str
+        """
+        return self._host
+
+    @host.setter
+    def host(self, host):
+        """Sets the host of this InputSFTPSubmissionEndpointForProjectAllOf.
+
+
+        :param host: The host of this InputSFTPSubmissionEndpointForProjectAllOf.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and host is None:  # noqa: E501
+            raise ValueError("Invalid value for `host`, must not be `None`")  # noqa: E501
+
+        self._host = host
+
+    @property
+    def port(self):
+        """Gets the port of this InputSFTPSubmissionEndpointForProjectAllOf.  # noqa: E501
+
+
+        :return: The port of this InputSFTPSubmissionEndpointForProjectAllOf.  # noqa: E501
         :rtype: int
         """
-        return self._reboot_delay
+        return self._port
 
-    @reboot_delay.setter
-    def reboot_delay(self, reboot_delay):
-        """Sets the reboot_delay of this MinimalSoftwareComponentAllOf.
+    @port.setter
+    def port(self, port):
+        """Sets the port of this InputSFTPSubmissionEndpointForProjectAllOf.
 
 
-        :param reboot_delay: The reboot_delay of this MinimalSoftwareComponentAllOf.  # noqa: E501
+        :param port: The port of this InputSFTPSubmissionEndpointForProjectAllOf.  # noqa: E501
         :type: int
         """
 
-        self._reboot_delay = reboot_delay
+        self._port = port
 
     @property
-    def reboot_required(self):
-        """Gets the reboot_required of this MinimalSoftwareComponentAllOf.  # noqa: E501
+    def subtype(self):
+        """Gets the subtype of this InputSFTPSubmissionEndpointForProjectAllOf.  # noqa: E501
 
 
-        :return: The reboot_required of this MinimalSoftwareComponentAllOf.  # noqa: E501
-        :rtype: bool
+        :return: The subtype of this InputSFTPSubmissionEndpointForProjectAllOf.  # noqa: E501
+        :rtype: str
         """
-        return self._reboot_required
+        return self._subtype
 
-    @reboot_required.setter
-    def reboot_required(self, reboot_required):
-        """Sets the reboot_required of this MinimalSoftwareComponentAllOf.
+    @subtype.setter
+    def subtype(self, subtype):
+        """Sets the subtype of this InputSFTPSubmissionEndpointForProjectAllOf.
 
 
-        :param reboot_required: The reboot_required of this MinimalSoftwareComponentAllOf.  # noqa: E501
-        :type: bool
+        :param subtype: The subtype of this InputSFTPSubmissionEndpointForProjectAllOf.  # noqa: E501
+        :type: str
         """
+        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
+            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
 
-        self._reboot_required = reboot_required
+        self._subtype = subtype
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -149,14 +177,14 @@ class MinimalSoftwareComponentAllOf(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, MinimalSoftwareComponentAllOf):
+        if not isinstance(other, InputSFTPSubmissionEndpointForProjectAllOf):
             return False
 
         return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        if not isinstance(other, MinimalSoftwareComponentAllOf):
+        if not isinstance(other, InputSFTPSubmissionEndpointForProjectAllOf):
             return True
 
         return self.to_dict() != other.to_dict()

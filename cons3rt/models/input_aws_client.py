@@ -49,17 +49,110 @@ class InputAwsClient(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'username': 'str',
+        'password': 'str',
+        'subtype': 'str'
     }
 
     attribute_map = {
+        'username': 'username',
+        'password': 'password',
+        'subtype': 'subtype'
     }
 
-    def __init__(self, local_vars_configuration=None):  # noqa: E501
+    discriminator_value_class_map = {
+        
+    }
+
+    def __init__(self, username=None, password=None, subtype=None, local_vars_configuration=None):  # noqa: E501
         """InputAwsClient - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
-        self.discriminator = None
+
+        self._username = None
+        self._password = None
+        self._subtype = None
+        self.discriminator = 'subtype'
+
+        self.username = username
+        self.password = password
+        self.subtype = subtype
+
+    @property
+    def username(self):
+        """Gets the username of this InputAwsClient.  # noqa: E501
+
+
+        :return: The username of this InputAwsClient.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this InputAwsClient.
+
+
+        :param username: The username of this InputAwsClient.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and username is None:  # noqa: E501
+            raise ValueError("Invalid value for `username`, must not be `None`")  # noqa: E501
+
+        self._username = username
+
+    @property
+    def password(self):
+        """Gets the password of this InputAwsClient.  # noqa: E501
+
+
+        :return: The password of this InputAwsClient.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this InputAwsClient.
+
+
+        :param password: The password of this InputAwsClient.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and password is None:  # noqa: E501
+            raise ValueError("Invalid value for `password`, must not be `None`")  # noqa: E501
+
+        self._password = password
+
+    @property
+    def subtype(self):
+        """Gets the subtype of this InputAwsClient.  # noqa: E501
+
+
+        :return: The subtype of this InputAwsClient.  # noqa: E501
+        :rtype: str
+        """
+        return self._subtype
+
+    @subtype.setter
+    def subtype(self, subtype):
+        """Sets the subtype of this InputAwsClient.
+
+
+        :param subtype: The subtype of this InputAwsClient.  # noqa: E501
+        :type: str
+        """
+        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
+            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
+
+        self._subtype = subtype
+
+    def get_real_child_model(self, data):
+        """Returns the real base class specified by the discriminator"""
+        discriminator_key = self.attribute_map[self.discriminator]
+        discriminator_value = data[discriminator_key]
+        return self.discriminator_value_class_map.get(discriminator_value)
 
     def to_dict(self):
         """Returns the model properties as a dict"""
