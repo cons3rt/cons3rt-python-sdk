@@ -1,3 +1,5 @@
+from __future__ import absolute_import
+
 """
    Copyright 2020 Jackpine Technologies Corporation
 
@@ -21,8 +23,6 @@ cons3rt - Copyright Jackpine Technologies Corp.
 NOTE: This file is auto-generated. Do not edit the file manually.
 """
 
-
-from __future__ import absolute_import
 
 import io
 import json
