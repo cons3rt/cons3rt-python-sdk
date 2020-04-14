@@ -49,73 +49,97 @@ class TemplateBinding(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'virtualization_realm_templates': 'list[MinimalCons3rtTemplateData]',
-        'system_role': 'str'
+        'template': 'MinimalCons3rtTemplateData',
+        'best_matches': 'list[InstanceType]',
+        'matches': 'list[InstanceTypeFamily]'
     }
 
     attribute_map = {
-        'virtualization_realm_templates': 'virtualizationRealmTemplates',
-        'system_role': 'systemRole'
+        'template': 'template',
+        'best_matches': 'bestMatches',
+        'matches': 'matches'
     }
 
-    def __init__(self, virtualization_realm_templates=None, system_role=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, template=None, best_matches=None, matches=None, local_vars_configuration=None):  # noqa: E501
         """TemplateBinding - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._virtualization_realm_templates = None
-        self._system_role = None
+        self._template = None
+        self._best_matches = None
+        self._matches = None
         self.discriminator = None
 
-        self.virtualization_realm_templates = virtualization_realm_templates
-        self.system_role = system_role
+        if template is not None:
+            self.template = template
+        if best_matches is not None:
+            self.best_matches = best_matches
+        if matches is not None:
+            self.matches = matches
 
     @property
-    def virtualization_realm_templates(self):
-        """Gets the virtualization_realm_templates of this TemplateBinding.  # noqa: E501
+    def template(self):
+        """Gets the template of this TemplateBinding.  # noqa: E501
 
 
-        :return: The virtualization_realm_templates of this TemplateBinding.  # noqa: E501
-        :rtype: list[MinimalCons3rtTemplateData]
+        :return: The template of this TemplateBinding.  # noqa: E501
+        :rtype: MinimalCons3rtTemplateData
         """
-        return self._virtualization_realm_templates
+        return self._template
 
-    @virtualization_realm_templates.setter
-    def virtualization_realm_templates(self, virtualization_realm_templates):
-        """Sets the virtualization_realm_templates of this TemplateBinding.
+    @template.setter
+    def template(self, template):
+        """Sets the template of this TemplateBinding.
 
 
-        :param virtualization_realm_templates: The virtualization_realm_templates of this TemplateBinding.  # noqa: E501
-        :type: list[MinimalCons3rtTemplateData]
+        :param template: The template of this TemplateBinding.  # noqa: E501
+        :type: MinimalCons3rtTemplateData
         """
-        if self.local_vars_configuration.client_side_validation and virtualization_realm_templates is None:  # noqa: E501
-            raise ValueError("Invalid value for `virtualization_realm_templates`, must not be `None`")  # noqa: E501
 
-        self._virtualization_realm_templates = virtualization_realm_templates
+        self._template = template
 
     @property
-    def system_role(self):
-        """Gets the system_role of this TemplateBinding.  # noqa: E501
+    def best_matches(self):
+        """Gets the best_matches of this TemplateBinding.  # noqa: E501
 
 
-        :return: The system_role of this TemplateBinding.  # noqa: E501
-        :rtype: str
+        :return: The best_matches of this TemplateBinding.  # noqa: E501
+        :rtype: list[InstanceType]
         """
-        return self._system_role
+        return self._best_matches
 
-    @system_role.setter
-    def system_role(self, system_role):
-        """Sets the system_role of this TemplateBinding.
+    @best_matches.setter
+    def best_matches(self, best_matches):
+        """Sets the best_matches of this TemplateBinding.
 
 
-        :param system_role: The system_role of this TemplateBinding.  # noqa: E501
-        :type: str
+        :param best_matches: The best_matches of this TemplateBinding.  # noqa: E501
+        :type: list[InstanceType]
         """
-        if self.local_vars_configuration.client_side_validation and system_role is None:  # noqa: E501
-            raise ValueError("Invalid value for `system_role`, must not be `None`")  # noqa: E501
 
-        self._system_role = system_role
+        self._best_matches = best_matches
+
+    @property
+    def matches(self):
+        """Gets the matches of this TemplateBinding.  # noqa: E501
+
+
+        :return: The matches of this TemplateBinding.  # noqa: E501
+        :rtype: list[InstanceTypeFamily]
+        """
+        return self._matches
+
+    @matches.setter
+    def matches(self, matches):
+        """Sets the matches of this TemplateBinding.
+
+
+        :param matches: The matches of this TemplateBinding.  # noqa: E501
+        :type: list[InstanceTypeFamily]
+        """
+
+        self._matches = matches
 
     def to_dict(self):
         """Returns the model properties as a dict"""

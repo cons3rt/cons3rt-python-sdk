@@ -1289,7 +1289,7 @@ with cons3rt.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cons3rt.SoftwareAssetsApi(api_client)
     id = 'id_example' # str | ID of asset
-file = 'file_example' # list[str] |  (optional)
+file = '/path/to/file' # list[file] |  (optional)
 filename = 'filename_example' # str |  (optional)
 
     try:
@@ -1332,7 +1332,7 @@ with cons3rt.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cons3rt.SoftwareAssetsApi(api_client)
     id = 'id_example' # str | ID of asset
-file = 'file_example' # list[str] |  (optional)
+file = '/path/to/file' # list[file] |  (optional)
 filename = 'filename_example' # str |  (optional)
 
     try:
@@ -1348,7 +1348,7 @@ filename = 'filename_example' # str |  (optional)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| ID of asset | 
- **file** | [**list[str]**](str.md)|  | [optional] 
+ **file** | **list[file]**|  | [optional] 
  **filename** | **str**|  | [optional] 
 
 ### Return type
@@ -2025,7 +2025,7 @@ with cons3rt.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cons3rt.SoftwareAssetsApi(api_client)
     id = 'id_example' # str | ID of software asset
-file = 'file_example' # list[str] |  (optional)
+file = '/path/to/file' # list[file] |  (optional)
 filename = 'filename_example' # str |  (optional)
 
     try:
@@ -2068,7 +2068,7 @@ with cons3rt.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cons3rt.SoftwareAssetsApi(api_client)
     id = 'id_example' # str | ID of software asset
-file = 'file_example' # list[str] |  (optional)
+file = '/path/to/file' # list[file] |  (optional)
 filename = 'filename_example' # str |  (optional)
 
     try:
@@ -2084,7 +2084,7 @@ filename = 'filename_example' # str |  (optional)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| ID of software asset | 
- **file** | [**list[str]**](str.md)|  | [optional] 
+ **file** | **list[file]**|  | [optional] 
  **filename** | **str**|  | [optional] 
 
 ### Return type

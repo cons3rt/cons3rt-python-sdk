@@ -67,9 +67,9 @@ class PhysicalHost(object):
         'template_profile': 'TemplateProfile',
         'subtype': 'str',
         'physical_machine': 'PhysicalMachine',
+        'mac_address': 'str',
         'ip_address': 'str',
-        'hostname': 'str',
-        'mac_address': 'str'
+        'hostname': 'str'
     }
 
     attribute_map = {
@@ -91,12 +91,12 @@ class PhysicalHost(object):
         'template_profile': 'templateProfile',
         'subtype': 'subtype',
         'physical_machine': 'physicalMachine',
+        'mac_address': 'macAddress',
         'ip_address': 'ipAddress',
-        'hostname': 'hostname',
-        'mac_address': 'macAddress'
+        'hostname': 'hostname'
     }
 
-    def __init__(self, components=None, id=None, trusted_projects=None, creator=None, dependent_asset_count=None, description=None, metadata=None, name=None, offline=None, owning_project=None, state=None, visibility=None, impact_level=None, categories=None, physical_machine_uuid=None, template_profile=None, subtype=None, physical_machine=None, ip_address=None, hostname=None, mac_address=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, components=None, id=None, trusted_projects=None, creator=None, dependent_asset_count=None, description=None, metadata=None, name=None, offline=None, owning_project=None, state=None, visibility=None, impact_level=None, categories=None, physical_machine_uuid=None, template_profile=None, subtype=None, physical_machine=None, mac_address=None, ip_address=None, hostname=None, local_vars_configuration=None):  # noqa: E501
         """PhysicalHost - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -120,9 +120,9 @@ class PhysicalHost(object):
         self._template_profile = None
         self._subtype = None
         self._physical_machine = None
+        self._mac_address = None
         self._ip_address = None
         self._hostname = None
-        self._mac_address = None
         self.discriminator = None
 
         if components is not None:
@@ -160,12 +160,12 @@ class PhysicalHost(object):
         self.subtype = subtype
         if physical_machine is not None:
             self.physical_machine = physical_machine
+        if mac_address is not None:
+            self.mac_address = mac_address
         if ip_address is not None:
             self.ip_address = ip_address
         if hostname is not None:
             self.hostname = hostname
-        if mac_address is not None:
-            self.mac_address = mac_address
 
     @property
     def components(self):
@@ -566,6 +566,27 @@ class PhysicalHost(object):
         self._physical_machine = physical_machine
 
     @property
+    def mac_address(self):
+        """Gets the mac_address of this PhysicalHost.  # noqa: E501
+
+
+        :return: The mac_address of this PhysicalHost.  # noqa: E501
+        :rtype: str
+        """
+        return self._mac_address
+
+    @mac_address.setter
+    def mac_address(self, mac_address):
+        """Sets the mac_address of this PhysicalHost.
+
+
+        :param mac_address: The mac_address of this PhysicalHost.  # noqa: E501
+        :type: str
+        """
+
+        self._mac_address = mac_address
+
+    @property
     def ip_address(self):
         """Gets the ip_address of this PhysicalHost.  # noqa: E501
 
@@ -606,27 +627,6 @@ class PhysicalHost(object):
         """
 
         self._hostname = hostname
-
-    @property
-    def mac_address(self):
-        """Gets the mac_address of this PhysicalHost.  # noqa: E501
-
-
-        :return: The mac_address of this PhysicalHost.  # noqa: E501
-        :rtype: str
-        """
-        return self._mac_address
-
-    @mac_address.setter
-    def mac_address(self, mac_address):
-        """Sets the mac_address of this PhysicalHost.
-
-
-        :param mac_address: The mac_address of this PhysicalHost.  # noqa: E501
-        :type: str
-        """
-
-        self._mac_address = mac_address
 
     def to_dict(self):
         """Returns the model properties as a dict"""

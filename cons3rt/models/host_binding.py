@@ -37,7 +37,7 @@ __maintainer__ = 'API Support'
 __email__ = 'support@cons3rt.com'
 
 
-class InputVirtualizationRealmBinding(object):
+class HostBinding(object):
     """NOTE: This class is auto-generated. Do not edit the class manually.
     """
 
@@ -49,73 +49,73 @@ class InputVirtualizationRealmBinding(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'virtualization_realm': 'InputMinimalVirtualizationRealm',
-        'template_bindings': 'list[InputHostBinding]'
+        'virtualization_realm_templates': 'list[TemplateBinding]',
+        'system_role': 'str'
     }
 
     attribute_map = {
-        'virtualization_realm': 'virtualizationRealm',
-        'template_bindings': 'templateBindings'
+        'virtualization_realm_templates': 'virtualizationRealmTemplates',
+        'system_role': 'systemRole'
     }
 
-    def __init__(self, virtualization_realm=None, template_bindings=None, local_vars_configuration=None):  # noqa: E501
-        """InputVirtualizationRealmBinding - a model defined in OpenAPI"""  # noqa: E501
+    def __init__(self, virtualization_realm_templates=None, system_role=None, local_vars_configuration=None):  # noqa: E501
+        """HostBinding - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._virtualization_realm = None
-        self._template_bindings = None
+        self._virtualization_realm_templates = None
+        self._system_role = None
         self.discriminator = None
 
-        self.virtualization_realm = virtualization_realm
-        self.template_bindings = template_bindings
+        self.virtualization_realm_templates = virtualization_realm_templates
+        self.system_role = system_role
 
     @property
-    def virtualization_realm(self):
-        """Gets the virtualization_realm of this InputVirtualizationRealmBinding.  # noqa: E501
+    def virtualization_realm_templates(self):
+        """Gets the virtualization_realm_templates of this HostBinding.  # noqa: E501
 
 
-        :return: The virtualization_realm of this InputVirtualizationRealmBinding.  # noqa: E501
-        :rtype: InputMinimalVirtualizationRealm
+        :return: The virtualization_realm_templates of this HostBinding.  # noqa: E501
+        :rtype: list[TemplateBinding]
         """
-        return self._virtualization_realm
+        return self._virtualization_realm_templates
 
-    @virtualization_realm.setter
-    def virtualization_realm(self, virtualization_realm):
-        """Sets the virtualization_realm of this InputVirtualizationRealmBinding.
+    @virtualization_realm_templates.setter
+    def virtualization_realm_templates(self, virtualization_realm_templates):
+        """Sets the virtualization_realm_templates of this HostBinding.
 
 
-        :param virtualization_realm: The virtualization_realm of this InputVirtualizationRealmBinding.  # noqa: E501
-        :type: InputMinimalVirtualizationRealm
+        :param virtualization_realm_templates: The virtualization_realm_templates of this HostBinding.  # noqa: E501
+        :type: list[TemplateBinding]
         """
-        if self.local_vars_configuration.client_side_validation and virtualization_realm is None:  # noqa: E501
-            raise ValueError("Invalid value for `virtualization_realm`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and virtualization_realm_templates is None:  # noqa: E501
+            raise ValueError("Invalid value for `virtualization_realm_templates`, must not be `None`")  # noqa: E501
 
-        self._virtualization_realm = virtualization_realm
+        self._virtualization_realm_templates = virtualization_realm_templates
 
     @property
-    def template_bindings(self):
-        """Gets the template_bindings of this InputVirtualizationRealmBinding.  # noqa: E501
+    def system_role(self):
+        """Gets the system_role of this HostBinding.  # noqa: E501
 
 
-        :return: The template_bindings of this InputVirtualizationRealmBinding.  # noqa: E501
-        :rtype: list[InputHostBinding]
+        :return: The system_role of this HostBinding.  # noqa: E501
+        :rtype: str
         """
-        return self._template_bindings
+        return self._system_role
 
-    @template_bindings.setter
-    def template_bindings(self, template_bindings):
-        """Sets the template_bindings of this InputVirtualizationRealmBinding.
+    @system_role.setter
+    def system_role(self, system_role):
+        """Sets the system_role of this HostBinding.
 
 
-        :param template_bindings: The template_bindings of this InputVirtualizationRealmBinding.  # noqa: E501
-        :type: list[InputHostBinding]
+        :param system_role: The system_role of this HostBinding.  # noqa: E501
+        :type: str
         """
-        if self.local_vars_configuration.client_side_validation and template_bindings is None:  # noqa: E501
-            raise ValueError("Invalid value for `template_bindings`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and system_role is None:  # noqa: E501
+            raise ValueError("Invalid value for `system_role`, must not be `None`")  # noqa: E501
 
-        self._template_bindings = template_bindings
+        self._system_role = system_role
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -151,14 +151,14 @@ class InputVirtualizationRealmBinding(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, InputVirtualizationRealmBinding):
+        if not isinstance(other, HostBinding):
             return False
 
         return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        if not isinstance(other, InputVirtualizationRealmBinding):
+        if not isinstance(other, HostBinding):
             return True
 
         return self.to_dict() != other.to_dict()

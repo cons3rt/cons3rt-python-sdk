@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**create_scenario**](ScenariosApi.md#create_scenario) | **PUT** /api/scenarios/createscenario | Create Scenario
 [**create_system_entire**](ScenariosApi.md#create_system_entire) | **PUT** /api/systems/createsystem | Create System
 [**delete_asset**](ScenariosApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete asset
+[**get_bindings_for_deployment1**](ScenariosApi.md#get_bindings_for_deployment1) | **GET** /api/scenarios/{id}/bindings | List Bindings
 [**get_scenario**](ScenariosApi.md#get_scenario) | **GET** /api/scenarios/{id} | Retrieve Scenario
 [**get_scenarios**](ScenariosApi.md#get_scenarios) | **GET** /api/scenarios | List Scenarios
 [**get_scenarios_expanded**](ScenariosApi.md#get_scenarios_expanded) | **GET** /api/scenarios/expanded | List all Scenarios, including Project Assets
@@ -625,6 +626,128 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **400** | Invalid asset ID supplied |  -  |
 **404** | Asset not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_bindings_for_deployment1**
+> list[VirtualizationRealmBinding] get_bindings_for_deployment1(id, virtualization_realm_id=virtualization_realm_id)
+
+List Bindings
+
+Returns a collection of the possible Virtualization Realm bindings for a single scenario.
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ScenariosApi(api_client)
+    id = 'id_example' # str | ID of scenario
+virtualization_realm_id = 56 # int | ID of preferred virtualization realm (optional)
+
+    try:
+        # List Bindings
+        api_response = api_instance.get_bindings_for_deployment1(id, virtualization_realm_id=virtualization_realm_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ScenariosApi->get_bindings_for_deployment1: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ScenariosApi(api_client)
+    id = 'id_example' # str | ID of scenario
+virtualization_realm_id = 56 # int | ID of preferred virtualization realm (optional)
+
+    try:
+        # List Bindings
+        api_response = api_instance.get_bindings_for_deployment1(id, virtualization_realm_id=virtualization_realm_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ScenariosApi->get_bindings_for_deployment1: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of scenario | 
+ **virtualization_realm_id** | **int**| ID of preferred virtualization realm | [optional] 
+
+### Return type
+
+[**list[VirtualizationRealmBinding]**](VirtualizationRealmBinding.md)
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Invalid scenario ID or virtualization realm ID supplied |  -  |
+**404** | Scenario not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

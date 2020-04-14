@@ -1203,7 +1203,7 @@ class AssetsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str id: ID of asset (required)
-        :param list[str] file:
+        :param list[file] file:
         :param str filename:
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -1230,7 +1230,7 @@ class AssetsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str id: ID of asset (required)
-        :param list[str] file:
+        :param list[file] file:
         :param str filename:
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -1280,7 +1280,7 @@ class AssetsApi(object):
         form_params = []
         local_var_files = {}
         if 'file' in local_var_params:
-            form_params.append(('file', local_var_params['file']))  # noqa: E501
+            local_var_files['file'] = local_var_params['file']  # noqa: E501
             collection_formats['file'] = 'csv'  # noqa: E501
         if 'filename' in local_var_params:
             form_params.append(('filename', local_var_params['filename']))  # noqa: E501
@@ -1900,7 +1900,7 @@ class AssetsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str id: ID of software asset (required)
-        :param list[str] file:
+        :param list[file] file:
         :param str filename:
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -1927,7 +1927,7 @@ class AssetsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str id: ID of software asset (required)
-        :param list[str] file:
+        :param list[file] file:
         :param str filename:
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -1977,7 +1977,7 @@ class AssetsApi(object):
         form_params = []
         local_var_files = {}
         if 'file' in local_var_params:
-            form_params.append(('file', local_var_params['file']))  # noqa: E501
+            local_var_files['file'] = local_var_params['file']  # noqa: E501
             collection_formats['file'] = 'csv'  # noqa: E501
         if 'filename' in local_var_params:
             form_params.append(('filename', local_var_params['filename']))  # noqa: E501

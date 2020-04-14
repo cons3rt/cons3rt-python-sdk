@@ -50,10 +50,9 @@ class CompositionRunOptions(object):
     """
     openapi_types = {
         'description': 'str',
-        'host_options': 'list[HostOption]',
+        'host_options': 'list[CompositionHostOption]',
         'virtualization_realm_id': 'int',
         'properties': 'list[ModelProperty]',
-        'virt_realm_binding': 'VirtualizationRealmBinding',
         'windows_domain_name': 'str'
     }
 
@@ -62,11 +61,10 @@ class CompositionRunOptions(object):
         'host_options': 'hostOptions',
         'virtualization_realm_id': 'virtualizationRealmId',
         'properties': 'properties',
-        'virt_realm_binding': 'virtRealmBinding',
         'windows_domain_name': 'windowsDomainName'
     }
 
-    def __init__(self, description=None, host_options=None, virtualization_realm_id=None, properties=None, virt_realm_binding=None, windows_domain_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, description=None, host_options=None, virtualization_realm_id=None, properties=None, windows_domain_name=None, local_vars_configuration=None):  # noqa: E501
         """CompositionRunOptions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,7 +74,6 @@ class CompositionRunOptions(object):
         self._host_options = None
         self._virtualization_realm_id = None
         self._properties = None
-        self._virt_realm_binding = None
         self._windows_domain_name = None
         self.discriminator = None
 
@@ -84,12 +81,9 @@ class CompositionRunOptions(object):
             self.description = description
         if host_options is not None:
             self.host_options = host_options
-        if virtualization_realm_id is not None:
-            self.virtualization_realm_id = virtualization_realm_id
+        self.virtualization_realm_id = virtualization_realm_id
         if properties is not None:
             self.properties = properties
-        if virt_realm_binding is not None:
-            self.virt_realm_binding = virt_realm_binding
         if windows_domain_name is not None:
             self.windows_domain_name = windows_domain_name
 
@@ -120,7 +114,7 @@ class CompositionRunOptions(object):
 
 
         :return: The host_options of this CompositionRunOptions.  # noqa: E501
-        :rtype: list[HostOption]
+        :rtype: list[CompositionHostOption]
         """
         return self._host_options
 
@@ -130,7 +124,7 @@ class CompositionRunOptions(object):
 
 
         :param host_options: The host_options of this CompositionRunOptions.  # noqa: E501
-        :type: list[HostOption]
+        :type: list[CompositionHostOption]
         """
 
         self._host_options = host_options
@@ -153,6 +147,8 @@ class CompositionRunOptions(object):
         :param virtualization_realm_id: The virtualization_realm_id of this CompositionRunOptions.  # noqa: E501
         :type: int
         """
+        if self.local_vars_configuration.client_side_validation and virtualization_realm_id is None:  # noqa: E501
+            raise ValueError("Invalid value for `virtualization_realm_id`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 virtualization_realm_id is not None and virtualization_realm_id < 1):  # noqa: E501
             raise ValueError("Invalid value for `virtualization_realm_id`, must be a value greater than or equal to `1`")  # noqa: E501
@@ -179,27 +175,6 @@ class CompositionRunOptions(object):
         """
 
         self._properties = properties
-
-    @property
-    def virt_realm_binding(self):
-        """Gets the virt_realm_binding of this CompositionRunOptions.  # noqa: E501
-
-
-        :return: The virt_realm_binding of this CompositionRunOptions.  # noqa: E501
-        :rtype: VirtualizationRealmBinding
-        """
-        return self._virt_realm_binding
-
-    @virt_realm_binding.setter
-    def virt_realm_binding(self, virt_realm_binding):
-        """Sets the virt_realm_binding of this CompositionRunOptions.
-
-
-        :param virt_realm_binding: The virt_realm_binding of this CompositionRunOptions.  # noqa: E501
-        :type: VirtualizationRealmBinding
-        """
-
-        self._virt_realm_binding = virt_realm_binding
 
     @property
     def windows_domain_name(self):

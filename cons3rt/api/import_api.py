@@ -61,8 +61,8 @@ class ImportApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
+        :param list[file] file:
         :param str filename:
-        :param file file:
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -87,8 +87,8 @@ class ImportApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
+        :param list[file] file:
         :param str filename:
-        :param file file:
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -105,7 +105,7 @@ class ImportApi(object):
 
         local_var_params = locals()
 
-        all_params = ['filename', 'file']  # noqa: E501
+        all_params = ['file', 'filename']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -130,10 +130,11 @@ class ImportApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'filename' in local_var_params:
-            form_params.append(('filename', local_var_params['filename']))  # noqa: E501
         if 'file' in local_var_params:
             local_var_files['file'] = local_var_params['file']  # noqa: E501
+            collection_formats['file'] = 'csv'  # noqa: E501
+        if 'filename' in local_var_params:
+            form_params.append(('filename', local_var_params['filename']))  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`

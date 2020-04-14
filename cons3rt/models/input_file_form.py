@@ -49,7 +49,7 @@ class InputFileForm(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'file': 'list[str]',
+        'file': 'list[file]',
         'filename': 'str'
     }
 
@@ -79,7 +79,7 @@ class InputFileForm(object):
 
 
         :return: The file of this InputFileForm.  # noqa: E501
-        :rtype: list[str]
+        :rtype: list[file]
         """
         return self._file
 
@@ -89,7 +89,7 @@ class InputFileForm(object):
 
 
         :param file: The file of this InputFileForm.  # noqa: E501
-        :type: list[str]
+        :type: list[file]
         """
 
         self._file = file

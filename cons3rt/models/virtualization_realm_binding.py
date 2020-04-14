@@ -50,7 +50,7 @@ class VirtualizationRealmBinding(object):
     """
     openapi_types = {
         'virtualization_realm': 'MinimalVirtualizationRealm',
-        'template_bindings': 'list[TemplateBinding]'
+        'template_bindings': 'list[HostBinding]'
     }
 
     attribute_map = {
@@ -100,7 +100,7 @@ class VirtualizationRealmBinding(object):
 
 
         :return: The template_bindings of this VirtualizationRealmBinding.  # noqa: E501
-        :rtype: list[TemplateBinding]
+        :rtype: list[HostBinding]
         """
         return self._template_bindings
 
@@ -110,7 +110,7 @@ class VirtualizationRealmBinding(object):
 
 
         :param template_bindings: The template_bindings of this VirtualizationRealmBinding.  # noqa: E501
-        :type: list[TemplateBinding]
+        :type: list[HostBinding]
         """
         if self.local_vars_configuration.client_side_validation and template_bindings is None:  # noqa: E501
             raise ValueError("Invalid value for `template_bindings`, must not be `None`")  # noqa: E501

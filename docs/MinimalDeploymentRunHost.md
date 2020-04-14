@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **hostname** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
 **installations** | [**list[AbstractInstallation]**](AbstractInstallation.md) |  | [optional] 
+**instance_type_name** | **str** |  | [optional] 
 **nested_virtualization** | **bool** |  | [optional] 
 **network_interfaces** | [**list[NetworkInterface]**](NetworkInterface.md) |  | [optional] 
 **num_cpus** | **int** |  | [optional] 

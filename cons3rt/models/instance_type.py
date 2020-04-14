@@ -37,7 +37,7 @@ __maintainer__ = 'API Support'
 __email__ = 'support@cons3rt.com'
 
 
-class InputVirtualizationRealmBinding(object):
+class InstanceType(object):
     """NOTE: This class is auto-generated. Do not edit the class manually.
     """
 
@@ -49,73 +49,71 @@ class InputVirtualizationRealmBinding(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'virtualization_realm': 'InputMinimalVirtualizationRealm',
-        'template_bindings': 'list[InputHostBinding]'
+        'family': 'str',
+        'type': 'str'
     }
 
     attribute_map = {
-        'virtualization_realm': 'virtualizationRealm',
-        'template_bindings': 'templateBindings'
+        'family': 'family',
+        'type': 'type'
     }
 
-    def __init__(self, virtualization_realm=None, template_bindings=None, local_vars_configuration=None):  # noqa: E501
-        """InputVirtualizationRealmBinding - a model defined in OpenAPI"""  # noqa: E501
+    def __init__(self, family=None, type=None, local_vars_configuration=None):  # noqa: E501
+        """InstanceType - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._virtualization_realm = None
-        self._template_bindings = None
+        self._family = None
+        self._type = None
         self.discriminator = None
 
-        self.virtualization_realm = virtualization_realm
-        self.template_bindings = template_bindings
+        if family is not None:
+            self.family = family
+        if type is not None:
+            self.type = type
 
     @property
-    def virtualization_realm(self):
-        """Gets the virtualization_realm of this InputVirtualizationRealmBinding.  # noqa: E501
+    def family(self):
+        """Gets the family of this InstanceType.  # noqa: E501
 
 
-        :return: The virtualization_realm of this InputVirtualizationRealmBinding.  # noqa: E501
-        :rtype: InputMinimalVirtualizationRealm
+        :return: The family of this InstanceType.  # noqa: E501
+        :rtype: str
         """
-        return self._virtualization_realm
+        return self._family
 
-    @virtualization_realm.setter
-    def virtualization_realm(self, virtualization_realm):
-        """Sets the virtualization_realm of this InputVirtualizationRealmBinding.
+    @family.setter
+    def family(self, family):
+        """Sets the family of this InstanceType.
 
 
-        :param virtualization_realm: The virtualization_realm of this InputVirtualizationRealmBinding.  # noqa: E501
-        :type: InputMinimalVirtualizationRealm
+        :param family: The family of this InstanceType.  # noqa: E501
+        :type: str
         """
-        if self.local_vars_configuration.client_side_validation and virtualization_realm is None:  # noqa: E501
-            raise ValueError("Invalid value for `virtualization_realm`, must not be `None`")  # noqa: E501
 
-        self._virtualization_realm = virtualization_realm
+        self._family = family
 
     @property
-    def template_bindings(self):
-        """Gets the template_bindings of this InputVirtualizationRealmBinding.  # noqa: E501
+    def type(self):
+        """Gets the type of this InstanceType.  # noqa: E501
 
 
-        :return: The template_bindings of this InputVirtualizationRealmBinding.  # noqa: E501
-        :rtype: list[InputHostBinding]
+        :return: The type of this InstanceType.  # noqa: E501
+        :rtype: str
         """
-        return self._template_bindings
+        return self._type
 
-    @template_bindings.setter
-    def template_bindings(self, template_bindings):
-        """Sets the template_bindings of this InputVirtualizationRealmBinding.
+    @type.setter
+    def type(self, type):
+        """Sets the type of this InstanceType.
 
 
-        :param template_bindings: The template_bindings of this InputVirtualizationRealmBinding.  # noqa: E501
-        :type: list[InputHostBinding]
+        :param type: The type of this InstanceType.  # noqa: E501
+        :type: str
         """
-        if self.local_vars_configuration.client_side_validation and template_bindings is None:  # noqa: E501
-            raise ValueError("Invalid value for `template_bindings`, must not be `None`")  # noqa: E501
 
-        self._template_bindings = template_bindings
+        self._type = type
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -151,14 +149,14 @@ class InputVirtualizationRealmBinding(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, InputVirtualizationRealmBinding):
+        if not isinstance(other, InstanceType):
             return False
 
         return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        if not isinstance(other, InputVirtualizationRealmBinding):
+        if not isinstance(other, InstanceType):
             return True
 
         return self.to_dict() != other.to_dict()

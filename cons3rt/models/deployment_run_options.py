@@ -69,7 +69,7 @@ class DeploymentRunOptions(object):
         'retain_on_error': 'bool',
         'task_group': 'str',
         'username': 'str',
-        'virt_realm_binding': 'VirtualizationRealmBinding',
+        'virt_realm_binding': 'InputVirtualizationRealmBinding',
         'windows_domain_name': 'str'
     }
 
@@ -613,7 +613,7 @@ class DeploymentRunOptions(object):
 
 
         :return: The virt_realm_binding of this DeploymentRunOptions.  # noqa: E501
-        :rtype: VirtualizationRealmBinding
+        :rtype: InputVirtualizationRealmBinding
         """
         return self._virt_realm_binding
 
@@ -623,7 +623,7 @@ class DeploymentRunOptions(object):
 
 
         :param virt_realm_binding: The virt_realm_binding of this DeploymentRunOptions.  # noqa: E501
-        :type: VirtualizationRealmBinding
+        :type: InputVirtualizationRealmBinding
         """
 
         self._virt_realm_binding = virt_realm_binding

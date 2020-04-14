@@ -51,18 +51,18 @@ class MultipartFormDataInput(object):
     openapi_types = {
         'form_data': 'dict(str, InputPart)',
         'form_data_map': 'dict(str, list[InputPart])',
-        'parts': 'list[InputPart]',
-        'preamble': 'str'
+        'preamble': 'str',
+        'parts': 'list[InputPart]'
     }
 
     attribute_map = {
         'form_data': 'formData',
         'form_data_map': 'formDataMap',
-        'parts': 'parts',
-        'preamble': 'preamble'
+        'preamble': 'preamble',
+        'parts': 'parts'
     }
 
-    def __init__(self, form_data=None, form_data_map=None, parts=None, preamble=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, form_data=None, form_data_map=None, preamble=None, parts=None, local_vars_configuration=None):  # noqa: E501
         """MultipartFormDataInput - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,18 +70,18 @@ class MultipartFormDataInput(object):
 
         self._form_data = None
         self._form_data_map = None
-        self._parts = None
         self._preamble = None
+        self._parts = None
         self.discriminator = None
 
         if form_data is not None:
             self.form_data = form_data
         if form_data_map is not None:
             self.form_data_map = form_data_map
-        if parts is not None:
-            self.parts = parts
         if preamble is not None:
             self.preamble = preamble
+        if parts is not None:
+            self.parts = parts
 
     @property
     def form_data(self):
@@ -126,27 +126,6 @@ class MultipartFormDataInput(object):
         self._form_data_map = form_data_map
 
     @property
-    def parts(self):
-        """Gets the parts of this MultipartFormDataInput.  # noqa: E501
-
-
-        :return: The parts of this MultipartFormDataInput.  # noqa: E501
-        :rtype: list[InputPart]
-        """
-        return self._parts
-
-    @parts.setter
-    def parts(self, parts):
-        """Sets the parts of this MultipartFormDataInput.
-
-
-        :param parts: The parts of this MultipartFormDataInput.  # noqa: E501
-        :type: list[InputPart]
-        """
-
-        self._parts = parts
-
-    @property
     def preamble(self):
         """Gets the preamble of this MultipartFormDataInput.  # noqa: E501
 
@@ -166,6 +145,27 @@ class MultipartFormDataInput(object):
         """
 
         self._preamble = preamble
+
+    @property
+    def parts(self):
+        """Gets the parts of this MultipartFormDataInput.  # noqa: E501
+
+
+        :return: The parts of this MultipartFormDataInput.  # noqa: E501
+        :rtype: list[InputPart]
+        """
+        return self._parts
+
+    @parts.setter
+    def parts(self, parts):
+        """Sets the parts of this MultipartFormDataInput.
+
+
+        :param parts: The parts of this MultipartFormDataInput.  # noqa: E501
+        :type: list[InputPart]
+        """
+
+        self._parts = parts
 
     def to_dict(self):
         """Returns the model properties as a dict"""

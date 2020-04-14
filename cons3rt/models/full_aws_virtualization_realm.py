@@ -89,12 +89,8 @@ class FullAwsVirtualizationRealm(object):
         'zone_count': 'int',
         'nat_image_id': 'str',
         'nat_instance_type': 'str',
-        'nat_key_name': 'str',
-        'nat_key_pem': 'str',
         'region': 'str',
         'security_group_id': 'str',
-        'user_key_name': 'str',
-        'user_key_pem': 'str',
         'virtual_network_name': 'str',
         'vpc_id': 'str',
         'vpc_subnet_name': 'str'
@@ -141,18 +137,14 @@ class FullAwsVirtualizationRealm(object):
         'zone_count': 'zoneCount',
         'nat_image_id': 'natImageId',
         'nat_instance_type': 'natInstanceType',
-        'nat_key_name': 'natKeyName',
-        'nat_key_pem': 'natKeyPem',
         'region': 'region',
         'security_group_id': 'securityGroupId',
-        'user_key_name': 'userKeyName',
-        'user_key_pem': 'userKeyPem',
         'virtual_network_name': 'virtualNetworkName',
         'vpc_id': 'vpcId',
         'vpc_subnet_name': 'vpcSubnetName'
     }
 
-    def __init__(self, virtualization_realm_type=None, id=None, name=None, state=None, access_point=None, account_id=None, active_virtual_machines=None, networks=None, admin_users=None, allocated=None, cloud=None, created_at=None, date_last_reachable=None, description=None, default_windows_domain_name=None, local_storage_name=None, maximum_impact_level=None, maximum_num_cpus=None, maximum_num_gpus=None, maximum_ram_in_megabytes=None, maximum_storage_in_megabytes=None, maximum_virtual_machines=None, power_on_delay_base=None, power_on_initial_delay_base=None, power_on_minimum_delay=None, projects=None, reachable=None, remote_access_config=None, remote_access_deployment_id=None, remote_access_deployment_run_status=None, remote_access_status=None, supported_features=None, template_registrations=None, templates=None, template_subscriptions=None, updated_at=None, username=None, zone_count=None, nat_image_id=None, nat_instance_type=None, nat_key_name=None, nat_key_pem=None, region=None, security_group_id=None, user_key_name=None, user_key_pem=None, virtual_network_name=None, vpc_id=None, vpc_subnet_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, virtualization_realm_type=None, id=None, name=None, state=None, access_point=None, account_id=None, active_virtual_machines=None, networks=None, admin_users=None, allocated=None, cloud=None, created_at=None, date_last_reachable=None, description=None, default_windows_domain_name=None, local_storage_name=None, maximum_impact_level=None, maximum_num_cpus=None, maximum_num_gpus=None, maximum_ram_in_megabytes=None, maximum_storage_in_megabytes=None, maximum_virtual_machines=None, power_on_delay_base=None, power_on_initial_delay_base=None, power_on_minimum_delay=None, projects=None, reachable=None, remote_access_config=None, remote_access_deployment_id=None, remote_access_deployment_run_status=None, remote_access_status=None, supported_features=None, template_registrations=None, templates=None, template_subscriptions=None, updated_at=None, username=None, zone_count=None, nat_image_id=None, nat_instance_type=None, region=None, security_group_id=None, virtual_network_name=None, vpc_id=None, vpc_subnet_name=None, local_vars_configuration=None):  # noqa: E501
         """FullAwsVirtualizationRealm - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -198,12 +190,8 @@ class FullAwsVirtualizationRealm(object):
         self._zone_count = None
         self._nat_image_id = None
         self._nat_instance_type = None
-        self._nat_key_name = None
-        self._nat_key_pem = None
         self._region = None
         self._security_group_id = None
-        self._user_key_name = None
-        self._user_key_pem = None
         self._virtual_network_name = None
         self._vpc_id = None
         self._vpc_subnet_name = None
@@ -284,18 +272,10 @@ class FullAwsVirtualizationRealm(object):
             self.nat_image_id = nat_image_id
         if nat_instance_type is not None:
             self.nat_instance_type = nat_instance_type
-        if nat_key_name is not None:
-            self.nat_key_name = nat_key_name
-        if nat_key_pem is not None:
-            self.nat_key_pem = nat_key_pem
         if region is not None:
             self.region = region
         if security_group_id is not None:
             self.security_group_id = security_group_id
-        if user_key_name is not None:
-            self.user_key_name = user_key_name
-        if user_key_pem is not None:
-            self.user_key_pem = user_key_pem
         if virtual_network_name is not None:
             self.virtual_network_name = virtual_network_name
         if vpc_id is not None:
@@ -1210,48 +1190,6 @@ class FullAwsVirtualizationRealm(object):
         self._nat_instance_type = nat_instance_type
 
     @property
-    def nat_key_name(self):
-        """Gets the nat_key_name of this FullAwsVirtualizationRealm.  # noqa: E501
-
-
-        :return: The nat_key_name of this FullAwsVirtualizationRealm.  # noqa: E501
-        :rtype: str
-        """
-        return self._nat_key_name
-
-    @nat_key_name.setter
-    def nat_key_name(self, nat_key_name):
-        """Sets the nat_key_name of this FullAwsVirtualizationRealm.
-
-
-        :param nat_key_name: The nat_key_name of this FullAwsVirtualizationRealm.  # noqa: E501
-        :type: str
-        """
-
-        self._nat_key_name = nat_key_name
-
-    @property
-    def nat_key_pem(self):
-        """Gets the nat_key_pem of this FullAwsVirtualizationRealm.  # noqa: E501
-
-
-        :return: The nat_key_pem of this FullAwsVirtualizationRealm.  # noqa: E501
-        :rtype: str
-        """
-        return self._nat_key_pem
-
-    @nat_key_pem.setter
-    def nat_key_pem(self, nat_key_pem):
-        """Sets the nat_key_pem of this FullAwsVirtualizationRealm.
-
-
-        :param nat_key_pem: The nat_key_pem of this FullAwsVirtualizationRealm.  # noqa: E501
-        :type: str
-        """
-
-        self._nat_key_pem = nat_key_pem
-
-    @property
     def region(self):
         """Gets the region of this FullAwsVirtualizationRealm.  # noqa: E501
 
@@ -1292,48 +1230,6 @@ class FullAwsVirtualizationRealm(object):
         """
 
         self._security_group_id = security_group_id
-
-    @property
-    def user_key_name(self):
-        """Gets the user_key_name of this FullAwsVirtualizationRealm.  # noqa: E501
-
-
-        :return: The user_key_name of this FullAwsVirtualizationRealm.  # noqa: E501
-        :rtype: str
-        """
-        return self._user_key_name
-
-    @user_key_name.setter
-    def user_key_name(self, user_key_name):
-        """Sets the user_key_name of this FullAwsVirtualizationRealm.
-
-
-        :param user_key_name: The user_key_name of this FullAwsVirtualizationRealm.  # noqa: E501
-        :type: str
-        """
-
-        self._user_key_name = user_key_name
-
-    @property
-    def user_key_pem(self):
-        """Gets the user_key_pem of this FullAwsVirtualizationRealm.  # noqa: E501
-
-
-        :return: The user_key_pem of this FullAwsVirtualizationRealm.  # noqa: E501
-        :rtype: str
-        """
-        return self._user_key_pem
-
-    @user_key_pem.setter
-    def user_key_pem(self, user_key_pem):
-        """Sets the user_key_pem of this FullAwsVirtualizationRealm.
-
-
-        :param user_key_pem: The user_key_pem of this FullAwsVirtualizationRealm.  # noqa: E501
-        :type: str
-        """
-
-        self._user_key_pem = user_key_pem
 
     @property
     def virtual_network_name(self):

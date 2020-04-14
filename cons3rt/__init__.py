@@ -132,6 +132,7 @@ from cons3rt.models.cloud_features import CloudFeatures
 from cons3rt.models.cloud_stack_cloud import CloudStackCloud
 from cons3rt.models.cloud_stack_cloud_all_of import CloudStackCloudAllOf
 from cons3rt.models.composition import Composition
+from cons3rt.models.composition_host_option import CompositionHostOption
 from cons3rt.models.composition_launch_options import CompositionLaunchOptions
 from cons3rt.models.composition_run_options import CompositionRunOptions
 from cons3rt.models.configuration import Configuration
@@ -167,6 +168,7 @@ from cons3rt.models.full_aws_cloud_all_of import FullAwsCloudAllOf
 from cons3rt.models.full_aws_cloud_all_of1 import FullAwsCloudAllOf1
 from cons3rt.models.full_aws_virtualization_realm import FullAwsVirtualizationRealm
 from cons3rt.models.full_aws_virtualization_realm_all_of import FullAwsVirtualizationRealmAllOf
+from cons3rt.models.full_aws_virtualization_realm_all_of1 import FullAwsVirtualizationRealmAllOf1
 from cons3rt.models.full_azure_cloud import FullAzureCloud
 from cons3rt.models.full_azure_cloud_all_of import FullAzureCloudAllOf
 from cons3rt.models.full_azure_virtualization_realm import FullAzureVirtualizationRealm
@@ -215,11 +217,11 @@ from cons3rt.models.full_virtual_service_all_of import FullVirtualServiceAllOf
 from cons3rt.models.full_virtualization_realm import FullVirtualizationRealm
 from cons3rt.models.general_physical_machine import GeneralPhysicalMachine
 from cons3rt.models.general_scenario import GeneralScenario
+from cons3rt.models.host_binding import HostBinding
 from cons3rt.models.host_option import HostOption
 from cons3rt.models.image_reference_dto import ImageReferenceDTO
 from cons3rt.models.inactive_composition_status import InactiveCompositionStatus
 from cons3rt.models.inactive_composition_status_all_of import InactiveCompositionStatusAllOf
-from cons3rt.models.inline_object import InlineObject
 from cons3rt.models.input_abstract_component import InputAbstractComponent
 from cons3rt.models.input_appliance import InputAppliance
 from cons3rt.models.input_appliance_all_of import InputApplianceAllOf
@@ -237,10 +239,10 @@ from cons3rt.models.input_azure_virtualization_realm_all_of import InputAzureVir
 from cons3rt.models.input_category import InputCategory
 from cons3rt.models.input_cloud import InputCloud
 from cons3rt.models.input_composition import InputComposition
+from cons3rt.models.input_composition_host_option import InputCompositionHostOption
 from cons3rt.models.input_composition_run_options import InputCompositionRunOptions
 from cons3rt.models.input_configuration import InputConfiguration
 from cons3rt.models.input_cons3rt_template_data import InputCons3rtTemplateData
-from cons3rt.models.input_cons3rt_template_data_for_binding import InputCons3rtTemplateDataForBinding
 from cons3rt.models.input_container_component import InputContainerComponent
 from cons3rt.models.input_container_component_all_of import InputContainerComponentAllOf
 from cons3rt.models.input_container_component_all_of1 import InputContainerComponentAllOf1
@@ -256,6 +258,7 @@ from cons3rt.models.input_docker_registry_submission_endpoint_for_asset_submissi
 from cons3rt.models.input_docker_registry_submission_endpoint_for_asset_submission_all_of import InputDockerRegistrySubmissionEndpointForAssetSubmissionAllOf
 from cons3rt.models.input_docker_registry_submission_endpoint_for_project import InputDockerRegistrySubmissionEndpointForProject
 from cons3rt.models.input_file_form import InputFileForm
+from cons3rt.models.input_host_binding import InputHostBinding
 from cons3rt.models.input_host_option import InputHostOption
 from cons3rt.models.input_metadata import InputMetadata
 from cons3rt.models.input_minimal_virtualization_realm import InputMinimalVirtualizationRealm
@@ -294,7 +297,6 @@ from cons3rt.models.input_system_module import InputSystemModule
 from cons3rt.models.input_system_module_full import InputSystemModuleFull
 from cons3rt.models.input_team import InputTeam
 from cons3rt.models.input_team_full import InputTeamFull
-from cons3rt.models.input_template_binding import InputTemplateBinding
 from cons3rt.models.input_template_profile import InputTemplateProfile
 from cons3rt.models.input_template_subscription import InputTemplateSubscription
 from cons3rt.models.input_test_asset import InputTestAsset
@@ -317,6 +319,8 @@ from cons3rt.models.input_virtualization_realm import InputVirtualizationRealm
 from cons3rt.models.input_virtualization_realm_binding import InputVirtualizationRealmBinding
 from cons3rt.models.input_virtualization_realm_client import InputVirtualizationRealmClient
 from cons3rt.models.input_virtualization_realm_network import InputVirtualizationRealmNetwork
+from cons3rt.models.instance_type import InstanceType
+from cons3rt.models.instance_type_family import InstanceTypeFamily
 from cons3rt.models.log_entry import LogEntry
 from cons3rt.models.maintenance_mode_request import MaintenanceModeRequest
 from cons3rt.models.metadata import Metadata

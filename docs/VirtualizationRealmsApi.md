@@ -42,6 +42,7 @@ Method | HTTP request | Description
 [**update_template_subscription**](VirtualizationRealmsApi.md#update_template_subscription) | **PUT** /api/virtualizationrealms/{id}/templates/subscriptions/{subscription_id} | Update Template Subscription
 [**update_virt_realm_remote_access_config**](VirtualizationRealmsApi.md#update_virt_realm_remote_access_config) | **PUT** /api/virtualizationrealms/{id}/remoteaccess | Update Remote Access
 [**update_virtualization_realm**](VirtualizationRealmsApi.md#update_virtualization_realm) | **PUT** /api/virtualizationrealms/{id} | Update Virtualization Realm
+[**update_virtualization_realm_reachability**](VirtualizationRealmsApi.md#update_virtualization_realm_reachability) | **PUT** /api/virtualizationrealms/{id}/updatereachability | 
 
 
 # **add_network**
@@ -4699,6 +4700,119 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **400** | Invalid ID or data supplied |  -  |
 **404** | Virtualization realm not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_virtualization_realm_reachability**
+> bool update_virtualization_realm_reachability(id)
+
+
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
+
+    try:
+        api_response = api_instance.update_virtualization_realm_reachability(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->update_virtualization_realm_reachability: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
+    id = 'id_example' # str | ID of virtualization realm
+
+    try:
+        api_response = api_instance.update_virtualization_realm_reachability(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling VirtualizationRealmsApi->update_virtualization_realm_reachability: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of virtualization realm | 
+
+### Return type
+
+**bool**
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**0** | default response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

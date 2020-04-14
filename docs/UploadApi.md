@@ -285,7 +285,7 @@ configuration.key_password='keyfile_password' # optional
 with cons3rt.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cons3rt.UploadApi(api_client)
-    file = 'file_example' # list[str] |  (optional)
+    file = '/path/to/file' # list[file] |  (optional)
 filename = 'filename_example' # str |  (optional)
 
     try:
@@ -327,7 +327,7 @@ configuration.key_password='keyfile_password' # optional
 with cons3rt.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cons3rt.UploadApi(api_client)
-    file = 'file_example' # list[str] |  (optional)
+    file = '/path/to/file' # list[file] |  (optional)
 filename = 'filename_example' # str |  (optional)
 
     try:
@@ -342,7 +342,7 @@ filename = 'filename_example' # str |  (optional)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | [**list[str]**](str.md)|  | [optional] 
+ **file** | **list[file]**|  | [optional] 
  **filename** | **str**|  | [optional] 
 
 ### Return type

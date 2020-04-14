@@ -249,6 +249,7 @@ Class | Method | HTTP request | Description
 *ScenariosApi* | [**create_scenario**](docs/ScenariosApi.md#create_scenario) | **PUT** /api/scenarios/createscenario | Create Scenario
 *ScenariosApi* | [**create_system_entire**](docs/ScenariosApi.md#create_system_entire) | **PUT** /api/systems/createsystem | Create System
 *ScenariosApi* | [**delete_asset**](docs/ScenariosApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete asset
+*ScenariosApi* | [**get_bindings_for_deployment1**](docs/ScenariosApi.md#get_bindings_for_deployment1) | **GET** /api/scenarios/{id}/bindings | List Bindings
 *ScenariosApi* | [**get_scenario**](docs/ScenariosApi.md#get_scenario) | **GET** /api/scenarios/{id} | Retrieve Scenario
 *ScenariosApi* | [**get_scenarios**](docs/ScenariosApi.md#get_scenarios) | **GET** /api/scenarios | List Scenarios
 *ScenariosApi* | [**get_scenarios_expanded**](docs/ScenariosApi.md#get_scenarios_expanded) | **GET** /api/scenarios/expanded | List all Scenarios, including Project Assets
@@ -390,6 +391,7 @@ Class | Method | HTTP request | Description
 *VirtualizationRealmsApi* | [**update_template_subscription**](docs/VirtualizationRealmsApi.md#update_template_subscription) | **PUT** /api/virtualizationrealms/{id}/templates/subscriptions/{subscription_id} | Update Template Subscription
 *VirtualizationRealmsApi* | [**update_virt_realm_remote_access_config**](docs/VirtualizationRealmsApi.md#update_virt_realm_remote_access_config) | **PUT** /api/virtualizationrealms/{id}/remoteaccess | Update Remote Access
 *VirtualizationRealmsApi* | [**update_virtualization_realm**](docs/VirtualizationRealmsApi.md#update_virtualization_realm) | **PUT** /api/virtualizationrealms/{id} | Update Virtualization Realm
+*VirtualizationRealmsApi* | [**update_virtualization_realm_reachability**](docs/VirtualizationRealmsApi.md#update_virtualization_realm_reachability) | **PUT** /api/virtualizationrealms/{id}/updatereachability | 
 *DefaultApi* | [**get_build_number**](docs/DefaultApi.md#get_build_number) | **GET** /public/buildNumber | 
 *DefaultApi* | [**get_build_timestamp**](docs/DefaultApi.md#get_build_timestamp) | **GET** /public/buildTimestamp | 
 *DefaultApi* | [**get_cons3rt_version**](docs/DefaultApi.md#get_cons3rt_version) | **GET** /public/cons3rtVersion | 
@@ -474,6 +476,7 @@ Class | Method | HTTP request | Description
  - [CloudStackCloud](docs/CloudStackCloud.md)
  - [CloudStackCloudAllOf](docs/CloudStackCloudAllOf.md)
  - [Composition](docs/Composition.md)
+ - [CompositionHostOption](docs/CompositionHostOption.md)
  - [CompositionLaunchOptions](docs/CompositionLaunchOptions.md)
  - [CompositionRunOptions](docs/CompositionRunOptions.md)
  - [Configuration](docs/Configuration.md)
@@ -509,6 +512,7 @@ Class | Method | HTTP request | Description
  - [FullAwsCloudAllOf1](docs/FullAwsCloudAllOf1.md)
  - [FullAwsVirtualizationRealm](docs/FullAwsVirtualizationRealm.md)
  - [FullAwsVirtualizationRealmAllOf](docs/FullAwsVirtualizationRealmAllOf.md)
+ - [FullAwsVirtualizationRealmAllOf1](docs/FullAwsVirtualizationRealmAllOf1.md)
  - [FullAzureCloud](docs/FullAzureCloud.md)
  - [FullAzureCloudAllOf](docs/FullAzureCloudAllOf.md)
  - [FullAzureVirtualizationRealm](docs/FullAzureVirtualizationRealm.md)
@@ -557,11 +561,11 @@ Class | Method | HTTP request | Description
  - [FullVirtualizationRealm](docs/FullVirtualizationRealm.md)
  - [GeneralPhysicalMachine](docs/GeneralPhysicalMachine.md)
  - [GeneralScenario](docs/GeneralScenario.md)
+ - [HostBinding](docs/HostBinding.md)
  - [HostOption](docs/HostOption.md)
  - [ImageReferenceDTO](docs/ImageReferenceDTO.md)
  - [InactiveCompositionStatus](docs/InactiveCompositionStatus.md)
  - [InactiveCompositionStatusAllOf](docs/InactiveCompositionStatusAllOf.md)
- - [InlineObject](docs/InlineObject.md)
  - [InputAbstractComponent](docs/InputAbstractComponent.md)
  - [InputAppliance](docs/InputAppliance.md)
  - [InputApplianceAllOf](docs/InputApplianceAllOf.md)
@@ -579,10 +583,10 @@ Class | Method | HTTP request | Description
  - [InputCategory](docs/InputCategory.md)
  - [InputCloud](docs/InputCloud.md)
  - [InputComposition](docs/InputComposition.md)
+ - [InputCompositionHostOption](docs/InputCompositionHostOption.md)
  - [InputCompositionRunOptions](docs/InputCompositionRunOptions.md)
  - [InputConfiguration](docs/InputConfiguration.md)
  - [InputCons3rtTemplateData](docs/InputCons3rtTemplateData.md)
- - [InputCons3rtTemplateDataForBinding](docs/InputCons3rtTemplateDataForBinding.md)
  - [InputContainerComponent](docs/InputContainerComponent.md)
  - [InputContainerComponentAllOf](docs/InputContainerComponentAllOf.md)
  - [InputContainerComponentAllOf1](docs/InputContainerComponentAllOf1.md)
@@ -598,6 +602,7 @@ Class | Method | HTTP request | Description
  - [InputDockerRegistrySubmissionEndpointForAssetSubmissionAllOf](docs/InputDockerRegistrySubmissionEndpointForAssetSubmissionAllOf.md)
  - [InputDockerRegistrySubmissionEndpointForProject](docs/InputDockerRegistrySubmissionEndpointForProject.md)
  - [InputFileForm](docs/InputFileForm.md)
+ - [InputHostBinding](docs/InputHostBinding.md)
  - [InputHostOption](docs/InputHostOption.md)
  - [InputMetadata](docs/InputMetadata.md)
  - [InputMinimalVirtualizationRealm](docs/InputMinimalVirtualizationRealm.md)
@@ -636,7 +641,6 @@ Class | Method | HTTP request | Description
  - [InputSystemModuleFull](docs/InputSystemModuleFull.md)
  - [InputTeam](docs/InputTeam.md)
  - [InputTeamFull](docs/InputTeamFull.md)
- - [InputTemplateBinding](docs/InputTemplateBinding.md)
  - [InputTemplateProfile](docs/InputTemplateProfile.md)
  - [InputTemplateSubscription](docs/InputTemplateSubscription.md)
  - [InputTestAsset](docs/InputTestAsset.md)
@@ -659,6 +663,8 @@ Class | Method | HTTP request | Description
  - [InputVirtualizationRealmBinding](docs/InputVirtualizationRealmBinding.md)
  - [InputVirtualizationRealmClient](docs/InputVirtualizationRealmClient.md)
  - [InputVirtualizationRealmNetwork](docs/InputVirtualizationRealmNetwork.md)
+ - [InstanceType](docs/InstanceType.md)
+ - [InstanceTypeFamily](docs/InstanceTypeFamily.md)
  - [LogEntry](docs/LogEntry.md)
  - [MaintenanceModeRequest](docs/MaintenanceModeRequest.md)
  - [Metadata](docs/Metadata.md)

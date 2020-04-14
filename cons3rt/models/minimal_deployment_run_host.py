@@ -60,6 +60,7 @@ class MinimalDeploymentRunHost(object):
         'hostname': 'str',
         'id': 'int',
         'installations': 'list[AbstractInstallation]',
+        'instance_type_name': 'str',
         'nested_virtualization': 'bool',
         'network_interfaces': 'list[NetworkInterface]',
         'num_cpus': 'int',
@@ -89,6 +90,7 @@ class MinimalDeploymentRunHost(object):
         'hostname': 'hostname',
         'id': 'id',
         'installations': 'installations',
+        'instance_type_name': 'instanceTypeName',
         'nested_virtualization': 'nestedVirtualization',
         'network_interfaces': 'networkInterfaces',
         'num_cpus': 'numCpus',
@@ -106,7 +108,7 @@ class MinimalDeploymentRunHost(object):
         'provisionable': 'provisionable'
     }
 
-    def __init__(self, build_order=None, created_password=None, created_username=None, default_password=None, default_username=None, disks=None, fap_status=None, host_action_in_process=None, hostname=None, id=None, installations=None, nested_virtualization=None, network_interfaces=None, num_cpus=None, physical_machine_data_or_template_uuid=None, physical_machine_or_template_name=None, published=None, ram=None, snapshot_available=None, snapshot_date=None, system_module_id=None, system_module_type=None, system_role=None, virtualization_realm_status=None, virtual=None, provisionable=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, build_order=None, created_password=None, created_username=None, default_password=None, default_username=None, disks=None, fap_status=None, host_action_in_process=None, hostname=None, id=None, installations=None, instance_type_name=None, nested_virtualization=None, network_interfaces=None, num_cpus=None, physical_machine_data_or_template_uuid=None, physical_machine_or_template_name=None, published=None, ram=None, snapshot_available=None, snapshot_date=None, system_module_id=None, system_module_type=None, system_role=None, virtualization_realm_status=None, virtual=None, provisionable=None, local_vars_configuration=None):  # noqa: E501
         """MinimalDeploymentRunHost - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -123,6 +125,7 @@ class MinimalDeploymentRunHost(object):
         self._hostname = None
         self._id = None
         self._installations = None
+        self._instance_type_name = None
         self._nested_virtualization = None
         self._network_interfaces = None
         self._num_cpus = None
@@ -162,6 +165,8 @@ class MinimalDeploymentRunHost(object):
             self.id = id
         if installations is not None:
             self.installations = installations
+        if instance_type_name is not None:
+            self.instance_type_name = instance_type_name
         if nested_virtualization is not None:
             self.nested_virtualization = nested_virtualization
         if network_interfaces is not None:
@@ -429,6 +434,27 @@ class MinimalDeploymentRunHost(object):
         """
 
         self._installations = installations
+
+    @property
+    def instance_type_name(self):
+        """Gets the instance_type_name of this MinimalDeploymentRunHost.  # noqa: E501
+
+
+        :return: The instance_type_name of this MinimalDeploymentRunHost.  # noqa: E501
+        :rtype: str
+        """
+        return self._instance_type_name
+
+    @instance_type_name.setter
+    def instance_type_name(self, instance_type_name):
+        """Sets the instance_type_name of this MinimalDeploymentRunHost.
+
+
+        :param instance_type_name: The instance_type_name of this MinimalDeploymentRunHost.  # noqa: E501
+        :type: str
+        """
+
+        self._instance_type_name = instance_type_name
 
     @property
     def nested_virtualization(self):
