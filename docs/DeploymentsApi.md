@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**create_deployment_entire**](DeploymentsApi.md#create_deployment_entire) | **PUT** /api/deployments/createdeployment | Create Deployment
 [**delete_asset**](DeploymentsApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete asset
 [**determine_valid_virtualization_realms**](DeploymentsApi.md#determine_valid_virtualization_realms) | **GET** /api/deployments/{id}/validrealms | List Valid Virtualization Realms
-[**get_bindings_for_deployment**](DeploymentsApi.md#get_bindings_for_deployment) | **GET** /api/deployments/{id}/bindings | List Bindings
+[**get_bindings_for_deployment**](DeploymentsApi.md#get_bindings_for_deployment) | **POST** /api/deployments/{id}/bindings | List Bindings
 [**get_deployment**](DeploymentsApi.md#get_deployment) | **GET** /api/deployments/{id} | Retrieve Deployment
 [**get_deployment_metric**](DeploymentsApi.md#get_deployment_metric) | **GET** /api/deployments/{id}/metrics | Retrieve Metrics
 [**get_deployment_runs**](DeploymentsApi.md#get_deployment_runs) | **GET** /api/deployments/{id}/runs | List Deployment Runs
@@ -884,7 +884,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_bindings_for_deployment**
-> list[VirtualizationRealmBinding] get_bindings_for_deployment(id, virtualization_realm_id=virtualization_realm_id)
+> list[VirtualizationRealmBinding] get_bindings_for_deployment(id, input_deployment_run_options_for_bindings=input_deployment_run_options_for_bindings)
 
 List Bindings
 
@@ -924,11 +924,11 @@ with cons3rt.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cons3rt.DeploymentsApi(api_client)
     id = 'id_example' # str | ID of deployment
-virtualization_realm_id = 56 # int | ID of preferred virtualization realm (optional)
+input_deployment_run_options_for_bindings = cons3rt.InputDeploymentRunOptionsForBindings() # InputDeploymentRunOptionsForBindings | The deployment run options to use when launching the deployment (optional)
 
     try:
         # List Bindings
-        api_response = api_instance.get_bindings_for_deployment(id, virtualization_realm_id=virtualization_realm_id)
+        api_response = api_instance.get_bindings_for_deployment(id, input_deployment_run_options_for_bindings=input_deployment_run_options_for_bindings)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling DeploymentsApi->get_bindings_for_deployment: %s\n" % e)
@@ -966,11 +966,11 @@ with cons3rt.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cons3rt.DeploymentsApi(api_client)
     id = 'id_example' # str | ID of deployment
-virtualization_realm_id = 56 # int | ID of preferred virtualization realm (optional)
+input_deployment_run_options_for_bindings = cons3rt.InputDeploymentRunOptionsForBindings() # InputDeploymentRunOptionsForBindings | The deployment run options to use when launching the deployment (optional)
 
     try:
         # List Bindings
-        api_response = api_instance.get_bindings_for_deployment(id, virtualization_realm_id=virtualization_realm_id)
+        api_response = api_instance.get_bindings_for_deployment(id, input_deployment_run_options_for_bindings=input_deployment_run_options_for_bindings)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling DeploymentsApi->get_bindings_for_deployment: %s\n" % e)
@@ -981,7 +981,7 @@ virtualization_realm_id = 56 # int | ID of preferred virtualization realm (optio
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| ID of deployment | 
- **virtualization_realm_id** | **int**| ID of preferred virtualization realm | [optional] 
+ **input_deployment_run_options_for_bindings** | [**InputDeploymentRunOptionsForBindings**](InputDeploymentRunOptionsForBindings.md)| The deployment run options to use when launching the deployment | [optional] 
 
 ### Return type
 
@@ -993,7 +993,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json
 
 ### HTTP response details
@@ -1244,7 +1244,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_deployment_runs**
-> list[MinimalDeploymentRun] get_deployment_runs(id)
+> list[MinimalDeploymentRun] get_deployment_runs(id, maxresults=maxresults, page=page)
 
 List Deployment Runs
 
@@ -1284,10 +1284,12 @@ with cons3rt.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cons3rt.DeploymentsApi(api_client)
     id = 'id_example' # str | ID of deployment
+maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
+page = 0 # int | Requested page number (optional) (default to 0)
 
     try:
         # List Deployment Runs
-        api_response = api_instance.get_deployment_runs(id)
+        api_response = api_instance.get_deployment_runs(id, maxresults=maxresults, page=page)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling DeploymentsApi->get_deployment_runs: %s\n" % e)
@@ -1325,10 +1327,12 @@ with cons3rt.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cons3rt.DeploymentsApi(api_client)
     id = 'id_example' # str | ID of deployment
+maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
+page = 0 # int | Requested page number (optional) (default to 0)
 
     try:
         # List Deployment Runs
-        api_response = api_instance.get_deployment_runs(id)
+        api_response = api_instance.get_deployment_runs(id, maxresults=maxresults, page=page)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling DeploymentsApi->get_deployment_runs: %s\n" % e)
@@ -1339,6 +1343,8 @@ with cons3rt.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| ID of deployment | 
+ **maxresults** | **int**| Maximum number of results to return | [optional] [default to 40]
+ **page** | **int**| Requested page number | [optional] [default to 0]
 
 ### Return type
 

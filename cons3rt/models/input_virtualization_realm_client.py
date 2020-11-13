@@ -61,7 +61,9 @@ class InputVirtualizationRealmClient(object):
     }
 
     discriminator_value_class_map = {
-        
+        'InputOpenStackClient': 'InputOpenStackClient',
+        'InputVCloudClient': 'InputVCloudClient',
+        'InputAwsClient': 'InputAwsClient'
     }
 
     def __init__(self, username=None, password=None, subtype=None, local_vars_configuration=None):  # noqa: E501

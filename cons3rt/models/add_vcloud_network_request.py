@@ -49,81 +49,23 @@ class AddVcloudNetworkRequest(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'network': 'Network',
-        'subtype': 'str',
-        'external_network_name': 'str',
-        'vdc_network_pool_name': 'str'
+        'external_network_name': 'str'
     }
 
     attribute_map = {
-        'network': 'network',
-        'subtype': 'subtype',
-        'external_network_name': 'externalNetworkName',
-        'vdc_network_pool_name': 'vdcNetworkPoolName'
+        'external_network_name': 'externalNetworkName'
     }
 
-    def __init__(self, network=None, subtype=None, external_network_name=None, vdc_network_pool_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, external_network_name=None, local_vars_configuration=None):  # noqa: E501
         """AddVcloudNetworkRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._network = None
-        self._subtype = None
         self._external_network_name = None
-        self._vdc_network_pool_name = None
         self.discriminator = None
 
-        self.network = network
-        self.subtype = subtype
         self.external_network_name = external_network_name
-        self.vdc_network_pool_name = vdc_network_pool_name
-
-    @property
-    def network(self):
-        """Gets the network of this AddVcloudNetworkRequest.  # noqa: E501
-
-
-        :return: The network of this AddVcloudNetworkRequest.  # noqa: E501
-        :rtype: Network
-        """
-        return self._network
-
-    @network.setter
-    def network(self, network):
-        """Sets the network of this AddVcloudNetworkRequest.
-
-
-        :param network: The network of this AddVcloudNetworkRequest.  # noqa: E501
-        :type: Network
-        """
-        if self.local_vars_configuration.client_side_validation and network is None:  # noqa: E501
-            raise ValueError("Invalid value for `network`, must not be `None`")  # noqa: E501
-
-        self._network = network
-
-    @property
-    def subtype(self):
-        """Gets the subtype of this AddVcloudNetworkRequest.  # noqa: E501
-
-
-        :return: The subtype of this AddVcloudNetworkRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._subtype
-
-    @subtype.setter
-    def subtype(self, subtype):
-        """Sets the subtype of this AddVcloudNetworkRequest.
-
-
-        :param subtype: The subtype of this AddVcloudNetworkRequest.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
-            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
-
-        self._subtype = subtype
 
     @property
     def external_network_name(self):
@@ -147,29 +89,6 @@ class AddVcloudNetworkRequest(object):
             raise ValueError("Invalid value for `external_network_name`, must not be `None`")  # noqa: E501
 
         self._external_network_name = external_network_name
-
-    @property
-    def vdc_network_pool_name(self):
-        """Gets the vdc_network_pool_name of this AddVcloudNetworkRequest.  # noqa: E501
-
-
-        :return: The vdc_network_pool_name of this AddVcloudNetworkRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._vdc_network_pool_name
-
-    @vdc_network_pool_name.setter
-    def vdc_network_pool_name(self, vdc_network_pool_name):
-        """Sets the vdc_network_pool_name of this AddVcloudNetworkRequest.
-
-
-        :param vdc_network_pool_name: The vdc_network_pool_name of this AddVcloudNetworkRequest.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and vdc_network_pool_name is None:  # noqa: E501
-            raise ValueError("Invalid value for `vdc_network_pool_name`, must not be `None`")  # noqa: E501
-
-        self._vdc_network_pool_name = vdc_network_pool_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

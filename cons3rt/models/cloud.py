@@ -85,7 +85,10 @@ class Cloud(object):
     }
 
     discriminator_value_class_map = {
-        
+        'AwsCloud': 'AwsCloud',
+        'VCloudRestCloud': 'VCloudRestCloud',
+        'OpenStackCloud': 'OpenStackCloud',
+        'AzureCloud': 'AzureCloud'
     }
 
     def __init__(self, cloud_type=None, description=None, name=None, external_ip_addresses=None, external_ip_source=None, features=None, id=None, linux_repository_url=None, maximum_impact_level=None, networks=None, owning_team=None, state=None, template_virtualization_realm=None, virtualization_realms=None, subtype=None, local_vars_configuration=None):  # noqa: E501
@@ -154,7 +157,7 @@ class Cloud(object):
         :param cloud_type: The cloud_type of this Cloud.  # noqa: E501
         :type: str
         """
-        allowed_values = ["AwsCloud", "AzureCloud", "CloudStackCloud", "OpenStackCloud", "VCloudCloud"]  # noqa: E501
+        allowed_values = ["AwsCloud", "AzureCloud", "OpenStackCloud", "VCloudRestCloud"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and cloud_type not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `cloud_type` ({0}), must be one of {1}"  # noqa: E501

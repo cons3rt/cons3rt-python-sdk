@@ -51,7 +51,7 @@ class MinimalRecurringSchedule(object):
     openapi_types = {
         'id': 'int',
         'complete': 'bool',
-        'end_date': 'int',
+        'end_date': 'datetime',
         'max_iterations': 'int',
         'deployment_run_options': 'MinimalDeploymentRunOptions',
         'remaining_iterations': 'int',
@@ -148,7 +148,7 @@ class MinimalRecurringSchedule(object):
 
 
         :return: The end_date of this MinimalRecurringSchedule.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._end_date
 
@@ -158,7 +158,7 @@ class MinimalRecurringSchedule(object):
 
 
         :param end_date: The end_date of this MinimalRecurringSchedule.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._end_date = end_date

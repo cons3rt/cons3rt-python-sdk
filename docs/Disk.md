@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**boot_disk** | **bool** |  | [optional] 
 **additional_disk** | **bool** |  | [optional] 
+**boot_disk** | **bool** |  | [optional] 
 **capacity_in_megabytes** | **int** |  | 
 **create_order** | **int** |  | [optional] 
 **is_additional_disk** | **bool** |  | [optional] 

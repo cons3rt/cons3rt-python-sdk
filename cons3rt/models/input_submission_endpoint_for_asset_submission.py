@@ -59,7 +59,8 @@ class InputSubmissionEndpointForAssetSubmission(object):
     }
 
     discriminator_value_class_map = {
-        
+        'InputDockerRegistrySubmissionEndpointForAssetSubmission': 'InputDockerRegistrySubmissionEndpointForAssetSubmission',
+        'InputSFTPSubmissionEndpointForAssetSubmission': 'InputSFTPSubmissionEndpointForAssetSubmission'
     }
 
     def __init__(self, port=None, subtype=None, local_vars_configuration=None):  # noqa: E501

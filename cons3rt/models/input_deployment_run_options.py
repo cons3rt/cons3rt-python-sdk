@@ -57,7 +57,7 @@ class InputDeploymentRunOptions(object):
         'retain_on_error': 'bool',
         'username': 'str',
         'password': 'str',
-        'earliest_start_time': 'int',
+        'earliest_start_time': 'datetime',
         'end_existing': 'bool',
         'duration': 'int',
         'properties': 'list[InputProperty]',
@@ -66,7 +66,7 @@ class InputDeploymentRunOptions(object):
         'virt_realm_binding': 'InputVirtualizationRealmBinding',
         'id': 'int',
         'debug': 'bool',
-        'end_date': 'int',
+        'end_date': 'datetime',
         'windows_domain_name': 'str'
     }
 
@@ -341,7 +341,7 @@ class InputDeploymentRunOptions(object):
 
 
         :return: The earliest_start_time of this InputDeploymentRunOptions.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._earliest_start_time
 
@@ -351,7 +351,7 @@ class InputDeploymentRunOptions(object):
 
 
         :param earliest_start_time: The earliest_start_time of this InputDeploymentRunOptions.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._earliest_start_time = earliest_start_time
@@ -530,7 +530,7 @@ class InputDeploymentRunOptions(object):
 
 
         :return: The end_date of this InputDeploymentRunOptions.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._end_date
 
@@ -540,7 +540,7 @@ class InputDeploymentRunOptions(object):
 
 
         :param end_date: The end_date of this InputDeploymentRunOptions.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._end_date = end_date

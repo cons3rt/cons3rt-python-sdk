@@ -8,8 +8,6 @@ Name | Type | Description | Notes
 **operating_system** | **str** |  | 
 **cons3rt_agent_installed** | **bool** |  | [optional] 
 **container_capable** | **bool** |  | [optional] 
-**default_password** | **str** |  | [optional] 
-**default_username** | **str** |  | [optional] 
 **disks** | [**list[InputDiskForTemplate]**](InputDiskForTemplate.md) |  | [optional] 
 **has_gpu** | **bool** |  | [optional] 
 **license** | **str** |  | [optional] 

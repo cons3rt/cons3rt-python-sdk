@@ -99,7 +99,10 @@ class InputVirtualizationRealm(object):
     }
 
     discriminator_value_class_map = {
-        
+        'InputVCloudRestVirtualizationRealm': 'InputVCloudRestVirtualizationRealm',
+        'InputOpenStackVirtualizationRealm': 'InputOpenStackVirtualizationRealm',
+        'InputAzureVirtualizationRealm': 'InputAzureVirtualizationRealm',
+        'InputAwsVirtualizationRealm': 'InputAwsVirtualizationRealm'
     }
 
     def __init__(self, virtualization_realm_type=None, access_point=None, account_id=None, cidr=None, default_windows_domain_name=None, description=None, id=None, local_storage_name=None, maximum_num_cpus=None, maximum_num_gpus=None, maximum_ram_in_megabytes=None, maximum_storage_in_megabytes=None, maximum_virtual_machines=None, name=None, password=None, power_on_delay_base=None, power_on_initial_delay_base=None, power_on_minimum_delay=None, remote_access_config=None, state=None, username=None, zone_count=None, local_vars_configuration=None):  # noqa: E501
@@ -189,7 +192,7 @@ class InputVirtualizationRealm(object):
         :param virtualization_realm_type: The virtualization_realm_type of this InputVirtualizationRealm.  # noqa: E501
         :type: str
         """
-        allowed_values = ["Amazon", "Azure", "CloudStack", "Mock", "OpenStack", "VCloud"]  # noqa: E501
+        allowed_values = ["Amazon", "Azure", "Mock", "OpenStack", "VCloudRest"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and virtualization_realm_type not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `virtualization_realm_type` ({0}), must be one of {1}"  # noqa: E501

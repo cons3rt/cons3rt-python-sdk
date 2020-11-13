@@ -8,8 +8,6 @@ Name | Type | Description | Notes
 **virt_realm_template_name** | **str** |  | 
 **cons3rt_agent_installed** | **bool** |  | [optional] 
 **container_capable** | **bool** |  | [optional] 
-**default_password** | **str** |  | [optional] 
-**default_username** | **str** |  | [optional] 
 **disks** | [**list[Disk]**](Disk.md) |  | [optional] 
 **fail_count** | **int** |  | [optional] 
 **has_gpu** | **bool** |  | [optional] 

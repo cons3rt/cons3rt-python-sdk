@@ -118,10 +118,12 @@ Class | Method | HTTP request | Description
 *AssetsApi* | [**update_software_asset_install_script**](docs/AssetsApi.md#update_software_asset_install_script) | **PUT** /api/software/{id}/updateinstall | Update Install Script
 *AssetsApi* | [**update_virtualization_realm_maximum_impact_level**](docs/AssetsApi.md#update_virtualization_realm_maximum_impact_level) | **PUT** /api/clouds/{id}/impactlevel | Update Impact Level
 *CategoriesApi* | [**add_category_to_asset**](docs/CategoriesApi.md#add_category_to_asset) | **PUT** /api/categories/{id}/asset | Assign Category to Asset
+*CategoriesApi* | [**add_category_to_deployment_run**](docs/CategoriesApi.md#add_category_to_deployment_run) | **PUT** /api/categories/{id}/run | Assign Category to Run
 *CategoriesApi* | [**create_category**](docs/CategoriesApi.md#create_category) | **POST** /api/categories | Create a Category
 *CategoriesApi* | [**delete_category**](docs/CategoriesApi.md#delete_category) | **DELETE** /api/categories/{id} | Delete Category
 *CategoriesApi* | [**get_categories**](docs/CategoriesApi.md#get_categories) | **GET** /api/categories | List all Categories
 *CategoriesApi* | [**remove_category_from_asset**](docs/CategoriesApi.md#remove_category_from_asset) | **DELETE** /api/categories/{id}/asset | Unassign Category from Asset
+*CategoriesApi* | [**remove_category_from_deployment_run**](docs/CategoriesApi.md#remove_category_from_deployment_run) | **DELETE** /api/categories/{id}/run | Unassign Category from deployment run
 *CategoriesApi* | [**set_category_parent**](docs/CategoriesApi.md#set_category_parent) | **PUT** /api/categories/{id}/parent | Set Parent Category
 *CategoriesApi* | [**update_category**](docs/CategoriesApi.md#update_category) | **PUT** /api/categories/{id} | Update Category
 *ClientApi* | [**launch_composition**](docs/ClientApi.md#launch_composition) | **POST** /api/client/{id} | Launch Composition
@@ -129,23 +131,31 @@ Class | Method | HTTP request | Description
 *CloudsApi* | [**add_project**](docs/CloudsApi.md#add_project) | **PUT** /api/virtualizationrealms/{id}/projects | Assign Project
 *CloudsApi* | [**allocate_virtualization_realm**](docs/CloudsApi.md#allocate_virtualization_realm) | **POST** /api/clouds/{id}/virtualizationrealms/allocate | Allocate Virtualization Realm
 *CloudsApi* | [**assign_managing_team**](docs/CloudsApi.md#assign_managing_team) | **PUT** /api/clouds/{id}/virtualizationrealms/{virtualizationRealmId}/team | Assign Virtualization Realm-managing Team
+*CloudsApi* | [**create_bucket**](docs/CloudsApi.md#create_bucket) | **POST** /api/clouds/{id}/buckets | 
 *CloudsApi* | [**deallocate_virt_realm**](docs/CloudsApi.md#deallocate_virt_realm) | **DELETE** /api/clouds/{id}/virtualizationrealms/allocate | De-allocate Virtualization Realm
+*CloudsApi* | [**delete_bucket**](docs/CloudsApi.md#delete_bucket) | **DELETE** /api/clouds/{id}/buckets/{bucket_id} | 
 *CloudsApi* | [**delete_cloud**](docs/CloudsApi.md#delete_cloud) | **DELETE** /api/clouds/{id} | Delete Cloud
+*CloudsApi* | [**download_file_from_bucket**](docs/CloudsApi.md#download_file_from_bucket) | **GET** /api/clouds/{id}/buckets/{bucket_id}/download | Download File From Bucket
 *CloudsApi* | [**enable_maintence_mode**](docs/CloudsApi.md#enable_maintence_mode) | **PUT** /api/clouds/{id}/maintenance | Update Maintenance Mode
+*CloudsApi* | [**get_bucket**](docs/CloudsApi.md#get_bucket) | **GET** /api/clouds/{id}/buckets/{bucket_id} | 
+*CloudsApi* | [**get_bucket_listing**](docs/CloudsApi.md#get_bucket_listing) | **GET** /api/clouds/{id}/buckets/{bucket_id}/listing | 
 *CloudsApi* | [**get_cloud**](docs/CloudsApi.md#get_cloud) | **GET** /api/clouds/{id} | Retrieve Cloud
 *CloudsApi* | [**get_cloud_resources**](docs/CloudsApi.md#get_cloud_resources) | **GET** /api/clouds/{id}/resources | Retrieve Cloud Resources
 *CloudsApi* | [**get_clouds**](docs/CloudsApi.md#get_clouds) | **GET** /api/clouds | List Clouds
 *CloudsApi* | [**get_default_network**](docs/CloudsApi.md#get_default_network) | **GET** /api/clouds/defaultnetwork | Retrieve Default Network
 *CloudsApi* | [**get_edge_gateway_i_ps**](docs/CloudsApi.md#get_edge_gateway_i_ps) | **GET** /api/clouds/{id}/edgegateways | List Edge Gateways
+*CloudsApi* | [**list_buckets**](docs/CloudsApi.md#list_buckets) | **GET** /api/clouds/{id}/buckets | 
 *CloudsApi* | [**list_virt_realms_in_cloud**](docs/CloudsApi.md#list_virt_realms_in_cloud) | **GET** /api/clouds/{id}/virtualizationrealms | List Virtualization Realms
 *CloudsApi* | [**register_cloud**](docs/CloudsApi.md#register_cloud) | **POST** /api/clouds | Create Cloud
 *CloudsApi* | [**register_virtualization_realm**](docs/CloudsApi.md#register_virtualization_realm) | **POST** /api/clouds/{id}/virtualizationrealms | Register Virtualization Realm
 *CloudsApi* | [**remove_virt_realm**](docs/CloudsApi.md#remove_virt_realm) | **DELETE** /api/clouds/{id}/virtualizationrealms | Unregister Virtualization Realm
 *CloudsApi* | [**unassign_managing_team**](docs/CloudsApi.md#unassign_managing_team) | **DELETE** /api/clouds/{id}/virtualizationrealms/{virtualizationRealmId}/team | Unassign Manager from Team
+*CloudsApi* | [**update_bucket**](docs/CloudsApi.md#update_bucket) | **PUT** /api/clouds/{id}/buckets/{bucket_id} | 
 *CloudsApi* | [**update_cloud**](docs/CloudsApi.md#update_cloud) | **PUT** /api/clouds/{id} | Update Cloud Content
 *CloudsApi* | [**update_virt_realm**](docs/CloudsApi.md#update_virt_realm) | **PUT** /api/clouds/{id}/virtualizationrealms | Update Virtualization Realm
 *CloudsApi* | [**update_virtualization_realm**](docs/CloudsApi.md#update_virtualization_realm) | **PUT** /api/virtualizationrealms/{id} | Update Virtualization Realm
 *CloudsApi* | [**update_virtualization_realm_maximum_impact_level**](docs/CloudsApi.md#update_virtualization_realm_maximum_impact_level) | **PUT** /api/clouds/{id}/impactlevel | Update Impact Level
+*CloudsApi* | [**upload_file_to_bucket**](docs/CloudsApi.md#upload_file_to_bucket) | **POST** /api/clouds/{id}/buckets/{bucket_id} | Upload File to Bucket
 *CompositionsApi* | [**delete_composition**](docs/CompositionsApi.md#delete_composition) | **DELETE** /api/compositions/{id} | Delete Composition
 *CompositionsApi* | [**get_composition**](docs/CompositionsApi.md#get_composition) | **GET** /api/compositions/{id} | Retrieve Composition
 *CompositionsApi* | [**list_compositions**](docs/CompositionsApi.md#list_compositions) | **GET** /api/compositions | List all Compositions
@@ -156,6 +166,7 @@ Class | Method | HTTP request | Description
 *ContainerAssetsApi* | [**add_trusted_project**](docs/ContainerAssetsApi.md#add_trusted_project) | **PUT** /api/assets/{id}/addtrustedproject | Assign Trusted Project to Asset
 *ContainerAssetsApi* | [**delete_asset**](docs/ContainerAssetsApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete asset
 *ContainerAssetsApi* | [**download**](docs/ContainerAssetsApi.md#download) | **GET** /api/assets/{id}/download | Download Asset
+*ContainerAssetsApi* | [**download_file_from_bucket**](docs/ContainerAssetsApi.md#download_file_from_bucket) | **GET** /api/clouds/{id}/buckets/{bucket_id}/download | Download File From Bucket
 *ContainerAssetsApi* | [**get_container**](docs/ContainerAssetsApi.md#get_container) | **GET** /api/containers/{id} | Retrieve Container Asset
 *ContainerAssetsApi* | [**get_container_assets**](docs/ContainerAssetsApi.md#get_container_assets) | **GET** /api/containers | List all Containers
 *ContainerAssetsApi* | [**get_container_assets_expanded**](docs/ContainerAssetsApi.md#get_container_assets_expanded) | **GET** /api/containers/expanded | List all Containers, including Project Assets
@@ -170,6 +181,7 @@ Class | Method | HTTP request | Description
 *ContainerAssetsApi* | [**update_impact_level**](docs/ContainerAssetsApi.md#update_impact_level) | **PUT** /api/assets/{id}/impactlevel | Update Impact Level
 *ContainerAssetsApi* | [**update_instance_limit**](docs/ContainerAssetsApi.md#update_instance_limit) | **PUT** /api/assets/{id}/limit | Update Instance Limit
 *ContainerAssetsApi* | [**update_offline_status**](docs/ContainerAssetsApi.md#update_offline_status) | **PUT** /api/assets/{id}/offline | Update Offline Status
+*DeploymentRunsApi* | [**add_category_to_deployment_run**](docs/DeploymentRunsApi.md#add_category_to_deployment_run) | **PUT** /api/categories/{id}/run | Assign Category to Run
 *DeploymentRunsApi* | [**delete_deployment_run**](docs/DeploymentRunsApi.md#delete_deployment_run) | **DELETE** /api/drs/{id} | Delete Deployment Run
 *DeploymentRunsApi* | [**download_deployment_run_test_report**](docs/DeploymentRunsApi.md#download_deployment_run_test_report) | **GET** /api/drs/{id}/downloadreport | Download Report
 *DeploymentRunsApi* | [**download_host**](docs/DeploymentRunsApi.md#download_host) | **GET** /api/drs/{id}/downloadhost | Download Host
@@ -180,11 +192,13 @@ Class | Method | HTTP request | Description
 *DeploymentRunsApi* | [**get_host**](docs/DeploymentRunsApi.md#get_host) | **GET** /api/drs/{id}/host/{hostid} | Retrieve Host
 *DeploymentRunsApi* | [**get_host_access**](docs/DeploymentRunsApi.md#get_host_access) | **GET** /api/drs/{id}/host/{hostid}/access | List Host Access Logs
 *DeploymentRunsApi* | [**get_host_configuration_metrics**](docs/DeploymentRunsApi.md#get_host_configuration_metrics) | **GET** /api/projects/{id}/metrics/hostconfiguration | Retrieve Metrics
+*DeploymentRunsApi* | [**get_host_instance_types**](docs/DeploymentRunsApi.md#get_host_instance_types) | **GET** /api/drs/{id}/host/{hostid}/resize | List available instance types for host
 *DeploymentRunsApi* | [**perform_host_action**](docs/DeploymentRunsApi.md#perform_host_action) | **PUT** /api/drs/{id}/hostaction | Execute Host Action
 *DeploymentRunsApi* | [**publish_deployment_run**](docs/DeploymentRunsApi.md#publish_deployment_run) | **POST** /api/drs/{id}/publish | Publish Deployment Run
 *DeploymentRunsApi* | [**redeploy_container_asset**](docs/DeploymentRunsApi.md#redeploy_container_asset) | **PUT** /api/drs/{id}/host/{hostid}/container | Re-deploy Container Asset
 *DeploymentRunsApi* | [**relaunch_deployment_run**](docs/DeploymentRunsApi.md#relaunch_deployment_run) | **PUT** /api/drs/{id}/rerun | Relaunch Deployment Run
 *DeploymentRunsApi* | [**release_deployment_run**](docs/DeploymentRunsApi.md#release_deployment_run) | **PUT** /api/drs/{id}/release | Release Deployment Run
+*DeploymentRunsApi* | [**remove_category_from_deployment_run**](docs/DeploymentRunsApi.md#remove_category_from_deployment_run) | **DELETE** /api/categories/{id}/run | Unassign Category from deployment run
 *DeploymentRunsApi* | [**retest_deployment_run**](docs/DeploymentRunsApi.md#retest_deployment_run) | **PUT** /api/drs/{id}/retest | Re-test Deployment Run
 *DeploymentRunsApi* | [**set_deployment_run_lock**](docs/DeploymentRunsApi.md#set_deployment_run_lock) | **PUT** /api/drs/{id}/setlock | Update Lock
 *DeploymentRunsApi* | [**set_power_schedule_for_deployment_run**](docs/DeploymentRunsApi.md#set_power_schedule_for_deployment_run) | **PUT** /api/drs/{id}/powerschedule | Update Power Schedule
@@ -196,7 +210,7 @@ Class | Method | HTTP request | Description
 *DeploymentsApi* | [**create_deployment_entire**](docs/DeploymentsApi.md#create_deployment_entire) | **PUT** /api/deployments/createdeployment | Create Deployment
 *DeploymentsApi* | [**delete_asset**](docs/DeploymentsApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete asset
 *DeploymentsApi* | [**determine_valid_virtualization_realms**](docs/DeploymentsApi.md#determine_valid_virtualization_realms) | **GET** /api/deployments/{id}/validrealms | List Valid Virtualization Realms
-*DeploymentsApi* | [**get_bindings_for_deployment**](docs/DeploymentsApi.md#get_bindings_for_deployment) | **GET** /api/deployments/{id}/bindings | List Bindings
+*DeploymentsApi* | [**get_bindings_for_deployment**](docs/DeploymentsApi.md#get_bindings_for_deployment) | **POST** /api/deployments/{id}/bindings | List Bindings
 *DeploymentsApi* | [**get_deployment**](docs/DeploymentsApi.md#get_deployment) | **GET** /api/deployments/{id} | Retrieve Deployment
 *DeploymentsApi* | [**get_deployment_metric**](docs/DeploymentsApi.md#get_deployment_metric) | **GET** /api/deployments/{id}/metrics | Retrieve Metrics
 *DeploymentsApi* | [**get_deployment_runs**](docs/DeploymentsApi.md#get_deployment_runs) | **GET** /api/deployments/{id}/runs | List Deployment Runs
@@ -268,6 +282,7 @@ Class | Method | HTTP request | Description
 *SoftwareAssetsApi* | [**add_trusted_project**](docs/SoftwareAssetsApi.md#add_trusted_project) | **PUT** /api/assets/{id}/addtrustedproject | Assign Trusted Project to Asset
 *SoftwareAssetsApi* | [**delete_asset**](docs/SoftwareAssetsApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete asset
 *SoftwareAssetsApi* | [**download**](docs/SoftwareAssetsApi.md#download) | **GET** /api/assets/{id}/download | Download Asset
+*SoftwareAssetsApi* | [**download_file_from_bucket**](docs/SoftwareAssetsApi.md#download_file_from_bucket) | **GET** /api/clouds/{id}/buckets/{bucket_id}/download | Download File From Bucket
 *SoftwareAssetsApi* | [**get_software**](docs/SoftwareAssetsApi.md#get_software) | **GET** /api/software/{id} | Retrieve Software Asset
 *SoftwareAssetsApi* | [**get_software_set**](docs/SoftwareAssetsApi.md#get_software_set) | **GET** /api/software | List Software Assets
 *SoftwareAssetsApi* | [**get_software_set_expanded**](docs/SoftwareAssetsApi.md#get_software_set_expanded) | **GET** /api/software/expanded | List all Software Assets, including Project Assets
@@ -333,6 +348,7 @@ Class | Method | HTTP request | Description
 *TestAssetsApi* | [**add_trusted_project**](docs/TestAssetsApi.md#add_trusted_project) | **PUT** /api/assets/{id}/addtrustedproject | Assign Trusted Project to Asset
 *TestAssetsApi* | [**delete_asset**](docs/TestAssetsApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete asset
 *TestAssetsApi* | [**download**](docs/TestAssetsApi.md#download) | **GET** /api/assets/{id}/download | Download Asset
+*TestAssetsApi* | [**download_file_from_bucket**](docs/TestAssetsApi.md#download_file_from_bucket) | **GET** /api/clouds/{id}/buckets/{bucket_id}/download | Download File From Bucket
 *TestAssetsApi* | [**get_test_asset**](docs/TestAssetsApi.md#get_test_asset) | **GET** /api/testassets/{id} | Retrieve Test Asset
 *TestAssetsApi* | [**get_test_assets**](docs/TestAssetsApi.md#get_test_assets) | **GET** /api/testassets | List Test Assets
 *TestAssetsApi* | [**get_test_assets_expanded**](docs/TestAssetsApi.md#get_test_assets_expanded) | **GET** /api/testassets/expanded | List all Test Assets, including Project Assets
@@ -350,6 +366,7 @@ Class | Method | HTTP request | Description
 *UploadApi* | [**get_file_content**](docs/UploadApi.md#get_file_content) | **GET** /api/upload/content | Get File Content
 *UploadApi* | [**get_file_object**](docs/UploadApi.md#get_file_object) | **GET** /api/upload | Download File
 *UploadApi* | [**upload_file1**](docs/UploadApi.md#upload_file1) | **POST** /api/upload | Upload File
+*UploadApi* | [**upload_file_to_bucket**](docs/UploadApi.md#upload_file_to_bucket) | **POST** /api/clouds/{id}/buckets/{bucket_id} | Upload File to Bucket
 *UsersApi* | [**create_user**](docs/UsersApi.md#create_user) | **POST** /api/users | Create a new user
 *UsersApi* | [**get_pending_users**](docs/UsersApi.md#get_pending_users) | **GET** /api/users/pending | List Pending Users
 *UsersApi* | [**get_users**](docs/UsersApi.md#get_users) | **GET** /api/users | List all Users
@@ -378,7 +395,6 @@ Class | Method | HTTP request | Description
 *VirtualizationRealmsApi* | [**list_template_registrations**](docs/VirtualizationRealmsApi.md#list_template_registrations) | **GET** /api/virtualizationrealms/{id}/templates/registrations | List Template Registrations
 *VirtualizationRealmsApi* | [**list_template_subscriptions**](docs/VirtualizationRealmsApi.md#list_template_subscriptions) | **GET** /api/virtualizationrealms/{id}/templates/subscriptions | List Template Subscriptions
 *VirtualizationRealmsApi* | [**list_unregistered_templates**](docs/VirtualizationRealmsApi.md#list_unregistered_templates) | **GET** /api/virtualizationrealms/{id}/templates/registrations/pending | List Unregistered Templates
-*VirtualizationRealmsApi* | [**redeploy_edges**](docs/VirtualizationRealmsApi.md#redeploy_edges) | **PUT** /api/virtualizationrealms/{id}/networks/redeployedges | Re-deploy Network Edge Devices
 *VirtualizationRealmsApi* | [**register_network**](docs/VirtualizationRealmsApi.md#register_network) | **PUT** /api/virtualizationrealms/{id}/networks/{networkIdentifier} | Register Network
 *VirtualizationRealmsApi* | [**register_template**](docs/VirtualizationRealmsApi.md#register_template) | **POST** /api/virtualizationrealms/{id}/templates/registrations | Register Template
 *VirtualizationRealmsApi* | [**remove_project**](docs/VirtualizationRealmsApi.md#remove_project) | **DELETE** /api/virtualizationrealms/{id}/projects | Unassign Project
@@ -413,42 +429,37 @@ Class | Method | HTTP request | Description
  - [AbstractRegisterCloudSpaceRequest](docs/AbstractRegisterCloudSpaceRequest.md)
  - [ActiveCompositionStatus](docs/ActiveCompositionStatus.md)
  - [ActiveCompositionStatusAllOf](docs/ActiveCompositionStatusAllOf.md)
- - [ActiveCompositionStatusAllOf1](docs/ActiveCompositionStatusAllOf1.md)
  - [AddAwsNetworkRequest](docs/AddAwsNetworkRequest.md)
  - [AddAwsNetworkRequestAllOf](docs/AddAwsNetworkRequestAllOf.md)
- - [AddAwsNetworkRequestAllOf1](docs/AddAwsNetworkRequestAllOf1.md)
  - [AddAzureNetworkRequest](docs/AddAzureNetworkRequest.md)
  - [AddAzureNetworkRequestAllOf](docs/AddAzureNetworkRequestAllOf.md)
  - [AddOpenStackNetworkRequest](docs/AddOpenStackNetworkRequest.md)
  - [AddOpenStackNetworkRequestAllOf](docs/AddOpenStackNetworkRequestAllOf.md)
  - [AddVcloudNetworkRequest](docs/AddVcloudNetworkRequest.md)
  - [AddVcloudNetworkRequestAllOf](docs/AddVcloudNetworkRequestAllOf.md)
+ - [AddVcloudRestNetworkRequest](docs/AddVcloudRestNetworkRequest.md)
  - [Appliance](docs/Appliance.md)
  - [Asset](docs/Asset.md)
  - [AwsClient](docs/AwsClient.md)
  - [AwsClientAllOf](docs/AwsClientAllOf.md)
- - [AwsClientAllOf1](docs/AwsClientAllOf1.md)
  - [AwsCloud](docs/AwsCloud.md)
  - [AwsCloudAllOf](docs/AwsCloudAllOf.md)
- - [AwsCloudAllOf1](docs/AwsCloudAllOf1.md)
  - [AwsCloudResources](docs/AwsCloudResources.md)
  - [AwsCloudResourcesAllOf](docs/AwsCloudResourcesAllOf.md)
- - [AwsCloudResourcesAllOf1](docs/AwsCloudResourcesAllOf1.md)
  - [AwsCloudSpaceRequest](docs/AwsCloudSpaceRequest.md)
  - [AwsCloudSpaceRequestAllOf](docs/AwsCloudSpaceRequestAllOf.md)
- - [AwsCloudSpaceRequestAllOf1](docs/AwsCloudSpaceRequestAllOf1.md)
  - [AwsRegisterCloudSpaceRequest](docs/AwsRegisterCloudSpaceRequest.md)
  - [AwsRegisterCloudSpaceRequestAllOf](docs/AwsRegisterCloudSpaceRequestAllOf.md)
- - [AwsRegisterCloudSpaceRequestAllOf1](docs/AwsRegisterCloudSpaceRequestAllOf1.md)
  - [AwsVirtualizationRealm](docs/AwsVirtualizationRealm.md)
  - [AwsVirtualizationRealmAllOf](docs/AwsVirtualizationRealmAllOf.md)
- - [AwsVirtualizationRealmAllOf1](docs/AwsVirtualizationRealmAllOf1.md)
  - [AzureCloud](docs/AzureCloud.md)
  - [AzureCloudAllOf](docs/AzureCloudAllOf.md)
  - [AzureCloudResources](docs/AzureCloudResources.md)
  - [AzureCloudResourcesAllOf](docs/AzureCloudResourcesAllOf.md)
  - [AzureCloudSpaceRequest](docs/AzureCloudSpaceRequest.md)
  - [AzureCloudSpaceRequestAllOf](docs/AzureCloudSpaceRequestAllOf.md)
+ - [AzureRegisterCloudSpaceRequest](docs/AzureRegisterCloudSpaceRequest.md)
+ - [AzureRegisterCloudSpaceRequestAllOf](docs/AzureRegisterCloudSpaceRequestAllOf.md)
  - [AzureVirtualizationRealm](docs/AzureVirtualizationRealm.md)
  - [AzureVirtualizationRealmAllOf](docs/AzureVirtualizationRealmAllOf.md)
  - [BasicAppliance](docs/BasicAppliance.md)
@@ -459,7 +470,6 @@ Class | Method | HTTP request | Description
  - [BasicPhysicalHost](docs/BasicPhysicalHost.md)
  - [BasicPhysicalMachine](docs/BasicPhysicalMachine.md)
  - [BasicPhysicalMachineAllOf](docs/BasicPhysicalMachineAllOf.md)
- - [BasicPhysicalMachineAllOf1](docs/BasicPhysicalMachineAllOf1.md)
  - [BasicScenario](docs/BasicScenario.md)
  - [BasicSoftwareAsset](docs/BasicSoftwareAsset.md)
  - [BasicSoftwareAssetAllOf](docs/BasicSoftwareAssetAllOf.md)
@@ -469,12 +479,11 @@ Class | Method | HTTP request | Description
  - [BasicTestAssetAllOf](docs/BasicTestAssetAllOf.md)
  - [BasicUser](docs/BasicUser.md)
  - [BasicVirtualHost](docs/BasicVirtualHost.md)
+ - [Bucket](docs/Bucket.md)
  - [Category](docs/Category.md)
  - [Certificate](docs/Certificate.md)
  - [Cloud](docs/Cloud.md)
  - [CloudFeatures](docs/CloudFeatures.md)
- - [CloudStackCloud](docs/CloudStackCloud.md)
- - [CloudStackCloudAllOf](docs/CloudStackCloudAllOf.md)
  - [Composition](docs/Composition.md)
  - [CompositionHostOption](docs/CompositionHostOption.md)
  - [CompositionLaunchOptions](docs/CompositionLaunchOptions.md)
@@ -484,47 +493,41 @@ Class | Method | HTTP request | Description
  - [Cons3rtTemplateTagData](docs/Cons3rtTemplateTagData.md)
  - [ContainerComponent](docs/ContainerComponent.md)
  - [ContainerComponentAllOf](docs/ContainerComponentAllOf.md)
- - [ContainerComponentAllOf1](docs/ContainerComponentAllOf1.md)
  - [ContainerConfiguration](docs/ContainerConfiguration.md)
  - [ContainerInstallation](docs/ContainerInstallation.md)
  - [ContainerInstallationAllOf](docs/ContainerInstallationAllOf.md)
- - [ContainerInstallationAllOf1](docs/ContainerInstallationAllOf1.md)
+ - [ContainerMount](docs/ContainerMount.md)
  - [ContainerPortMapping](docs/ContainerPortMapping.md)
  - [Credentials](docs/Credentials.md)
  - [Deployment](docs/Deployment.md)
  - [DeploymentAssetMetric](docs/DeploymentAssetMetric.md)
  - [DeploymentHost](docs/DeploymentHost.md)
  - [DeploymentRunOptions](docs/DeploymentRunOptions.md)
+ - [DeploymentRunOptionsForBindings](docs/DeploymentRunOptionsForBindings.md)
  - [Device](docs/Device.md)
  - [DeviceAllOf](docs/DeviceAllOf.md)
- - [DeviceAllOf1](docs/DeviceAllOf1.md)
  - [Disk](docs/Disk.md)
  - [DnatRule](docs/DnatRule.md)
  - [DockerRegistrySubmissionEndpoint](docs/DockerRegistrySubmissionEndpoint.md)
  - [DockerRegistrySubmissionEndpointAllOf](docs/DockerRegistrySubmissionEndpointAllOf.md)
- - [DockerRegistrySubmissionEndpointAllOf1](docs/DockerRegistrySubmissionEndpointAllOf1.md)
  - [FirewallRule](docs/FirewallRule.md)
  - [FullAppliance](docs/FullAppliance.md)
  - [FullApplianceAllOf](docs/FullApplianceAllOf.md)
  - [FullAsset](docs/FullAsset.md)
  - [FullAwsCloud](docs/FullAwsCloud.md)
  - [FullAwsCloudAllOf](docs/FullAwsCloudAllOf.md)
- - [FullAwsCloudAllOf1](docs/FullAwsCloudAllOf1.md)
  - [FullAwsVirtualizationRealm](docs/FullAwsVirtualizationRealm.md)
  - [FullAwsVirtualizationRealmAllOf](docs/FullAwsVirtualizationRealmAllOf.md)
- - [FullAwsVirtualizationRealmAllOf1](docs/FullAwsVirtualizationRealmAllOf1.md)
  - [FullAzureCloud](docs/FullAzureCloud.md)
  - [FullAzureCloudAllOf](docs/FullAzureCloudAllOf.md)
  - [FullAzureVirtualizationRealm](docs/FullAzureVirtualizationRealm.md)
  - [FullCategory](docs/FullCategory.md)
  - [FullCloud](docs/FullCloud.md)
- - [FullCloudStackCloud](docs/FullCloudStackCloud.md)
  - [FullComposition](docs/FullComposition.md)
  - [FullCons3rtTemplateData](docs/FullCons3rtTemplateData.md)
  - [FullContainerAsset](docs/FullContainerAsset.md)
  - [FullDeployment](docs/FullDeployment.md)
  - [FullDeploymentAllOf](docs/FullDeploymentAllOf.md)
- - [FullDeploymentAllOf1](docs/FullDeploymentAllOf1.md)
  - [FullDeploymentRun](docs/FullDeploymentRun.md)
  - [FullDevice](docs/FullDevice.md)
  - [FullDeviceAllOf](docs/FullDeviceAllOf.md)
@@ -551,9 +554,9 @@ Class | Method | HTTP request | Description
  - [FullTemplateRegistrationForSubscription](docs/FullTemplateRegistrationForSubscription.md)
  - [FullTemplateSubscription](docs/FullTemplateSubscription.md)
  - [FullTestAsset](docs/FullTestAsset.md)
- - [FullVCloudCloud](docs/FullVCloudCloud.md)
- - [FullVCloudCloudAllOf](docs/FullVCloudCloudAllOf.md)
- - [FullVCloudVirtualizationRealm](docs/FullVCloudVirtualizationRealm.md)
+ - [FullVCloudRestCloud](docs/FullVCloudRestCloud.md)
+ - [FullVCloudRestCloudAllOf](docs/FullVCloudRestCloudAllOf.md)
+ - [FullVCloudRestVirtualizationRealm](docs/FullVCloudRestVirtualizationRealm.md)
  - [FullVirtualHost](docs/FullVirtualHost.md)
  - [FullVirtualHostAllOf](docs/FullVirtualHostAllOf.md)
  - [FullVirtualService](docs/FullVirtualService.md)
@@ -573,10 +576,8 @@ Class | Method | HTTP request | Description
  - [InputAssetForUpdate](docs/InputAssetForUpdate.md)
  - [InputAwsClient](docs/InputAwsClient.md)
  - [InputAwsCloud](docs/InputAwsCloud.md)
- - [InputAwsCloudAllOf](docs/InputAwsCloudAllOf.md)
  - [InputAwsVirtualizationRealm](docs/InputAwsVirtualizationRealm.md)
  - [InputAwsVirtualizationRealmAllOf](docs/InputAwsVirtualizationRealmAllOf.md)
- - [InputAwsVirtualizationRealmAllOf1](docs/InputAwsVirtualizationRealmAllOf1.md)
  - [InputAzureCloud](docs/InputAzureCloud.md)
  - [InputAzureVirtualizationRealm](docs/InputAzureVirtualizationRealm.md)
  - [InputAzureVirtualizationRealmAllOf](docs/InputAzureVirtualizationRealmAllOf.md)
@@ -589,17 +590,15 @@ Class | Method | HTTP request | Description
  - [InputCons3rtTemplateData](docs/InputCons3rtTemplateData.md)
  - [InputContainerComponent](docs/InputContainerComponent.md)
  - [InputContainerComponentAllOf](docs/InputContainerComponentAllOf.md)
- - [InputContainerComponentAllOf1](docs/InputContainerComponentAllOf1.md)
  - [InputContainerConfiguration](docs/InputContainerConfiguration.md)
  - [InputDeployment](docs/InputDeployment.md)
  - [InputDeploymentRunOptions](docs/InputDeploymentRunOptions.md)
+ - [InputDeploymentRunOptionsForBindings](docs/InputDeploymentRunOptionsForBindings.md)
  - [InputDevice](docs/InputDevice.md)
  - [InputDeviceAllOf](docs/InputDeviceAllOf.md)
- - [InputDeviceAllOf1](docs/InputDeviceAllOf1.md)
  - [InputDisk](docs/InputDisk.md)
  - [InputDiskForTemplate](docs/InputDiskForTemplate.md)
  - [InputDockerRegistrySubmissionEndpointForAssetSubmission](docs/InputDockerRegistrySubmissionEndpointForAssetSubmission.md)
- - [InputDockerRegistrySubmissionEndpointForAssetSubmissionAllOf](docs/InputDockerRegistrySubmissionEndpointForAssetSubmissionAllOf.md)
  - [InputDockerRegistrySubmissionEndpointForProject](docs/InputDockerRegistrySubmissionEndpointForProject.md)
  - [InputFileForm](docs/InputFileForm.md)
  - [InputHostBinding](docs/InputHostBinding.md)
@@ -609,6 +608,7 @@ Class | Method | HTTP request | Description
  - [InputNetworkInterface](docs/InputNetworkInterface.md)
  - [InputOpenStackClient](docs/InputOpenStackClient.md)
  - [InputOpenStackCloud](docs/InputOpenStackCloud.md)
+ - [InputOpenStackCloudAllOf](docs/InputOpenStackCloudAllOf.md)
  - [InputOpenStackVirtualizationRealm](docs/InputOpenStackVirtualizationRealm.md)
  - [InputParentCategory](docs/InputParentCategory.md)
  - [InputPart](docs/InputPart.md)
@@ -627,7 +627,6 @@ Class | Method | HTTP request | Description
  - [InputSFTPSubmissionEndpointForAssetSubmission](docs/InputSFTPSubmissionEndpointForAssetSubmission.md)
  - [InputSFTPSubmissionEndpointForAssetSubmissionAllOf](docs/InputSFTPSubmissionEndpointForAssetSubmissionAllOf.md)
  - [InputSFTPSubmissionEndpointForProject](docs/InputSFTPSubmissionEndpointForProject.md)
- - [InputSFTPSubmissionEndpointForProjectAllOf](docs/InputSFTPSubmissionEndpointForProjectAllOf.md)
  - [InputScenario](docs/InputScenario.md)
  - [InputScenarioFull](docs/InputScenarioFull.md)
  - [InputScenarioHost](docs/InputScenarioHost.md)
@@ -648,12 +647,13 @@ Class | Method | HTTP request | Description
  - [InputUnregisterTemplateObject](docs/InputUnregisterTemplateObject.md)
  - [InputUser](docs/InputUser.md)
  - [InputVCloudClient](docs/InputVCloudClient.md)
- - [InputVCloudCloud](docs/InputVCloudCloud.md)
- - [InputVCloudVirtualizationRealm](docs/InputVCloudVirtualizationRealm.md)
+ - [InputVCloudRestCloud](docs/InputVCloudRestCloud.md)
+ - [InputVCloudRestCloudAllOf](docs/InputVCloudRestCloudAllOf.md)
+ - [InputVCloudRestVirtualizationRealm](docs/InputVCloudRestVirtualizationRealm.md)
  - [InputVRAdminAwsVirtualizationRealm](docs/InputVRAdminAwsVirtualizationRealm.md)
  - [InputVRAdminAzureVirtualizationRealm](docs/InputVRAdminAzureVirtualizationRealm.md)
  - [InputVRAdminOpenStackVirtualizationRealm](docs/InputVRAdminOpenStackVirtualizationRealm.md)
- - [InputVRAdminVCloudVirtualizationRealm](docs/InputVRAdminVCloudVirtualizationRealm.md)
+ - [InputVRAdminVCloudRestVirtualizationRealm](docs/InputVRAdminVCloudRestVirtualizationRealm.md)
  - [InputVRAdminVirtualizationRealm](docs/InputVRAdminVirtualizationRealm.md)
  - [InputVirtualHost](docs/InputVirtualHost.md)
  - [InputVirtualHostAllOf](docs/InputVirtualHostAllOf.md)
@@ -680,7 +680,6 @@ Class | Method | HTTP request | Description
  - [MinimalContainerAsset](docs/MinimalContainerAsset.md)
  - [MinimalContainerComponent](docs/MinimalContainerComponent.md)
  - [MinimalContainerComponentAllOf](docs/MinimalContainerComponentAllOf.md)
- - [MinimalContainerComponentAllOf1](docs/MinimalContainerComponentAllOf1.md)
  - [MinimalContainerConfiguration](docs/MinimalContainerConfiguration.md)
  - [MinimalDeployment](docs/MinimalDeployment.md)
  - [MinimalDeploymentHost](docs/MinimalDeploymentHost.md)
@@ -754,6 +753,7 @@ Class | Method | HTTP request | Description
  - [Subnet](docs/Subnet.md)
  - [SystemAsset](docs/SystemAsset.md)
  - [SystemModule](docs/SystemModule.md)
+ - [TargetInstanceTypes](docs/TargetInstanceTypes.md)
  - [Team](docs/Team.md)
  - [TemplateBinding](docs/TemplateBinding.md)
  - [TemplateProfile](docs/TemplateProfile.md)
@@ -767,16 +767,16 @@ Class | Method | HTTP request | Description
  - [UserProject](docs/UserProject.md)
  - [VCloudClient](docs/VCloudClient.md)
  - [VCloudClientAllOf](docs/VCloudClientAllOf.md)
- - [VCloudCloud](docs/VCloudCloud.md)
- - [VCloudCloudAllOf](docs/VCloudCloudAllOf.md)
  - [VCloudCloudResources](docs/VCloudCloudResources.md)
  - [VCloudCloudResourcesAllOf](docs/VCloudCloudResourcesAllOf.md)
- - [VCloudCloudSpaceRequest](docs/VCloudCloudSpaceRequest.md)
- - [VCloudCloudSpaceRequestAllOf](docs/VCloudCloudSpaceRequestAllOf.md)
- - [VCloudRegisterCloudSpaceRequest](docs/VCloudRegisterCloudSpaceRequest.md)
- - [VCloudRegisterCloudSpaceRequestAllOf](docs/VCloudRegisterCloudSpaceRequestAllOf.md)
- - [VCloudVirtualizationRealm](docs/VCloudVirtualizationRealm.md)
- - [VCloudVirtualizationRealmAllOf](docs/VCloudVirtualizationRealmAllOf.md)
+ - [VCloudRestCloud](docs/VCloudRestCloud.md)
+ - [VCloudRestCloudAllOf](docs/VCloudRestCloudAllOf.md)
+ - [VCloudRestCloudSpaceRequest](docs/VCloudRestCloudSpaceRequest.md)
+ - [VCloudRestCloudSpaceRequestAllOf](docs/VCloudRestCloudSpaceRequestAllOf.md)
+ - [VCloudRestRegisterCloudSpaceRequest](docs/VCloudRestRegisterCloudSpaceRequest.md)
+ - [VCloudRestRegisterCloudSpaceRequestAllOf](docs/VCloudRestRegisterCloudSpaceRequestAllOf.md)
+ - [VCloudRestVirtualizationRealm](docs/VCloudRestVirtualizationRealm.md)
+ - [VCloudRestVirtualizationRealmAllOf](docs/VCloudRestVirtualizationRealmAllOf.md)
  - [VirtualHost](docs/VirtualHost.md)
  - [VirtualizationRealm](docs/VirtualizationRealm.md)
  - [VirtualizationRealmBinding](docs/VirtualizationRealmBinding.md)

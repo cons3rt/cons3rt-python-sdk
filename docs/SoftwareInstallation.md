@@ -3,16 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**asset_id** | **int** |  | [optional] 
-**asset_name** | **str** |  | [optional] 
-**average_installation_time** | **int** |  | [optional] 
-**end_date** | **int** |  | [optional] 
-**error** | **str** |  | [optional] 
-**id** | **int** |  | [optional] 
-**load_order** | **int** |  | [optional] 
-**start_date** | **int** |  | [optional] 
-**status** | **str** |  | [optional] 
-**subtype** | **str** |  | 
 **asset_type** | **str** |  | [optional] 
 **reboot_delay_seconds** | **int** |  | [optional] 
 **reboot_required** | **bool** |  | [optional] 

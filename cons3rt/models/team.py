@@ -51,6 +51,7 @@ class Team(object):
     openapi_types = {
         'asset_bundle_installer_enabled': 'bool',
         'availability_zone_enabled': 'bool',
+        'bypass_scanning_enabled': 'bool',
         'lead_user': 'User',
         'icon': 'str',
         'id': 'int',
@@ -77,12 +78,13 @@ class Team(object):
         'rdp_client_session_duration': 'int',
         'state': 'str',
         'snapshot_enabled': 'bool',
-        'valid_until': 'int'
+        'valid_until': 'datetime'
     }
 
     attribute_map = {
         'asset_bundle_installer_enabled': 'assetBundleInstallerEnabled',
         'availability_zone_enabled': 'availabilityZoneEnabled',
+        'bypass_scanning_enabled': 'bypassScanningEnabled',
         'lead_user': 'leadUser',
         'icon': 'icon',
         'id': 'id',
@@ -112,7 +114,7 @@ class Team(object):
         'valid_until': 'validUntil'
     }
 
-    def __init__(self, asset_bundle_installer_enabled=None, availability_zone_enabled=None, lead_user=None, icon=None, id=None, managed_virtualization_realms=None, team_managers=None, max_assets=None, max_managed_virtualization_realms=None, max_num_cpus=None, max_num_gpus=None, max_projects=None, max_ram_in_megabytes=None, max_shared_remote_access_sessions=None, max_storage_in_megabytes=None, max_users=None, max_virtual_machines=None, name=None, order_number=None, owned_clouds=None, power_schedule_enabled=None, owned_projects=None, contact_info=None, private=None, rdp_client_proxy_enabled=None, rdp_client_session_duration=None, state=None, snapshot_enabled=None, valid_until=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, asset_bundle_installer_enabled=None, availability_zone_enabled=None, bypass_scanning_enabled=None, lead_user=None, icon=None, id=None, managed_virtualization_realms=None, team_managers=None, max_assets=None, max_managed_virtualization_realms=None, max_num_cpus=None, max_num_gpus=None, max_projects=None, max_ram_in_megabytes=None, max_shared_remote_access_sessions=None, max_storage_in_megabytes=None, max_users=None, max_virtual_machines=None, name=None, order_number=None, owned_clouds=None, power_schedule_enabled=None, owned_projects=None, contact_info=None, private=None, rdp_client_proxy_enabled=None, rdp_client_session_duration=None, state=None, snapshot_enabled=None, valid_until=None, local_vars_configuration=None):  # noqa: E501
         """Team - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -120,6 +122,7 @@ class Team(object):
 
         self._asset_bundle_installer_enabled = None
         self._availability_zone_enabled = None
+        self._bypass_scanning_enabled = None
         self._lead_user = None
         self._icon = None
         self._id = None
@@ -153,6 +156,8 @@ class Team(object):
             self.asset_bundle_installer_enabled = asset_bundle_installer_enabled
         if availability_zone_enabled is not None:
             self.availability_zone_enabled = availability_zone_enabled
+        if bypass_scanning_enabled is not None:
+            self.bypass_scanning_enabled = bypass_scanning_enabled
         self.lead_user = lead_user
         if icon is not None:
             self.icon = icon
@@ -244,6 +249,27 @@ class Team(object):
         """
 
         self._availability_zone_enabled = availability_zone_enabled
+
+    @property
+    def bypass_scanning_enabled(self):
+        """Gets the bypass_scanning_enabled of this Team.  # noqa: E501
+
+
+        :return: The bypass_scanning_enabled of this Team.  # noqa: E501
+        :rtype: bool
+        """
+        return self._bypass_scanning_enabled
+
+    @bypass_scanning_enabled.setter
+    def bypass_scanning_enabled(self, bypass_scanning_enabled):
+        """Sets the bypass_scanning_enabled of this Team.
+
+
+        :param bypass_scanning_enabled: The bypass_scanning_enabled of this Team.  # noqa: E501
+        :type: bool
+        """
+
+        self._bypass_scanning_enabled = bypass_scanning_enabled
 
     @property
     def lead_user(self):
@@ -838,7 +864,7 @@ class Team(object):
 
 
         :return: The valid_until of this Team.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._valid_until
 
@@ -848,7 +874,7 @@ class Team(object):
 
 
         :param valid_until: The valid_until of this Team.  # noqa: E501
-        :type: int
+        :type: datetime
         """
         if self.local_vars_configuration.client_side_validation and valid_until is None:  # noqa: E501
             raise ValueError("Invalid value for `valid_until`, must not be `None`")  # noqa: E501

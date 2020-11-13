@@ -49,21 +49,6 @@ class OpenStackCloud(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'cloud_type': 'str',
-        'description': 'str',
-        'name': 'str',
-        'external_ip_addresses': 'list[str]',
-        'external_ip_source': 'str',
-        'features': 'CloudFeatures',
-        'id': 'int',
-        'linux_repository_url': 'str',
-        'maximum_impact_level': 'str',
-        'networks': 'list[Network]',
-        'owning_team': 'Team',
-        'state': 'str',
-        'template_virtualization_realm': 'VirtualizationRealm',
-        'virtualization_realms': 'list[VirtualizationRealm]',
-        'subtype': 'str',
         'domain_name': 'str',
         'keystone_hostname': 'str',
         'keystone_password': 'str',
@@ -73,26 +58,16 @@ class OpenStackCloud(object):
         'keystone_version': 'str',
         'nat_image_id': 'str',
         'nat_instance_type': 'str',
+        'storage_service_hostname': 'str',
+        'storage_service_port': 'int',
+        'storage_service_protocol': 'str',
+        'storage_service_username': 'str',
+        'storage_service_password': 'str',
         'tenant': 'str',
         'tenant_id': 'str'
     }
 
     attribute_map = {
-        'cloud_type': 'cloudType',
-        'description': 'description',
-        'name': 'name',
-        'external_ip_addresses': 'externalIpAddresses',
-        'external_ip_source': 'externalIpSource',
-        'features': 'features',
-        'id': 'id',
-        'linux_repository_url': 'linuxRepositoryUrl',
-        'maximum_impact_level': 'maximumImpactLevel',
-        'networks': 'networks',
-        'owning_team': 'owningTeam',
-        'state': 'state',
-        'template_virtualization_realm': 'templateVirtualizationRealm',
-        'virtualization_realms': 'virtualizationRealms',
-        'subtype': 'subtype',
         'domain_name': 'domainName',
         'keystone_hostname': 'keystoneHostname',
         'keystone_password': 'keystonePassword',
@@ -102,31 +77,21 @@ class OpenStackCloud(object):
         'keystone_version': 'keystoneVersion',
         'nat_image_id': 'natImageId',
         'nat_instance_type': 'natInstanceType',
+        'storage_service_hostname': 'storageServiceHostname',
+        'storage_service_port': 'storageServicePort',
+        'storage_service_protocol': 'storageServiceProtocol',
+        'storage_service_username': 'storageServiceUsername',
+        'storage_service_password': 'storageServicePassword',
         'tenant': 'tenant',
         'tenant_id': 'tenantId'
     }
 
-    def __init__(self, cloud_type=None, description=None, name=None, external_ip_addresses=None, external_ip_source=None, features=None, id=None, linux_repository_url=None, maximum_impact_level=None, networks=None, owning_team=None, state=None, template_virtualization_realm=None, virtualization_realms=None, subtype=None, domain_name=None, keystone_hostname=None, keystone_password=None, keystone_port=None, keystone_protocol=None, keystone_username=None, keystone_version=None, nat_image_id=None, nat_instance_type=None, tenant=None, tenant_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, domain_name=None, keystone_hostname=None, keystone_password=None, keystone_port=None, keystone_protocol=None, keystone_username=None, keystone_version=None, nat_image_id=None, nat_instance_type=None, storage_service_hostname=None, storage_service_port=None, storage_service_protocol=None, storage_service_username=None, storage_service_password=None, tenant=None, tenant_id=None, local_vars_configuration=None):  # noqa: E501
         """OpenStackCloud - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._cloud_type = None
-        self._description = None
-        self._name = None
-        self._external_ip_addresses = None
-        self._external_ip_source = None
-        self._features = None
-        self._id = None
-        self._linux_repository_url = None
-        self._maximum_impact_level = None
-        self._networks = None
-        self._owning_team = None
-        self._state = None
-        self._template_virtualization_realm = None
-        self._virtualization_realms = None
-        self._subtype = None
         self._domain_name = None
         self._keystone_hostname = None
         self._keystone_password = None
@@ -136,34 +101,15 @@ class OpenStackCloud(object):
         self._keystone_version = None
         self._nat_image_id = None
         self._nat_instance_type = None
+        self._storage_service_hostname = None
+        self._storage_service_port = None
+        self._storage_service_protocol = None
+        self._storage_service_username = None
+        self._storage_service_password = None
         self._tenant = None
         self._tenant_id = None
         self.discriminator = None
 
-        if cloud_type is not None:
-            self.cloud_type = cloud_type
-        self.description = description
-        self.name = name
-        if external_ip_addresses is not None:
-            self.external_ip_addresses = external_ip_addresses
-        self.external_ip_source = external_ip_source
-        if features is not None:
-            self.features = features
-        if id is not None:
-            self.id = id
-        if linux_repository_url is not None:
-            self.linux_repository_url = linux_repository_url
-        self.maximum_impact_level = maximum_impact_level
-        if networks is not None:
-            self.networks = networks
-        self.owning_team = owning_team
-        if state is not None:
-            self.state = state
-        if template_virtualization_realm is not None:
-            self.template_virtualization_realm = template_virtualization_realm
-        if virtualization_realms is not None:
-            self.virtualization_realms = virtualization_realms
-        self.subtype = subtype
         if domain_name is not None:
             self.domain_name = domain_name
         self.keystone_hostname = keystone_hostname
@@ -174,359 +120,18 @@ class OpenStackCloud(object):
         self.keystone_version = keystone_version
         self.nat_image_id = nat_image_id
         self.nat_instance_type = nat_instance_type
+        if storage_service_hostname is not None:
+            self.storage_service_hostname = storage_service_hostname
+        if storage_service_port is not None:
+            self.storage_service_port = storage_service_port
+        if storage_service_protocol is not None:
+            self.storage_service_protocol = storage_service_protocol
+        if storage_service_username is not None:
+            self.storage_service_username = storage_service_username
+        if storage_service_password is not None:
+            self.storage_service_password = storage_service_password
         self.tenant = tenant
         self.tenant_id = tenant_id
-
-    @property
-    def cloud_type(self):
-        """Gets the cloud_type of this OpenStackCloud.  # noqa: E501
-
-
-        :return: The cloud_type of this OpenStackCloud.  # noqa: E501
-        :rtype: str
-        """
-        return self._cloud_type
-
-    @cloud_type.setter
-    def cloud_type(self, cloud_type):
-        """Sets the cloud_type of this OpenStackCloud.
-
-
-        :param cloud_type: The cloud_type of this OpenStackCloud.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["AwsCloud", "AzureCloud", "CloudStackCloud", "OpenStackCloud", "VCloudCloud"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and cloud_type not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `cloud_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(cloud_type, allowed_values)
-            )
-
-        self._cloud_type = cloud_type
-
-    @property
-    def description(self):
-        """Gets the description of this OpenStackCloud.  # noqa: E501
-
-
-        :return: The description of this OpenStackCloud.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this OpenStackCloud.
-
-
-        :param description: The description of this OpenStackCloud.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and description is None:  # noqa: E501
-            raise ValueError("Invalid value for `description`, must not be `None`")  # noqa: E501
-
-        self._description = description
-
-    @property
-    def name(self):
-        """Gets the name of this OpenStackCloud.  # noqa: E501
-
-
-        :return: The name of this OpenStackCloud.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this OpenStackCloud.
-
-
-        :param name: The name of this OpenStackCloud.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
-            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
-
-        self._name = name
-
-    @property
-    def external_ip_addresses(self):
-        """Gets the external_ip_addresses of this OpenStackCloud.  # noqa: E501
-
-
-        :return: The external_ip_addresses of this OpenStackCloud.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._external_ip_addresses
-
-    @external_ip_addresses.setter
-    def external_ip_addresses(self, external_ip_addresses):
-        """Sets the external_ip_addresses of this OpenStackCloud.
-
-
-        :param external_ip_addresses: The external_ip_addresses of this OpenStackCloud.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._external_ip_addresses = external_ip_addresses
-
-    @property
-    def external_ip_source(self):
-        """Gets the external_ip_source of this OpenStackCloud.  # noqa: E501
-
-
-        :return: The external_ip_source of this OpenStackCloud.  # noqa: E501
-        :rtype: str
-        """
-        return self._external_ip_source
-
-    @external_ip_source.setter
-    def external_ip_source(self, external_ip_source):
-        """Sets the external_ip_source of this OpenStackCloud.
-
-
-        :param external_ip_source: The external_ip_source of this OpenStackCloud.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and external_ip_source is None:  # noqa: E501
-            raise ValueError("Invalid value for `external_ip_source`, must not be `None`")  # noqa: E501
-        allowed_values = ["ON_DEMAND", "POOL"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and external_ip_source not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `external_ip_source` ({0}), must be one of {1}"  # noqa: E501
-                .format(external_ip_source, allowed_values)
-            )
-
-        self._external_ip_source = external_ip_source
-
-    @property
-    def features(self):
-        """Gets the features of this OpenStackCloud.  # noqa: E501
-
-
-        :return: The features of this OpenStackCloud.  # noqa: E501
-        :rtype: CloudFeatures
-        """
-        return self._features
-
-    @features.setter
-    def features(self, features):
-        """Sets the features of this OpenStackCloud.
-
-
-        :param features: The features of this OpenStackCloud.  # noqa: E501
-        :type: CloudFeatures
-        """
-
-        self._features = features
-
-    @property
-    def id(self):
-        """Gets the id of this OpenStackCloud.  # noqa: E501
-
-
-        :return: The id of this OpenStackCloud.  # noqa: E501
-        :rtype: int
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this OpenStackCloud.
-
-
-        :param id: The id of this OpenStackCloud.  # noqa: E501
-        :type: int
-        """
-
-        self._id = id
-
-    @property
-    def linux_repository_url(self):
-        """Gets the linux_repository_url of this OpenStackCloud.  # noqa: E501
-
-
-        :return: The linux_repository_url of this OpenStackCloud.  # noqa: E501
-        :rtype: str
-        """
-        return self._linux_repository_url
-
-    @linux_repository_url.setter
-    def linux_repository_url(self, linux_repository_url):
-        """Sets the linux_repository_url of this OpenStackCloud.
-
-
-        :param linux_repository_url: The linux_repository_url of this OpenStackCloud.  # noqa: E501
-        :type: str
-        """
-
-        self._linux_repository_url = linux_repository_url
-
-    @property
-    def maximum_impact_level(self):
-        """Gets the maximum_impact_level of this OpenStackCloud.  # noqa: E501
-
-
-        :return: The maximum_impact_level of this OpenStackCloud.  # noqa: E501
-        :rtype: str
-        """
-        return self._maximum_impact_level
-
-    @maximum_impact_level.setter
-    def maximum_impact_level(self, maximum_impact_level):
-        """Sets the maximum_impact_level of this OpenStackCloud.
-
-
-        :param maximum_impact_level: The maximum_impact_level of this OpenStackCloud.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and maximum_impact_level is None:  # noqa: E501
-            raise ValueError("Invalid value for `maximum_impact_level`, must not be `None`")  # noqa: E501
-        allowed_values = ["NONE", "FEDRAMP_LOW", "FEDRAMP_MODERATE_DOD_LEVEL_2", "FEDRAMP_HIGH_DOD_LEVEL_4", "DOD_LEVEL_5", "DOD_LEVEL_6"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and maximum_impact_level not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `maximum_impact_level` ({0}), must be one of {1}"  # noqa: E501
-                .format(maximum_impact_level, allowed_values)
-            )
-
-        self._maximum_impact_level = maximum_impact_level
-
-    @property
-    def networks(self):
-        """Gets the networks of this OpenStackCloud.  # noqa: E501
-
-
-        :return: The networks of this OpenStackCloud.  # noqa: E501
-        :rtype: list[Network]
-        """
-        return self._networks
-
-    @networks.setter
-    def networks(self, networks):
-        """Sets the networks of this OpenStackCloud.
-
-
-        :param networks: The networks of this OpenStackCloud.  # noqa: E501
-        :type: list[Network]
-        """
-
-        self._networks = networks
-
-    @property
-    def owning_team(self):
-        """Gets the owning_team of this OpenStackCloud.  # noqa: E501
-
-
-        :return: The owning_team of this OpenStackCloud.  # noqa: E501
-        :rtype: Team
-        """
-        return self._owning_team
-
-    @owning_team.setter
-    def owning_team(self, owning_team):
-        """Sets the owning_team of this OpenStackCloud.
-
-
-        :param owning_team: The owning_team of this OpenStackCloud.  # noqa: E501
-        :type: Team
-        """
-        if self.local_vars_configuration.client_side_validation and owning_team is None:  # noqa: E501
-            raise ValueError("Invalid value for `owning_team`, must not be `None`")  # noqa: E501
-
-        self._owning_team = owning_team
-
-    @property
-    def state(self):
-        """Gets the state of this OpenStackCloud.  # noqa: E501
-
-
-        :return: The state of this OpenStackCloud.  # noqa: E501
-        :rtype: str
-        """
-        return self._state
-
-    @state.setter
-    def state(self, state):
-        """Sets the state of this OpenStackCloud.
-
-
-        :param state: The state of this OpenStackCloud.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["ACTIVE", "ENTERING_MAINTENANCE", "MAINTENANCE"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and state not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `state` ({0}), must be one of {1}"  # noqa: E501
-                .format(state, allowed_values)
-            )
-
-        self._state = state
-
-    @property
-    def template_virtualization_realm(self):
-        """Gets the template_virtualization_realm of this OpenStackCloud.  # noqa: E501
-
-
-        :return: The template_virtualization_realm of this OpenStackCloud.  # noqa: E501
-        :rtype: VirtualizationRealm
-        """
-        return self._template_virtualization_realm
-
-    @template_virtualization_realm.setter
-    def template_virtualization_realm(self, template_virtualization_realm):
-        """Sets the template_virtualization_realm of this OpenStackCloud.
-
-
-        :param template_virtualization_realm: The template_virtualization_realm of this OpenStackCloud.  # noqa: E501
-        :type: VirtualizationRealm
-        """
-
-        self._template_virtualization_realm = template_virtualization_realm
-
-    @property
-    def virtualization_realms(self):
-        """Gets the virtualization_realms of this OpenStackCloud.  # noqa: E501
-
-
-        :return: The virtualization_realms of this OpenStackCloud.  # noqa: E501
-        :rtype: list[VirtualizationRealm]
-        """
-        return self._virtualization_realms
-
-    @virtualization_realms.setter
-    def virtualization_realms(self, virtualization_realms):
-        """Sets the virtualization_realms of this OpenStackCloud.
-
-
-        :param virtualization_realms: The virtualization_realms of this OpenStackCloud.  # noqa: E501
-        :type: list[VirtualizationRealm]
-        """
-
-        self._virtualization_realms = virtualization_realms
-
-    @property
-    def subtype(self):
-        """Gets the subtype of this OpenStackCloud.  # noqa: E501
-
-
-        :return: The subtype of this OpenStackCloud.  # noqa: E501
-        :rtype: str
-        """
-        return self._subtype
-
-    @subtype.setter
-    def subtype(self, subtype):
-        """Sets the subtype of this OpenStackCloud.
-
-
-        :param subtype: The subtype of this OpenStackCloud.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
-            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
-
-        self._subtype = subtype
 
     @property
     def domain_name(self):
@@ -732,6 +337,111 @@ class OpenStackCloud(object):
             raise ValueError("Invalid value for `nat_instance_type`, must not be `None`")  # noqa: E501
 
         self._nat_instance_type = nat_instance_type
+
+    @property
+    def storage_service_hostname(self):
+        """Gets the storage_service_hostname of this OpenStackCloud.  # noqa: E501
+
+
+        :return: The storage_service_hostname of this OpenStackCloud.  # noqa: E501
+        :rtype: str
+        """
+        return self._storage_service_hostname
+
+    @storage_service_hostname.setter
+    def storage_service_hostname(self, storage_service_hostname):
+        """Sets the storage_service_hostname of this OpenStackCloud.
+
+
+        :param storage_service_hostname: The storage_service_hostname of this OpenStackCloud.  # noqa: E501
+        :type: str
+        """
+
+        self._storage_service_hostname = storage_service_hostname
+
+    @property
+    def storage_service_port(self):
+        """Gets the storage_service_port of this OpenStackCloud.  # noqa: E501
+
+
+        :return: The storage_service_port of this OpenStackCloud.  # noqa: E501
+        :rtype: int
+        """
+        return self._storage_service_port
+
+    @storage_service_port.setter
+    def storage_service_port(self, storage_service_port):
+        """Sets the storage_service_port of this OpenStackCloud.
+
+
+        :param storage_service_port: The storage_service_port of this OpenStackCloud.  # noqa: E501
+        :type: int
+        """
+
+        self._storage_service_port = storage_service_port
+
+    @property
+    def storage_service_protocol(self):
+        """Gets the storage_service_protocol of this OpenStackCloud.  # noqa: E501
+
+
+        :return: The storage_service_protocol of this OpenStackCloud.  # noqa: E501
+        :rtype: str
+        """
+        return self._storage_service_protocol
+
+    @storage_service_protocol.setter
+    def storage_service_protocol(self, storage_service_protocol):
+        """Sets the storage_service_protocol of this OpenStackCloud.
+
+
+        :param storage_service_protocol: The storage_service_protocol of this OpenStackCloud.  # noqa: E501
+        :type: str
+        """
+
+        self._storage_service_protocol = storage_service_protocol
+
+    @property
+    def storage_service_username(self):
+        """Gets the storage_service_username of this OpenStackCloud.  # noqa: E501
+
+
+        :return: The storage_service_username of this OpenStackCloud.  # noqa: E501
+        :rtype: str
+        """
+        return self._storage_service_username
+
+    @storage_service_username.setter
+    def storage_service_username(self, storage_service_username):
+        """Sets the storage_service_username of this OpenStackCloud.
+
+
+        :param storage_service_username: The storage_service_username of this OpenStackCloud.  # noqa: E501
+        :type: str
+        """
+
+        self._storage_service_username = storage_service_username
+
+    @property
+    def storage_service_password(self):
+        """Gets the storage_service_password of this OpenStackCloud.  # noqa: E501
+
+
+        :return: The storage_service_password of this OpenStackCloud.  # noqa: E501
+        :rtype: str
+        """
+        return self._storage_service_password
+
+    @storage_service_password.setter
+    def storage_service_password(self, storage_service_password):
+        """Sets the storage_service_password of this OpenStackCloud.
+
+
+        :param storage_service_password: The storage_service_password of this OpenStackCloud.  # noqa: E501
+        :type: str
+        """
+
+        self._storage_service_password = storage_service_password
 
     @property
     def tenant(self):

@@ -49,73 +49,71 @@ class AddAwsNetworkRequestAllOf(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'network': 'Network',
-        'subtype': 'str'
+        'nat_instance_type': 'str',
+        'nat_image_id': 'str'
     }
 
     attribute_map = {
-        'network': 'network',
-        'subtype': 'subtype'
+        'nat_instance_type': 'natInstanceType',
+        'nat_image_id': 'natImageId'
     }
 
-    def __init__(self, network=None, subtype=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, nat_instance_type=None, nat_image_id=None, local_vars_configuration=None):  # noqa: E501
         """AddAwsNetworkRequestAllOf - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._network = None
-        self._subtype = None
+        self._nat_instance_type = None
+        self._nat_image_id = None
         self.discriminator = None
 
-        self.network = network
-        self.subtype = subtype
+        if nat_instance_type is not None:
+            self.nat_instance_type = nat_instance_type
+        if nat_image_id is not None:
+            self.nat_image_id = nat_image_id
 
     @property
-    def network(self):
-        """Gets the network of this AddAwsNetworkRequestAllOf.  # noqa: E501
+    def nat_instance_type(self):
+        """Gets the nat_instance_type of this AddAwsNetworkRequestAllOf.  # noqa: E501
 
 
-        :return: The network of this AddAwsNetworkRequestAllOf.  # noqa: E501
-        :rtype: Network
-        """
-        return self._network
-
-    @network.setter
-    def network(self, network):
-        """Sets the network of this AddAwsNetworkRequestAllOf.
-
-
-        :param network: The network of this AddAwsNetworkRequestAllOf.  # noqa: E501
-        :type: Network
-        """
-        if self.local_vars_configuration.client_side_validation and network is None:  # noqa: E501
-            raise ValueError("Invalid value for `network`, must not be `None`")  # noqa: E501
-
-        self._network = network
-
-    @property
-    def subtype(self):
-        """Gets the subtype of this AddAwsNetworkRequestAllOf.  # noqa: E501
-
-
-        :return: The subtype of this AddAwsNetworkRequestAllOf.  # noqa: E501
+        :return: The nat_instance_type of this AddAwsNetworkRequestAllOf.  # noqa: E501
         :rtype: str
         """
-        return self._subtype
+        return self._nat_instance_type
 
-    @subtype.setter
-    def subtype(self, subtype):
-        """Sets the subtype of this AddAwsNetworkRequestAllOf.
+    @nat_instance_type.setter
+    def nat_instance_type(self, nat_instance_type):
+        """Sets the nat_instance_type of this AddAwsNetworkRequestAllOf.
 
 
-        :param subtype: The subtype of this AddAwsNetworkRequestAllOf.  # noqa: E501
+        :param nat_instance_type: The nat_instance_type of this AddAwsNetworkRequestAllOf.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
-            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
 
-        self._subtype = subtype
+        self._nat_instance_type = nat_instance_type
+
+    @property
+    def nat_image_id(self):
+        """Gets the nat_image_id of this AddAwsNetworkRequestAllOf.  # noqa: E501
+
+
+        :return: The nat_image_id of this AddAwsNetworkRequestAllOf.  # noqa: E501
+        :rtype: str
+        """
+        return self._nat_image_id
+
+    @nat_image_id.setter
+    def nat_image_id(self, nat_image_id):
+        """Sets the nat_image_id of this AddAwsNetworkRequestAllOf.
+
+
+        :param nat_image_id: The nat_image_id of this AddAwsNetworkRequestAllOf.  # noqa: E501
+        :type: str
+        """
+
+        self._nat_image_id = nat_image_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

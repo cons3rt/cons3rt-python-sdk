@@ -50,38 +50,38 @@ class PhysicalHostAllOf(object):
     """
     openapi_types = {
         'physical_machine': 'PhysicalMachine',
+        'hostname': 'str',
         'mac_address': 'str',
-        'ip_address': 'str',
-        'hostname': 'str'
+        'ip_address': 'str'
     }
 
     attribute_map = {
         'physical_machine': 'physicalMachine',
+        'hostname': 'hostname',
         'mac_address': 'macAddress',
-        'ip_address': 'ipAddress',
-        'hostname': 'hostname'
+        'ip_address': 'ipAddress'
     }
 
-    def __init__(self, physical_machine=None, mac_address=None, ip_address=None, hostname=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, physical_machine=None, hostname=None, mac_address=None, ip_address=None, local_vars_configuration=None):  # noqa: E501
         """PhysicalHostAllOf - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._physical_machine = None
+        self._hostname = None
         self._mac_address = None
         self._ip_address = None
-        self._hostname = None
         self.discriminator = None
 
         if physical_machine is not None:
             self.physical_machine = physical_machine
+        if hostname is not None:
+            self.hostname = hostname
         if mac_address is not None:
             self.mac_address = mac_address
         if ip_address is not None:
             self.ip_address = ip_address
-        if hostname is not None:
-            self.hostname = hostname
 
     @property
     def physical_machine(self):
@@ -103,6 +103,27 @@ class PhysicalHostAllOf(object):
         """
 
         self._physical_machine = physical_machine
+
+    @property
+    def hostname(self):
+        """Gets the hostname of this PhysicalHostAllOf.  # noqa: E501
+
+
+        :return: The hostname of this PhysicalHostAllOf.  # noqa: E501
+        :rtype: str
+        """
+        return self._hostname
+
+    @hostname.setter
+    def hostname(self, hostname):
+        """Sets the hostname of this PhysicalHostAllOf.
+
+
+        :param hostname: The hostname of this PhysicalHostAllOf.  # noqa: E501
+        :type: str
+        """
+
+        self._hostname = hostname
 
     @property
     def mac_address(self):
@@ -145,27 +166,6 @@ class PhysicalHostAllOf(object):
         """
 
         self._ip_address = ip_address
-
-    @property
-    def hostname(self):
-        """Gets the hostname of this PhysicalHostAllOf.  # noqa: E501
-
-
-        :return: The hostname of this PhysicalHostAllOf.  # noqa: E501
-        :rtype: str
-        """
-        return self._hostname
-
-    @hostname.setter
-    def hostname(self, hostname):
-        """Sets the hostname of this PhysicalHostAllOf.
-
-
-        :param hostname: The hostname of this PhysicalHostAllOf.  # noqa: E501
-        :type: str
-        """
-
-        self._hostname = hostname
 
     def to_dict(self):
         """Returns the model properties as a dict"""

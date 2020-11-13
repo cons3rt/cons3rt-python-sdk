@@ -1,5 +1,4 @@
 # coding: utf-8
-from __future__ import absolute_import
 
 """
    Copyright 2020 Jackpine Technologies Corporation
@@ -22,6 +21,8 @@ cons3rt - Copyright Jackpine Technologies Corp.
 NOTE: This file is auto-generated. Do not edit the file manually.
 """
 
+
+from __future__ import absolute_import
 
 import re  # noqa: F401
 
@@ -854,7 +855,7 @@ class DeploymentsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str id: ID of deployment (required)
-        :param int virtualization_realm_id: ID of preferred virtualization realm
+        :param InputDeploymentRunOptionsForBindings input_deployment_run_options_for_bindings: The deployment run options to use when launching the deployment
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -880,7 +881,7 @@ class DeploymentsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str id: ID of deployment (required)
-        :param int virtualization_realm_id: ID of preferred virtualization realm
+        :param InputDeploymentRunOptionsForBindings input_deployment_run_options_for_bindings: The deployment run options to use when launching the deployment
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -897,7 +898,7 @@ class DeploymentsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['id', 'virtualization_realm_id']  # noqa: E501
+        all_params = ['id', 'input_deployment_run_options_for_bindings']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -923,8 +924,6 @@ class DeploymentsApi(object):
             path_params['id'] = local_var_params['id']  # noqa: E501
 
         query_params = []
-        if 'virtualization_realm_id' in local_var_params and local_var_params['virtualization_realm_id'] is not None:  # noqa: E501
-            query_params.append(('virtualizationRealmId', local_var_params['virtualization_realm_id']))  # noqa: E501
 
         header_params = {}
 
@@ -932,15 +931,21 @@ class DeploymentsApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'input_deployment_run_options_for_bindings' in local_var_params:
+            body_params = local_var_params['input_deployment_run_options_for_bindings']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json', 'application/xml'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['APIKeyHeader', 'Username']  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/deployments/{id}/bindings', 'GET',
+            '/api/deployments/{id}/bindings', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1182,6 +1187,8 @@ class DeploymentsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str id: ID of deployment (required)
+        :param int maxresults: Maximum number of results to return
+        :param int page: Requested page number
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1207,6 +1214,8 @@ class DeploymentsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str id: ID of deployment (required)
+        :param int maxresults: Maximum number of results to return
+        :param int page: Requested page number
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1223,7 +1232,7 @@ class DeploymentsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'maxresults', 'page']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1249,6 +1258,10 @@ class DeploymentsApi(object):
             path_params['id'] = local_var_params['id']  # noqa: E501
 
         query_params = []
+        if 'maxresults' in local_var_params and local_var_params['maxresults'] is not None:  # noqa: E501
+            query_params.append(('maxresults', local_var_params['maxresults']))  # noqa: E501
+        if 'page' in local_var_params and local_var_params['page'] is not None:  # noqa: E501
+            query_params.append(('page', local_var_params['page']))  # noqa: E501
 
         header_params = {}
 

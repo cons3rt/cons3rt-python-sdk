@@ -1,5 +1,4 @@
 # coding: utf-8
-from __future__ import absolute_import
 
 """
    Copyright 2020 Jackpine Technologies Corporation
@@ -22,6 +21,8 @@ cons3rt - Copyright Jackpine Technologies Corp.
 NOTE: This file is auto-generated. Do not edit the file manually.
 """
 
+
+from __future__ import absolute_import
 
 import re  # noqa: F401
 
@@ -153,6 +154,122 @@ class CategoriesApi(object):
 
         return self.api_client.call_api(
             '/api/categories/{id}/asset', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='bool',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def add_category_to_deployment_run(self, id, runid, **kwargs):  # noqa: E501
+        """Assign Category to Run  # noqa: E501
+
+        Assigns the Category as a filter tag to the provided Deployment Run.<br> <br> Altering the Category will affect future Run filtering.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_category_to_deployment_run(id, runid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: ID of category (required)
+        :param str runid: ID of run to assign (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: bool
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.add_category_to_deployment_run_with_http_info(id, runid, **kwargs)  # noqa: E501
+
+    def add_category_to_deployment_run_with_http_info(self, id, runid, **kwargs):  # noqa: E501
+        """Assign Category to Run  # noqa: E501
+
+        Assigns the Category as a filter tag to the provided Deployment Run.<br> <br> Altering the Category will affect future Run filtering.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_category_to_deployment_run_with_http_info(id, runid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: ID of category (required)
+        :param str runid: ID of run to assign (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(bool, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['id', 'runid']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_category_to_deployment_run" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'id' is set
+        if self.api_client.client_side_validation and ('id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `id` when calling `add_category_to_deployment_run`")  # noqa: E501
+        # verify the required parameter 'runid' is set
+        if self.api_client.client_side_validation and ('runid' not in local_var_params or  # noqa: E501
+                                                        local_var_params['runid'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `runid` when calling `add_category_to_deployment_run`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in local_var_params:
+            path_params['id'] = local_var_params['id']  # noqa: E501
+
+        query_params = []
+        if 'runid' in local_var_params and local_var_params['runid'] is not None:  # noqa: E501
+            query_params.append(('runid', local_var_params['runid']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['APIKeyHeader', 'Username']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/categories/{id}/run', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -585,6 +702,122 @@ class CategoriesApi(object):
 
         return self.api_client.call_api(
             '/api/categories/{id}/asset', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='bool',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def remove_category_from_deployment_run(self, id, runid, **kwargs):  # noqa: E501
+        """Unassign Category from deployment run  # noqa: E501
+
+        Removes the Category as a filter tag from the provided Run.<br> <br> Altering the Category will affect future run filtering.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.remove_category_from_deployment_run(id, runid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: ID of category (required)
+        :param str runid: ID of run to unassign (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: bool
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.remove_category_from_deployment_run_with_http_info(id, runid, **kwargs)  # noqa: E501
+
+    def remove_category_from_deployment_run_with_http_info(self, id, runid, **kwargs):  # noqa: E501
+        """Unassign Category from deployment run  # noqa: E501
+
+        Removes the Category as a filter tag from the provided Run.<br> <br> Altering the Category will affect future run filtering.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.remove_category_from_deployment_run_with_http_info(id, runid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: ID of category (required)
+        :param str runid: ID of run to unassign (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(bool, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['id', 'runid']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method remove_category_from_deployment_run" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'id' is set
+        if self.api_client.client_side_validation and ('id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `id` when calling `remove_category_from_deployment_run`")  # noqa: E501
+        # verify the required parameter 'runid' is set
+        if self.api_client.client_side_validation and ('runid' not in local_var_params or  # noqa: E501
+                                                        local_var_params['runid'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `runid` when calling `remove_category_from_deployment_run`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in local_var_params:
+            path_params['id'] = local_var_params['id']  # noqa: E501
+
+        query_params = []
+        if 'runid' in local_var_params and local_var_params['runid'] is not None:  # noqa: E501
+            query_params.append(('runid', local_var_params['runid']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['APIKeyHeader', 'Username']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/categories/{id}/run', 'DELETE',
             path_params,
             query_params,
             header_params,

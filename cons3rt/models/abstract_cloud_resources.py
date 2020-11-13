@@ -49,27 +49,56 @@ class AbstractCloudResources(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'nat_instance_types': 'list[InstanceType]',
         'subtype': 'str'
     }
 
     attribute_map = {
+        'nat_instance_types': 'natInstanceTypes',
         'subtype': 'subtype'
     }
 
     discriminator_value_class_map = {
-        
+        'OpenStackCloudResources': 'OpenStackCloudResources',
+        'AzureCloudResources': 'AzureCloudResources',
+        'VCloudCloudResources': 'VCloudCloudResources',
+        'AwsCloudResources': 'AwsCloudResources'
     }
 
-    def __init__(self, subtype=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, nat_instance_types=None, subtype=None, local_vars_configuration=None):  # noqa: E501
         """AbstractCloudResources - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._nat_instance_types = None
         self._subtype = None
         self.discriminator = 'subtype'
 
+        if nat_instance_types is not None:
+            self.nat_instance_types = nat_instance_types
         self.subtype = subtype
+
+    @property
+    def nat_instance_types(self):
+        """Gets the nat_instance_types of this AbstractCloudResources.  # noqa: E501
+
+
+        :return: The nat_instance_types of this AbstractCloudResources.  # noqa: E501
+        :rtype: list[InstanceType]
+        """
+        return self._nat_instance_types
+
+    @nat_instance_types.setter
+    def nat_instance_types(self, nat_instance_types):
+        """Sets the nat_instance_types of this AbstractCloudResources.
+
+
+        :param nat_instance_types: The nat_instance_types of this AbstractCloudResources.  # noqa: E501
+        :type: list[InstanceType]
+        """
+
+        self._nat_instance_types = nat_instance_types
 
     @property
     def subtype(self):

@@ -3,14 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cloud_space_name** | **str** |  | 
-**maximum_virtual_machines** | **int** |  | [optional] 
-**cidr** | **str** |  | 
-**num_availability_zones** | **int** |  | [optional] 
-**power_on_minimum_delay** | **int** |  | [optional] 
-**subtype** | **str** |  | 
-**external_network_name** | **str** |  | 
+**nat_flavor_type** | **str** |  | 
+**nat_image_id** | **str** |  | 
 **dns_server_ip_addresses** | **str** |  | [optional] 
+**external_network_name** | **str** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

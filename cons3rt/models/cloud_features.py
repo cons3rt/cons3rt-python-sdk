@@ -50,28 +50,38 @@ class CloudFeatures(object):
     """
     openapi_types = {
         'allocation_capable': 'bool',
-        'deallocation_capable': 'bool'
+        'bypass_scanning_enabled': 'bool',
+        'deallocation_capable': 'bool',
+        'storage_service_enabled': 'bool'
     }
 
     attribute_map = {
         'allocation_capable': 'allocationCapable',
-        'deallocation_capable': 'deallocationCapable'
+        'bypass_scanning_enabled': 'bypassScanningEnabled',
+        'deallocation_capable': 'deallocationCapable',
+        'storage_service_enabled': 'storageServiceEnabled'
     }
 
-    def __init__(self, allocation_capable=None, deallocation_capable=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allocation_capable=None, bypass_scanning_enabled=None, deallocation_capable=None, storage_service_enabled=None, local_vars_configuration=None):  # noqa: E501
         """CloudFeatures - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._allocation_capable = None
+        self._bypass_scanning_enabled = None
         self._deallocation_capable = None
+        self._storage_service_enabled = None
         self.discriminator = None
 
         if allocation_capable is not None:
             self.allocation_capable = allocation_capable
+        if bypass_scanning_enabled is not None:
+            self.bypass_scanning_enabled = bypass_scanning_enabled
         if deallocation_capable is not None:
             self.deallocation_capable = deallocation_capable
+        if storage_service_enabled is not None:
+            self.storage_service_enabled = storage_service_enabled
 
     @property
     def allocation_capable(self):
@@ -95,6 +105,27 @@ class CloudFeatures(object):
         self._allocation_capable = allocation_capable
 
     @property
+    def bypass_scanning_enabled(self):
+        """Gets the bypass_scanning_enabled of this CloudFeatures.  # noqa: E501
+
+
+        :return: The bypass_scanning_enabled of this CloudFeatures.  # noqa: E501
+        :rtype: bool
+        """
+        return self._bypass_scanning_enabled
+
+    @bypass_scanning_enabled.setter
+    def bypass_scanning_enabled(self, bypass_scanning_enabled):
+        """Sets the bypass_scanning_enabled of this CloudFeatures.
+
+
+        :param bypass_scanning_enabled: The bypass_scanning_enabled of this CloudFeatures.  # noqa: E501
+        :type: bool
+        """
+
+        self._bypass_scanning_enabled = bypass_scanning_enabled
+
+    @property
     def deallocation_capable(self):
         """Gets the deallocation_capable of this CloudFeatures.  # noqa: E501
 
@@ -114,6 +145,27 @@ class CloudFeatures(object):
         """
 
         self._deallocation_capable = deallocation_capable
+
+    @property
+    def storage_service_enabled(self):
+        """Gets the storage_service_enabled of this CloudFeatures.  # noqa: E501
+
+
+        :return: The storage_service_enabled of this CloudFeatures.  # noqa: E501
+        :rtype: bool
+        """
+        return self._storage_service_enabled
+
+    @storage_service_enabled.setter
+    def storage_service_enabled(self, storage_service_enabled):
+        """Sets the storage_service_enabled of this CloudFeatures.
+
+
+        :param storage_service_enabled: The storage_service_enabled of this CloudFeatures.  # noqa: E501
+        :type: bool
+        """
+
+        self._storage_service_enabled = storage_service_enabled
 
     def to_dict(self):
         """Returns the model properties as a dict"""

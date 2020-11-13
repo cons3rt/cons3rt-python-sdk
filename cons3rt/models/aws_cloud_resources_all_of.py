@@ -49,46 +49,97 @@ class AwsCloudResourcesAllOf(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'subtype': 'str'
+        'availability_zone_names': 'list[str]',
+        'nat_image_names': 'list[str]',
+        'region_names': 'list[str]'
     }
 
     attribute_map = {
-        'subtype': 'subtype'
+        'availability_zone_names': 'availabilityZoneNames',
+        'nat_image_names': 'natImageNames',
+        'region_names': 'regionNames'
     }
 
-    def __init__(self, subtype=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, availability_zone_names=None, nat_image_names=None, region_names=None, local_vars_configuration=None):  # noqa: E501
         """AwsCloudResourcesAllOf - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._subtype = None
+        self._availability_zone_names = None
+        self._nat_image_names = None
+        self._region_names = None
         self.discriminator = None
 
-        self.subtype = subtype
+        if availability_zone_names is not None:
+            self.availability_zone_names = availability_zone_names
+        if nat_image_names is not None:
+            self.nat_image_names = nat_image_names
+        if region_names is not None:
+            self.region_names = region_names
 
     @property
-    def subtype(self):
-        """Gets the subtype of this AwsCloudResourcesAllOf.  # noqa: E501
+    def availability_zone_names(self):
+        """Gets the availability_zone_names of this AwsCloudResourcesAllOf.  # noqa: E501
 
 
-        :return: The subtype of this AwsCloudResourcesAllOf.  # noqa: E501
-        :rtype: str
+        :return: The availability_zone_names of this AwsCloudResourcesAllOf.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._subtype
+        return self._availability_zone_names
 
-    @subtype.setter
-    def subtype(self, subtype):
-        """Sets the subtype of this AwsCloudResourcesAllOf.
+    @availability_zone_names.setter
+    def availability_zone_names(self, availability_zone_names):
+        """Sets the availability_zone_names of this AwsCloudResourcesAllOf.
 
 
-        :param subtype: The subtype of this AwsCloudResourcesAllOf.  # noqa: E501
-        :type: str
+        :param availability_zone_names: The availability_zone_names of this AwsCloudResourcesAllOf.  # noqa: E501
+        :type: list[str]
         """
-        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
-            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
 
-        self._subtype = subtype
+        self._availability_zone_names = availability_zone_names
+
+    @property
+    def nat_image_names(self):
+        """Gets the nat_image_names of this AwsCloudResourcesAllOf.  # noqa: E501
+
+
+        :return: The nat_image_names of this AwsCloudResourcesAllOf.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._nat_image_names
+
+    @nat_image_names.setter
+    def nat_image_names(self, nat_image_names):
+        """Sets the nat_image_names of this AwsCloudResourcesAllOf.
+
+
+        :param nat_image_names: The nat_image_names of this AwsCloudResourcesAllOf.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._nat_image_names = nat_image_names
+
+    @property
+    def region_names(self):
+        """Gets the region_names of this AwsCloudResourcesAllOf.  # noqa: E501
+
+
+        :return: The region_names of this AwsCloudResourcesAllOf.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._region_names
+
+    @region_names.setter
+    def region_names(self, region_names):
+        """Sets the region_names of this AwsCloudResourcesAllOf.
+
+
+        :param region_names: The region_names of this AwsCloudResourcesAllOf.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._region_names = region_names
 
     def to_dict(self):
         """Returns the model properties as a dict"""

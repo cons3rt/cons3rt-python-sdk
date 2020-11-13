@@ -58,6 +58,11 @@ class OpenStackCloudAllOf(object):
         'keystone_version': 'str',
         'nat_image_id': 'str',
         'nat_instance_type': 'str',
+        'storage_service_hostname': 'str',
+        'storage_service_port': 'int',
+        'storage_service_protocol': 'str',
+        'storage_service_username': 'str',
+        'storage_service_password': 'str',
         'tenant': 'str',
         'tenant_id': 'str'
     }
@@ -72,11 +77,16 @@ class OpenStackCloudAllOf(object):
         'keystone_version': 'keystoneVersion',
         'nat_image_id': 'natImageId',
         'nat_instance_type': 'natInstanceType',
+        'storage_service_hostname': 'storageServiceHostname',
+        'storage_service_port': 'storageServicePort',
+        'storage_service_protocol': 'storageServiceProtocol',
+        'storage_service_username': 'storageServiceUsername',
+        'storage_service_password': 'storageServicePassword',
         'tenant': 'tenant',
         'tenant_id': 'tenantId'
     }
 
-    def __init__(self, domain_name=None, keystone_hostname=None, keystone_password=None, keystone_port=None, keystone_protocol=None, keystone_username=None, keystone_version=None, nat_image_id=None, nat_instance_type=None, tenant=None, tenant_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, domain_name=None, keystone_hostname=None, keystone_password=None, keystone_port=None, keystone_protocol=None, keystone_username=None, keystone_version=None, nat_image_id=None, nat_instance_type=None, storage_service_hostname=None, storage_service_port=None, storage_service_protocol=None, storage_service_username=None, storage_service_password=None, tenant=None, tenant_id=None, local_vars_configuration=None):  # noqa: E501
         """OpenStackCloudAllOf - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -91,6 +101,11 @@ class OpenStackCloudAllOf(object):
         self._keystone_version = None
         self._nat_image_id = None
         self._nat_instance_type = None
+        self._storage_service_hostname = None
+        self._storage_service_port = None
+        self._storage_service_protocol = None
+        self._storage_service_username = None
+        self._storage_service_password = None
         self._tenant = None
         self._tenant_id = None
         self.discriminator = None
@@ -113,6 +128,16 @@ class OpenStackCloudAllOf(object):
             self.nat_image_id = nat_image_id
         if nat_instance_type is not None:
             self.nat_instance_type = nat_instance_type
+        if storage_service_hostname is not None:
+            self.storage_service_hostname = storage_service_hostname
+        if storage_service_port is not None:
+            self.storage_service_port = storage_service_port
+        if storage_service_protocol is not None:
+            self.storage_service_protocol = storage_service_protocol
+        if storage_service_username is not None:
+            self.storage_service_username = storage_service_username
+        if storage_service_password is not None:
+            self.storage_service_password = storage_service_password
         if tenant is not None:
             self.tenant = tenant
         if tenant_id is not None:
@@ -306,6 +331,111 @@ class OpenStackCloudAllOf(object):
         """
 
         self._nat_instance_type = nat_instance_type
+
+    @property
+    def storage_service_hostname(self):
+        """Gets the storage_service_hostname of this OpenStackCloudAllOf.  # noqa: E501
+
+
+        :return: The storage_service_hostname of this OpenStackCloudAllOf.  # noqa: E501
+        :rtype: str
+        """
+        return self._storage_service_hostname
+
+    @storage_service_hostname.setter
+    def storage_service_hostname(self, storage_service_hostname):
+        """Sets the storage_service_hostname of this OpenStackCloudAllOf.
+
+
+        :param storage_service_hostname: The storage_service_hostname of this OpenStackCloudAllOf.  # noqa: E501
+        :type: str
+        """
+
+        self._storage_service_hostname = storage_service_hostname
+
+    @property
+    def storage_service_port(self):
+        """Gets the storage_service_port of this OpenStackCloudAllOf.  # noqa: E501
+
+
+        :return: The storage_service_port of this OpenStackCloudAllOf.  # noqa: E501
+        :rtype: int
+        """
+        return self._storage_service_port
+
+    @storage_service_port.setter
+    def storage_service_port(self, storage_service_port):
+        """Sets the storage_service_port of this OpenStackCloudAllOf.
+
+
+        :param storage_service_port: The storage_service_port of this OpenStackCloudAllOf.  # noqa: E501
+        :type: int
+        """
+
+        self._storage_service_port = storage_service_port
+
+    @property
+    def storage_service_protocol(self):
+        """Gets the storage_service_protocol of this OpenStackCloudAllOf.  # noqa: E501
+
+
+        :return: The storage_service_protocol of this OpenStackCloudAllOf.  # noqa: E501
+        :rtype: str
+        """
+        return self._storage_service_protocol
+
+    @storage_service_protocol.setter
+    def storage_service_protocol(self, storage_service_protocol):
+        """Sets the storage_service_protocol of this OpenStackCloudAllOf.
+
+
+        :param storage_service_protocol: The storage_service_protocol of this OpenStackCloudAllOf.  # noqa: E501
+        :type: str
+        """
+
+        self._storage_service_protocol = storage_service_protocol
+
+    @property
+    def storage_service_username(self):
+        """Gets the storage_service_username of this OpenStackCloudAllOf.  # noqa: E501
+
+
+        :return: The storage_service_username of this OpenStackCloudAllOf.  # noqa: E501
+        :rtype: str
+        """
+        return self._storage_service_username
+
+    @storage_service_username.setter
+    def storage_service_username(self, storage_service_username):
+        """Sets the storage_service_username of this OpenStackCloudAllOf.
+
+
+        :param storage_service_username: The storage_service_username of this OpenStackCloudAllOf.  # noqa: E501
+        :type: str
+        """
+
+        self._storage_service_username = storage_service_username
+
+    @property
+    def storage_service_password(self):
+        """Gets the storage_service_password of this OpenStackCloudAllOf.  # noqa: E501
+
+
+        :return: The storage_service_password of this OpenStackCloudAllOf.  # noqa: E501
+        :rtype: str
+        """
+        return self._storage_service_password
+
+    @storage_service_password.setter
+    def storage_service_password(self, storage_service_password):
+        """Sets the storage_service_password of this OpenStackCloudAllOf.
+
+
+        :param storage_service_password: The storage_service_password of this OpenStackCloudAllOf.  # noqa: E501
+        :type: str
+        """
+
+        self._storage_service_password = storage_service_password
 
     @property
     def tenant(self):

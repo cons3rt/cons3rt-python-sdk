@@ -52,11 +52,11 @@ class AbstractInstallation(object):
         'asset_id': 'int',
         'asset_name': 'str',
         'average_installation_time': 'int',
-        'end_date': 'int',
+        'end_date': 'datetime',
         'error': 'str',
         'id': 'int',
         'load_order': 'int',
-        'start_date': 'int',
+        'start_date': 'datetime',
         'status': 'str',
         'subtype': 'str'
     }
@@ -75,7 +75,8 @@ class AbstractInstallation(object):
     }
 
     discriminator_value_class_map = {
-        
+        'ContainerInstallation': 'ContainerInstallation',
+        'SoftwareInstallation': 'SoftwareInstallation'
     }
 
     def __init__(self, asset_id=None, asset_name=None, average_installation_time=None, end_date=None, error=None, id=None, load_order=None, start_date=None, status=None, subtype=None, local_vars_configuration=None):  # noqa: E501
@@ -185,7 +186,7 @@ class AbstractInstallation(object):
 
 
         :return: The end_date of this AbstractInstallation.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._end_date
 
@@ -195,7 +196,7 @@ class AbstractInstallation(object):
 
 
         :param end_date: The end_date of this AbstractInstallation.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._end_date = end_date
@@ -269,7 +270,7 @@ class AbstractInstallation(object):
 
 
         :return: The start_date of this AbstractInstallation.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._start_date
 
@@ -279,7 +280,7 @@ class AbstractInstallation(object):
 
 
         :param start_date: The start_date of this AbstractInstallation.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._start_date = start_date

@@ -3,9 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**subtype** | **str** |  | 
 **availability_zone_names** | **list[str]** |  | [optional] 
-**instance_type_names** | **list[str]** |  | [optional] 
 **nat_image_names** | **list[str]** |  | [optional] 
 **region_names** | **list[str]** |  | [optional] 
 

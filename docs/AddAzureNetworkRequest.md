@@ -3,8 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**network** | [**Network**](Network.md) |  | 
-**subtype** | **str** |  | 
 **nat_instance_type** | **str** |  | 
 **nat_image_reference** | [**ImageReferenceDTO**](ImageReferenceDTO.md) |  | 
 

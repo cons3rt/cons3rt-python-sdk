@@ -7,23 +7,31 @@ Method | HTTP request | Description
 [**add_project**](CloudsApi.md#add_project) | **PUT** /api/virtualizationrealms/{id}/projects | Assign Project
 [**allocate_virtualization_realm**](CloudsApi.md#allocate_virtualization_realm) | **POST** /api/clouds/{id}/virtualizationrealms/allocate | Allocate Virtualization Realm
 [**assign_managing_team**](CloudsApi.md#assign_managing_team) | **PUT** /api/clouds/{id}/virtualizationrealms/{virtualizationRealmId}/team | Assign Virtualization Realm-managing Team
+[**create_bucket**](CloudsApi.md#create_bucket) | **POST** /api/clouds/{id}/buckets | 
 [**deallocate_virt_realm**](CloudsApi.md#deallocate_virt_realm) | **DELETE** /api/clouds/{id}/virtualizationrealms/allocate | De-allocate Virtualization Realm
+[**delete_bucket**](CloudsApi.md#delete_bucket) | **DELETE** /api/clouds/{id}/buckets/{bucket_id} | 
 [**delete_cloud**](CloudsApi.md#delete_cloud) | **DELETE** /api/clouds/{id} | Delete Cloud
+[**download_file_from_bucket**](CloudsApi.md#download_file_from_bucket) | **GET** /api/clouds/{id}/buckets/{bucket_id}/download | Download File From Bucket
 [**enable_maintence_mode**](CloudsApi.md#enable_maintence_mode) | **PUT** /api/clouds/{id}/maintenance | Update Maintenance Mode
+[**get_bucket**](CloudsApi.md#get_bucket) | **GET** /api/clouds/{id}/buckets/{bucket_id} | 
+[**get_bucket_listing**](CloudsApi.md#get_bucket_listing) | **GET** /api/clouds/{id}/buckets/{bucket_id}/listing | 
 [**get_cloud**](CloudsApi.md#get_cloud) | **GET** /api/clouds/{id} | Retrieve Cloud
 [**get_cloud_resources**](CloudsApi.md#get_cloud_resources) | **GET** /api/clouds/{id}/resources | Retrieve Cloud Resources
 [**get_clouds**](CloudsApi.md#get_clouds) | **GET** /api/clouds | List Clouds
 [**get_default_network**](CloudsApi.md#get_default_network) | **GET** /api/clouds/defaultnetwork | Retrieve Default Network
 [**get_edge_gateway_i_ps**](CloudsApi.md#get_edge_gateway_i_ps) | **GET** /api/clouds/{id}/edgegateways | List Edge Gateways
+[**list_buckets**](CloudsApi.md#list_buckets) | **GET** /api/clouds/{id}/buckets | 
 [**list_virt_realms_in_cloud**](CloudsApi.md#list_virt_realms_in_cloud) | **GET** /api/clouds/{id}/virtualizationrealms | List Virtualization Realms
 [**register_cloud**](CloudsApi.md#register_cloud) | **POST** /api/clouds | Create Cloud
 [**register_virtualization_realm**](CloudsApi.md#register_virtualization_realm) | **POST** /api/clouds/{id}/virtualizationrealms | Register Virtualization Realm
 [**remove_virt_realm**](CloudsApi.md#remove_virt_realm) | **DELETE** /api/clouds/{id}/virtualizationrealms | Unregister Virtualization Realm
 [**unassign_managing_team**](CloudsApi.md#unassign_managing_team) | **DELETE** /api/clouds/{id}/virtualizationrealms/{virtualizationRealmId}/team | Unassign Manager from Team
+[**update_bucket**](CloudsApi.md#update_bucket) | **PUT** /api/clouds/{id}/buckets/{bucket_id} | 
 [**update_cloud**](CloudsApi.md#update_cloud) | **PUT** /api/clouds/{id} | Update Cloud Content
 [**update_virt_realm**](CloudsApi.md#update_virt_realm) | **PUT** /api/clouds/{id}/virtualizationrealms | Update Virtualization Realm
 [**update_virtualization_realm**](CloudsApi.md#update_virtualization_realm) | **PUT** /api/virtualizationrealms/{id} | Update Virtualization Realm
 [**update_virtualization_realm_maximum_impact_level**](CloudsApi.md#update_virtualization_realm_maximum_impact_level) | **PUT** /api/clouds/{id}/impactlevel | Update Impact Level
+[**upload_file_to_bucket**](CloudsApi.md#upload_file_to_bucket) | **POST** /api/clouds/{id}/buckets/{bucket_id} | Upload File to Bucket
 
 
 # **add_project**
@@ -395,6 +403,122 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **create_bucket**
+> str create_bucket(id, bucket)
+
+
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of the cloud
+bucket = cons3rt.Bucket() # Bucket | The bucket creation information
+
+    try:
+        api_response = api_instance.create_bucket(id, bucket)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->create_bucket: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of the cloud
+bucket = cons3rt.Bucket() # Bucket | The bucket creation information
+
+    try:
+        api_response = api_instance.create_bucket(id, bucket)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->create_bucket: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the cloud | 
+ **bucket** | [**Bucket**](Bucket.md)| The bucket creation information | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**0** | default response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **deallocate_virt_realm**
 > bool deallocate_virt_realm(id, virt_realm_id)
 
@@ -517,6 +641,122 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **delete_bucket**
+> bool delete_bucket(id, bucket_id)
+
+
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of the cloud
+bucket_id = 'bucket_id_example' # str | ID of bucket
+
+    try:
+        api_response = api_instance.delete_bucket(id, bucket_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->delete_bucket: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of the cloud
+bucket_id = 'bucket_id_example' # str | ID of bucket
+
+    try:
+        api_response = api_instance.delete_bucket(id, bucket_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->delete_bucket: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the cloud | 
+ **bucket_id** | **str**| ID of bucket | 
+
+### Return type
+
+**bool**
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**0** | default response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_cloud**
 > bool delete_cloud(id)
 
@@ -633,6 +873,135 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **400** | Invalid ID or data supplied |  -  |
 **404** | Cloud not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **download_file_from_bucket**
+> bool download_file_from_bucket(id, bucket_id, file_name, background=background)
+
+Download File From Bucket
+
+Downloads the Asset in the form of a zip file. Download is only available for importable Asset types (i.e. Software, Test, and Container).<br> <br> Based on the background flag, the download will be done in the foreground (false), background (true), or in a location as determined by Asset size (default).<br> <br> If the background flag is set to true (or if no value for the background flag is provided), and the Asset is larger than the site threshold, the Asset will be prepared for download in the background.In that case, an email with a link to retrieve the Asset will be sent.If the Asset is larger than download threshold, it will be prepared for download in the background, and an email with a download link will be sent.
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
+bucket_id = 'bucket_id_example' # str | ID of bucket
+file_name = 'file_name_example' # str | The filename within the bucket to download
+background = False # bool | Force the download to happen in the background (optional) (default to False)
+
+    try:
+        # Download File From Bucket
+        api_response = api_instance.download_file_from_bucket(id, bucket_id, file_name, background=background)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->download_file_from_bucket: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of cloud
+bucket_id = 'bucket_id_example' # str | ID of bucket
+file_name = 'file_name_example' # str | The filename within the bucket to download
+background = False # bool | Force the download to happen in the background (optional) (default to False)
+
+    try:
+        # Download File From Bucket
+        api_response = api_instance.download_file_from_bucket(id, bucket_id, file_name, background=background)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->download_file_from_bucket: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of cloud | 
+ **bucket_id** | **str**| ID of bucket | 
+ **file_name** | **str**| The filename within the bucket to download | 
+ **background** | **bool**| Force the download to happen in the background | [optional] [default to False]
+
+### Return type
+
+**bool**
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**202** | Accepted |  -  |
+**400** | Invalid ID supplied or asset is not the correct type |  -  |
+**404** | Asset not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -758,6 +1127,238 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **400** | Invalid cloud ID or data supplied |  -  |
 **404** | Cloud not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_bucket**
+> Bucket get_bucket(id, bucket_id)
+
+
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of the cloud
+bucket_id = 'bucket_id_example' # str | ID of bucket
+
+    try:
+        api_response = api_instance.get_bucket(id, bucket_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->get_bucket: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of the cloud
+bucket_id = 'bucket_id_example' # str | ID of bucket
+
+    try:
+        api_response = api_instance.get_bucket(id, bucket_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->get_bucket: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the cloud | 
+ **bucket_id** | **str**| ID of bucket | 
+
+### Return type
+
+[**Bucket**](Bucket.md)
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**0** | default response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_bucket_listing**
+> str get_bucket_listing(id, bucket_id)
+
+
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of the cloud
+bucket_id = 'bucket_id_example' # str | ID of bucket
+
+    try:
+        api_response = api_instance.get_bucket_listing(id, bucket_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->get_bucket_listing: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of the cloud
+bucket_id = 'bucket_id_example' # str | ID of bucket
+
+    try:
+        api_response = api_instance.get_bucket_listing(id, bucket_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->get_bucket_listing: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the cloud | 
+ **bucket_id** | **str**| ID of bucket | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**0** | default response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1347,6 +1948,128 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **400** | Invalid cloud ID supplied |  -  |
 **404** | Cloud not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_buckets**
+> list[Bucket] list_buckets(id, project=project, maxresults=maxresults, page=page)
+
+
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of the cloud
+project = False # bool | Include project buckets (optional) (default to False)
+maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
+page = 0 # int | Requested page number (optional) (default to 0)
+
+    try:
+        api_response = api_instance.list_buckets(id, project=project, maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->list_buckets: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of the cloud
+project = False # bool | Include project buckets (optional) (default to False)
+maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
+page = 0 # int | Requested page number (optional) (default to 0)
+
+    try:
+        api_response = api_instance.list_buckets(id, project=project, maxresults=maxresults, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->list_buckets: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the cloud | 
+ **project** | **bool**| Include project buckets | [optional] [default to False]
+ **maxresults** | **int**| Maximum number of results to return | [optional] [default to 40]
+ **page** | **int**| Requested page number | [optional] [default to 0]
+
+### Return type
+
+[**list[Bucket]**](Bucket.md)
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**0** | default response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1965,6 +2688,125 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **update_bucket**
+> Bucket update_bucket(id, bucket_id, bucket)
+
+
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of the cloud
+bucket_id = 'bucket_id_example' # str | ID of bucket
+bucket = cons3rt.Bucket() # Bucket | The bucket creation information
+
+    try:
+        api_response = api_instance.update_bucket(id, bucket_id, bucket)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->update_bucket: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of the cloud
+bucket_id = 'bucket_id_example' # str | ID of bucket
+bucket = cons3rt.Bucket() # Bucket | The bucket creation information
+
+    try:
+        api_response = api_instance.update_bucket(id, bucket_id, bucket)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->update_bucket: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the cloud | 
+ **bucket_id** | **str**| ID of bucket | 
+ **bucket** | [**Bucket**](Bucket.md)| The bucket creation information | 
+
+### Return type
+
+[**Bucket**](Bucket.md)
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**0** | default response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_cloud**
 > bool update_cloud(id, input_cloud=input_cloud)
 
@@ -2453,6 +3295,134 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **400** | Invalid ID or impact level supplied |  -  |
 **404** | Cloud not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **upload_file_to_bucket**
+> int upload_file_to_bucket(id, bucket_id, file=file, filename=filename)
+
+Upload File to Bucket
+
+Uploads a file to a bucket.<br> <br> File must be submitted as multipart-form data, with a file element named \"file\" and a filename field <br> <br> A \"Connection: Keep-Alive\" configuration may be needed for larger sized files, due to the time it takes to copy to the server.
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of the cloud
+bucket_id = 'bucket_id_example' # str | ID of bucket
+file = '/path/to/file' # list[file] |  (optional)
+filename = 'filename_example' # str |  (optional)
+
+    try:
+        # Upload File to Bucket
+        api_response = api_instance.upload_file_to_bucket(id, bucket_id, file=file, filename=filename)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->upload_file_to_bucket: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.CloudsApi(api_client)
+    id = 'id_example' # str | ID of the cloud
+bucket_id = 'bucket_id_example' # str | ID of bucket
+file = '/path/to/file' # list[file] |  (optional)
+filename = 'filename_example' # str |  (optional)
+
+    try:
+        # Upload File to Bucket
+        api_response = api_instance.upload_file_to_bucket(id, bucket_id, file=file, filename=filename)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudsApi->upload_file_to_bucket: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the cloud | 
+ **bucket_id** | **str**| ID of bucket | 
+ **file** | **list[file]**|  | [optional] 
+ **filename** | **str**|  | [optional] 
+
+### Return type
+
+**int**
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**202** | Accepted |  -  |
+**400** | Invalid file data supplied |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

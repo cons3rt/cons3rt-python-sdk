@@ -171,7 +171,7 @@ class MinimalCloud(object):
         :param cloud_type: The cloud_type of this MinimalCloud.  # noqa: E501
         :type: str
         """
-        allowed_values = ["AwsCloud", "AzureCloud", "CloudStackCloud", "OpenStackCloud", "VCloudCloud"]  # noqa: E501
+        allowed_values = ["AwsCloud", "AzureCloud", "OpenStackCloud", "VCloudRestCloud"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and cloud_type not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `cloud_type` ({0}), must be one of {1}"  # noqa: E501

@@ -49,286 +49,77 @@ class ContainerInstallationAllOf(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'asset_id': 'int',
-        'asset_name': 'str',
-        'average_installation_time': 'int',
-        'end_date': 'int',
-        'error': 'str',
-        'id': 'int',
-        'load_order': 'int',
-        'start_date': 'int',
-        'status': 'str',
-        'subtype': 'str'
+        'asset_type': 'str',
+        'run_arguments': 'str'
     }
 
     attribute_map = {
-        'asset_id': 'assetId',
-        'asset_name': 'assetName',
-        'average_installation_time': 'averageInstallationTime',
-        'end_date': 'endDate',
-        'error': 'error',
-        'id': 'id',
-        'load_order': 'loadOrder',
-        'start_date': 'startDate',
-        'status': 'status',
-        'subtype': 'subtype'
+        'asset_type': 'assetType',
+        'run_arguments': 'runArguments'
     }
 
-    def __init__(self, asset_id=None, asset_name=None, average_installation_time=None, end_date=None, error=None, id=None, load_order=None, start_date=None, status=None, subtype=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, asset_type=None, run_arguments=None, local_vars_configuration=None):  # noqa: E501
         """ContainerInstallationAllOf - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._asset_id = None
-        self._asset_name = None
-        self._average_installation_time = None
-        self._end_date = None
-        self._error = None
-        self._id = None
-        self._load_order = None
-        self._start_date = None
-        self._status = None
-        self._subtype = None
+        self._asset_type = None
+        self._run_arguments = None
         self.discriminator = None
 
-        if asset_id is not None:
-            self.asset_id = asset_id
-        if asset_name is not None:
-            self.asset_name = asset_name
-        if average_installation_time is not None:
-            self.average_installation_time = average_installation_time
-        if end_date is not None:
-            self.end_date = end_date
-        if error is not None:
-            self.error = error
-        if id is not None:
-            self.id = id
-        if load_order is not None:
-            self.load_order = load_order
-        if start_date is not None:
-            self.start_date = start_date
-        if status is not None:
-            self.status = status
-        self.subtype = subtype
+        if asset_type is not None:
+            self.asset_type = asset_type
+        if run_arguments is not None:
+            self.run_arguments = run_arguments
 
     @property
-    def asset_id(self):
-        """Gets the asset_id of this ContainerInstallationAllOf.  # noqa: E501
+    def asset_type(self):
+        """Gets the asset_type of this ContainerInstallationAllOf.  # noqa: E501
 
 
-        :return: The asset_id of this ContainerInstallationAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._asset_id
-
-    @asset_id.setter
-    def asset_id(self, asset_id):
-        """Sets the asset_id of this ContainerInstallationAllOf.
-
-
-        :param asset_id: The asset_id of this ContainerInstallationAllOf.  # noqa: E501
-        :type: int
-        """
-
-        self._asset_id = asset_id
-
-    @property
-    def asset_name(self):
-        """Gets the asset_name of this ContainerInstallationAllOf.  # noqa: E501
-
-
-        :return: The asset_name of this ContainerInstallationAllOf.  # noqa: E501
+        :return: The asset_type of this ContainerInstallationAllOf.  # noqa: E501
         :rtype: str
         """
-        return self._asset_name
+        return self._asset_type
 
-    @asset_name.setter
-    def asset_name(self, asset_name):
-        """Sets the asset_name of this ContainerInstallationAllOf.
+    @asset_type.setter
+    def asset_type(self, asset_type):
+        """Sets the asset_type of this ContainerInstallationAllOf.
 
 
-        :param asset_name: The asset_name of this ContainerInstallationAllOf.  # noqa: E501
+        :param asset_type: The asset_type of this ContainerInstallationAllOf.  # noqa: E501
         :type: str
         """
-
-        self._asset_name = asset_name
-
-    @property
-    def average_installation_time(self):
-        """Gets the average_installation_time of this ContainerInstallationAllOf.  # noqa: E501
-
-
-        :return: The average_installation_time of this ContainerInstallationAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._average_installation_time
-
-    @average_installation_time.setter
-    def average_installation_time(self, average_installation_time):
-        """Sets the average_installation_time of this ContainerInstallationAllOf.
-
-
-        :param average_installation_time: The average_installation_time of this ContainerInstallationAllOf.  # noqa: E501
-        :type: int
-        """
-
-        self._average_installation_time = average_installation_time
-
-    @property
-    def end_date(self):
-        """Gets the end_date of this ContainerInstallationAllOf.  # noqa: E501
-
-
-        :return: The end_date of this ContainerInstallationAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._end_date
-
-    @end_date.setter
-    def end_date(self, end_date):
-        """Sets the end_date of this ContainerInstallationAllOf.
-
-
-        :param end_date: The end_date of this ContainerInstallationAllOf.  # noqa: E501
-        :type: int
-        """
-
-        self._end_date = end_date
-
-    @property
-    def error(self):
-        """Gets the error of this ContainerInstallationAllOf.  # noqa: E501
-
-
-        :return: The error of this ContainerInstallationAllOf.  # noqa: E501
-        :rtype: str
-        """
-        return self._error
-
-    @error.setter
-    def error(self, error):
-        """Sets the error of this ContainerInstallationAllOf.
-
-
-        :param error: The error of this ContainerInstallationAllOf.  # noqa: E501
-        :type: str
-        """
-
-        self._error = error
-
-    @property
-    def id(self):
-        """Gets the id of this ContainerInstallationAllOf.  # noqa: E501
-
-
-        :return: The id of this ContainerInstallationAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this ContainerInstallationAllOf.
-
-
-        :param id: The id of this ContainerInstallationAllOf.  # noqa: E501
-        :type: int
-        """
-
-        self._id = id
-
-    @property
-    def load_order(self):
-        """Gets the load_order of this ContainerInstallationAllOf.  # noqa: E501
-
-
-        :return: The load_order of this ContainerInstallationAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._load_order
-
-    @load_order.setter
-    def load_order(self, load_order):
-        """Sets the load_order of this ContainerInstallationAllOf.
-
-
-        :param load_order: The load_order of this ContainerInstallationAllOf.  # noqa: E501
-        :type: int
-        """
-
-        self._load_order = load_order
-
-    @property
-    def start_date(self):
-        """Gets the start_date of this ContainerInstallationAllOf.  # noqa: E501
-
-
-        :return: The start_date of this ContainerInstallationAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._start_date
-
-    @start_date.setter
-    def start_date(self, start_date):
-        """Sets the start_date of this ContainerInstallationAllOf.
-
-
-        :param start_date: The start_date of this ContainerInstallationAllOf.  # noqa: E501
-        :type: int
-        """
-
-        self._start_date = start_date
-
-    @property
-    def status(self):
-        """Gets the status of this ContainerInstallationAllOf.  # noqa: E501
-
-
-        :return: The status of this ContainerInstallationAllOf.  # noqa: E501
-        :rtype: str
-        """
-        return self._status
-
-    @status.setter
-    def status(self, status):
-        """Sets the status of this ContainerInstallationAllOf.
-
-
-        :param status: The status of this ContainerInstallationAllOf.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["NONE", "PENDING", "PREPARING", "DOWNLOADING", "EXPANDING", "INSTALLING", "INSTALLED", "REBOOTING", "ERROR", "COMPLETE", "STARTING", "STARTED"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
+        allowed_values = ["DOCKER", "OCI"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and asset_type not in allowed_values:  # noqa: E501
             raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
-                .format(status, allowed_values)
+                "Invalid value for `asset_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(asset_type, allowed_values)
             )
 
-        self._status = status
+        self._asset_type = asset_type
 
     @property
-    def subtype(self):
-        """Gets the subtype of this ContainerInstallationAllOf.  # noqa: E501
+    def run_arguments(self):
+        """Gets the run_arguments of this ContainerInstallationAllOf.  # noqa: E501
 
 
-        :return: The subtype of this ContainerInstallationAllOf.  # noqa: E501
+        :return: The run_arguments of this ContainerInstallationAllOf.  # noqa: E501
         :rtype: str
         """
-        return self._subtype
+        return self._run_arguments
 
-    @subtype.setter
-    def subtype(self, subtype):
-        """Sets the subtype of this ContainerInstallationAllOf.
+    @run_arguments.setter
+    def run_arguments(self, run_arguments):
+        """Sets the run_arguments of this ContainerInstallationAllOf.
 
 
-        :param subtype: The subtype of this ContainerInstallationAllOf.  # noqa: E501
+        :param run_arguments: The run_arguments of this ContainerInstallationAllOf.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
-            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
 
-        self._subtype = subtype
+        self._run_arguments = run_arguments
 
     def to_dict(self):
         """Returns the model properties as a dict"""

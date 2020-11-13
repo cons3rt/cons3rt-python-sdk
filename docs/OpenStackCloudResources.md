@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**subtype** | **str** |  | 
 **flavor_type_names** | **list[str]** |  | [optional] 
 **nat_image_names** | **list[str]** |  | [optional] 
 

@@ -12,6 +12,11 @@ Name | Type | Description | Notes
 **keystone_version** | **str** |  | [optional] 
 **nat_image_id** | **str** |  | [optional] 
 **nat_instance_type** | **str** |  | [optional] 
+**storage_service_hostname** | **str** |  | [optional] 
+**storage_service_port** | **int** |  | [optional] 
+**storage_service_protocol** | **str** |  | [optional] 
+**storage_service_username** | **str** |  | [optional] 
+**storage_service_password** | **str** |  | [optional] 
 **tenant** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
 

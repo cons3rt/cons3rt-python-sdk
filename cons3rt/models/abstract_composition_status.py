@@ -69,7 +69,8 @@ class AbstractCompositionStatus(object):
     }
 
     discriminator_value_class_map = {
-        
+        'ActiveCompositionStatus': 'ActiveCompositionStatus',
+        'InactiveCompositionStatus': 'InactiveCompositionStatus'
     }
 
     def __init__(self, id=None, name=None, project_id=None, stoppable=None, connectable=None, startable=None, type=None, local_vars_configuration=None):  # noqa: E501

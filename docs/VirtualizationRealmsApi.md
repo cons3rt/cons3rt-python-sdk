@@ -29,7 +29,6 @@ Method | HTTP request | Description
 [**list_template_registrations**](VirtualizationRealmsApi.md#list_template_registrations) | **GET** /api/virtualizationrealms/{id}/templates/registrations | List Template Registrations
 [**list_template_subscriptions**](VirtualizationRealmsApi.md#list_template_subscriptions) | **GET** /api/virtualizationrealms/{id}/templates/subscriptions | List Template Subscriptions
 [**list_unregistered_templates**](VirtualizationRealmsApi.md#list_unregistered_templates) | **GET** /api/virtualizationrealms/{id}/templates/registrations/pending | List Unregistered Templates
-[**redeploy_edges**](VirtualizationRealmsApi.md#redeploy_edges) | **PUT** /api/virtualizationrealms/{id}/networks/redeployedges | Re-deploy Network Edge Devices
 [**register_network**](VirtualizationRealmsApi.md#register_network) | **PUT** /api/virtualizationrealms/{id}/networks/{networkIdentifier} | Register Network
 [**register_template**](VirtualizationRealmsApi.md#register_template) | **POST** /api/virtualizationrealms/{id}/templates/registrations | Register Template
 [**remove_project**](VirtualizationRealmsApi.md#remove_project) | **DELETE** /api/virtualizationrealms/{id}/projects | Unassign Project
@@ -3080,125 +3079,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[Cons3rtTemplateTagData]**](Cons3rtTemplateTagData.md)
-
-### Authorization
-
-[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Invalid virtualization realm ID supplied |  -  |
-**404** | Virtualization realm not found |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **redeploy_edges**
-> bool redeploy_edges(id)
-
-Re-deploy Network Edge Devices
-
-Re-deploys the Network Edge Device(s) in the specified Virtualization Realm.<br> <br> Note: This option is only available in VCloud Virtualization Realms.
-
-### Example
-
-* Api Key Authentication (APIKeyHeader):
-```python
-from __future__ import print_function
-import time
-import cons3rt
-from cons3rt.rest import ApiException
-from pprint import pprint
-# Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_VALUE'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['token'] = 'Bearer'
-# Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_VALUE'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['username'] = 'Bearer'
-
-# Using a client certificate for authentication is required in some cases.
-# To use a "soft-token" such as an ECA, provide the path the PEM encoded
-# version of the certificate
-configuration.cert_file='/path/to/your/client_cert.pem'
-
-# If the key to the provided certificate is stored in a separate file,
-# provide the path to the keyfile and, optionally, the key password if
-# the key is encrypted
-configuration.key_file='/path/to/your/client_cert.key'
-configuration.key_password='keyfile_password' # optional
-
-# Enter a context with an instance of the API client
-with cons3rt.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
-    id = 'id_example' # str | ID of virtualization realm
-
-    try:
-        # Re-deploy Network Edge Devices
-        api_response = api_instance.redeploy_edges(id)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VirtualizationRealmsApi->redeploy_edges: %s\n" % e)
-```
-
-* Api Key Authentication (Username):
-```python
-from __future__ import print_function
-import time
-import cons3rt
-from cons3rt.rest import ApiException
-from pprint import pprint
-# Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_VALUE'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['token'] = 'Bearer'
-# Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_VALUE'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['username'] = 'Bearer'
-
-# Using a client certificate for authentication is required in some cases.
-# To use a "soft-token" such as an ECA, provide the path the PEM encoded
-# version of the certificate
-configuration.cert_file='/path/to/your/client_cert.pem'
-
-# If the key to the provided certificate is stored in a separate file,
-# provide the path to the keyfile and, optionally, the key password if
-# the key is encrypted
-configuration.key_file='/path/to/your/client_cert.key'
-configuration.key_password='keyfile_password' # optional
-
-# Enter a context with an instance of the API client
-with cons3rt.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = cons3rt.VirtualizationRealmsApi(api_client)
-    id = 'id_example' # str | ID of virtualization realm
-
-    try:
-        # Re-deploy Network Edge Devices
-        api_response = api_instance.redeploy_edges(id)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling VirtualizationRealmsApi->redeploy_edges: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**| ID of virtualization realm | 
-
-### Return type
-
-**bool**
 
 ### Authorization
 

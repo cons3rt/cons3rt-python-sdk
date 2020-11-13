@@ -100,7 +100,7 @@ class MinimalVirtualizationRealm(object):
         :param virtualization_realm_type: The virtualization_realm_type of this MinimalVirtualizationRealm.  # noqa: E501
         :type: str
         """
-        allowed_values = ["Amazon", "Azure", "CloudStack", "Mock", "OpenStack", "VCloud"]  # noqa: E501
+        allowed_values = ["Amazon", "Azure", "Mock", "OpenStack", "VCloudRest"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and virtualization_realm_type not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `virtualization_realm_type` ({0}), must be one of {1}"  # noqa: E501

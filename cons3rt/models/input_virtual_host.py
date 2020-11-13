@@ -49,61 +49,34 @@ class InputVirtualHost(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'subtype': 'str',
         'components': 'list[InputAbstractComponent]',
         'name': 'str',
         'template_profile': 'InputTemplateProfile'
     }
 
     attribute_map = {
-        'subtype': 'subtype',
         'components': 'components',
         'name': 'name',
         'template_profile': 'templateProfile'
     }
 
-    def __init__(self, subtype=None, components=None, name=None, template_profile=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, components=None, name=None, template_profile=None, local_vars_configuration=None):  # noqa: E501
         """InputVirtualHost - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._subtype = None
         self._components = None
         self._name = None
         self._template_profile = None
         self.discriminator = None
 
-        self.subtype = subtype
         if components is not None:
             self.components = components
         if name is not None:
             self.name = name
         if template_profile is not None:
             self.template_profile = template_profile
-
-    @property
-    def subtype(self):
-        """Gets the subtype of this InputVirtualHost.  # noqa: E501
-
-
-        :return: The subtype of this InputVirtualHost.  # noqa: E501
-        :rtype: str
-        """
-        return self._subtype
-
-    @subtype.setter
-    def subtype(self, subtype):
-        """Sets the subtype of this InputVirtualHost.
-
-
-        :param subtype: The subtype of this InputVirtualHost.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
-            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
-
-        self._subtype = subtype
 
     @property
     def components(self):

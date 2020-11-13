@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**end_date** | **int** |  | [optional] 
+**end_date** | **datetime** |  | [optional] 
 **id** | **int** |  | [optional] 
 **low_bandwidth** | **bool** |  | [optional] 
-**start_date** | **int** |  | [optional] 
+**start_date** | **datetime** |  | [optional] 
 **username** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 

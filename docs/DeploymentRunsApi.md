@@ -4,6 +4,7 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**add_category_to_deployment_run**](DeploymentRunsApi.md#add_category_to_deployment_run) | **PUT** /api/categories/{id}/run | Assign Category to Run
 [**delete_deployment_run**](DeploymentRunsApi.md#delete_deployment_run) | **DELETE** /api/drs/{id} | Delete Deployment Run
 [**download_deployment_run_test_report**](DeploymentRunsApi.md#download_deployment_run_test_report) | **GET** /api/drs/{id}/downloadreport | Download Report
 [**download_host**](DeploymentRunsApi.md#download_host) | **GET** /api/drs/{id}/downloadhost | Download Host
@@ -14,16 +15,140 @@ Method | HTTP request | Description
 [**get_host**](DeploymentRunsApi.md#get_host) | **GET** /api/drs/{id}/host/{hostid} | Retrieve Host
 [**get_host_access**](DeploymentRunsApi.md#get_host_access) | **GET** /api/drs/{id}/host/{hostid}/access | List Host Access Logs
 [**get_host_configuration_metrics**](DeploymentRunsApi.md#get_host_configuration_metrics) | **GET** /api/projects/{id}/metrics/hostconfiguration | Retrieve Metrics
+[**get_host_instance_types**](DeploymentRunsApi.md#get_host_instance_types) | **GET** /api/drs/{id}/host/{hostid}/resize | List available instance types for host
 [**perform_host_action**](DeploymentRunsApi.md#perform_host_action) | **PUT** /api/drs/{id}/hostaction | Execute Host Action
 [**publish_deployment_run**](DeploymentRunsApi.md#publish_deployment_run) | **POST** /api/drs/{id}/publish | Publish Deployment Run
 [**redeploy_container_asset**](DeploymentRunsApi.md#redeploy_container_asset) | **PUT** /api/drs/{id}/host/{hostid}/container | Re-deploy Container Asset
 [**relaunch_deployment_run**](DeploymentRunsApi.md#relaunch_deployment_run) | **PUT** /api/drs/{id}/rerun | Relaunch Deployment Run
 [**release_deployment_run**](DeploymentRunsApi.md#release_deployment_run) | **PUT** /api/drs/{id}/release | Release Deployment Run
+[**remove_category_from_deployment_run**](DeploymentRunsApi.md#remove_category_from_deployment_run) | **DELETE** /api/categories/{id}/run | Unassign Category from deployment run
 [**retest_deployment_run**](DeploymentRunsApi.md#retest_deployment_run) | **PUT** /api/drs/{id}/retest | Re-test Deployment Run
 [**set_deployment_run_lock**](DeploymentRunsApi.md#set_deployment_run_lock) | **PUT** /api/drs/{id}/setlock | Update Lock
 [**set_power_schedule_for_deployment_run**](DeploymentRunsApi.md#set_power_schedule_for_deployment_run) | **PUT** /api/drs/{id}/powerschedule | Update Power Schedule
 [**unpublish_deployment_run**](DeploymentRunsApi.md#unpublish_deployment_run) | **DELETE** /api/drs/{id}/publish | Unpublish Deployment Run
 
+
+# **add_category_to_deployment_run**
+> bool add_category_to_deployment_run(id, runid)
+
+Assign Category to Run
+
+Assigns the Category as a filter tag to the provided Deployment Run.<br> <br> Altering the Category will affect future Run filtering.
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of category
+runid = 'runid_example' # str | ID of run to assign
+
+    try:
+        # Assign Category to Run
+        api_response = api_instance.add_category_to_deployment_run(id, runid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->add_category_to_deployment_run: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of category
+runid = 'runid_example' # str | ID of run to assign
+
+    try:
+        # Assign Category to Run
+        api_response = api_instance.add_category_to_deployment_run(id, runid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->add_category_to_deployment_run: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of category | 
+ **runid** | **str**| ID of run to assign | 
+
+### Return type
+
+**bool**
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Invalid category ID or deplyoyment run ID supplied |  -  |
+**404** | Category not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_deployment_run**
 > bool delete_deployment_run(id, purge=purge)
@@ -633,7 +758,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_deployment_runs**
-> list[MinimalDeploymentRun] get_deployment_runs(id)
+> list[MinimalDeploymentRun] get_deployment_runs(id, maxresults=maxresults, page=page)
 
 List Deployment Runs
 
@@ -673,10 +798,12 @@ with cons3rt.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cons3rt.DeploymentRunsApi(api_client)
     id = 'id_example' # str | ID of deployment
+maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
+page = 0 # int | Requested page number (optional) (default to 0)
 
     try:
         # List Deployment Runs
-        api_response = api_instance.get_deployment_runs(id)
+        api_response = api_instance.get_deployment_runs(id, maxresults=maxresults, page=page)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling DeploymentRunsApi->get_deployment_runs: %s\n" % e)
@@ -714,10 +841,12 @@ with cons3rt.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cons3rt.DeploymentRunsApi(api_client)
     id = 'id_example' # str | ID of deployment
+maxresults = 40 # int | Maximum number of results to return (optional) (default to 40)
+page = 0 # int | Requested page number (optional) (default to 0)
 
     try:
         # List Deployment Runs
-        api_response = api_instance.get_deployment_runs(id)
+        api_response = api_instance.get_deployment_runs(id, maxresults=maxresults, page=page)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling DeploymentRunsApi->get_deployment_runs: %s\n" % e)
@@ -728,6 +857,8 @@ with cons3rt.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| ID of deployment | 
+ **maxresults** | **int**| Maximum number of results to return | [optional] [default to 40]
+ **page** | **int**| Requested page number | [optional] [default to 0]
 
 ### Return type
 
@@ -1259,8 +1390,130 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_host_instance_types**
+> TargetInstanceTypes get_host_instance_types(id, hostid)
+
+List available instance types for host
+
+Returns a collection of available instance types for resizing a Deployment Run Host.
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+hostid = 'hostid_example' # str | ID of host
+
+    try:
+        # List available instance types for host
+        api_response = api_instance.get_host_instance_types(id, hostid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_host_instance_types: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+hostid = 'hostid_example' # str | ID of host
+
+    try:
+        # List available instance types for host
+        api_response = api_instance.get_host_instance_types(id, hostid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_host_instance_types: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of deployment run | 
+ **hostid** | **str**| ID of host | 
+
+### Return type
+
+[**TargetInstanceTypes**](TargetInstanceTypes.md)
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Invalid deployment run ID, host id, or query parameter supplied |  -  |
+**404** | Deployment run or host not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **perform_host_action**
-> bool perform_host_action(id, deploymentrunhostid, action, cpu=cpu, ram=ram)
+> bool perform_host_action(id, deploymentrunhostid, action, cpu=cpu, ram=ram, instance_type_name=instance_type_name)
 
 Execute Host Action
 
@@ -1302,12 +1555,13 @@ with cons3rt.ApiClient(configuration) as api_client:
     id = 'id_example' # str | ID of deployment run
 deploymentrunhostid = 'deploymentrunhostid_example' # str | ID of host
 action = 'action_example' # str | Action to perform
-cpu = 56 # int | Desired number of CPUs, if resizing host (optional)
-ram = 56 # int | Desired amount of RAM in Mebibytes, if resizing host (optional)
+cpu = 56 # int | Desired number of CPUs, if resizing host in a non instance type based virtualization realm (optional)
+ram = 56 # int | Desired amount of RAM in Mebibytes, if resizing host in a non instance type based virtualization realm (optional)
+instance_type_name = 'instance_type_name_example' # str | The instance type name to resize to, if resizing host in an instance type based virtualization realm (optional)
 
     try:
         # Execute Host Action
-        api_response = api_instance.perform_host_action(id, deploymentrunhostid, action, cpu=cpu, ram=ram)
+        api_response = api_instance.perform_host_action(id, deploymentrunhostid, action, cpu=cpu, ram=ram, instance_type_name=instance_type_name)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling DeploymentRunsApi->perform_host_action: %s\n" % e)
@@ -1347,12 +1601,13 @@ with cons3rt.ApiClient(configuration) as api_client:
     id = 'id_example' # str | ID of deployment run
 deploymentrunhostid = 'deploymentrunhostid_example' # str | ID of host
 action = 'action_example' # str | Action to perform
-cpu = 56 # int | Desired number of CPUs, if resizing host (optional)
-ram = 56 # int | Desired amount of RAM in Mebibytes, if resizing host (optional)
+cpu = 56 # int | Desired number of CPUs, if resizing host in a non instance type based virtualization realm (optional)
+ram = 56 # int | Desired amount of RAM in Mebibytes, if resizing host in a non instance type based virtualization realm (optional)
+instance_type_name = 'instance_type_name_example' # str | The instance type name to resize to, if resizing host in an instance type based virtualization realm (optional)
 
     try:
         # Execute Host Action
-        api_response = api_instance.perform_host_action(id, deploymentrunhostid, action, cpu=cpu, ram=ram)
+        api_response = api_instance.perform_host_action(id, deploymentrunhostid, action, cpu=cpu, ram=ram, instance_type_name=instance_type_name)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling DeploymentRunsApi->perform_host_action: %s\n" % e)
@@ -1365,8 +1620,9 @@ Name | Type | Description  | Notes
  **id** | **str**| ID of deployment run | 
  **deploymentrunhostid** | **str**| ID of host | 
  **action** | **str**| Action to perform | 
- **cpu** | **int**| Desired number of CPUs, if resizing host | [optional] 
- **ram** | **int**| Desired amount of RAM in Mebibytes, if resizing host | [optional] 
+ **cpu** | **int**| Desired number of CPUs, if resizing host in a non instance type based virtualization realm | [optional] 
+ **ram** | **int**| Desired amount of RAM in Mebibytes, if resizing host in a non instance type based virtualization realm | [optional] 
+ **instance_type_name** | **str**| The instance type name to resize to, if resizing host in an instance type based virtualization realm | [optional] 
 
 ### Return type
 
@@ -1875,6 +2131,128 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **400** | Invalid deployment run ID supplied |  -  |
 **404** | Deployment run not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **remove_category_from_deployment_run**
+> bool remove_category_from_deployment_run(id, runid)
+
+Unassign Category from deployment run
+
+Removes the Category as a filter tag from the provided Run.<br> <br> Altering the Category will affect future run filtering.
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of category
+runid = 'runid_example' # str | ID of run to unassign
+
+    try:
+        # Unassign Category from deployment run
+        api_response = api_instance.remove_category_from_deployment_run(id, runid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->remove_category_from_deployment_run: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of category
+runid = 'runid_example' # str | ID of run to unassign
+
+    try:
+        # Unassign Category from deployment run
+        api_response = api_instance.remove_category_from_deployment_run(id, runid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->remove_category_from_deployment_run: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of category | 
+ **runid** | **str**| ID of run to unassign | 
+
+### Return type
+
+**bool**
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Invalid category ID or run ID supplied |  -  |
+**404** | Category not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

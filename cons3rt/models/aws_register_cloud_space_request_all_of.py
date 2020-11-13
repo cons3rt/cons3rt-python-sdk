@@ -49,532 +49,149 @@ class AwsRegisterCloudSpaceRequestAllOf(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'virtualization_realm_type': 'str',
-        'name': 'str',
-        'description': 'str',
-        'access_point': 'str',
-        'active_after_registration': 'bool',
-        'additional_network_names': 'list[str]',
-        'cons3rt_network_name': 'str',
-        'maximum_num_cpus': 'int',
-        'maximum_num_gpus': 'int',
-        'maximum_ram_in_megabytes': 'int',
-        'maximum_storage_in_megabytes': 'int',
-        'maximum_virtual_machines': 'int',
-        'power_on_minimum_delay': 'int',
-        'password': 'str',
-        'power_on_initial_delay_base': 'int',
-        'primary_network_name': 'str',
-        'remote_access_config': 'RemoteAccessConfig',
-        'username': 'str'
+        'account_id': 'str',
+        'region': 'str',
+        'vpc_id': 'str',
+        'user_key_name': 'str',
+        'network_security_group_map': 'dict(str, str)'
     }
 
     attribute_map = {
-        'virtualization_realm_type': 'virtualizationRealmType',
-        'name': 'name',
-        'description': 'description',
-        'access_point': 'accessPoint',
-        'active_after_registration': 'activeAfterRegistration',
-        'additional_network_names': 'additionalNetworkNames',
-        'cons3rt_network_name': 'cons3rtNetworkName',
-        'maximum_num_cpus': 'maximumNumCpus',
-        'maximum_num_gpus': 'maximumNumGpus',
-        'maximum_ram_in_megabytes': 'maximumRamInMegabytes',
-        'maximum_storage_in_megabytes': 'maximumStorageInMegabytes',
-        'maximum_virtual_machines': 'maximumVirtualMachines',
-        'power_on_minimum_delay': 'powerOnMinimumDelay',
-        'password': 'password',
-        'power_on_initial_delay_base': 'powerOnInitialDelayBase',
-        'primary_network_name': 'primaryNetworkName',
-        'remote_access_config': 'remoteAccessConfig',
-        'username': 'username'
+        'account_id': 'accountId',
+        'region': 'region',
+        'vpc_id': 'vpcId',
+        'user_key_name': 'userKeyName',
+        'network_security_group_map': 'networkSecurityGroupMap'
     }
 
-    def __init__(self, virtualization_realm_type=None, name=None, description=None, access_point=None, active_after_registration=None, additional_network_names=None, cons3rt_network_name=None, maximum_num_cpus=None, maximum_num_gpus=None, maximum_ram_in_megabytes=None, maximum_storage_in_megabytes=None, maximum_virtual_machines=None, power_on_minimum_delay=None, password=None, power_on_initial_delay_base=None, primary_network_name=None, remote_access_config=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_id=None, region=None, vpc_id=None, user_key_name=None, network_security_group_map=None, local_vars_configuration=None):  # noqa: E501
         """AwsRegisterCloudSpaceRequestAllOf - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._virtualization_realm_type = None
-        self._name = None
-        self._description = None
-        self._access_point = None
-        self._active_after_registration = None
-        self._additional_network_names = None
-        self._cons3rt_network_name = None
-        self._maximum_num_cpus = None
-        self._maximum_num_gpus = None
-        self._maximum_ram_in_megabytes = None
-        self._maximum_storage_in_megabytes = None
-        self._maximum_virtual_machines = None
-        self._power_on_minimum_delay = None
-        self._password = None
-        self._power_on_initial_delay_base = None
-        self._primary_network_name = None
-        self._remote_access_config = None
-        self._username = None
+        self._account_id = None
+        self._region = None
+        self._vpc_id = None
+        self._user_key_name = None
+        self._network_security_group_map = None
         self.discriminator = None
 
-        self.virtualization_realm_type = virtualization_realm_type
-        self.name = name
-        if description is not None:
-            self.description = description
-        if access_point is not None:
-            self.access_point = access_point
-        if active_after_registration is not None:
-            self.active_after_registration = active_after_registration
-        if additional_network_names is not None:
-            self.additional_network_names = additional_network_names
-        self.cons3rt_network_name = cons3rt_network_name
-        if maximum_num_cpus is not None:
-            self.maximum_num_cpus = maximum_num_cpus
-        if maximum_num_gpus is not None:
-            self.maximum_num_gpus = maximum_num_gpus
-        if maximum_ram_in_megabytes is not None:
-            self.maximum_ram_in_megabytes = maximum_ram_in_megabytes
-        if maximum_storage_in_megabytes is not None:
-            self.maximum_storage_in_megabytes = maximum_storage_in_megabytes
-        if maximum_virtual_machines is not None:
-            self.maximum_virtual_machines = maximum_virtual_machines
-        if power_on_minimum_delay is not None:
-            self.power_on_minimum_delay = power_on_minimum_delay
-        self.password = password
-        if power_on_initial_delay_base is not None:
-            self.power_on_initial_delay_base = power_on_initial_delay_base
-        self.primary_network_name = primary_network_name
-        if remote_access_config is not None:
-            self.remote_access_config = remote_access_config
-        self.username = username
+        if account_id is not None:
+            self.account_id = account_id
+        if region is not None:
+            self.region = region
+        if vpc_id is not None:
+            self.vpc_id = vpc_id
+        if user_key_name is not None:
+            self.user_key_name = user_key_name
+        if network_security_group_map is not None:
+            self.network_security_group_map = network_security_group_map
 
     @property
-    def virtualization_realm_type(self):
-        """Gets the virtualization_realm_type of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
+    def account_id(self):
+        """Gets the account_id of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
 
 
-        :return: The virtualization_realm_type of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
+        :return: The account_id of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
         :rtype: str
         """
-        return self._virtualization_realm_type
+        return self._account_id
 
-    @virtualization_realm_type.setter
-    def virtualization_realm_type(self, virtualization_realm_type):
-        """Sets the virtualization_realm_type of this AwsRegisterCloudSpaceRequestAllOf.
-
-
-        :param virtualization_realm_type: The virtualization_realm_type of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and virtualization_realm_type is None:  # noqa: E501
-            raise ValueError("Invalid value for `virtualization_realm_type`, must not be `None`")  # noqa: E501
-        allowed_values = ["Amazon", "Azure", "CloudStack", "Mock", "OpenStack", "VCloud"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and virtualization_realm_type not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `virtualization_realm_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(virtualization_realm_type, allowed_values)
-            )
-
-        self._virtualization_realm_type = virtualization_realm_type
-
-    @property
-    def name(self):
-        """Gets the name of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
+    @account_id.setter
+    def account_id(self, account_id):
+        """Sets the account_id of this AwsRegisterCloudSpaceRequestAllOf.
 
 
-        :return: The name of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this AwsRegisterCloudSpaceRequestAllOf.
-
-
-        :param name: The name of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
-            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                name is not None and len(name) > 25):
-            raise ValueError("Invalid value for `name`, length must be less than or equal to `25`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                name is not None and len(name) < 3):
-            raise ValueError("Invalid value for `name`, length must be greater than or equal to `3`")  # noqa: E501
-
-        self._name = name
-
-    @property
-    def description(self):
-        """Gets the description of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-
-
-        :return: The description of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this AwsRegisterCloudSpaceRequestAllOf.
-
-
-        :param description: The description of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
+        :param account_id: The account_id of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
         :type: str
         """
 
-        self._description = description
+        self._account_id = account_id
 
     @property
-    def access_point(self):
-        """Gets the access_point of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
+    def region(self):
+        """Gets the region of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
 
 
-        :return: The access_point of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
+        :return: The region of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
         :rtype: str
         """
-        return self._access_point
+        return self._region
 
-    @access_point.setter
-    def access_point(self, access_point):
-        """Sets the access_point of this AwsRegisterCloudSpaceRequestAllOf.
+    @region.setter
+    def region(self, region):
+        """Sets the region of this AwsRegisterCloudSpaceRequestAllOf.
 
 
-        :param access_point: The access_point of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
+        :param region: The region of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
         :type: str
         """
-        if (self.local_vars_configuration.client_side_validation and
-                access_point is not None and len(access_point) > 18):
-            raise ValueError("Invalid value for `access_point`, length must be less than or equal to `18`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                access_point is not None and len(access_point) < 7):
-            raise ValueError("Invalid value for `access_point`, length must be greater than or equal to `7`")  # noqa: E501
 
-        self._access_point = access_point
+        self._region = region
 
     @property
-    def active_after_registration(self):
-        """Gets the active_after_registration of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
+    def vpc_id(self):
+        """Gets the vpc_id of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
 
 
-        :return: The active_after_registration of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :rtype: bool
-        """
-        return self._active_after_registration
-
-    @active_after_registration.setter
-    def active_after_registration(self, active_after_registration):
-        """Sets the active_after_registration of this AwsRegisterCloudSpaceRequestAllOf.
-
-
-        :param active_after_registration: The active_after_registration of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :type: bool
-        """
-
-        self._active_after_registration = active_after_registration
-
-    @property
-    def additional_network_names(self):
-        """Gets the additional_network_names of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-
-
-        :return: The additional_network_names of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._additional_network_names
-
-    @additional_network_names.setter
-    def additional_network_names(self, additional_network_names):
-        """Sets the additional_network_names of this AwsRegisterCloudSpaceRequestAllOf.
-
-
-        :param additional_network_names: The additional_network_names of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._additional_network_names = additional_network_names
-
-    @property
-    def cons3rt_network_name(self):
-        """Gets the cons3rt_network_name of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-
-
-        :return: The cons3rt_network_name of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
+        :return: The vpc_id of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
         :rtype: str
         """
-        return self._cons3rt_network_name
+        return self._vpc_id
 
-    @cons3rt_network_name.setter
-    def cons3rt_network_name(self, cons3rt_network_name):
-        """Sets the cons3rt_network_name of this AwsRegisterCloudSpaceRequestAllOf.
+    @vpc_id.setter
+    def vpc_id(self, vpc_id):
+        """Sets the vpc_id of this AwsRegisterCloudSpaceRequestAllOf.
 
 
-        :param cons3rt_network_name: The cons3rt_network_name of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
+        :param vpc_id: The vpc_id of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and cons3rt_network_name is None:  # noqa: E501
-            raise ValueError("Invalid value for `cons3rt_network_name`, must not be `None`")  # noqa: E501
 
-        self._cons3rt_network_name = cons3rt_network_name
+        self._vpc_id = vpc_id
 
     @property
-    def maximum_num_cpus(self):
-        """Gets the maximum_num_cpus of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
+    def user_key_name(self):
+        """Gets the user_key_name of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
 
 
-        :return: The maximum_num_cpus of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._maximum_num_cpus
-
-    @maximum_num_cpus.setter
-    def maximum_num_cpus(self, maximum_num_cpus):
-        """Sets the maximum_num_cpus of this AwsRegisterCloudSpaceRequestAllOf.
-
-
-        :param maximum_num_cpus: The maximum_num_cpus of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                maximum_num_cpus is not None and maximum_num_cpus < 0):  # noqa: E501
-            raise ValueError("Invalid value for `maximum_num_cpus`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._maximum_num_cpus = maximum_num_cpus
-
-    @property
-    def maximum_num_gpus(self):
-        """Gets the maximum_num_gpus of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-
-
-        :return: The maximum_num_gpus of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._maximum_num_gpus
-
-    @maximum_num_gpus.setter
-    def maximum_num_gpus(self, maximum_num_gpus):
-        """Sets the maximum_num_gpus of this AwsRegisterCloudSpaceRequestAllOf.
-
-
-        :param maximum_num_gpus: The maximum_num_gpus of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                maximum_num_gpus is not None and maximum_num_gpus < 0):  # noqa: E501
-            raise ValueError("Invalid value for `maximum_num_gpus`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._maximum_num_gpus = maximum_num_gpus
-
-    @property
-    def maximum_ram_in_megabytes(self):
-        """Gets the maximum_ram_in_megabytes of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-
-
-        :return: The maximum_ram_in_megabytes of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._maximum_ram_in_megabytes
-
-    @maximum_ram_in_megabytes.setter
-    def maximum_ram_in_megabytes(self, maximum_ram_in_megabytes):
-        """Sets the maximum_ram_in_megabytes of this AwsRegisterCloudSpaceRequestAllOf.
-
-
-        :param maximum_ram_in_megabytes: The maximum_ram_in_megabytes of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                maximum_ram_in_megabytes is not None and maximum_ram_in_megabytes < 0):  # noqa: E501
-            raise ValueError("Invalid value for `maximum_ram_in_megabytes`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._maximum_ram_in_megabytes = maximum_ram_in_megabytes
-
-    @property
-    def maximum_storage_in_megabytes(self):
-        """Gets the maximum_storage_in_megabytes of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-
-
-        :return: The maximum_storage_in_megabytes of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._maximum_storage_in_megabytes
-
-    @maximum_storage_in_megabytes.setter
-    def maximum_storage_in_megabytes(self, maximum_storage_in_megabytes):
-        """Sets the maximum_storage_in_megabytes of this AwsRegisterCloudSpaceRequestAllOf.
-
-
-        :param maximum_storage_in_megabytes: The maximum_storage_in_megabytes of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                maximum_storage_in_megabytes is not None and maximum_storage_in_megabytes < 0):  # noqa: E501
-            raise ValueError("Invalid value for `maximum_storage_in_megabytes`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._maximum_storage_in_megabytes = maximum_storage_in_megabytes
-
-    @property
-    def maximum_virtual_machines(self):
-        """Gets the maximum_virtual_machines of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-
-
-        :return: The maximum_virtual_machines of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._maximum_virtual_machines
-
-    @maximum_virtual_machines.setter
-    def maximum_virtual_machines(self, maximum_virtual_machines):
-        """Sets the maximum_virtual_machines of this AwsRegisterCloudSpaceRequestAllOf.
-
-
-        :param maximum_virtual_machines: The maximum_virtual_machines of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                maximum_virtual_machines is not None and maximum_virtual_machines < 0):  # noqa: E501
-            raise ValueError("Invalid value for `maximum_virtual_machines`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._maximum_virtual_machines = maximum_virtual_machines
-
-    @property
-    def power_on_minimum_delay(self):
-        """Gets the power_on_minimum_delay of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-
-
-        :return: The power_on_minimum_delay of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._power_on_minimum_delay
-
-    @power_on_minimum_delay.setter
-    def power_on_minimum_delay(self, power_on_minimum_delay):
-        """Sets the power_on_minimum_delay of this AwsRegisterCloudSpaceRequestAllOf.
-
-
-        :param power_on_minimum_delay: The power_on_minimum_delay of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                power_on_minimum_delay is not None and power_on_minimum_delay < 0):  # noqa: E501
-            raise ValueError("Invalid value for `power_on_minimum_delay`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._power_on_minimum_delay = power_on_minimum_delay
-
-    @property
-    def password(self):
-        """Gets the password of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-
-
-        :return: The password of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
+        :return: The user_key_name of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
         :rtype: str
         """
-        return self._password
+        return self._user_key_name
 
-    @password.setter
-    def password(self, password):
-        """Sets the password of this AwsRegisterCloudSpaceRequestAllOf.
+    @user_key_name.setter
+    def user_key_name(self, user_key_name):
+        """Sets the user_key_name of this AwsRegisterCloudSpaceRequestAllOf.
 
 
-        :param password: The password of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
+        :param user_key_name: The user_key_name of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and password is None:  # noqa: E501
-            raise ValueError("Invalid value for `password`, must not be `None`")  # noqa: E501
 
-        self._password = password
+        self._user_key_name = user_key_name
 
     @property
-    def power_on_initial_delay_base(self):
-        """Gets the power_on_initial_delay_base of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
+    def network_security_group_map(self):
+        """Gets the network_security_group_map of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
 
 
-        :return: The power_on_initial_delay_base of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :rtype: int
+        :return: The network_security_group_map of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
+        :rtype: dict(str, str)
         """
-        return self._power_on_initial_delay_base
+        return self._network_security_group_map
 
-    @power_on_initial_delay_base.setter
-    def power_on_initial_delay_base(self, power_on_initial_delay_base):
-        """Sets the power_on_initial_delay_base of this AwsRegisterCloudSpaceRequestAllOf.
-
-
-        :param power_on_initial_delay_base: The power_on_initial_delay_base of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                power_on_initial_delay_base is not None and power_on_initial_delay_base < 0):  # noqa: E501
-            raise ValueError("Invalid value for `power_on_initial_delay_base`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._power_on_initial_delay_base = power_on_initial_delay_base
-
-    @property
-    def primary_network_name(self):
-        """Gets the primary_network_name of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
+    @network_security_group_map.setter
+    def network_security_group_map(self, network_security_group_map):
+        """Sets the network_security_group_map of this AwsRegisterCloudSpaceRequestAllOf.
 
 
-        :return: The primary_network_name of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :rtype: str
-        """
-        return self._primary_network_name
-
-    @primary_network_name.setter
-    def primary_network_name(self, primary_network_name):
-        """Sets the primary_network_name of this AwsRegisterCloudSpaceRequestAllOf.
-
-
-        :param primary_network_name: The primary_network_name of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and primary_network_name is None:  # noqa: E501
-            raise ValueError("Invalid value for `primary_network_name`, must not be `None`")  # noqa: E501
-
-        self._primary_network_name = primary_network_name
-
-    @property
-    def remote_access_config(self):
-        """Gets the remote_access_config of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-
-
-        :return: The remote_access_config of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :rtype: RemoteAccessConfig
-        """
-        return self._remote_access_config
-
-    @remote_access_config.setter
-    def remote_access_config(self, remote_access_config):
-        """Sets the remote_access_config of this AwsRegisterCloudSpaceRequestAllOf.
-
-
-        :param remote_access_config: The remote_access_config of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :type: RemoteAccessConfig
+        :param network_security_group_map: The network_security_group_map of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
+        :type: dict(str, str)
         """
 
-        self._remote_access_config = remote_access_config
-
-    @property
-    def username(self):
-        """Gets the username of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-
-
-        :return: The username of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this AwsRegisterCloudSpaceRequestAllOf.
-
-
-        :param username: The username of this AwsRegisterCloudSpaceRequestAllOf.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and username is None:  # noqa: E501
-            raise ValueError("Invalid value for `username`, must not be `None`")  # noqa: E501
-
-        self._username = username
+        self._network_security_group_map = network_security_group_map
 
     def to_dict(self):
         """Returns the model properties as a dict"""

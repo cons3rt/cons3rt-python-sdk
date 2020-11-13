@@ -53,7 +53,7 @@ class MinimalDeploymentRun(object):
         'id': 'int',
         'project': 'MinimalProject',
         'result': 'str',
-        'start_time': 'int',
+        'start_time': 'datetime',
         'canceled': 'bool',
         'deployment_run_status': 'str',
         'description': 'str',
@@ -213,7 +213,7 @@ class MinimalDeploymentRun(object):
 
 
         :return: The start_time of this MinimalDeploymentRun.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._start_time
 
@@ -223,7 +223,7 @@ class MinimalDeploymentRun(object):
 
 
         :param start_time: The start_time of this MinimalDeploymentRun.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._start_time = start_time

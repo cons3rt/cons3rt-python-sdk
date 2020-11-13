@@ -56,6 +56,7 @@ class MinimalDeploymentRunHost(object):
         'default_username': 'str',
         'disks': 'list[Disk]',
         'fap_status': 'str',
+        'has_gpu': 'bool',
         'host_action_in_process': 'bool',
         'hostname': 'str',
         'id': 'int',
@@ -69,7 +70,7 @@ class MinimalDeploymentRunHost(object):
         'published': 'bool',
         'ram': 'int',
         'snapshot_available': 'bool',
-        'snapshot_date': 'int',
+        'snapshot_date': 'datetime',
         'system_module_id': 'int',
         'system_module_type': 'str',
         'system_role': 'str',
@@ -86,6 +87,7 @@ class MinimalDeploymentRunHost(object):
         'default_username': 'defaultUsername',
         'disks': 'disks',
         'fap_status': 'fapStatus',
+        'has_gpu': 'hasGpu',
         'host_action_in_process': 'hostActionInProcess',
         'hostname': 'hostname',
         'id': 'id',
@@ -108,7 +110,7 @@ class MinimalDeploymentRunHost(object):
         'provisionable': 'provisionable'
     }
 
-    def __init__(self, build_order=None, created_password=None, created_username=None, default_password=None, default_username=None, disks=None, fap_status=None, host_action_in_process=None, hostname=None, id=None, installations=None, instance_type_name=None, nested_virtualization=None, network_interfaces=None, num_cpus=None, physical_machine_data_or_template_uuid=None, physical_machine_or_template_name=None, published=None, ram=None, snapshot_available=None, snapshot_date=None, system_module_id=None, system_module_type=None, system_role=None, virtualization_realm_status=None, virtual=None, provisionable=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, build_order=None, created_password=None, created_username=None, default_password=None, default_username=None, disks=None, fap_status=None, has_gpu=None, host_action_in_process=None, hostname=None, id=None, installations=None, instance_type_name=None, nested_virtualization=None, network_interfaces=None, num_cpus=None, physical_machine_data_or_template_uuid=None, physical_machine_or_template_name=None, published=None, ram=None, snapshot_available=None, snapshot_date=None, system_module_id=None, system_module_type=None, system_role=None, virtualization_realm_status=None, virtual=None, provisionable=None, local_vars_configuration=None):  # noqa: E501
         """MinimalDeploymentRunHost - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -121,6 +123,7 @@ class MinimalDeploymentRunHost(object):
         self._default_username = None
         self._disks = None
         self._fap_status = None
+        self._has_gpu = None
         self._host_action_in_process = None
         self._hostname = None
         self._id = None
@@ -157,6 +160,8 @@ class MinimalDeploymentRunHost(object):
             self.disks = disks
         if fap_status is not None:
             self.fap_status = fap_status
+        if has_gpu is not None:
+            self.has_gpu = has_gpu
         if host_action_in_process is not None:
             self.host_action_in_process = host_action_in_process
         if hostname is not None:
@@ -350,6 +355,27 @@ class MinimalDeploymentRunHost(object):
             )
 
         self._fap_status = fap_status
+
+    @property
+    def has_gpu(self):
+        """Gets the has_gpu of this MinimalDeploymentRunHost.  # noqa: E501
+
+
+        :return: The has_gpu of this MinimalDeploymentRunHost.  # noqa: E501
+        :rtype: bool
+        """
+        return self._has_gpu
+
+    @has_gpu.setter
+    def has_gpu(self, has_gpu):
+        """Sets the has_gpu of this MinimalDeploymentRunHost.
+
+
+        :param has_gpu: The has_gpu of this MinimalDeploymentRunHost.  # noqa: E501
+        :type: bool
+        """
+
+        self._has_gpu = has_gpu
 
     @property
     def host_action_in_process(self):
@@ -630,7 +656,7 @@ class MinimalDeploymentRunHost(object):
 
 
         :return: The snapshot_date of this MinimalDeploymentRunHost.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._snapshot_date
 
@@ -640,7 +666,7 @@ class MinimalDeploymentRunHost(object):
 
 
         :param snapshot_date: The snapshot_date of this MinimalDeploymentRunHost.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._snapshot_date = snapshot_date

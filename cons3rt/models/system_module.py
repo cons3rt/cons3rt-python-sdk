@@ -89,7 +89,10 @@ class SystemModule(object):
     }
 
     discriminator_value_class_map = {
-        
+        'PhysicalHost': 'PhysicalHost',
+        'Appliance': 'Appliance',
+        'VirtualHost': 'VirtualHost',
+        'Device': 'Device'
     }
 
     def __init__(self, components=None, id=None, trusted_projects=None, creator=None, dependent_asset_count=None, description=None, metadata=None, name=None, offline=None, owning_project=None, state=None, visibility=None, impact_level=None, categories=None, physical_machine_uuid=None, template_profile=None, subtype=None, local_vars_configuration=None):  # noqa: E501

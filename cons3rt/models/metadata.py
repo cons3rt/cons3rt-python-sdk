@@ -52,14 +52,14 @@ class Metadata(object):
         'asset_directory': 'str',
         'version': 'int',
         'cloud': 'Cloud',
-        'creation_date': 'int',
+        'creation_date': 'datetime',
         'documentation': 'str',
         'id': 'int',
         'instance_limit': 'int',
         'itar_restricted': 'bool',
         'license': 'str',
         'modifier': 'User',
-        'modifier_date': 'int',
+        'modifier_date': 'datetime',
         'properties': 'list[ModelProperty]',
         'uri': 'str',
         'validated': 'bool',
@@ -207,7 +207,7 @@ class Metadata(object):
 
 
         :return: The creation_date of this Metadata.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._creation_date
 
@@ -217,7 +217,7 @@ class Metadata(object):
 
 
         :param creation_date: The creation_date of this Metadata.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._creation_date = creation_date
@@ -354,7 +354,7 @@ class Metadata(object):
 
 
         :return: The modifier_date of this Metadata.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._modifier_date
 
@@ -364,7 +364,7 @@ class Metadata(object):
 
 
         :param modifier_date: The modifier_date of this Metadata.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._modifier_date = modifier_date

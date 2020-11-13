@@ -49,56 +49,24 @@ class AzureCloudResources(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'subtype': 'str',
-        'images': 'list[ImageReferenceDTO]',
-        'instance_types': 'list[str]'
+        'images': 'list[ImageReferenceDTO]'
     }
 
     attribute_map = {
-        'subtype': 'subtype',
-        'images': 'images',
-        'instance_types': 'instanceTypes'
+        'images': 'images'
     }
 
-    def __init__(self, subtype=None, images=None, instance_types=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, images=None, local_vars_configuration=None):  # noqa: E501
         """AzureCloudResources - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._subtype = None
         self._images = None
-        self._instance_types = None
         self.discriminator = None
 
-        self.subtype = subtype
         if images is not None:
             self.images = images
-        if instance_types is not None:
-            self.instance_types = instance_types
-
-    @property
-    def subtype(self):
-        """Gets the subtype of this AzureCloudResources.  # noqa: E501
-
-
-        :return: The subtype of this AzureCloudResources.  # noqa: E501
-        :rtype: str
-        """
-        return self._subtype
-
-    @subtype.setter
-    def subtype(self, subtype):
-        """Sets the subtype of this AzureCloudResources.
-
-
-        :param subtype: The subtype of this AzureCloudResources.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
-            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
-
-        self._subtype = subtype
 
     @property
     def images(self):
@@ -120,27 +88,6 @@ class AzureCloudResources(object):
         """
 
         self._images = images
-
-    @property
-    def instance_types(self):
-        """Gets the instance_types of this AzureCloudResources.  # noqa: E501
-
-
-        :return: The instance_types of this AzureCloudResources.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._instance_types
-
-    @instance_types.setter
-    def instance_types(self, instance_types):
-        """Sets the instance_types of this AzureCloudResources.
-
-
-        :param instance_types: The instance_types of this AzureCloudResources.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._instance_types = instance_types
 
     def to_dict(self):
         """Returns the model properties as a dict"""

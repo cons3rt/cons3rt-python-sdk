@@ -3,21 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cloud_type** | **str** |  | [optional] 
-**description** | **str** |  | 
-**name** | **str** |  | 
-**external_ip_addresses** | **list[str]** |  | [optional] 
-**external_ip_source** | **str** |  | 
-**features** | [**CloudFeatures**](CloudFeatures.md) |  | [optional] 
-**id** | **int** |  | [optional] 
-**linux_repository_url** | **str** |  | [optional] 
-**maximum_impact_level** | **str** |  | 
-**networks** | [**list[Network]**](Network.md) |  | [optional] 
-**owning_team** | [**Team**](Team.md) |  | 
-**state** | **str** |  | [optional] 
-**template_virtualization_realm** | [**VirtualizationRealm**](VirtualizationRealm.md) |  | [optional] 
-**virtualization_realms** | [**list[VirtualizationRealm]**](VirtualizationRealm.md) |  | [optional] 
-**subtype** | **str** |  | 
 **domain_name** | **str** |  | [optional] 
 **keystone_hostname** | **str** |  | 
 **keystone_password** | **str** |  | 
@@ -27,6 +12,11 @@ Name | Type | Description | Notes
 **keystone_version** | **str** |  | 
 **nat_image_id** | **str** |  | 
 **nat_instance_type** | **str** |  | 
+**storage_service_hostname** | **str** |  | [optional] 
+**storage_service_port** | **int** |  | [optional] 
+**storage_service_protocol** | **str** |  | [optional] 
+**storage_service_username** | **str** |  | [optional] 
+**storage_service_password** | **str** |  | [optional] 
 **tenant** | **str** |  | 
 **tenant_id** | **str** |  | 
 

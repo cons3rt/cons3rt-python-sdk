@@ -3,12 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cloud_space_name** | **str** |  | 
-**maximum_virtual_machines** | **int** |  | [optional] 
-**cidr** | **str** |  | 
-**num_availability_zones** | **int** |  | [optional] 
-**power_on_minimum_delay** | **int** |  | [optional] 
-**subtype** | **str** |  | 
 **nat_image_id** | **str** |  | 
 **nat_instance_type** | **str** |  | 
 

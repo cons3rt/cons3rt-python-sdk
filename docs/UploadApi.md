@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**get_file_content**](UploadApi.md#get_file_content) | **GET** /api/upload/content | Get File Content
 [**get_file_object**](UploadApi.md#get_file_object) | **GET** /api/upload | Download File
 [**upload_file1**](UploadApi.md#upload_file1) | **POST** /api/upload | Upload File
+[**upload_file_to_bucket**](UploadApi.md#upload_file_to_bucket) | **POST** /api/clouds/{id}/buckets/{bucket_id} | Upload File to Bucket
 
 
 # **get_file_content**
@@ -362,6 +363,134 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**400** | Invalid file data supplied |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **upload_file_to_bucket**
+> int upload_file_to_bucket(id, bucket_id, file=file, filename=filename)
+
+Upload File to Bucket
+
+Uploads a file to a bucket.<br> <br> File must be submitted as multipart-form data, with a file element named \"file\" and a filename field <br> <br> A \"Connection: Keep-Alive\" configuration may be needed for larger sized files, due to the time it takes to copy to the server.
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.UploadApi(api_client)
+    id = 'id_example' # str | ID of the cloud
+bucket_id = 'bucket_id_example' # str | ID of bucket
+file = '/path/to/file' # list[file] |  (optional)
+filename = 'filename_example' # str |  (optional)
+
+    try:
+        # Upload File to Bucket
+        api_response = api_instance.upload_file_to_bucket(id, bucket_id, file=file, filename=filename)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UploadApi->upload_file_to_bucket: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.UploadApi(api_client)
+    id = 'id_example' # str | ID of the cloud
+bucket_id = 'bucket_id_example' # str | ID of bucket
+file = '/path/to/file' # list[file] |  (optional)
+filename = 'filename_example' # str |  (optional)
+
+    try:
+        # Upload File to Bucket
+        api_response = api_instance.upload_file_to_bucket(id, bucket_id, file=file, filename=filename)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UploadApi->upload_file_to_bucket: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the cloud | 
+ **bucket_id** | **str**| ID of bucket | 
+ **file** | **list[file]**|  | [optional] 
+ **filename** | **str**|  | [optional] 
+
+### Return type
+
+**int**
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**202** | Accepted |  -  |
 **400** | Invalid file data supplied |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

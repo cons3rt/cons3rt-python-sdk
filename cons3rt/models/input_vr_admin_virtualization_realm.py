@@ -71,7 +71,10 @@ class InputVRAdminVirtualizationRealm(object):
     }
 
     discriminator_value_class_map = {
-        
+        'InputVRAdminAwsVirtualizationRealm': 'InputVRAdminAwsVirtualizationRealm',
+        'InputVRAdminAzureVirtualizationRealm': 'InputVRAdminAzureVirtualizationRealm',
+        'InputVRAdminOpenStackVirtualizationRealm': 'InputVRAdminOpenStackVirtualizationRealm',
+        'InputVRAdminVCloudRestVirtualizationRealm': 'InputVRAdminVCloudRestVirtualizationRealm'
     }
 
     def __init__(self, virtualization_realm_type=None, id=None, additional_networks=None, cidr=None, cons3rt_network=None, default_windows_domain_name=None, description=None, name=None, local_vars_configuration=None):  # noqa: E501
@@ -123,7 +126,7 @@ class InputVRAdminVirtualizationRealm(object):
         """
         if self.local_vars_configuration.client_side_validation and virtualization_realm_type is None:  # noqa: E501
             raise ValueError("Invalid value for `virtualization_realm_type`, must not be `None`")  # noqa: E501
-        allowed_values = ["Amazon", "Azure", "CloudStack", "Mock", "OpenStack", "VCloud"]  # noqa: E501
+        allowed_values = ["Amazon", "Azure", "Mock", "OpenStack", "VCloudRest"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and virtualization_realm_type not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `virtualization_realm_type` ({0}), must be one of {1}"  # noqa: E501

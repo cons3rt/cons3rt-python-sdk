@@ -49,633 +49,71 @@ class InputAwsVirtualizationRealmAllOf(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'virtualization_realm_type': 'str',
-        'access_point': 'str',
-        'account_id': 'str',
-        'cidr': 'str',
-        'default_windows_domain_name': 'str',
-        'description': 'str',
-        'id': 'int',
-        'local_storage_name': 'str',
-        'maximum_num_cpus': 'int',
-        'maximum_num_gpus': 'int',
-        'maximum_ram_in_megabytes': 'int',
-        'maximum_storage_in_megabytes': 'int',
-        'maximum_virtual_machines': 'int',
-        'name': 'str',
-        'password': 'str',
-        'power_on_delay_base': 'int',
-        'power_on_initial_delay_base': 'int',
-        'power_on_minimum_delay': 'int',
-        'remote_access_config': 'RemoteAccessConfig',
-        'state': 'str',
-        'username': 'str',
-        'zone_count': 'int'
+        'region': 'str',
+        'vpc_id': 'str'
     }
 
     attribute_map = {
-        'virtualization_realm_type': 'virtualizationRealmType',
-        'access_point': 'accessPoint',
-        'account_id': 'accountId',
-        'cidr': 'cidr',
-        'default_windows_domain_name': 'defaultWindowsDomainName',
-        'description': 'description',
-        'id': 'id',
-        'local_storage_name': 'localStorageName',
-        'maximum_num_cpus': 'maximumNumCpus',
-        'maximum_num_gpus': 'maximumNumGpus',
-        'maximum_ram_in_megabytes': 'maximumRamInMegabytes',
-        'maximum_storage_in_megabytes': 'maximumStorageInMegabytes',
-        'maximum_virtual_machines': 'maximumVirtualMachines',
-        'name': 'name',
-        'password': 'password',
-        'power_on_delay_base': 'powerOnDelayBase',
-        'power_on_initial_delay_base': 'powerOnInitialDelayBase',
-        'power_on_minimum_delay': 'powerOnMinimumDelay',
-        'remote_access_config': 'remoteAccessConfig',
-        'state': 'state',
-        'username': 'username',
-        'zone_count': 'zoneCount'
+        'region': 'region',
+        'vpc_id': 'vpcId'
     }
 
-    def __init__(self, virtualization_realm_type=None, access_point=None, account_id=None, cidr=None, default_windows_domain_name=None, description=None, id=None, local_storage_name=None, maximum_num_cpus=None, maximum_num_gpus=None, maximum_ram_in_megabytes=None, maximum_storage_in_megabytes=None, maximum_virtual_machines=None, name=None, password=None, power_on_delay_base=None, power_on_initial_delay_base=None, power_on_minimum_delay=None, remote_access_config=None, state=None, username=None, zone_count=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, region=None, vpc_id=None, local_vars_configuration=None):  # noqa: E501
         """InputAwsVirtualizationRealmAllOf - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._virtualization_realm_type = None
-        self._access_point = None
-        self._account_id = None
-        self._cidr = None
-        self._default_windows_domain_name = None
-        self._description = None
-        self._id = None
-        self._local_storage_name = None
-        self._maximum_num_cpus = None
-        self._maximum_num_gpus = None
-        self._maximum_ram_in_megabytes = None
-        self._maximum_storage_in_megabytes = None
-        self._maximum_virtual_machines = None
-        self._name = None
-        self._password = None
-        self._power_on_delay_base = None
-        self._power_on_initial_delay_base = None
-        self._power_on_minimum_delay = None
-        self._remote_access_config = None
-        self._state = None
-        self._username = None
-        self._zone_count = None
+        self._region = None
+        self._vpc_id = None
         self.discriminator = None
 
-        if virtualization_realm_type is not None:
-            self.virtualization_realm_type = virtualization_realm_type
-        if access_point is not None:
-            self.access_point = access_point
-        self.account_id = account_id
-        self.cidr = cidr
-        if default_windows_domain_name is not None:
-            self.default_windows_domain_name = default_windows_domain_name
-        self.description = description
-        if id is not None:
-            self.id = id
-        if local_storage_name is not None:
-            self.local_storage_name = local_storage_name
-        if maximum_num_cpus is not None:
-            self.maximum_num_cpus = maximum_num_cpus
-        if maximum_num_gpus is not None:
-            self.maximum_num_gpus = maximum_num_gpus
-        if maximum_ram_in_megabytes is not None:
-            self.maximum_ram_in_megabytes = maximum_ram_in_megabytes
-        if maximum_storage_in_megabytes is not None:
-            self.maximum_storage_in_megabytes = maximum_storage_in_megabytes
-        if maximum_virtual_machines is not None:
-            self.maximum_virtual_machines = maximum_virtual_machines
-        self.name = name
-        self.password = password
-        if power_on_delay_base is not None:
-            self.power_on_delay_base = power_on_delay_base
-        if power_on_initial_delay_base is not None:
-            self.power_on_initial_delay_base = power_on_initial_delay_base
-        if power_on_minimum_delay is not None:
-            self.power_on_minimum_delay = power_on_minimum_delay
-        if remote_access_config is not None:
-            self.remote_access_config = remote_access_config
-        if state is not None:
-            self.state = state
-        self.username = username
-        if zone_count is not None:
-            self.zone_count = zone_count
+        if region is not None:
+            self.region = region
+        if vpc_id is not None:
+            self.vpc_id = vpc_id
 
     @property
-    def virtualization_realm_type(self):
-        """Gets the virtualization_realm_type of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
+    def region(self):
+        """Gets the region of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
 
 
-        :return: The virtualization_realm_type of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
+        :return: The region of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
         :rtype: str
         """
-        return self._virtualization_realm_type
+        return self._region
 
-    @virtualization_realm_type.setter
-    def virtualization_realm_type(self, virtualization_realm_type):
-        """Sets the virtualization_realm_type of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param virtualization_realm_type: The virtualization_realm_type of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["Amazon", "Azure", "CloudStack", "Mock", "OpenStack", "VCloud"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and virtualization_realm_type not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `virtualization_realm_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(virtualization_realm_type, allowed_values)
-            )
-
-        self._virtualization_realm_type = virtualization_realm_type
-
-    @property
-    def access_point(self):
-        """Gets the access_point of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
+    @region.setter
+    def region(self, region):
+        """Sets the region of this InputAwsVirtualizationRealmAllOf.
 
 
-        :return: The access_point of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: str
-        """
-        return self._access_point
-
-    @access_point.setter
-    def access_point(self, access_point):
-        """Sets the access_point of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param access_point: The access_point of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
+        :param region: The region of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
         :type: str
         """
 
-        self._access_point = access_point
+        self._region = region
 
     @property
-    def account_id(self):
-        """Gets the account_id of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
+    def vpc_id(self):
+        """Gets the vpc_id of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
 
 
-        :return: The account_id of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
+        :return: The vpc_id of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
         :rtype: str
         """
-        return self._account_id
+        return self._vpc_id
 
-    @account_id.setter
-    def account_id(self, account_id):
-        """Sets the account_id of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param account_id: The account_id of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and account_id is None:  # noqa: E501
-            raise ValueError("Invalid value for `account_id`, must not be `None`")  # noqa: E501
-
-        self._account_id = account_id
-
-    @property
-    def cidr(self):
-        """Gets the cidr of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
+    @vpc_id.setter
+    def vpc_id(self, vpc_id):
+        """Sets the vpc_id of this InputAwsVirtualizationRealmAllOf.
 
 
-        :return: The cidr of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: str
-        """
-        return self._cidr
-
-    @cidr.setter
-    def cidr(self, cidr):
-        """Sets the cidr of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param cidr: The cidr of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and cidr is None:  # noqa: E501
-            raise ValueError("Invalid value for `cidr`, must not be `None`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                cidr is not None and len(cidr) > 16):
-            raise ValueError("Invalid value for `cidr`, length must be less than or equal to `16`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                cidr is not None and len(cidr) < 10):
-            raise ValueError("Invalid value for `cidr`, length must be greater than or equal to `10`")  # noqa: E501
-
-        self._cidr = cidr
-
-    @property
-    def default_windows_domain_name(self):
-        """Gets the default_windows_domain_name of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-
-
-        :return: The default_windows_domain_name of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: str
-        """
-        return self._default_windows_domain_name
-
-    @default_windows_domain_name.setter
-    def default_windows_domain_name(self, default_windows_domain_name):
-        """Sets the default_windows_domain_name of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param default_windows_domain_name: The default_windows_domain_name of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
+        :param vpc_id: The vpc_id of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
         :type: str
         """
 
-        self._default_windows_domain_name = default_windows_domain_name
-
-    @property
-    def description(self):
-        """Gets the description of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-
-
-        :return: The description of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param description: The description of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and description is None:  # noqa: E501
-            raise ValueError("Invalid value for `description`, must not be `None`")  # noqa: E501
-
-        self._description = description
-
-    @property
-    def id(self):
-        """Gets the id of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-
-
-        :return: The id of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param id: The id of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: int
-        """
-
-        self._id = id
-
-    @property
-    def local_storage_name(self):
-        """Gets the local_storage_name of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-
-
-        :return: The local_storage_name of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: str
-        """
-        return self._local_storage_name
-
-    @local_storage_name.setter
-    def local_storage_name(self, local_storage_name):
-        """Sets the local_storage_name of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param local_storage_name: The local_storage_name of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: str
-        """
-
-        self._local_storage_name = local_storage_name
-
-    @property
-    def maximum_num_cpus(self):
-        """Gets the maximum_num_cpus of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-
-
-        :return: The maximum_num_cpus of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._maximum_num_cpus
-
-    @maximum_num_cpus.setter
-    def maximum_num_cpus(self, maximum_num_cpus):
-        """Sets the maximum_num_cpus of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param maximum_num_cpus: The maximum_num_cpus of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                maximum_num_cpus is not None and maximum_num_cpus < 0):  # noqa: E501
-            raise ValueError("Invalid value for `maximum_num_cpus`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._maximum_num_cpus = maximum_num_cpus
-
-    @property
-    def maximum_num_gpus(self):
-        """Gets the maximum_num_gpus of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-
-
-        :return: The maximum_num_gpus of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._maximum_num_gpus
-
-    @maximum_num_gpus.setter
-    def maximum_num_gpus(self, maximum_num_gpus):
-        """Sets the maximum_num_gpus of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param maximum_num_gpus: The maximum_num_gpus of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                maximum_num_gpus is not None and maximum_num_gpus < 0):  # noqa: E501
-            raise ValueError("Invalid value for `maximum_num_gpus`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._maximum_num_gpus = maximum_num_gpus
-
-    @property
-    def maximum_ram_in_megabytes(self):
-        """Gets the maximum_ram_in_megabytes of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-
-
-        :return: The maximum_ram_in_megabytes of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._maximum_ram_in_megabytes
-
-    @maximum_ram_in_megabytes.setter
-    def maximum_ram_in_megabytes(self, maximum_ram_in_megabytes):
-        """Sets the maximum_ram_in_megabytes of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param maximum_ram_in_megabytes: The maximum_ram_in_megabytes of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                maximum_ram_in_megabytes is not None and maximum_ram_in_megabytes < 0):  # noqa: E501
-            raise ValueError("Invalid value for `maximum_ram_in_megabytes`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._maximum_ram_in_megabytes = maximum_ram_in_megabytes
-
-    @property
-    def maximum_storage_in_megabytes(self):
-        """Gets the maximum_storage_in_megabytes of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-
-
-        :return: The maximum_storage_in_megabytes of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._maximum_storage_in_megabytes
-
-    @maximum_storage_in_megabytes.setter
-    def maximum_storage_in_megabytes(self, maximum_storage_in_megabytes):
-        """Sets the maximum_storage_in_megabytes of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param maximum_storage_in_megabytes: The maximum_storage_in_megabytes of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                maximum_storage_in_megabytes is not None and maximum_storage_in_megabytes < 0):  # noqa: E501
-            raise ValueError("Invalid value for `maximum_storage_in_megabytes`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._maximum_storage_in_megabytes = maximum_storage_in_megabytes
-
-    @property
-    def maximum_virtual_machines(self):
-        """Gets the maximum_virtual_machines of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-
-
-        :return: The maximum_virtual_machines of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._maximum_virtual_machines
-
-    @maximum_virtual_machines.setter
-    def maximum_virtual_machines(self, maximum_virtual_machines):
-        """Sets the maximum_virtual_machines of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param maximum_virtual_machines: The maximum_virtual_machines of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                maximum_virtual_machines is not None and maximum_virtual_machines < 0):  # noqa: E501
-            raise ValueError("Invalid value for `maximum_virtual_machines`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._maximum_virtual_machines = maximum_virtual_machines
-
-    @property
-    def name(self):
-        """Gets the name of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-
-
-        :return: The name of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param name: The name of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
-            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
-
-        self._name = name
-
-    @property
-    def password(self):
-        """Gets the password of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-
-
-        :return: The password of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param password: The password of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and password is None:  # noqa: E501
-            raise ValueError("Invalid value for `password`, must not be `None`")  # noqa: E501
-
-        self._password = password
-
-    @property
-    def power_on_delay_base(self):
-        """Gets the power_on_delay_base of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-
-
-        :return: The power_on_delay_base of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._power_on_delay_base
-
-    @power_on_delay_base.setter
-    def power_on_delay_base(self, power_on_delay_base):
-        """Sets the power_on_delay_base of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param power_on_delay_base: The power_on_delay_base of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: int
-        """
-
-        self._power_on_delay_base = power_on_delay_base
-
-    @property
-    def power_on_initial_delay_base(self):
-        """Gets the power_on_initial_delay_base of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-
-
-        :return: The power_on_initial_delay_base of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._power_on_initial_delay_base
-
-    @power_on_initial_delay_base.setter
-    def power_on_initial_delay_base(self, power_on_initial_delay_base):
-        """Sets the power_on_initial_delay_base of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param power_on_initial_delay_base: The power_on_initial_delay_base of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: int
-        """
-
-        self._power_on_initial_delay_base = power_on_initial_delay_base
-
-    @property
-    def power_on_minimum_delay(self):
-        """Gets the power_on_minimum_delay of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-
-
-        :return: The power_on_minimum_delay of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._power_on_minimum_delay
-
-    @power_on_minimum_delay.setter
-    def power_on_minimum_delay(self, power_on_minimum_delay):
-        """Sets the power_on_minimum_delay of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param power_on_minimum_delay: The power_on_minimum_delay of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                power_on_minimum_delay is not None and power_on_minimum_delay < 0):  # noqa: E501
-            raise ValueError("Invalid value for `power_on_minimum_delay`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._power_on_minimum_delay = power_on_minimum_delay
-
-    @property
-    def remote_access_config(self):
-        """Gets the remote_access_config of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-
-
-        :return: The remote_access_config of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: RemoteAccessConfig
-        """
-        return self._remote_access_config
-
-    @remote_access_config.setter
-    def remote_access_config(self, remote_access_config):
-        """Sets the remote_access_config of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param remote_access_config: The remote_access_config of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: RemoteAccessConfig
-        """
-
-        self._remote_access_config = remote_access_config
-
-    @property
-    def state(self):
-        """Gets the state of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-
-
-        :return: The state of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: str
-        """
-        return self._state
-
-    @state.setter
-    def state(self, state):
-        """Sets the state of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param state: The state of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["ACTIVE", "ENTERING_MAINTENANCE", "INACTIVE", "MAINTENANCE", "PENDING", "REQUESTED", "RETIRED"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and state not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `state` ({0}), must be one of {1}"  # noqa: E501
-                .format(state, allowed_values)
-            )
-
-        self._state = state
-
-    @property
-    def username(self):
-        """Gets the username of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-
-
-        :return: The username of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param username: The username of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and username is None:  # noqa: E501
-            raise ValueError("Invalid value for `username`, must not be `None`")  # noqa: E501
-
-        self._username = username
-
-    @property
-    def zone_count(self):
-        """Gets the zone_count of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-
-
-        :return: The zone_count of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._zone_count
-
-    @zone_count.setter
-    def zone_count(self, zone_count):
-        """Sets the zone_count of this InputAwsVirtualizationRealmAllOf.
-
-
-        :param zone_count: The zone_count of this InputAwsVirtualizationRealmAllOf.  # noqa: E501
-        :type: int
-        """
-
-        self._zone_count = zone_count
+        self._vpc_id = vpc_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

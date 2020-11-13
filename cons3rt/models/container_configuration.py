@@ -50,42 +50,57 @@ class ContainerConfiguration(object):
     """
     openapi_types = {
         'id': 'int',
-        'port_mappings': 'list[ContainerPortMapping]',
         'container_name': 'str',
+        'container_runtime': 'str',
+        'environment_map': 'dict(str, str)',
+        'mounts': 'list[ContainerMount]',
+        'port_mappings': 'list[ContainerPortMapping]',
         'run_arguments': 'str',
-        'environment_map': 'dict(str, str)'
+        'run_disabled': 'bool'
     }
 
     attribute_map = {
         'id': 'id',
-        'port_mappings': 'portMappings',
         'container_name': 'containerName',
+        'container_runtime': 'containerRuntime',
+        'environment_map': 'environmentMap',
+        'mounts': 'mounts',
+        'port_mappings': 'portMappings',
         'run_arguments': 'runArguments',
-        'environment_map': 'environmentMap'
+        'run_disabled': 'runDisabled'
     }
 
-    def __init__(self, id=None, port_mappings=None, container_name=None, run_arguments=None, environment_map=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, container_name=None, container_runtime=None, environment_map=None, mounts=None, port_mappings=None, run_arguments=None, run_disabled=None, local_vars_configuration=None):  # noqa: E501
         """ContainerConfiguration - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._id = None
-        self._port_mappings = None
         self._container_name = None
-        self._run_arguments = None
+        self._container_runtime = None
         self._environment_map = None
+        self._mounts = None
+        self._port_mappings = None
+        self._run_arguments = None
+        self._run_disabled = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
-        if port_mappings is not None:
-            self.port_mappings = port_mappings
         self.container_name = container_name
-        if run_arguments is not None:
-            self.run_arguments = run_arguments
+        if container_runtime is not None:
+            self.container_runtime = container_runtime
         if environment_map is not None:
             self.environment_map = environment_map
+        if mounts is not None:
+            self.mounts = mounts
+        if port_mappings is not None:
+            self.port_mappings = port_mappings
+        if run_arguments is not None:
+            self.run_arguments = run_arguments
+        if run_disabled is not None:
+            self.run_disabled = run_disabled
 
     @property
     def id(self):
@@ -107,27 +122,6 @@ class ContainerConfiguration(object):
         """
 
         self._id = id
-
-    @property
-    def port_mappings(self):
-        """Gets the port_mappings of this ContainerConfiguration.  # noqa: E501
-
-
-        :return: The port_mappings of this ContainerConfiguration.  # noqa: E501
-        :rtype: list[ContainerPortMapping]
-        """
-        return self._port_mappings
-
-    @port_mappings.setter
-    def port_mappings(self, port_mappings):
-        """Sets the port_mappings of this ContainerConfiguration.
-
-
-        :param port_mappings: The port_mappings of this ContainerConfiguration.  # noqa: E501
-        :type: list[ContainerPortMapping]
-        """
-
-        self._port_mappings = port_mappings
 
     @property
     def container_name(self):
@@ -153,25 +147,31 @@ class ContainerConfiguration(object):
         self._container_name = container_name
 
     @property
-    def run_arguments(self):
-        """Gets the run_arguments of this ContainerConfiguration.  # noqa: E501
+    def container_runtime(self):
+        """Gets the container_runtime of this ContainerConfiguration.  # noqa: E501
 
 
-        :return: The run_arguments of this ContainerConfiguration.  # noqa: E501
+        :return: The container_runtime of this ContainerConfiguration.  # noqa: E501
         :rtype: str
         """
-        return self._run_arguments
+        return self._container_runtime
 
-    @run_arguments.setter
-    def run_arguments(self, run_arguments):
-        """Sets the run_arguments of this ContainerConfiguration.
+    @container_runtime.setter
+    def container_runtime(self, container_runtime):
+        """Sets the container_runtime of this ContainerConfiguration.
 
 
-        :param run_arguments: The run_arguments of this ContainerConfiguration.  # noqa: E501
+        :param container_runtime: The container_runtime of this ContainerConfiguration.  # noqa: E501
         :type: str
         """
+        allowed_values = ["DOCKER", "PODMAN"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and container_runtime not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `container_runtime` ({0}), must be one of {1}"  # noqa: E501
+                .format(container_runtime, allowed_values)
+            )
 
-        self._run_arguments = run_arguments
+        self._container_runtime = container_runtime
 
     @property
     def environment_map(self):
@@ -193,6 +193,90 @@ class ContainerConfiguration(object):
         """
 
         self._environment_map = environment_map
+
+    @property
+    def mounts(self):
+        """Gets the mounts of this ContainerConfiguration.  # noqa: E501
+
+
+        :return: The mounts of this ContainerConfiguration.  # noqa: E501
+        :rtype: list[ContainerMount]
+        """
+        return self._mounts
+
+    @mounts.setter
+    def mounts(self, mounts):
+        """Sets the mounts of this ContainerConfiguration.
+
+
+        :param mounts: The mounts of this ContainerConfiguration.  # noqa: E501
+        :type: list[ContainerMount]
+        """
+
+        self._mounts = mounts
+
+    @property
+    def port_mappings(self):
+        """Gets the port_mappings of this ContainerConfiguration.  # noqa: E501
+
+
+        :return: The port_mappings of this ContainerConfiguration.  # noqa: E501
+        :rtype: list[ContainerPortMapping]
+        """
+        return self._port_mappings
+
+    @port_mappings.setter
+    def port_mappings(self, port_mappings):
+        """Sets the port_mappings of this ContainerConfiguration.
+
+
+        :param port_mappings: The port_mappings of this ContainerConfiguration.  # noqa: E501
+        :type: list[ContainerPortMapping]
+        """
+
+        self._port_mappings = port_mappings
+
+    @property
+    def run_arguments(self):
+        """Gets the run_arguments of this ContainerConfiguration.  # noqa: E501
+
+
+        :return: The run_arguments of this ContainerConfiguration.  # noqa: E501
+        :rtype: str
+        """
+        return self._run_arguments
+
+    @run_arguments.setter
+    def run_arguments(self, run_arguments):
+        """Sets the run_arguments of this ContainerConfiguration.
+
+
+        :param run_arguments: The run_arguments of this ContainerConfiguration.  # noqa: E501
+        :type: str
+        """
+
+        self._run_arguments = run_arguments
+
+    @property
+    def run_disabled(self):
+        """Gets the run_disabled of this ContainerConfiguration.  # noqa: E501
+
+
+        :return: The run_disabled of this ContainerConfiguration.  # noqa: E501
+        :rtype: bool
+        """
+        return self._run_disabled
+
+    @run_disabled.setter
+    def run_disabled(self, run_disabled):
+        """Sets the run_disabled of this ContainerConfiguration.
+
+
+        :param run_disabled: The run_disabled of this ContainerConfiguration.  # noqa: E501
+        :type: bool
+        """
+
+        self._run_disabled = run_disabled
 
     def to_dict(self):
         """Returns the model properties as a dict"""

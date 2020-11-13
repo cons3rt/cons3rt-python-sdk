@@ -6,8 +6,6 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] 
 **cons3rt_agent_installed** | **bool** |  | [optional] 
 **container_capable** | **bool** |  | [optional] 
-**default_password** | **str** |  | [optional] 
-**default_username** | **str** |  | [optional] 
 **disks** | [**list[MinimalDisk]**](MinimalDisk.md) |  | [optional] 
 **display_name** | **str** |  | [optional] 
 **fail_count** | **int** |  | [optional] 

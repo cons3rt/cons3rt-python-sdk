@@ -49,61 +49,34 @@ class VCloudCloudResources(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'subtype': 'str',
         'external_network_names': 'list[str]',
         'provider_vdc_names': 'list[str]',
         'vdc_network_pool_names': 'list[str]'
     }
 
     attribute_map = {
-        'subtype': 'subtype',
         'external_network_names': 'externalNetworkNames',
         'provider_vdc_names': 'providerVdcNames',
         'vdc_network_pool_names': 'vdcNetworkPoolNames'
     }
 
-    def __init__(self, subtype=None, external_network_names=None, provider_vdc_names=None, vdc_network_pool_names=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, external_network_names=None, provider_vdc_names=None, vdc_network_pool_names=None, local_vars_configuration=None):  # noqa: E501
         """VCloudCloudResources - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._subtype = None
         self._external_network_names = None
         self._provider_vdc_names = None
         self._vdc_network_pool_names = None
         self.discriminator = None
 
-        self.subtype = subtype
         if external_network_names is not None:
             self.external_network_names = external_network_names
         if provider_vdc_names is not None:
             self.provider_vdc_names = provider_vdc_names
         if vdc_network_pool_names is not None:
             self.vdc_network_pool_names = vdc_network_pool_names
-
-    @property
-    def subtype(self):
-        """Gets the subtype of this VCloudCloudResources.  # noqa: E501
-
-
-        :return: The subtype of this VCloudCloudResources.  # noqa: E501
-        :rtype: str
-        """
-        return self._subtype
-
-    @subtype.setter
-    def subtype(self, subtype):
-        """Sets the subtype of this VCloudCloudResources.
-
-
-        :param subtype: The subtype of this VCloudCloudResources.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and subtype is None:  # noqa: E501
-            raise ValueError("Invalid value for `subtype`, must not be `None`")  # noqa: E501
-
-        self._subtype = subtype
 
     @property
     def external_network_names(self):

@@ -49,29 +49,24 @@ class AzureCloudResourcesAllOf(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'images': 'list[ImageReferenceDTO]',
-        'instance_types': 'list[str]'
+        'images': 'list[ImageReferenceDTO]'
     }
 
     attribute_map = {
-        'images': 'images',
-        'instance_types': 'instanceTypes'
+        'images': 'images'
     }
 
-    def __init__(self, images=None, instance_types=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, images=None, local_vars_configuration=None):  # noqa: E501
         """AzureCloudResourcesAllOf - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._images = None
-        self._instance_types = None
         self.discriminator = None
 
         if images is not None:
             self.images = images
-        if instance_types is not None:
-            self.instance_types = instance_types
 
     @property
     def images(self):
@@ -93,27 +88,6 @@ class AzureCloudResourcesAllOf(object):
         """
 
         self._images = images
-
-    @property
-    def instance_types(self):
-        """Gets the instance_types of this AzureCloudResourcesAllOf.  # noqa: E501
-
-
-        :return: The instance_types of this AzureCloudResourcesAllOf.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._instance_types
-
-    @instance_types.setter
-    def instance_types(self, instance_types):
-        """Sets the instance_types of this AzureCloudResourcesAllOf.
-
-
-        :param instance_types: The instance_types of this AzureCloudResourcesAllOf.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._instance_types = instance_types
 
     def to_dict(self):
         """Returns the model properties as a dict"""

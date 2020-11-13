@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**subtype** | **str** |  | 
 **name** | **str** |  | [optional] 
 **template_profile** | [**InputTemplateProfile**](InputTemplateProfile.md) |  | [optional] 
 

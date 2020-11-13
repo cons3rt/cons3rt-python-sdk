@@ -3,8 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**network** | [**Network**](Network.md) |  | 
-**subtype** | **str** |  | 
 **nat_image_id** | **str** |  | 
 **nat_instance_flavor** | **str** |  | 
 

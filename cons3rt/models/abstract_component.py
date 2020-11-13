@@ -63,7 +63,7 @@ class AbstractComponent(object):
     }
 
     discriminator_value_class_map = {
-        
+        'ContainerComponent': 'ContainerComponent'
     }
 
     def __init__(self, asset=None, id=None, load_order=None, subtype=None, local_vars_configuration=None):  # noqa: E501

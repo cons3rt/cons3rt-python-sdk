@@ -54,8 +54,6 @@ class InputCons3rtTemplateData(object):
         'operating_system': 'str',
         'cons3rt_agent_installed': 'bool',
         'container_capable': 'bool',
-        'default_password': 'str',
-        'default_username': 'str',
         'disks': 'list[InputDiskForTemplate]',
         'has_gpu': 'bool',
         'license': 'str',
@@ -75,8 +73,6 @@ class InputCons3rtTemplateData(object):
         'operating_system': 'operatingSystem',
         'cons3rt_agent_installed': 'cons3rtAgentInstalled',
         'container_capable': 'containerCapable',
-        'default_password': 'defaultPassword',
-        'default_username': 'defaultUsername',
         'disks': 'disks',
         'has_gpu': 'hasGpu',
         'license': 'license',
@@ -90,7 +86,7 @@ class InputCons3rtTemplateData(object):
         'remote_access_templates': 'remoteAccessTemplates'
     }
 
-    def __init__(self, display_name=None, virt_realm_template_name=None, operating_system=None, cons3rt_agent_installed=None, container_capable=None, default_password=None, default_username=None, disks=None, has_gpu=None, license=None, max_num_cpus=None, max_ram_in_megabytes=None, note=None, package_management_type=None, power_on_delay_override=None, power_shell_version=None, service_management_type=None, remote_access_templates=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, display_name=None, virt_realm_template_name=None, operating_system=None, cons3rt_agent_installed=None, container_capable=None, disks=None, has_gpu=None, license=None, max_num_cpus=None, max_ram_in_megabytes=None, note=None, package_management_type=None, power_on_delay_override=None, power_shell_version=None, service_management_type=None, remote_access_templates=None, local_vars_configuration=None):  # noqa: E501
         """InputCons3rtTemplateData - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -101,8 +97,6 @@ class InputCons3rtTemplateData(object):
         self._operating_system = None
         self._cons3rt_agent_installed = None
         self._container_capable = None
-        self._default_password = None
-        self._default_username = None
         self._disks = None
         self._has_gpu = None
         self._license = None
@@ -124,10 +118,6 @@ class InputCons3rtTemplateData(object):
             self.cons3rt_agent_installed = cons3rt_agent_installed
         if container_capable is not None:
             self.container_capable = container_capable
-        if default_password is not None:
-            self.default_password = default_password
-        if default_username is not None:
-            self.default_username = default_username
         if disks is not None:
             self.disks = disks
         if has_gpu is not None:
@@ -215,7 +205,7 @@ class InputCons3rtTemplateData(object):
         """
         if self.local_vars_configuration.client_side_validation and operating_system is None:  # noqa: E501
             raise ValueError("Invalid value for `operating_system`, must not be `None`")  # noqa: E501
-        allowed_values = ["AMAZON_LINUX_LATEST_X64", "AMAZON_LINUX_2_LATEST_X64", "CENTOS_6_X64", "CENTOS_6_X86", "CENTOS_7_X64", "CORE_OS_1221_X64", "F5_BIGIP_X64", "FORTISIEM", "PALO_ALTO_NETWORKS_PAN_OS_X64", "FEDORA_23_X64", "GENERIC_LINUX_X64", "GENERIC_WINDOWS_X64", "KALI_ROLLING_X64", "ORACLE_LINUX_6_X64", "ORACLE_LINUX_7_X64", "OS_X_10", "OS_X_11", "RASPBIAN", "RHEL_5_X64", "RHEL_5_X86", "RHEL_6_X64", "RHEL_6_X86", "RHEL_7_ATOMIC_HOST", "RHEL_7_PPCLE", "RHEL_7_X64", "SOLARIS_11_X64", "UBUNTU_12_X64", "UBUNTU_14_X64", "UBUNTU_16_X64", "UBUNTU_18_X64", "UBUNTU_CORE", "VYOS_1_1_X64", "VYOS_1_2_X64", "VYOS_1_3_X64", "WINDOWS_10_X64", "WINDOWS_7_X64", "WINDOWS_7_X86", "WINDOWS_8_X64", "WINDOWS_SERVER_2008_R2_X64", "WINDOWS_SERVER_2008_X64", "WINDOWS_SERVER_2012_R2_X64", "WINDOWS_SERVER_2012_X64", "WINDOWS_SERVER_2016_X64", "WINDOWS_SERVER_2019_X64", "WINDOWS_XP_X86"]  # noqa: E501
+        allowed_values = ["AMAZON_LINUX_2_LATEST_X64", "AMAZON_LINUX_LATEST_X64", "CENTOS_6_X64", "CENTOS_6_X86", "CENTOS_7_X64", "CENTOS_8_X64", "CORE_OS_1221_X64", "F5_BIGIP_X64", "FEDORA_23_X64", "FORTISIEM", "GENERIC_LINUX_X64", "GENERIC_WINDOWS_X64", "KALI_ROLLING_X64", "ORACLE_LINUX_6_X64", "ORACLE_LINUX_7_X64", "ORACLE_LINUX_8_X64", "OS_X_10", "OS_X_11", "PALO_ALTO_NETWORKS_PAN_OS_X64", "RASPBIAN", "RHEL_5_X64", "RHEL_5_X86", "RHEL_6_X64", "RHEL_6_X86", "RHEL_7_ATOMIC_HOST", "RHEL_7_PPCLE", "RHEL_7_X64", "RHEL_8_X64", "SOLARIS_11_X64", "UBUNTU_12_X64", "UBUNTU_14_X64", "UBUNTU_16_X64", "UBUNTU_18_X64", "UBUNTU_20_X64", "UBUNTU_CORE", "VYOS_1_1_X64", "VYOS_1_2_X64", "VYOS_1_3_X64", "WINDOWS_10_X64", "WINDOWS_7_X64", "WINDOWS_7_X86", "WINDOWS_8_X64", "WINDOWS_SERVER_2008_R2_X64", "WINDOWS_SERVER_2008_X64", "WINDOWS_SERVER_2012_R2_X64", "WINDOWS_SERVER_2012_X64", "WINDOWS_SERVER_2016_X64", "WINDOWS_SERVER_2019_X64", "WINDOWS_XP_X86"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and operating_system not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `operating_system` ({0}), must be one of {1}"  # noqa: E501
@@ -265,48 +255,6 @@ class InputCons3rtTemplateData(object):
         """
 
         self._container_capable = container_capable
-
-    @property
-    def default_password(self):
-        """Gets the default_password of this InputCons3rtTemplateData.  # noqa: E501
-
-
-        :return: The default_password of this InputCons3rtTemplateData.  # noqa: E501
-        :rtype: str
-        """
-        return self._default_password
-
-    @default_password.setter
-    def default_password(self, default_password):
-        """Sets the default_password of this InputCons3rtTemplateData.
-
-
-        :param default_password: The default_password of this InputCons3rtTemplateData.  # noqa: E501
-        :type: str
-        """
-
-        self._default_password = default_password
-
-    @property
-    def default_username(self):
-        """Gets the default_username of this InputCons3rtTemplateData.  # noqa: E501
-
-
-        :return: The default_username of this InputCons3rtTemplateData.  # noqa: E501
-        :rtype: str
-        """
-        return self._default_username
-
-    @default_username.setter
-    def default_username(self, default_username):
-        """Sets the default_username of this InputCons3rtTemplateData.
-
-
-        :param default_username: The default_username of this InputCons3rtTemplateData.  # noqa: E501
-        :type: str
-        """
-
-        self._default_username = default_username
 
     @property
     def disks(self):

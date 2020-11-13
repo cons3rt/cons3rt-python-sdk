@@ -1,5 +1,4 @@
 # coding: utf-8
-from __future__ import absolute_import
 
 """
    Copyright 2020 Jackpine Technologies Corporation
@@ -22,6 +21,8 @@ cons3rt - Copyright Jackpine Technologies Corp.
 NOTE: This file is auto-generated. Do not edit the file manually.
 """
 
+
+from __future__ import absolute_import
 
 import re  # noqa: F401
 
@@ -50,6 +51,122 @@ class DeploymentRunsApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+
+    def add_category_to_deployment_run(self, id, runid, **kwargs):  # noqa: E501
+        """Assign Category to Run  # noqa: E501
+
+        Assigns the Category as a filter tag to the provided Deployment Run.<br> <br> Altering the Category will affect future Run filtering.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_category_to_deployment_run(id, runid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: ID of category (required)
+        :param str runid: ID of run to assign (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: bool
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.add_category_to_deployment_run_with_http_info(id, runid, **kwargs)  # noqa: E501
+
+    def add_category_to_deployment_run_with_http_info(self, id, runid, **kwargs):  # noqa: E501
+        """Assign Category to Run  # noqa: E501
+
+        Assigns the Category as a filter tag to the provided Deployment Run.<br> <br> Altering the Category will affect future Run filtering.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_category_to_deployment_run_with_http_info(id, runid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: ID of category (required)
+        :param str runid: ID of run to assign (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(bool, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['id', 'runid']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_category_to_deployment_run" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'id' is set
+        if self.api_client.client_side_validation and ('id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `id` when calling `add_category_to_deployment_run`")  # noqa: E501
+        # verify the required parameter 'runid' is set
+        if self.api_client.client_side_validation and ('runid' not in local_var_params or  # noqa: E501
+                                                        local_var_params['runid'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `runid` when calling `add_category_to_deployment_run`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in local_var_params:
+            path_params['id'] = local_var_params['id']  # noqa: E501
+
+        query_params = []
+        if 'runid' in local_var_params and local_var_params['runid'] is not None:  # noqa: E501
+            query_params.append(('runid', local_var_params['runid']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['APIKeyHeader', 'Username']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/categories/{id}/run', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='bool',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
 
     def delete_deployment_run(self, id, **kwargs):  # noqa: E501
         """Delete Deployment Run  # noqa: E501
@@ -618,6 +735,8 @@ class DeploymentRunsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str id: ID of deployment (required)
+        :param int maxresults: Maximum number of results to return
+        :param int page: Requested page number
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -643,6 +762,8 @@ class DeploymentRunsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str id: ID of deployment (required)
+        :param int maxresults: Maximum number of results to return
+        :param int page: Requested page number
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -659,7 +780,7 @@ class DeploymentRunsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'maxresults', 'page']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -685,6 +806,10 @@ class DeploymentRunsApi(object):
             path_params['id'] = local_var_params['id']  # noqa: E501
 
         query_params = []
+        if 'maxresults' in local_var_params and local_var_params['maxresults'] is not None:  # noqa: E501
+            query_params.append(('maxresults', local_var_params['maxresults']))  # noqa: E501
+        if 'page' in local_var_params and local_var_params['page'] is not None:  # noqa: E501
+            query_params.append(('page', local_var_params['page']))  # noqa: E501
 
         header_params = {}
 
@@ -1207,6 +1332,122 @@ class DeploymentRunsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_host_instance_types(self, id, hostid, **kwargs):  # noqa: E501
+        """List available instance types for host  # noqa: E501
+
+        Returns a collection of available instance types for resizing a Deployment Run Host.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_host_instance_types(id, hostid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: ID of deployment run (required)
+        :param str hostid: ID of host (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: TargetInstanceTypes
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.get_host_instance_types_with_http_info(id, hostid, **kwargs)  # noqa: E501
+
+    def get_host_instance_types_with_http_info(self, id, hostid, **kwargs):  # noqa: E501
+        """List available instance types for host  # noqa: E501
+
+        Returns a collection of available instance types for resizing a Deployment Run Host.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_host_instance_types_with_http_info(id, hostid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: ID of deployment run (required)
+        :param str hostid: ID of host (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(TargetInstanceTypes, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['id', 'hostid']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_host_instance_types" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'id' is set
+        if self.api_client.client_side_validation and ('id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `id` when calling `get_host_instance_types`")  # noqa: E501
+        # verify the required parameter 'hostid' is set
+        if self.api_client.client_side_validation and ('hostid' not in local_var_params or  # noqa: E501
+                                                        local_var_params['hostid'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `hostid` when calling `get_host_instance_types`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in local_var_params:
+            path_params['id'] = local_var_params['id']  # noqa: E501
+        if 'hostid' in local_var_params:
+            path_params['hostid'] = local_var_params['hostid']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['APIKeyHeader', 'Username']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/drs/{id}/host/{hostid}/resize', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TargetInstanceTypes',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def perform_host_action(self, id, deploymentrunhostid, action, **kwargs):  # noqa: E501
         """Execute Host Action  # noqa: E501
 
@@ -1220,8 +1461,9 @@ class DeploymentRunsApi(object):
         :param str id: ID of deployment run (required)
         :param str deploymentrunhostid: ID of host (required)
         :param str action: Action to perform (required)
-        :param int cpu: Desired number of CPUs, if resizing host
-        :param int ram: Desired amount of RAM in Mebibytes, if resizing host
+        :param int cpu: Desired number of CPUs, if resizing host in a non instance type based virtualization realm
+        :param int ram: Desired amount of RAM in Mebibytes, if resizing host in a non instance type based virtualization realm
+        :param str instance_type_name: The instance type name to resize to, if resizing host in an instance type based virtualization realm
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -1249,8 +1491,9 @@ class DeploymentRunsApi(object):
         :param str id: ID of deployment run (required)
         :param str deploymentrunhostid: ID of host (required)
         :param str action: Action to perform (required)
-        :param int cpu: Desired number of CPUs, if resizing host
-        :param int ram: Desired amount of RAM in Mebibytes, if resizing host
+        :param int cpu: Desired number of CPUs, if resizing host in a non instance type based virtualization realm
+        :param int ram: Desired amount of RAM in Mebibytes, if resizing host in a non instance type based virtualization realm
+        :param str instance_type_name: The instance type name to resize to, if resizing host in an instance type based virtualization realm
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1267,7 +1510,7 @@ class DeploymentRunsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['id', 'deploymentrunhostid', 'action', 'cpu', 'ram']  # noqa: E501
+        all_params = ['id', 'deploymentrunhostid', 'action', 'cpu', 'ram', 'instance_type_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1309,6 +1552,8 @@ class DeploymentRunsApi(object):
             query_params.append(('cpu', local_var_params['cpu']))  # noqa: E501
         if 'ram' in local_var_params and local_var_params['ram'] is not None:  # noqa: E501
             query_params.append(('ram', local_var_params['ram']))  # noqa: E501
+        if 'instance_type_name' in local_var_params and local_var_params['instance_type_name'] is not None:  # noqa: E501
+            query_params.append(('instanceTypeName', local_var_params['instance_type_name']))  # noqa: E501
 
         header_params = {}
 
@@ -1785,6 +2030,122 @@ class DeploymentRunsApi(object):
 
         return self.api_client.call_api(
             '/api/drs/{id}/release', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='bool',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def remove_category_from_deployment_run(self, id, runid, **kwargs):  # noqa: E501
+        """Unassign Category from deployment run  # noqa: E501
+
+        Removes the Category as a filter tag from the provided Run.<br> <br> Altering the Category will affect future run filtering.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.remove_category_from_deployment_run(id, runid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: ID of category (required)
+        :param str runid: ID of run to unassign (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: bool
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.remove_category_from_deployment_run_with_http_info(id, runid, **kwargs)  # noqa: E501
+
+    def remove_category_from_deployment_run_with_http_info(self, id, runid, **kwargs):  # noqa: E501
+        """Unassign Category from deployment run  # noqa: E501
+
+        Removes the Category as a filter tag from the provided Run.<br> <br> Altering the Category will affect future run filtering.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.remove_category_from_deployment_run_with_http_info(id, runid, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str id: ID of category (required)
+        :param str runid: ID of run to unassign (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(bool, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = ['id', 'runid']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method remove_category_from_deployment_run" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'id' is set
+        if self.api_client.client_side_validation and ('id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `id` when calling `remove_category_from_deployment_run`")  # noqa: E501
+        # verify the required parameter 'runid' is set
+        if self.api_client.client_side_validation and ('runid' not in local_var_params or  # noqa: E501
+                                                        local_var_params['runid'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `runid` when calling `remove_category_from_deployment_run`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in local_var_params:
+            path_params['id'] = local_var_params['id']  # noqa: E501
+
+        query_params = []
+        if 'runid' in local_var_params and local_var_params['runid'] is not None:  # noqa: E501
+            query_params.append(('runid', local_var_params['runid']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['APIKeyHeader', 'Username']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/categories/{id}/run', 'DELETE',
             path_params,
             query_params,
             header_params,

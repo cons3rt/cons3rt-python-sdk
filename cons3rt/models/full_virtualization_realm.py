@@ -60,8 +60,8 @@ class FullVirtualizationRealm(object):
         'admin_users': 'list[MinimalUser]',
         'allocated': 'bool',
         'cloud': 'MinimalCloud',
-        'created_at': 'int',
-        'date_last_reachable': 'int',
+        'created_at': 'datetime',
+        'date_last_reachable': 'datetime',
         'description': 'str',
         'default_windows_domain_name': 'str',
         'local_storage_name': 'str',
@@ -84,7 +84,7 @@ class FullVirtualizationRealm(object):
         'template_registrations': 'list[MinimalTemplateRegistration]',
         'templates': 'list[MinimalCons3rtTemplateData]',
         'template_subscriptions': 'list[MinimalTemplateSubscription]',
-        'updated_at': 'int',
+        'updated_at': 'datetime',
         'username': 'str',
         'zone_count': 'int'
     }
@@ -131,7 +131,10 @@ class FullVirtualizationRealm(object):
     }
 
     discriminator_value_class_map = {
-        
+        'FullOpenStackVirtualizationRealm': 'FullOpenStackVirtualizationRealm',
+        'FullAzureVirtualizationRealm': 'FullAzureVirtualizationRealm',
+        'FullAwsVirtualizationRealm': 'FullAwsVirtualizationRealm',
+        'FullVCloudRestVirtualizationRealm': 'FullVCloudRestVirtualizationRealm'
     }
 
     def __init__(self, virtualization_realm_type=None, id=None, name=None, state=None, access_point=None, account_id=None, active_virtual_machines=None, networks=None, admin_users=None, allocated=None, cloud=None, created_at=None, date_last_reachable=None, description=None, default_windows_domain_name=None, local_storage_name=None, maximum_impact_level=None, maximum_num_cpus=None, maximum_num_gpus=None, maximum_ram_in_megabytes=None, maximum_storage_in_megabytes=None, maximum_virtual_machines=None, power_on_delay_base=None, power_on_initial_delay_base=None, power_on_minimum_delay=None, projects=None, reachable=None, remote_access_config=None, remote_access_deployment_id=None, remote_access_deployment_run_status=None, remote_access_status=None, supported_features=None, template_registrations=None, templates=None, template_subscriptions=None, updated_at=None, username=None, zone_count=None, local_vars_configuration=None):  # noqa: E501
@@ -270,7 +273,7 @@ class FullVirtualizationRealm(object):
         :param virtualization_realm_type: The virtualization_realm_type of this FullVirtualizationRealm.  # noqa: E501
         :type: str
         """
-        allowed_values = ["Amazon", "Azure", "CloudStack", "Mock", "OpenStack", "VCloud"]  # noqa: E501
+        allowed_values = ["Amazon", "Azure", "Mock", "OpenStack", "VCloudRest"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and virtualization_realm_type not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `virtualization_realm_type` ({0}), must be one of {1}"  # noqa: E501
@@ -507,7 +510,7 @@ class FullVirtualizationRealm(object):
 
 
         :return: The created_at of this FullVirtualizationRealm.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._created_at
 
@@ -517,7 +520,7 @@ class FullVirtualizationRealm(object):
 
 
         :param created_at: The created_at of this FullVirtualizationRealm.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._created_at = created_at
@@ -528,7 +531,7 @@ class FullVirtualizationRealm(object):
 
 
         :return: The date_last_reachable of this FullVirtualizationRealm.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._date_last_reachable
 
@@ -538,7 +541,7 @@ class FullVirtualizationRealm(object):
 
 
         :param date_last_reachable: The date_last_reachable of this FullVirtualizationRealm.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._date_last_reachable = date_last_reachable
@@ -1057,7 +1060,7 @@ class FullVirtualizationRealm(object):
 
 
         :return: The updated_at of this FullVirtualizationRealm.  # noqa: E501
-        :rtype: int
+        :rtype: datetime
         """
         return self._updated_at
 
@@ -1067,7 +1070,7 @@ class FullVirtualizationRealm(object):
 
 
         :param updated_at: The updated_at of this FullVirtualizationRealm.  # noqa: E501
-        :type: int
+        :type: datetime
         """
 
         self._updated_at = updated_at

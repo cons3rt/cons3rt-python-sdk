@@ -69,7 +69,10 @@ class MinimalSystemModule(object):
     }
 
     discriminator_value_class_map = {
-        
+        'MinimalVirtualHost': 'MinimalVirtualHost',
+        'MinimalAppliance': 'MinimalAppliance',
+        'MinimalDevice': 'MinimalDevice',
+        'MinimalPhysicalHost': 'MinimalPhysicalHost'
     }
 
     def __init__(self, id=None, name=None, description=None, offline=None, state=None, visibility=None, subtype=None, local_vars_configuration=None):  # noqa: E501
