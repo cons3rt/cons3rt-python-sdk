@@ -51,19 +51,19 @@ class FullDeploymentRun(object):
     openapi_types = {
         'categories': 'list[MinimalCategory]',
         'creator': 'MinimalUser',
-        'earliest_start_time': 'datetime',
-        'end_time': 'datetime',
-        'lease_time': 'datetime',
-        'estimated_ready_time': 'datetime',
-        'estimated_start_time': 'datetime',
+        'earliest_start_time': 'int',
+        'end_time': 'int',
+        'lease_time': 'int',
+        'estimated_ready_time': 'int',
+        'estimated_start_time': 'int',
         'id': 'int',
         'log_entries': 'list[MinimalLogEntry]',
         'message': 'str',
         'project': 'MinimalProject',
-        'ready_time': 'datetime',
+        'ready_time': 'int',
         'result': 'str',
-        'start_time': 'datetime',
-        'time_of_request': 'datetime',
+        'start_time': 'int',
+        'time_of_request': 'int',
         'canceled': 'bool',
         'deployment': 'MinimalDeployment',
         'deployment_run_hosts': 'list[MinimalDeploymentRunHost]',
@@ -281,7 +281,7 @@ class FullDeploymentRun(object):
 
 
         :return: The earliest_start_time of this FullDeploymentRun.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._earliest_start_time
 
@@ -291,7 +291,7 @@ class FullDeploymentRun(object):
 
 
         :param earliest_start_time: The earliest_start_time of this FullDeploymentRun.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._earliest_start_time = earliest_start_time
@@ -302,7 +302,7 @@ class FullDeploymentRun(object):
 
 
         :return: The end_time of this FullDeploymentRun.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._end_time
 
@@ -312,7 +312,7 @@ class FullDeploymentRun(object):
 
 
         :param end_time: The end_time of this FullDeploymentRun.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._end_time = end_time
@@ -323,7 +323,7 @@ class FullDeploymentRun(object):
 
 
         :return: The lease_time of this FullDeploymentRun.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._lease_time
 
@@ -333,7 +333,7 @@ class FullDeploymentRun(object):
 
 
         :param lease_time: The lease_time of this FullDeploymentRun.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._lease_time = lease_time
@@ -344,7 +344,7 @@ class FullDeploymentRun(object):
 
 
         :return: The estimated_ready_time of this FullDeploymentRun.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._estimated_ready_time
 
@@ -354,7 +354,7 @@ class FullDeploymentRun(object):
 
 
         :param estimated_ready_time: The estimated_ready_time of this FullDeploymentRun.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._estimated_ready_time = estimated_ready_time
@@ -365,7 +365,7 @@ class FullDeploymentRun(object):
 
 
         :return: The estimated_start_time of this FullDeploymentRun.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._estimated_start_time
 
@@ -375,7 +375,7 @@ class FullDeploymentRun(object):
 
 
         :param estimated_start_time: The estimated_start_time of this FullDeploymentRun.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._estimated_start_time = estimated_start_time
@@ -470,7 +470,7 @@ class FullDeploymentRun(object):
 
 
         :return: The ready_time of this FullDeploymentRun.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._ready_time
 
@@ -480,7 +480,7 @@ class FullDeploymentRun(object):
 
 
         :param ready_time: The ready_time of this FullDeploymentRun.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._ready_time = ready_time
@@ -512,7 +512,7 @@ class FullDeploymentRun(object):
 
 
         :return: The start_time of this FullDeploymentRun.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._start_time
 
@@ -522,7 +522,7 @@ class FullDeploymentRun(object):
 
 
         :param start_time: The start_time of this FullDeploymentRun.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._start_time = start_time
@@ -533,7 +533,7 @@ class FullDeploymentRun(object):
 
 
         :return: The time_of_request of this FullDeploymentRun.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._time_of_request
 
@@ -543,7 +543,7 @@ class FullDeploymentRun(object):
 
 
         :param time_of_request: The time_of_request of this FullDeploymentRun.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._time_of_request = time_of_request

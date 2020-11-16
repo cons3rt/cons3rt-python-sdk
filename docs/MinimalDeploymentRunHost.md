@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **published** | **bool** |  | [optional] 
 **ram** | **int** |  | [optional] 
 **snapshot_available** | **bool** |  | [optional] 
-**snapshot_date** | **datetime** |  | [optional] 
+**snapshot_date** | **int** |  | [optional] 
 **system_module_id** | **int** |  | [optional] 
 **system_module_type** | **str** |  | [optional] 
 **system_role** | **str** |  | [optional] 

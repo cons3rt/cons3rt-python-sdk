@@ -74,7 +74,7 @@ class InputTeamFull(object):
         'rdp_client_session_duration': 'int',
         'snapshot_enabled': 'bool',
         'state': 'str',
-        'valid_until': 'datetime'
+        'valid_until': 'int'
     }
 
     attribute_map = {
@@ -758,7 +758,7 @@ class InputTeamFull(object):
 
 
         :return: The valid_until of this InputTeamFull.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._valid_until
 
@@ -768,7 +768,7 @@ class InputTeamFull(object):
 
 
         :param valid_until: The valid_until of this InputTeamFull.  # noqa: E501
-        :type: datetime
+        :type: int
         """
         if self.local_vars_configuration.client_side_validation and valid_until is None:  # noqa: E501
             raise ValueError("Invalid value for `valid_until`, must not be `None`")  # noqa: E501

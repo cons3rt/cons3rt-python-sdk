@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] 
 **project** | [**MinimalProject**](MinimalProject.md) |  | [optional] 
 **result** | **str** |  | [optional] 
-**start_time** | **datetime** |  | [optional] 
+**start_time** | **int** |  | [optional] 
 **report_uri** | **str** |  | [optional] 
 **test_bundle** | [**MinimalTestBundle**](MinimalTestBundle.md) |  | [optional] 
 **test_manager_status** | **str** |  | [optional] 

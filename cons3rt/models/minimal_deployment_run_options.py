@@ -55,7 +55,7 @@ class MinimalDeploymentRunOptions(object):
         'description': 'str',
         'end_state': 'str',
         'duration': 'int',
-        'earliest_start_time': 'datetime',
+        'earliest_start_time': 'int',
         'end_existing': 'bool',
         'host_options': 'list[HostOption]',
         'id': 'int',
@@ -281,7 +281,7 @@ class MinimalDeploymentRunOptions(object):
 
 
         :return: The earliest_start_time of this MinimalDeploymentRunOptions.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._earliest_start_time
 
@@ -291,7 +291,7 @@ class MinimalDeploymentRunOptions(object):
 
 
         :param earliest_start_time: The earliest_start_time of this MinimalDeploymentRunOptions.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._earliest_start_time = earliest_start_time

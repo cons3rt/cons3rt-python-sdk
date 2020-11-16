@@ -54,7 +54,7 @@ class DeploymentRunOptions(object):
         'deployment_to_submit': 'int',
         'description': 'str',
         'end_state': 'str',
-        'earliest_start_time': 'datetime',
+        'earliest_start_time': 'int',
         'end_existing': 'bool',
         'host_options': 'list[HostOption]',
         'id': 'int',
@@ -65,7 +65,7 @@ class DeploymentRunOptions(object):
         'properties': 'list[ModelProperty]',
         'quick_build_cleanup_overridden': 'bool',
         'duration': 'int',
-        'end_date': 'datetime',
+        'end_date': 'int',
         'retain_on_error': 'bool',
         'task_group': 'str',
         'username': 'str',
@@ -288,7 +288,7 @@ class DeploymentRunOptions(object):
 
 
         :return: The earliest_start_time of this DeploymentRunOptions.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._earliest_start_time
 
@@ -298,7 +298,7 @@ class DeploymentRunOptions(object):
 
 
         :param earliest_start_time: The earliest_start_time of this DeploymentRunOptions.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._earliest_start_time = earliest_start_time
@@ -527,7 +527,7 @@ class DeploymentRunOptions(object):
 
 
         :return: The end_date of this DeploymentRunOptions.  # noqa: E501
-        :rtype: datetime
+        :rtype: int
         """
         return self._end_date
 
@@ -537,7 +537,7 @@ class DeploymentRunOptions(object):
 
 
         :param end_date: The end_date of this DeploymentRunOptions.  # noqa: E501
-        :type: datetime
+        :type: int
         """
 
         self._end_date = end_date
