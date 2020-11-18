@@ -9,7 +9,7 @@ Python client library for interacting with the API in CONS3RT-powered environmen
 from setuptools import setup, find_packages
 
 NAME = 'cons3rt'
-VERSION = '1.0.3'
+VERSION = '1.0.4'
 
 # To install the library, run the following
 #
