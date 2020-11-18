@@ -1,3 +1,7 @@
+# coding: utf-8
+
+from __future__ import absolute_import
+
 """
    Copyright 2020 Jackpine Technologies Corporation
 
@@ -13,10 +17,6 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 """
-# coding: utf-8
-
-# flake8: noqa
-
 """
 cons3rt - Copyright Jackpine Technologies Corp.
 
@@ -24,7 +24,7 @@ NOTE: This file is auto-generated. Do not edit the file manually.
 """
 
 
-from __future__ import absolute_import
+# flake8: noqa
 
 # import apis into sdk package
 from cons3rt.api.assets_api import AssetsApi
