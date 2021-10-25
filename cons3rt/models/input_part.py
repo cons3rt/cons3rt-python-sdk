@@ -50,36 +50,36 @@ class InputPart(object):
     """
     openapi_types = {
         'headers': 'dict(str, list[str])',
-        'media_type': 'InputPartMediaType',
         'body_as_string': 'str',
+        'media_type': 'InputPartMediaType',
         'content_type_from_message': 'bool'
     }
 
     attribute_map = {
         'headers': 'headers',
-        'media_type': 'mediaType',
         'body_as_string': 'bodyAsString',
+        'media_type': 'mediaType',
         'content_type_from_message': 'contentTypeFromMessage'
     }
 
-    def __init__(self, headers=None, media_type=None, body_as_string=None, content_type_from_message=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, headers=None, body_as_string=None, media_type=None, content_type_from_message=None, local_vars_configuration=None):  # noqa: E501
         """InputPart - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._headers = None
-        self._media_type = None
         self._body_as_string = None
+        self._media_type = None
         self._content_type_from_message = None
         self.discriminator = None
 
         if headers is not None:
             self.headers = headers
-        if media_type is not None:
-            self.media_type = media_type
         if body_as_string is not None:
             self.body_as_string = body_as_string
+        if media_type is not None:
+            self.media_type = media_type
         if content_type_from_message is not None:
             self.content_type_from_message = content_type_from_message
 
@@ -105,27 +105,6 @@ class InputPart(object):
         self._headers = headers
 
     @property
-    def media_type(self):
-        """Gets the media_type of this InputPart.  # noqa: E501
-
-
-        :return: The media_type of this InputPart.  # noqa: E501
-        :rtype: InputPartMediaType
-        """
-        return self._media_type
-
-    @media_type.setter
-    def media_type(self, media_type):
-        """Sets the media_type of this InputPart.
-
-
-        :param media_type: The media_type of this InputPart.  # noqa: E501
-        :type: InputPartMediaType
-        """
-
-        self._media_type = media_type
-
-    @property
     def body_as_string(self):
         """Gets the body_as_string of this InputPart.  # noqa: E501
 
@@ -145,6 +124,27 @@ class InputPart(object):
         """
 
         self._body_as_string = body_as_string
+
+    @property
+    def media_type(self):
+        """Gets the media_type of this InputPart.  # noqa: E501
+
+
+        :return: The media_type of this InputPart.  # noqa: E501
+        :rtype: InputPartMediaType
+        """
+        return self._media_type
+
+    @media_type.setter
+    def media_type(self, media_type):
+        """Sets the media_type of this InputPart.
+
+
+        :param media_type: The media_type of this InputPart.  # noqa: E501
+        :type: InputPartMediaType
+        """
+
+        self._media_type = media_type
 
     @property
     def content_type_from_message(self):

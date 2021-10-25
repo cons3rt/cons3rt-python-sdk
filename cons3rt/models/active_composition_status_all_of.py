@@ -117,7 +117,7 @@ class ActiveCompositionStatusAllOf(object):
         :param deployment_run_status: The deployment_run_status of this ActiveCompositionStatusAllOf.  # noqa: E501
         :type: str
         """
-        allowed_values = ["UNKNOWN", "SCHEDULED", "SUBMITTED", "PROVISIONING_HOSTS", "HOSTS_PROVISIONED", "RESERVED", "RELEASE_REQUESTED", "RELEASING", "TESTING", "TESTED", "COMPLETED", "CANCELED"]  # noqa: E501
+        allowed_values = ["UNKNOWN", "SCHEDULED", "SUBMITTED", "PROVISIONING_HOSTS", "HOSTS_PROVISIONED", "RESERVED", "RELEASE_REQUESTED", "RELEASING", "TESTING", "TESTED", "REDEPLOYING_HOSTS", "COMPLETED", "CANCELED"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and deployment_run_status not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `deployment_run_status` ({0}), must be one of {1}"  # noqa: E501

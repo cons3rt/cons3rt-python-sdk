@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **internal_ip_address** | **str** |  | [optional] 
+**mac_address** | **str** |  | [optional] 
 **network_function** | **str** |  | 
 **network_name** | **str** |  | 
 **network_identifier** | **str** |  | 

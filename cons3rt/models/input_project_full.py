@@ -54,6 +54,8 @@ class InputProjectFull(object):
         'itar_restricted': 'bool',
         'owning_team': 'InputTeam',
         'limits': 'ProjectLimits',
+        'default_role': 'str',
+        'features': 'ProjectFeatures',
         'is_private': 'bool'
     }
 
@@ -63,10 +65,12 @@ class InputProjectFull(object):
         'itar_restricted': 'itarRestricted',
         'owning_team': 'owningTeam',
         'limits': 'limits',
+        'default_role': 'defaultRole',
+        'features': 'features',
         'is_private': 'isPrivate'
     }
 
-    def __init__(self, name=None, description=None, itar_restricted=None, owning_team=None, limits=None, is_private=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, description=None, itar_restricted=None, owning_team=None, limits=None, default_role=None, features=None, is_private=None, local_vars_configuration=None):  # noqa: E501
         """InputProjectFull - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,6 +81,8 @@ class InputProjectFull(object):
         self._itar_restricted = None
         self._owning_team = None
         self._limits = None
+        self._default_role = None
+        self._features = None
         self._is_private = None
         self.discriminator = None
 
@@ -88,6 +94,10 @@ class InputProjectFull(object):
         if owning_team is not None:
             self.owning_team = owning_team
         self.limits = limits
+        if default_role is not None:
+            self.default_role = default_role
+        if features is not None:
+            self.features = features
         if is_private is not None:
             self.is_private = is_private
 
@@ -199,6 +209,54 @@ class InputProjectFull(object):
             raise ValueError("Invalid value for `limits`, must not be `None`")  # noqa: E501
 
         self._limits = limits
+
+    @property
+    def default_role(self):
+        """Gets the default_role of this InputProjectFull.  # noqa: E501
+
+
+        :return: The default_role of this InputProjectFull.  # noqa: E501
+        :rtype: str
+        """
+        return self._default_role
+
+    @default_role.setter
+    def default_role(self, default_role):
+        """Sets the default_role of this InputProjectFull.
+
+
+        :param default_role: The default_role of this InputProjectFull.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["ADMINISTRATOR", "ASSET_RESTORER", "STATUS_READER", "UI_MACHINE", "TEST_TOOL", "MEMBER", "CONSUMER", "STANDARD", "SOFTWARE_DEVELOPER", "TEST_DEVELOPER", "ASSET_SHARER", "ASSET_PROMOTER", "POWER_SCHEDULE_UPDATER", "PROJECT_OWNER", "PROJECT_MANAGER", "PROJECT_MODERATOR", "REMOTE_ACCESS", "MAESTRO_MACHINE", "FAP_MACHINE", "SCHEDULER_MACHINE", "CONS3RT_MACHINE", "SOURCEBUILDER_MACHINE", "SYSTEM_ASSET_IMPORTER", "ASSET_CERTIFIER", "ASSET_UPLOADER"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and default_role not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `default_role` ({0}), must be one of {1}"  # noqa: E501
+                .format(default_role, allowed_values)
+            )
+
+        self._default_role = default_role
+
+    @property
+    def features(self):
+        """Gets the features of this InputProjectFull.  # noqa: E501
+
+
+        :return: The features of this InputProjectFull.  # noqa: E501
+        :rtype: ProjectFeatures
+        """
+        return self._features
+
+    @features.setter
+    def features(self, features):
+        """Sets the features of this InputProjectFull.
+
+
+        :param features: The features of this InputProjectFull.  # noqa: E501
+        :type: ProjectFeatures
+        """
+
+        self._features = features
 
     @property
     def is_private(self):

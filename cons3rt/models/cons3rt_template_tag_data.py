@@ -49,34 +49,60 @@ class Cons3rtTemplateTagData(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'cons3rt_site_id': 'str',
         'uuid': 'str',
         'virt_realm_template_name': 'str',
         'registered_in_this_environment': 'bool'
     }
 
     attribute_map = {
+        'cons3rt_site_id': 'cons3rtSiteId',
         'uuid': 'uuid',
         'virt_realm_template_name': 'virtRealmTemplateName',
         'registered_in_this_environment': 'registeredInThisEnvironment'
     }
 
-    def __init__(self, uuid=None, virt_realm_template_name=None, registered_in_this_environment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cons3rt_site_id=None, uuid=None, virt_realm_template_name=None, registered_in_this_environment=None, local_vars_configuration=None):  # noqa: E501
         """Cons3rtTemplateTagData - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._cons3rt_site_id = None
         self._uuid = None
         self._virt_realm_template_name = None
         self._registered_in_this_environment = None
         self.discriminator = None
 
+        if cons3rt_site_id is not None:
+            self.cons3rt_site_id = cons3rt_site_id
         if uuid is not None:
             self.uuid = uuid
         if virt_realm_template_name is not None:
             self.virt_realm_template_name = virt_realm_template_name
         if registered_in_this_environment is not None:
             self.registered_in_this_environment = registered_in_this_environment
+
+    @property
+    def cons3rt_site_id(self):
+        """Gets the cons3rt_site_id of this Cons3rtTemplateTagData.  # noqa: E501
+
+
+        :return: The cons3rt_site_id of this Cons3rtTemplateTagData.  # noqa: E501
+        :rtype: str
+        """
+        return self._cons3rt_site_id
+
+    @cons3rt_site_id.setter
+    def cons3rt_site_id(self, cons3rt_site_id):
+        """Sets the cons3rt_site_id of this Cons3rtTemplateTagData.
+
+
+        :param cons3rt_site_id: The cons3rt_site_id of this Cons3rtTemplateTagData.  # noqa: E501
+        :type: str
+        """
+
+        self._cons3rt_site_id = cons3rt_site_id
 
     @property
     def uuid(self):

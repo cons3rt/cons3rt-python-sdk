@@ -13,7 +13,6 @@ Method | HTTP request | Description
 [**get_scenario**](ScenariosApi.md#get_scenario) | **GET** /api/scenarios/{id} | Retrieve Scenario
 [**get_scenarios**](ScenariosApi.md#get_scenarios) | **GET** /api/scenarios | List Scenarios
 [**get_scenarios_expanded**](ScenariosApi.md#get_scenarios_expanded) | **GET** /api/scenarios/expanded | List all Scenarios, including Project Assets
-[**itar_restrict_asset**](ScenariosApi.md#itar_restrict_asset) | **PUT** /api/assets/{id}/setitar | Set Asset Export Restriction
 [**list_dependent_assets**](ScenariosApi.md#list_dependent_assets) | **GET** /api/assets/{id}/dependent | List all Dependent Assets
 [**publish_scenario_to_composition**](ScenariosApi.md#publish_scenario_to_composition) | **POST** /api/scenarios/{id}/publish | Publish Scenario
 [**quick_build**](ScenariosApi.md#quick_build) | **PUT** /api/scenarios/{id}/launch | Launch Scenario
@@ -1118,125 +1117,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 **400** | Invalid query parameter |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **itar_restrict_asset**
-> bool itar_restrict_asset(id)
-
-Set Asset Export Restriction
-
-Sets the Export Restriction of a single Asset with the given ID.<br> <br> Export Restriction can only be set if the owning Project is an ITAR-restricted Project.<br> <br> Setting an Export Restriction cannot be undone.
-
-### Example
-
-* Api Key Authentication (APIKeyHeader):
-```python
-from __future__ import print_function
-import time
-import cons3rt
-from cons3rt.rest import ApiException
-from pprint import pprint
-# Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_VALUE'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['token'] = 'Bearer'
-# Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_VALUE'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['username'] = 'Bearer'
-
-# Using a client certificate for authentication is required in some cases.
-# To use a "soft-token" such as an ECA, provide the path the PEM encoded
-# version of the certificate
-configuration.cert_file='/path/to/your/client_cert.pem'
-
-# If the key to the provided certificate is stored in a separate file,
-# provide the path to the keyfile and, optionally, the key password if
-# the key is encrypted
-configuration.key_file='/path/to/your/client_cert.key'
-configuration.key_password='keyfile_password' # optional
-
-# Enter a context with an instance of the API client
-with cons3rt.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = cons3rt.ScenariosApi(api_client)
-    id = 'id_example' # str | ID of asset
-
-    try:
-        # Set Asset Export Restriction
-        api_response = api_instance.itar_restrict_asset(id)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling ScenariosApi->itar_restrict_asset: %s\n" % e)
-```
-
-* Api Key Authentication (Username):
-```python
-from __future__ import print_function
-import time
-import cons3rt
-from cons3rt.rest import ApiException
-from pprint import pprint
-# Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_VALUE'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['token'] = 'Bearer'
-# Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_VALUE'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['username'] = 'Bearer'
-
-# Using a client certificate for authentication is required in some cases.
-# To use a "soft-token" such as an ECA, provide the path the PEM encoded
-# version of the certificate
-configuration.cert_file='/path/to/your/client_cert.pem'
-
-# If the key to the provided certificate is stored in a separate file,
-# provide the path to the keyfile and, optionally, the key password if
-# the key is encrypted
-configuration.key_file='/path/to/your/client_cert.key'
-configuration.key_password='keyfile_password' # optional
-
-# Enter a context with an instance of the API client
-with cons3rt.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = cons3rt.ScenariosApi(api_client)
-    id = 'id_example' # str | ID of asset
-
-    try:
-        # Set Asset Export Restriction
-        api_response = api_instance.itar_restrict_asset(id)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling ScenariosApi->itar_restrict_asset: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**| ID of asset | 
-
-### Return type
-
-**bool**
-
-### Authorization
-
-[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Invalid ID or asset impact level supplied |  -  |
-**404** | Asset not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -52,17 +52,19 @@ class RemoteAccessConfig(object):
         'id': 'int',
         'remote_access_ip_address': 'str',
         'remote_access_port': 'int',
-        'instance_type': 'str'
+        'instance_type': 'str',
+        'template_name': 'str'
     }
 
     attribute_map = {
         'id': 'id',
         'remote_access_ip_address': 'remoteAccessIpAddress',
         'remote_access_port': 'remoteAccessPort',
-        'instance_type': 'instanceType'
+        'instance_type': 'instanceType',
+        'template_name': 'templateName'
     }
 
-    def __init__(self, id=None, remote_access_ip_address=None, remote_access_port=None, instance_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, remote_access_ip_address=None, remote_access_port=None, instance_type=None, template_name=None, local_vars_configuration=None):  # noqa: E501
         """RemoteAccessConfig - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +74,7 @@ class RemoteAccessConfig(object):
         self._remote_access_ip_address = None
         self._remote_access_port = None
         self._instance_type = None
+        self._template_name = None
         self.discriminator = None
 
         if id is not None:
@@ -79,6 +82,8 @@ class RemoteAccessConfig(object):
         self.remote_access_ip_address = remote_access_ip_address
         self.remote_access_port = remote_access_port
         self.instance_type = instance_type
+        if template_name is not None:
+            self.template_name = template_name
 
     @property
     def id(self):
@@ -175,6 +180,27 @@ class RemoteAccessConfig(object):
             )
 
         self._instance_type = instance_type
+
+    @property
+    def template_name(self):
+        """Gets the template_name of this RemoteAccessConfig.  # noqa: E501
+
+
+        :return: The template_name of this RemoteAccessConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._template_name
+
+    @template_name.setter
+    def template_name(self, template_name):
+        """Sets the template_name of this RemoteAccessConfig.
+
+
+        :param template_name: The template_name of this RemoteAccessConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._template_name = template_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

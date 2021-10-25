@@ -51,6 +51,7 @@ class Network(object):
     openapi_types = {
         'id': 'int',
         'isolated': 'bool',
+        'boundary_ip_address': 'str',
         'cidr': 'str',
         'description': 'str',
         'dnat_rules': 'list[DnatRule]',
@@ -62,6 +63,7 @@ class Network(object):
     attribute_map = {
         'id': 'id',
         'isolated': 'isolated',
+        'boundary_ip_address': 'boundaryIpAddress',
         'cidr': 'cidr',
         'description': 'description',
         'dnat_rules': 'dnatRules',
@@ -70,7 +72,7 @@ class Network(object):
         'name': 'name'
     }
 
-    def __init__(self, id=None, isolated=None, cidr=None, description=None, dnat_rules=None, firewall_rules=None, network_function=None, name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, isolated=None, boundary_ip_address=None, cidr=None, description=None, dnat_rules=None, firewall_rules=None, network_function=None, name=None, local_vars_configuration=None):  # noqa: E501
         """Network - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +80,7 @@ class Network(object):
 
         self._id = None
         self._isolated = None
+        self._boundary_ip_address = None
         self._cidr = None
         self._description = None
         self._dnat_rules = None
@@ -90,6 +93,8 @@ class Network(object):
             self.id = id
         if isolated is not None:
             self.isolated = isolated
+        if boundary_ip_address is not None:
+            self.boundary_ip_address = boundary_ip_address
         self.cidr = cidr
         if description is not None:
             self.description = description
@@ -140,6 +145,27 @@ class Network(object):
         """
 
         self._isolated = isolated
+
+    @property
+    def boundary_ip_address(self):
+        """Gets the boundary_ip_address of this Network.  # noqa: E501
+
+
+        :return: The boundary_ip_address of this Network.  # noqa: E501
+        :rtype: str
+        """
+        return self._boundary_ip_address
+
+    @boundary_ip_address.setter
+    def boundary_ip_address(self, boundary_ip_address):
+        """Sets the boundary_ip_address of this Network.
+
+
+        :param boundary_ip_address: The boundary_ip_address of this Network.  # noqa: E501
+        :type: str
+        """
+
+        self._boundary_ip_address = boundary_ip_address
 
     @property
     def cidr(self):

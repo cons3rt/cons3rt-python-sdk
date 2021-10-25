@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **admin_users** | [**list[User]**](User.md) |  | [optional] 
 **allocated** | **bool** |  | [optional] 
 **cidr** | **str** |  | 
+**connected_cloud** | [**Cloud**](Cloud.md) |  | [optional] 
 **cloud** | [**Cloud**](Cloud.md) |  | [optional] 
 **created_at** | **int** |  | [optional] 
 **date_last_reachable** | **int** |  | [optional] 
@@ -27,6 +28,7 @@ Name | Type | Description | Notes
 **password** | **str** |  | 
 **power_on_delay_base** | **int** |  | [optional] 
 **power_on_initial_delay_base** | **int** |  | [optional] 
+**power_on_maximum_delay** | **int** |  | [optional] 
 **power_on_minimum_delay** | **int** |  | [optional] 
 **projects** | [**list[Project]**](Project.md) |  | [optional] 
 **reachable** | **bool** |  | [optional] 

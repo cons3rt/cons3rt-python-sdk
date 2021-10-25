@@ -518,7 +518,7 @@ Name | Type | Description  | Notes
 
 Set Asset Export Restriction
 
-Sets the Export Restriction of a single Asset with the given ID.<br> <br> Export Restriction can only be set if the owning Project is an ITAR-restricted Project.<br> <br> Setting an Export Restriction cannot be undone.
+Sets the Export Restriction of a single software asset, test asset or container asset with the given ID.<br> <br> Export Restriction can only be set if the owning Project is an ITAR-restricted Project.<br> <br> Setting an Export Restriction cannot be undone.
 
 ### Example
 

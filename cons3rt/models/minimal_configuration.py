@@ -96,7 +96,7 @@ class MinimalConfiguration(object):
         :param configuration_script_type: The configuration_script_type of this MinimalConfiguration.  # noqa: E501
         :type: str
         """
-        allowed_values = ["HOST_INIT", "CONFIGURE_SCENARIO_HOST", "CUSTOMIZE_OS_HOST", "CONFIGURE_SCENARIO_MASTER", "CONFIGURE_TEST_MASTER", "CONFIGURE_TEST_HOST", "TEARDOWN_TEST_MASTER", "TEARDOWN_SCENARIO_HOST", "TEARDOWN_SCENARIO_MASTER"]  # noqa: E501
+        allowed_values = ["HOST_INIT", "CONFIGURE_SCENARIO_HOST", "CUSTOMIZE_OS_HOST", "CONFIGURE_SCENARIO_MASTER", "TEARDOWN_SCENARIO_HOST", "TEARDOWN_SCENARIO_MASTER"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and configuration_script_type not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `configuration_script_type` ({0}), must be one of {1}"  # noqa: E501

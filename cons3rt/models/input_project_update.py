@@ -51,16 +51,18 @@ class InputProjectUpdate(object):
     openapi_types = {
         'name': 'str',
         'description': 'str',
+        'default_role': 'str',
         'is_private': 'bool'
     }
 
     attribute_map = {
         'name': 'name',
         'description': 'description',
+        'default_role': 'defaultRole',
         'is_private': 'isPrivate'
     }
 
-    def __init__(self, name=None, description=None, is_private=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, description=None, default_role=None, is_private=None, local_vars_configuration=None):  # noqa: E501
         """InputProjectUpdate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,12 +70,15 @@ class InputProjectUpdate(object):
 
         self._name = None
         self._description = None
+        self._default_role = None
         self._is_private = None
         self.discriminator = None
 
         self.name = name
         if description is not None:
             self.description = description
+        if default_role is not None:
+            self.default_role = default_role
         if is_private is not None:
             self.is_private = is_private
 
@@ -120,6 +125,33 @@ class InputProjectUpdate(object):
         """
 
         self._description = description
+
+    @property
+    def default_role(self):
+        """Gets the default_role of this InputProjectUpdate.  # noqa: E501
+
+
+        :return: The default_role of this InputProjectUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._default_role
+
+    @default_role.setter
+    def default_role(self, default_role):
+        """Sets the default_role of this InputProjectUpdate.
+
+
+        :param default_role: The default_role of this InputProjectUpdate.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["ADMINISTRATOR", "ASSET_RESTORER", "STATUS_READER", "UI_MACHINE", "TEST_TOOL", "MEMBER", "CONSUMER", "STANDARD", "SOFTWARE_DEVELOPER", "TEST_DEVELOPER", "ASSET_SHARER", "ASSET_PROMOTER", "POWER_SCHEDULE_UPDATER", "PROJECT_OWNER", "PROJECT_MANAGER", "PROJECT_MODERATOR", "REMOTE_ACCESS", "MAESTRO_MACHINE", "FAP_MACHINE", "SCHEDULER_MACHINE", "CONS3RT_MACHINE", "SOURCEBUILDER_MACHINE", "SYSTEM_ASSET_IMPORTER", "ASSET_CERTIFIER", "ASSET_UPLOADER"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and default_role not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `default_role` ({0}), must be one of {1}"  # noqa: E501
+                .format(default_role, allowed_values)
+            )
+
+        self._default_role = default_role
 
     @property
     def is_private(self):

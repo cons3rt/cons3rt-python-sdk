@@ -54,7 +54,9 @@ class HostOption(object):
         'ram': 'int',
         'additional_disks': 'list[Disk]',
         'network_interfaces': 'list[NetworkInterface]',
-        'batch_software_install': 'bool'
+        'batch_software_install': 'bool',
+        'gpu_profile': 'str',
+        'gpu_type': 'str'
     }
 
     attribute_map = {
@@ -63,10 +65,12 @@ class HostOption(object):
         'ram': 'ram',
         'additional_disks': 'additionalDisks',
         'network_interfaces': 'networkInterfaces',
-        'batch_software_install': 'batchSoftwareInstall'
+        'batch_software_install': 'batchSoftwareInstall',
+        'gpu_profile': 'gpuProfile',
+        'gpu_type': 'gpuType'
     }
 
-    def __init__(self, system_role=None, cpus=None, ram=None, additional_disks=None, network_interfaces=None, batch_software_install=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, system_role=None, cpus=None, ram=None, additional_disks=None, network_interfaces=None, batch_software_install=None, gpu_profile=None, gpu_type=None, local_vars_configuration=None):  # noqa: E501
         """HostOption - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +82,8 @@ class HostOption(object):
         self._additional_disks = None
         self._network_interfaces = None
         self._batch_software_install = None
+        self._gpu_profile = None
+        self._gpu_type = None
         self.discriminator = None
 
         self.system_role = system_role
@@ -91,6 +97,10 @@ class HostOption(object):
             self.network_interfaces = network_interfaces
         if batch_software_install is not None:
             self.batch_software_install = batch_software_install
+        if gpu_profile is not None:
+            self.gpu_profile = gpu_profile
+        if gpu_type is not None:
+            self.gpu_type = gpu_type
 
     @property
     def system_role(self):
@@ -219,6 +229,60 @@ class HostOption(object):
         """
 
         self._batch_software_install = batch_software_install
+
+    @property
+    def gpu_profile(self):
+        """Gets the gpu_profile of this HostOption.  # noqa: E501
+
+
+        :return: The gpu_profile of this HostOption.  # noqa: E501
+        :rtype: str
+        """
+        return self._gpu_profile
+
+    @gpu_profile.setter
+    def gpu_profile(self, gpu_profile):
+        """Sets the gpu_profile of this HostOption.
+
+
+        :param gpu_profile: The gpu_profile of this HostOption.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["M10_0Q", "M10_1Q", "M10_2Q", "M10_4Q", "V100D_2Q", "V100D_4Q"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and gpu_profile not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `gpu_profile` ({0}), must be one of {1}"  # noqa: E501
+                .format(gpu_profile, allowed_values)
+            )
+
+        self._gpu_profile = gpu_profile
+
+    @property
+    def gpu_type(self):
+        """Gets the gpu_type of this HostOption.  # noqa: E501
+
+
+        :return: The gpu_type of this HostOption.  # noqa: E501
+        :rtype: str
+        """
+        return self._gpu_type
+
+    @gpu_type.setter
+    def gpu_type(self, gpu_type):
+        """Sets the gpu_type of this HostOption.
+
+
+        :param gpu_type: The gpu_type of this HostOption.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["K80", "M10", "M60", "P40", "T4", "V100D"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and gpu_type not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `gpu_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(gpu_type, allowed_values)
+            )
+
+        self._gpu_type = gpu_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

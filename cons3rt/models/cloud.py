@@ -55,13 +55,16 @@ class Cloud(object):
         'external_ip_addresses': 'list[str]',
         'external_ip_source': 'str',
         'features': 'CloudFeatures',
+        'gpu_types': 'list[str]',
         'id': 'int',
         'linux_repository_url': 'str',
         'maximum_impact_level': 'str',
         'networks': 'list[Network]',
         'owning_team': 'Team',
+        'provider_feature_configurations': 'dict(str, AbstractProviderClientConfiguration)',
         'state': 'str',
         'template_virtualization_realm': 'VirtualizationRealm',
+        'connected_virtualization_realms': 'list[VirtualizationRealm]',
         'virtualization_realms': 'list[VirtualizationRealm]',
         'subtype': 'str'
     }
@@ -73,13 +76,16 @@ class Cloud(object):
         'external_ip_addresses': 'externalIpAddresses',
         'external_ip_source': 'externalIpSource',
         'features': 'features',
+        'gpu_types': 'gpuTypes',
         'id': 'id',
         'linux_repository_url': 'linuxRepositoryUrl',
         'maximum_impact_level': 'maximumImpactLevel',
         'networks': 'networks',
         'owning_team': 'owningTeam',
+        'provider_feature_configurations': 'providerFeatureConfigurations',
         'state': 'state',
         'template_virtualization_realm': 'templateVirtualizationRealm',
+        'connected_virtualization_realms': 'connectedVirtualizationRealms',
         'virtualization_realms': 'virtualizationRealms',
         'subtype': 'subtype'
     }
@@ -91,7 +97,7 @@ class Cloud(object):
         'AzureCloud': 'AzureCloud'
     }
 
-    def __init__(self, cloud_type=None, description=None, name=None, external_ip_addresses=None, external_ip_source=None, features=None, id=None, linux_repository_url=None, maximum_impact_level=None, networks=None, owning_team=None, state=None, template_virtualization_realm=None, virtualization_realms=None, subtype=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cloud_type=None, description=None, name=None, external_ip_addresses=None, external_ip_source=None, features=None, gpu_types=None, id=None, linux_repository_url=None, maximum_impact_level=None, networks=None, owning_team=None, provider_feature_configurations=None, state=None, template_virtualization_realm=None, connected_virtualization_realms=None, virtualization_realms=None, subtype=None, local_vars_configuration=None):  # noqa: E501
         """Cloud - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -103,13 +109,16 @@ class Cloud(object):
         self._external_ip_addresses = None
         self._external_ip_source = None
         self._features = None
+        self._gpu_types = None
         self._id = None
         self._linux_repository_url = None
         self._maximum_impact_level = None
         self._networks = None
         self._owning_team = None
+        self._provider_feature_configurations = None
         self._state = None
         self._template_virtualization_realm = None
+        self._connected_virtualization_realms = None
         self._virtualization_realms = None
         self._subtype = None
         self.discriminator = 'subtype'
@@ -123,6 +132,8 @@ class Cloud(object):
         self.external_ip_source = external_ip_source
         if features is not None:
             self.features = features
+        if gpu_types is not None:
+            self.gpu_types = gpu_types
         if id is not None:
             self.id = id
         if linux_repository_url is not None:
@@ -131,10 +142,14 @@ class Cloud(object):
         if networks is not None:
             self.networks = networks
         self.owning_team = owning_team
+        if provider_feature_configurations is not None:
+            self.provider_feature_configurations = provider_feature_configurations
         if state is not None:
             self.state = state
         if template_virtualization_realm is not None:
             self.template_virtualization_realm = template_virtualization_realm
+        if connected_virtualization_realms is not None:
+            self.connected_virtualization_realms = connected_virtualization_realms
         if virtualization_realms is not None:
             self.virtualization_realms = virtualization_realms
         self.subtype = subtype
@@ -284,6 +299,35 @@ class Cloud(object):
         self._features = features
 
     @property
+    def gpu_types(self):
+        """Gets the gpu_types of this Cloud.  # noqa: E501
+
+
+        :return: The gpu_types of this Cloud.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._gpu_types
+
+    @gpu_types.setter
+    def gpu_types(self, gpu_types):
+        """Sets the gpu_types of this Cloud.
+
+
+        :param gpu_types: The gpu_types of this Cloud.  # noqa: E501
+        :type: list[str]
+        """
+        allowed_values = ["K80", "M10", "M60", "P40", "T4", "V100D"]  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                not set(gpu_types).issubset(set(allowed_values))):  # noqa: E501
+            raise ValueError(
+                "Invalid values for `gpu_types` [{0}], must be a subset of [{1}]"  # noqa: E501
+                .format(", ".join(map(str, set(gpu_types) - set(allowed_values))),  # noqa: E501
+                        ", ".join(map(str, allowed_values)))
+            )
+
+        self._gpu_types = gpu_types
+
+    @property
     def id(self):
         """Gets the id of this Cloud.  # noqa: E501
 
@@ -399,6 +443,27 @@ class Cloud(object):
         self._owning_team = owning_team
 
     @property
+    def provider_feature_configurations(self):
+        """Gets the provider_feature_configurations of this Cloud.  # noqa: E501
+
+
+        :return: The provider_feature_configurations of this Cloud.  # noqa: E501
+        :rtype: dict(str, AbstractProviderClientConfiguration)
+        """
+        return self._provider_feature_configurations
+
+    @provider_feature_configurations.setter
+    def provider_feature_configurations(self, provider_feature_configurations):
+        """Sets the provider_feature_configurations of this Cloud.
+
+
+        :param provider_feature_configurations: The provider_feature_configurations of this Cloud.  # noqa: E501
+        :type: dict(str, AbstractProviderClientConfiguration)
+        """
+
+        self._provider_feature_configurations = provider_feature_configurations
+
+    @property
     def state(self):
         """Gets the state of this Cloud.  # noqa: E501
 
@@ -445,6 +510,27 @@ class Cloud(object):
         """
 
         self._template_virtualization_realm = template_virtualization_realm
+
+    @property
+    def connected_virtualization_realms(self):
+        """Gets the connected_virtualization_realms of this Cloud.  # noqa: E501
+
+
+        :return: The connected_virtualization_realms of this Cloud.  # noqa: E501
+        :rtype: list[VirtualizationRealm]
+        """
+        return self._connected_virtualization_realms
+
+    @connected_virtualization_realms.setter
+    def connected_virtualization_realms(self, connected_virtualization_realms):
+        """Sets the connected_virtualization_realms of this Cloud.
+
+
+        :param connected_virtualization_realms: The connected_virtualization_realms of this Cloud.  # noqa: E501
+        :type: list[VirtualizationRealm]
+        """
+
+        self._connected_virtualization_realms = connected_virtualization_realms
 
     @property
     def virtualization_realms(self):

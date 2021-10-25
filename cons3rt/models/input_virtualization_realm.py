@@ -66,6 +66,7 @@ class InputVirtualizationRealm(object):
         'password': 'str',
         'power_on_delay_base': 'int',
         'power_on_initial_delay_base': 'int',
+        'power_on_maximum_delay': 'int',
         'power_on_minimum_delay': 'int',
         'remote_access_config': 'RemoteAccessConfig',
         'state': 'str',
@@ -91,6 +92,7 @@ class InputVirtualizationRealm(object):
         'password': 'password',
         'power_on_delay_base': 'powerOnDelayBase',
         'power_on_initial_delay_base': 'powerOnInitialDelayBase',
+        'power_on_maximum_delay': 'powerOnMaximumDelay',
         'power_on_minimum_delay': 'powerOnMinimumDelay',
         'remote_access_config': 'remoteAccessConfig',
         'state': 'state',
@@ -105,7 +107,7 @@ class InputVirtualizationRealm(object):
         'InputAwsVirtualizationRealm': 'InputAwsVirtualizationRealm'
     }
 
-    def __init__(self, virtualization_realm_type=None, access_point=None, account_id=None, cidr=None, default_windows_domain_name=None, description=None, id=None, local_storage_name=None, maximum_num_cpus=None, maximum_num_gpus=None, maximum_ram_in_megabytes=None, maximum_storage_in_megabytes=None, maximum_virtual_machines=None, name=None, password=None, power_on_delay_base=None, power_on_initial_delay_base=None, power_on_minimum_delay=None, remote_access_config=None, state=None, username=None, zone_count=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, virtualization_realm_type=None, access_point=None, account_id=None, cidr=None, default_windows_domain_name=None, description=None, id=None, local_storage_name=None, maximum_num_cpus=None, maximum_num_gpus=None, maximum_ram_in_megabytes=None, maximum_storage_in_megabytes=None, maximum_virtual_machines=None, name=None, password=None, power_on_delay_base=None, power_on_initial_delay_base=None, power_on_maximum_delay=None, power_on_minimum_delay=None, remote_access_config=None, state=None, username=None, zone_count=None, local_vars_configuration=None):  # noqa: E501
         """InputVirtualizationRealm - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -128,6 +130,7 @@ class InputVirtualizationRealm(object):
         self._password = None
         self._power_on_delay_base = None
         self._power_on_initial_delay_base = None
+        self._power_on_maximum_delay = None
         self._power_on_minimum_delay = None
         self._remote_access_config = None
         self._state = None
@@ -164,6 +167,8 @@ class InputVirtualizationRealm(object):
             self.power_on_delay_base = power_on_delay_base
         if power_on_initial_delay_base is not None:
             self.power_on_initial_delay_base = power_on_initial_delay_base
+        if power_on_maximum_delay is not None:
+            self.power_on_maximum_delay = power_on_maximum_delay
         if power_on_minimum_delay is not None:
             self.power_on_minimum_delay = power_on_minimum_delay
         if remote_access_config is not None:
@@ -567,6 +572,30 @@ class InputVirtualizationRealm(object):
         """
 
         self._power_on_initial_delay_base = power_on_initial_delay_base
+
+    @property
+    def power_on_maximum_delay(self):
+        """Gets the power_on_maximum_delay of this InputVirtualizationRealm.  # noqa: E501
+
+
+        :return: The power_on_maximum_delay of this InputVirtualizationRealm.  # noqa: E501
+        :rtype: int
+        """
+        return self._power_on_maximum_delay
+
+    @power_on_maximum_delay.setter
+    def power_on_maximum_delay(self, power_on_maximum_delay):
+        """Sets the power_on_maximum_delay of this InputVirtualizationRealm.
+
+
+        :param power_on_maximum_delay: The power_on_maximum_delay of this InputVirtualizationRealm.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                power_on_maximum_delay is not None and power_on_maximum_delay < 0):  # noqa: E501
+            raise ValueError("Invalid value for `power_on_maximum_delay`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._power_on_maximum_delay = power_on_maximum_delay
 
     @property
     def power_on_minimum_delay(self):

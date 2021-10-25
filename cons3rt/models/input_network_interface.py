@@ -50,6 +50,7 @@ class InputNetworkInterface(object):
     """
     openapi_types = {
         'internal_ip_address': 'str',
+        'mac_address': 'str',
         'network_function': 'str',
         'network_name': 'str',
         'network_identifier': 'str'
@@ -57,18 +58,20 @@ class InputNetworkInterface(object):
 
     attribute_map = {
         'internal_ip_address': 'internalIpAddress',
+        'mac_address': 'macAddress',
         'network_function': 'networkFunction',
         'network_name': 'networkName',
         'network_identifier': 'networkIdentifier'
     }
 
-    def __init__(self, internal_ip_address=None, network_function=None, network_name=None, network_identifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, internal_ip_address=None, mac_address=None, network_function=None, network_name=None, network_identifier=None, local_vars_configuration=None):  # noqa: E501
         """InputNetworkInterface - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._internal_ip_address = None
+        self._mac_address = None
         self._network_function = None
         self._network_name = None
         self._network_identifier = None
@@ -76,6 +79,8 @@ class InputNetworkInterface(object):
 
         if internal_ip_address is not None:
             self.internal_ip_address = internal_ip_address
+        if mac_address is not None:
+            self.mac_address = mac_address
         self.network_function = network_function
         self.network_name = network_name
         self.network_identifier = network_identifier
@@ -100,6 +105,27 @@ class InputNetworkInterface(object):
         """
 
         self._internal_ip_address = internal_ip_address
+
+    @property
+    def mac_address(self):
+        """Gets the mac_address of this InputNetworkInterface.  # noqa: E501
+
+
+        :return: The mac_address of this InputNetworkInterface.  # noqa: E501
+        :rtype: str
+        """
+        return self._mac_address
+
+    @mac_address.setter
+    def mac_address(self, mac_address):
+        """Sets the mac_address of this InputNetworkInterface.
+
+
+        :param mac_address: The mac_address of this InputNetworkInterface.  # noqa: E501
+        :type: str
+        """
+
+        self._mac_address = mac_address
 
     @property
     def network_function(self):

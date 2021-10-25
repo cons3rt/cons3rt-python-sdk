@@ -1,7 +1,5 @@
 # coding: utf-8
 
-from __future__ import absolute_import
-
 """
    Copyright 2020 Jackpine Technologies Corporation
 
@@ -23,6 +21,8 @@ cons3rt - Copyright Jackpine Technologies Corp.
 NOTE: This file is auto-generated. Do not edit the file manually.
 """
 
+
+from __future__ import absolute_import
 
 import re  # noqa: F401
 
@@ -377,18 +377,17 @@ class UploadApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def upload_file_to_bucket(self, id, bucket_id, **kwargs):  # noqa: E501
+    def upload_file_to_bucket(self, id, **kwargs):  # noqa: E501
         """Upload File to Bucket  # noqa: E501
 
         Uploads a file to a bucket.<br> <br> File must be submitted as multipart-form data, with a file element named \"file\" and a filename field <br> <br> A \"Connection: Keep-Alive\" configuration may be needed for larger sized files, due to the time it takes to copy to the server.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.upload_file_to_bucket(id, bucket_id, async_req=True)
+        >>> thread = api.upload_file_to_bucket(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: ID of the cloud (required)
-        :param str bucket_id: ID of bucket (required)
+        :param str id: ID of bucket (required)
         :param list[file] file:
         :param str filename:
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -403,20 +402,19 @@ class UploadApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.upload_file_to_bucket_with_http_info(id, bucket_id, **kwargs)  # noqa: E501
+        return self.upload_file_to_bucket_with_http_info(id, **kwargs)  # noqa: E501
 
-    def upload_file_to_bucket_with_http_info(self, id, bucket_id, **kwargs):  # noqa: E501
+    def upload_file_to_bucket_with_http_info(self, id, **kwargs):  # noqa: E501
         """Upload File to Bucket  # noqa: E501
 
         Uploads a file to a bucket.<br> <br> File must be submitted as multipart-form data, with a file element named \"file\" and a filename field <br> <br> A \"Connection: Keep-Alive\" configuration may be needed for larger sized files, due to the time it takes to copy to the server.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.upload_file_to_bucket_with_http_info(id, bucket_id, async_req=True)
+        >>> thread = api.upload_file_to_bucket_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str id: ID of the cloud (required)
-        :param str bucket_id: ID of bucket (required)
+        :param str id: ID of bucket (required)
         :param list[file] file:
         :param str filename:
         :param _return_http_data_only: response data without head status code
@@ -435,7 +433,7 @@ class UploadApi(object):
 
         local_var_params = locals()
 
-        all_params = ['id', 'bucket_id', 'file', 'filename']  # noqa: E501
+        all_params = ['id', 'file', 'filename']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -453,18 +451,12 @@ class UploadApi(object):
         if self.api_client.client_side_validation and ('id' not in local_var_params or  # noqa: E501
                                                         local_var_params['id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `id` when calling `upload_file_to_bucket`")  # noqa: E501
-        # verify the required parameter 'bucket_id' is set
-        if self.api_client.client_side_validation and ('bucket_id' not in local_var_params or  # noqa: E501
-                                                        local_var_params['bucket_id'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `bucket_id` when calling `upload_file_to_bucket`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'id' in local_var_params:
             path_params['id'] = local_var_params['id']  # noqa: E501
-        if 'bucket_id' in local_var_params:
-            path_params['bucket_id'] = local_var_params['bucket_id']  # noqa: E501
 
         query_params = []
 
@@ -491,7 +483,7 @@ class UploadApi(object):
         auth_settings = ['APIKeyHeader', 'Username']  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/clouds/{id}/buckets/{bucket_id}', 'POST',
+            '/api/buckets/{id}', 'POST',
             path_params,
             query_params,
             header_params,

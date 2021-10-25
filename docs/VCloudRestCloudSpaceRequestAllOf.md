@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **password** | **str** |  | [optional] 
 **email_address** | **str** |  | [optional] 
 **external_network_name** | **str** |  | [optional] 
-**maximum_cpu_mhz** | **int** |  | [optional] 
 **local_catalog_name** | **str** |  | [optional] 
 **vdc_network_quota** | **int** |  | [optional] 
 

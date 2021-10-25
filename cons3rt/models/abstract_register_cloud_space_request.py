@@ -62,6 +62,7 @@ class AbstractRegisterCloudSpaceRequest(object):
         'maximum_storage_in_megabytes': 'int',
         'maximum_virtual_machines': 'int',
         'power_on_minimum_delay': 'int',
+        'power_on_maximum_delay': 'int',
         'password': 'str',
         'power_on_initial_delay_base': 'int',
         'primary_network_name': 'str',
@@ -83,6 +84,7 @@ class AbstractRegisterCloudSpaceRequest(object):
         'maximum_storage_in_megabytes': 'maximumStorageInMegabytes',
         'maximum_virtual_machines': 'maximumVirtualMachines',
         'power_on_minimum_delay': 'powerOnMinimumDelay',
+        'power_on_maximum_delay': 'powerOnMaximumDelay',
         'password': 'password',
         'power_on_initial_delay_base': 'powerOnInitialDelayBase',
         'primary_network_name': 'primaryNetworkName',
@@ -96,7 +98,7 @@ class AbstractRegisterCloudSpaceRequest(object):
         'AwsRegisterCloudSpaceRequest': 'AwsRegisterCloudSpaceRequest'
     }
 
-    def __init__(self, virtualization_realm_type=None, name=None, description=None, access_point=None, active_after_registration=None, additional_network_names=None, cons3rt_network_name=None, maximum_num_cpus=None, maximum_num_gpus=None, maximum_ram_in_megabytes=None, maximum_storage_in_megabytes=None, maximum_virtual_machines=None, power_on_minimum_delay=None, password=None, power_on_initial_delay_base=None, primary_network_name=None, remote_access_config=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, virtualization_realm_type=None, name=None, description=None, access_point=None, active_after_registration=None, additional_network_names=None, cons3rt_network_name=None, maximum_num_cpus=None, maximum_num_gpus=None, maximum_ram_in_megabytes=None, maximum_storage_in_megabytes=None, maximum_virtual_machines=None, power_on_minimum_delay=None, power_on_maximum_delay=None, password=None, power_on_initial_delay_base=None, primary_network_name=None, remote_access_config=None, username=None, local_vars_configuration=None):  # noqa: E501
         """AbstractRegisterCloudSpaceRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -115,6 +117,7 @@ class AbstractRegisterCloudSpaceRequest(object):
         self._maximum_storage_in_megabytes = None
         self._maximum_virtual_machines = None
         self._power_on_minimum_delay = None
+        self._power_on_maximum_delay = None
         self._password = None
         self._power_on_initial_delay_base = None
         self._primary_network_name = None
@@ -145,6 +148,8 @@ class AbstractRegisterCloudSpaceRequest(object):
             self.maximum_virtual_machines = maximum_virtual_machines
         if power_on_minimum_delay is not None:
             self.power_on_minimum_delay = power_on_minimum_delay
+        if power_on_maximum_delay is not None:
+            self.power_on_maximum_delay = power_on_maximum_delay
         self.password = password
         if power_on_initial_delay_base is not None:
             self.power_on_initial_delay_base = power_on_initial_delay_base
@@ -467,6 +472,30 @@ class AbstractRegisterCloudSpaceRequest(object):
             raise ValueError("Invalid value for `power_on_minimum_delay`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._power_on_minimum_delay = power_on_minimum_delay
+
+    @property
+    def power_on_maximum_delay(self):
+        """Gets the power_on_maximum_delay of this AbstractRegisterCloudSpaceRequest.  # noqa: E501
+
+
+        :return: The power_on_maximum_delay of this AbstractRegisterCloudSpaceRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._power_on_maximum_delay
+
+    @power_on_maximum_delay.setter
+    def power_on_maximum_delay(self, power_on_maximum_delay):
+        """Sets the power_on_maximum_delay of this AbstractRegisterCloudSpaceRequest.
+
+
+        :param power_on_maximum_delay: The power_on_maximum_delay of this AbstractRegisterCloudSpaceRequest.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                power_on_maximum_delay is not None and power_on_maximum_delay < 0):  # noqa: E501
+            raise ValueError("Invalid value for `power_on_maximum_delay`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._power_on_maximum_delay = power_on_maximum_delay
 
     @property
     def password(self):

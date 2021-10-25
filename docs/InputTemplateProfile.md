@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **additional_disks** | [**list[InputDisk]**](InputDisk.md) |  | [optional] 
 **min_boot_disk_capacity** | **int** |  | [optional] 
 **remote_access_required** | **bool** |  | [optional] 
+**virt_realm_id** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

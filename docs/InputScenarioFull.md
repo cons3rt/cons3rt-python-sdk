@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] 
 **name** | **str** |  | [optional] 
 **scenario_hosts** | [**list[InputScenarioHost]**](InputScenarioHost.md) |  | [optional] 
+**scenario_build_order** | **int** |  | [optional] 
 **prepare_scenario_configuration** | [**InputConfiguration**](InputConfiguration.md) |  | [optional] 
 **teardown_scenario_configuration** | [**InputConfiguration**](InputConfiguration.md) |  | [optional] 
 

@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **visibility** | **str** |  | [optional] 
 **impact_level** | **str** |  | [optional] 
 **categories** | [**list[Category]**](Category.md) |  | [optional] 
-**scenarios** | [**list[Scenario]**](Scenario.md) |  | [optional] 
+**scenarios** | [**list[DeploymentScenario]**](DeploymentScenario.md) |  | [optional] 
 **test_bundles** | [**list[TestBundle]**](TestBundle.md) |  | [optional] 
 **deployment_hosts** | [**list[DeploymentHost]**](DeploymentHost.md) |  | [optional] 
 

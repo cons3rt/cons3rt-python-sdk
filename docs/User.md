@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **organization** | **str** |  | [optional] 
 **project_count** | **int** |  | [optional] 
 **state** | **str** |  | [optional] 
+**terms_of_service_accepted** | **bool** |  | [optional] 
 **username** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

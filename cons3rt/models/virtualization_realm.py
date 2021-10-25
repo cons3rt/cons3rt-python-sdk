@@ -57,6 +57,7 @@ class VirtualizationRealm(object):
         'admin_users': 'list[User]',
         'allocated': 'bool',
         'cidr': 'str',
+        'connected_cloud': 'Cloud',
         'cloud': 'Cloud',
         'created_at': 'int',
         'date_last_reachable': 'int',
@@ -73,6 +74,7 @@ class VirtualizationRealm(object):
         'password': 'str',
         'power_on_delay_base': 'int',
         'power_on_initial_delay_base': 'int',
+        'power_on_maximum_delay': 'int',
         'power_on_minimum_delay': 'int',
         'projects': 'list[Project]',
         'reachable': 'bool',
@@ -99,6 +101,7 @@ class VirtualizationRealm(object):
         'admin_users': 'adminUsers',
         'allocated': 'allocated',
         'cidr': 'cidr',
+        'connected_cloud': 'connectedCloud',
         'cloud': 'cloud',
         'created_at': 'createdAt',
         'date_last_reachable': 'dateLastReachable',
@@ -115,6 +118,7 @@ class VirtualizationRealm(object):
         'password': 'password',
         'power_on_delay_base': 'powerOnDelayBase',
         'power_on_initial_delay_base': 'powerOnInitialDelayBase',
+        'power_on_maximum_delay': 'powerOnMaximumDelay',
         'power_on_minimum_delay': 'powerOnMinimumDelay',
         'projects': 'projects',
         'reachable': 'reachable',
@@ -139,7 +143,7 @@ class VirtualizationRealm(object):
         'AzureVirtualizationRealm': 'AzureVirtualizationRealm'
     }
 
-    def __init__(self, virtualization_realm_type=None, access_point=None, account_id=None, active_virtual_machines=None, networks=None, admin_users=None, allocated=None, cidr=None, cloud=None, created_at=None, date_last_reachable=None, default_windows_domain_name=None, description=None, id=None, local_storage_name=None, maximum_num_cpus=None, maximum_num_gpus=None, maximum_ram_in_megabytes=None, maximum_storage_in_megabytes=None, maximum_virtual_machines=None, name=None, password=None, power_on_delay_base=None, power_on_initial_delay_base=None, power_on_minimum_delay=None, projects=None, reachable=None, remote_access_config=None, remote_access_deployment_id=None, remote_access_deployment_run_status=None, remote_access_status=None, state=None, supported_features=None, template_registrations=None, templates=None, template_subscriptions=None, updated_at=None, username=None, zone_count=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, virtualization_realm_type=None, access_point=None, account_id=None, active_virtual_machines=None, networks=None, admin_users=None, allocated=None, cidr=None, connected_cloud=None, cloud=None, created_at=None, date_last_reachable=None, default_windows_domain_name=None, description=None, id=None, local_storage_name=None, maximum_num_cpus=None, maximum_num_gpus=None, maximum_ram_in_megabytes=None, maximum_storage_in_megabytes=None, maximum_virtual_machines=None, name=None, password=None, power_on_delay_base=None, power_on_initial_delay_base=None, power_on_maximum_delay=None, power_on_minimum_delay=None, projects=None, reachable=None, remote_access_config=None, remote_access_deployment_id=None, remote_access_deployment_run_status=None, remote_access_status=None, state=None, supported_features=None, template_registrations=None, templates=None, template_subscriptions=None, updated_at=None, username=None, zone_count=None, local_vars_configuration=None):  # noqa: E501
         """VirtualizationRealm - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -153,6 +157,7 @@ class VirtualizationRealm(object):
         self._admin_users = None
         self._allocated = None
         self._cidr = None
+        self._connected_cloud = None
         self._cloud = None
         self._created_at = None
         self._date_last_reachable = None
@@ -169,6 +174,7 @@ class VirtualizationRealm(object):
         self._password = None
         self._power_on_delay_base = None
         self._power_on_initial_delay_base = None
+        self._power_on_maximum_delay = None
         self._power_on_minimum_delay = None
         self._projects = None
         self._reachable = None
@@ -200,6 +206,8 @@ class VirtualizationRealm(object):
         if allocated is not None:
             self.allocated = allocated
         self.cidr = cidr
+        if connected_cloud is not None:
+            self.connected_cloud = connected_cloud
         if cloud is not None:
             self.cloud = cloud
         if created_at is not None:
@@ -229,6 +237,8 @@ class VirtualizationRealm(object):
             self.power_on_delay_base = power_on_delay_base
         if power_on_initial_delay_base is not None:
             self.power_on_initial_delay_base = power_on_initial_delay_base
+        if power_on_maximum_delay is not None:
+            self.power_on_maximum_delay = power_on_maximum_delay
         if power_on_minimum_delay is not None:
             self.power_on_minimum_delay = power_on_minimum_delay
         if projects is not None:
@@ -442,6 +452,27 @@ class VirtualizationRealm(object):
             raise ValueError("Invalid value for `cidr`, length must be greater than or equal to `10`")  # noqa: E501
 
         self._cidr = cidr
+
+    @property
+    def connected_cloud(self):
+        """Gets the connected_cloud of this VirtualizationRealm.  # noqa: E501
+
+
+        :return: The connected_cloud of this VirtualizationRealm.  # noqa: E501
+        :rtype: Cloud
+        """
+        return self._connected_cloud
+
+    @connected_cloud.setter
+    def connected_cloud(self, connected_cloud):
+        """Sets the connected_cloud of this VirtualizationRealm.
+
+
+        :param connected_cloud: The connected_cloud of this VirtualizationRealm.  # noqa: E501
+        :type: Cloud
+        """
+
+        self._connected_cloud = connected_cloud
 
     @property
     def cloud(self):
@@ -801,6 +832,30 @@ class VirtualizationRealm(object):
         self._power_on_initial_delay_base = power_on_initial_delay_base
 
     @property
+    def power_on_maximum_delay(self):
+        """Gets the power_on_maximum_delay of this VirtualizationRealm.  # noqa: E501
+
+
+        :return: The power_on_maximum_delay of this VirtualizationRealm.  # noqa: E501
+        :rtype: int
+        """
+        return self._power_on_maximum_delay
+
+    @power_on_maximum_delay.setter
+    def power_on_maximum_delay(self, power_on_maximum_delay):
+        """Sets the power_on_maximum_delay of this VirtualizationRealm.
+
+
+        :param power_on_maximum_delay: The power_on_maximum_delay of this VirtualizationRealm.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                power_on_maximum_delay is not None and power_on_maximum_delay < 0):  # noqa: E501
+            raise ValueError("Invalid value for `power_on_maximum_delay`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._power_on_maximum_delay = power_on_maximum_delay
+
+    @property
     def power_on_minimum_delay(self):
         """Gets the power_on_minimum_delay of this VirtualizationRealm.  # noqa: E501
 
@@ -926,7 +981,7 @@ class VirtualizationRealm(object):
         :param remote_access_deployment_run_status: The remote_access_deployment_run_status of this VirtualizationRealm.  # noqa: E501
         :type: str
         """
-        allowed_values = ["UNKNOWN", "SCHEDULED", "SUBMITTED", "PROVISIONING_HOSTS", "HOSTS_PROVISIONED", "RESERVED", "RELEASE_REQUESTED", "RELEASING", "TESTING", "TESTED", "COMPLETED", "CANCELED"]  # noqa: E501
+        allowed_values = ["UNKNOWN", "SCHEDULED", "SUBMITTED", "PROVISIONING_HOSTS", "HOSTS_PROVISIONED", "RESERVED", "RELEASE_REQUESTED", "RELEASING", "TESTING", "TESTED", "REDEPLOYING_HOSTS", "COMPLETED", "CANCELED"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and remote_access_deployment_run_status not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `remote_access_deployment_run_status` ({0}), must be one of {1}"  # noqa: E501
@@ -1007,7 +1062,7 @@ class VirtualizationRealm(object):
         :param supported_features: The supported_features of this VirtualizationRealm.  # noqa: E501
         :type: list[str]
         """
-        allowed_values = ["USER_PASSWORD_UPDATE", "VIRT_MACHINE_NESTED_VIRTUALIZATION", "VIRT_MACHINE_SNAPSHOT", "VIRT_MACHINE_SUSPEND", "VIRT_REALM_ADD_NETWORK", "VIRT_REALM_ALLOCATION", "VIRT_REALM_APPLY_SECURITY", "VIRT_REALM_DEALLOCATION", "VIRT_REALM_DELETE_NETWORK", "VIRT_REALM_INSTANCE_TYPE_DRIVEN", "VIRT_REALM_REDEPLOY_BOUNDARY_PROTECTION", "VIRT_REALM_REFRESH_BOUNDARY_PROTECTION"]  # noqa: E501
+        allowed_values = ["USER_PASSWORD_UPDATE", "VIRT_MACHINE_NESTED_VIRTUALIZATION", "VIRT_MACHINE_REPROVISIONING", "VIRT_MACHINE_SNAPSHOT", "VIRT_MACHINE_SUSPEND", "VIRT_REALM_ADD_NETWORK", "VIRT_REALM_ALLOCATION", "VIRT_REALM_APPLY_SECURITY", "VIRT_REALM_DEALLOCATION", "VIRT_REALM_DELETE_NETWORK", "VIRT_REALM_INSTANCE_TYPE_DRIVEN", "VIRT_REALM_REDEPLOY_BOUNDARY_PROTECTION", "VIRT_REALM_REFRESH_BOUNDARY_PROTECTION"]  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 not set(supported_features).issubset(set(allowed_values))):  # noqa: E501
             raise ValueError(

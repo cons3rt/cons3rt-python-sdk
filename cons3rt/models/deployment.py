@@ -63,7 +63,7 @@ class Deployment(object):
         'visibility': 'str',
         'impact_level': 'str',
         'categories': 'list[Category]',
-        'scenarios': 'list[Scenario]',
+        'scenarios': 'list[DeploymentScenario]',
         'test_bundles': 'list[TestBundle]',
         'deployment_hosts': 'list[DeploymentHost]'
     }
@@ -466,7 +466,7 @@ class Deployment(object):
 
 
         :return: The scenarios of this Deployment.  # noqa: E501
-        :rtype: list[Scenario]
+        :rtype: list[DeploymentScenario]
         """
         return self._scenarios
 
@@ -476,7 +476,7 @@ class Deployment(object):
 
 
         :param scenarios: The scenarios of this Deployment.  # noqa: E501
-        :type: list[Scenario]
+        :type: list[DeploymentScenario]
         """
 
         self._scenarios = scenarios

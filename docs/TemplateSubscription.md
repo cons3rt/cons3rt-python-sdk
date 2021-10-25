@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**allow_gpu_usage** | **bool** |  | [optional] 
 **id** | **int** |  | [optional] 
 **max_num_cpus** | **int** |  | [optional] 
 **max_ram_in_megabytes** | **int** |  | [optional] 

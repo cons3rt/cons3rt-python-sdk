@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**get_file_content**](UploadApi.md#get_file_content) | **GET** /api/upload/content | Get File Content
 [**get_file_object**](UploadApi.md#get_file_object) | **GET** /api/upload | Download File
 [**upload_file1**](UploadApi.md#upload_file1) | **POST** /api/upload | Upload File
-[**upload_file_to_bucket**](UploadApi.md#upload_file_to_bucket) | **POST** /api/clouds/{id}/buckets/{bucket_id} | Upload File to Bucket
+[**upload_file_to_bucket**](UploadApi.md#upload_file_to_bucket) | **POST** /api/buckets/{id} | Upload File to Bucket
 
 
 # **get_file_content**
@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_file_to_bucket**
-> int upload_file_to_bucket(id, bucket_id, file=file, filename=filename)
+> int upload_file_to_bucket(id, file=file, filename=filename)
 
 Upload File to Bucket
 
@@ -407,14 +407,13 @@ configuration.key_password='keyfile_password' # optional
 with cons3rt.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cons3rt.UploadApi(api_client)
-    id = 'id_example' # str | ID of the cloud
-bucket_id = 'bucket_id_example' # str | ID of bucket
+    id = 'id_example' # str | ID of bucket
 file = '/path/to/file' # list[file] |  (optional)
 filename = 'filename_example' # str |  (optional)
 
     try:
         # Upload File to Bucket
-        api_response = api_instance.upload_file_to_bucket(id, bucket_id, file=file, filename=filename)
+        api_response = api_instance.upload_file_to_bucket(id, file=file, filename=filename)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling UploadApi->upload_file_to_bucket: %s\n" % e)
@@ -451,14 +450,13 @@ configuration.key_password='keyfile_password' # optional
 with cons3rt.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cons3rt.UploadApi(api_client)
-    id = 'id_example' # str | ID of the cloud
-bucket_id = 'bucket_id_example' # str | ID of bucket
+    id = 'id_example' # str | ID of bucket
 file = '/path/to/file' # list[file] |  (optional)
 filename = 'filename_example' # str |  (optional)
 
     try:
         # Upload File to Bucket
-        api_response = api_instance.upload_file_to_bucket(id, bucket_id, file=file, filename=filename)
+        api_response = api_instance.upload_file_to_bucket(id, file=file, filename=filename)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling UploadApi->upload_file_to_bucket: %s\n" % e)
@@ -468,8 +466,7 @@ filename = 'filename_example' # str |  (optional)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| ID of the cloud | 
- **bucket_id** | **str**| ID of bucket | 
+ **id** | **str**| ID of bucket | 
  **file** | **list[file]**|  | [optional] 
  **filename** | **str**|  | [optional] 
 

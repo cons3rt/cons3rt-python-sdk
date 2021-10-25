@@ -650,7 +650,7 @@ class FullDeploymentRun(object):
         :param deployment_run_status: The deployment_run_status of this FullDeploymentRun.  # noqa: E501
         :type: str
         """
-        allowed_values = ["UNKNOWN", "SCHEDULED", "SUBMITTED", "PROVISIONING_HOSTS", "HOSTS_PROVISIONED", "RESERVED", "RELEASE_REQUESTED", "RELEASING", "TESTING", "TESTED", "COMPLETED", "CANCELED"]  # noqa: E501
+        allowed_values = ["UNKNOWN", "SCHEDULED", "SUBMITTED", "PROVISIONING_HOSTS", "HOSTS_PROVISIONED", "RESERVED", "RELEASE_REQUESTED", "RELEASING", "TESTING", "TESTED", "REDEPLOYING_HOSTS", "COMPLETED", "CANCELED"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and deployment_run_status not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `deployment_run_status` ({0}), must be one of {1}"  # noqa: E501
@@ -698,7 +698,7 @@ class FullDeploymentRun(object):
         :param fap_status: The fap_status of this FullDeploymentRun.  # noqa: E501
         :type: str
         """
-        allowed_values = ["REQUESTED", "BUILDING_HOSTSET", "BUILDING_HOSTSET_ERROR", "HOSTSET_BUILT_POWERED_OFF", "POWERING_ON", "POWERING_ON_ERROR", "POWERED_ON", "AWAITING_AGENT_CHECK_IN", "AGENT_CHECK_IN_ERROR", "AGENT_CHECK_IN_SUCCESS", "BUILDING_SOURCE", "SOURCE_BUILT", "BUILDING_SOURCE_ERROR", "BUILDING_SYSTEMS", "BUILDING_SYSTEMS_ERROR", "SYSTEMS_BUILT", "BUILDING_SCENARIO", "BUILDING_SCENARIO_ERROR", "SCENARIO_BUILT", "REBOOTING", "REBOOTING_ERROR", "RESERVED", "RELEASE_REQUESTED", "RELEASING", "RELEASING_SCENARIO_ERROR", "COMPLETE", "UNKNOWN", "CANCELED", "INVALID_STATE_ERROR", "FAP_SERVICE_COMMUNICATIONS_ERROR", "INVALID_REQUEST_ERROR"]  # noqa: E501
+        allowed_values = ["REQUESTED", "BUILDING_HOSTSET", "BUILDING_HOSTSET_ERROR", "HOSTSET_BUILT_POWERED_OFF", "POWERING_ON", "POWERING_ON_ERROR", "POWERED_ON", "AWAITING_AGENT_CHECK_IN", "AGENT_CHECK_IN_ERROR", "AGENT_CHECK_IN_SUCCESS", "BUILDING_SOURCE", "SOURCE_BUILT", "BUILDING_SOURCE_ERROR", "BUILDING_SYSTEMS", "BUILDING_SYSTEMS_ERROR", "SYSTEMS_BUILT", "BUILDING_SCENARIO", "BUILDING_SCENARIO_ERROR", "SCENARIO_BUILT", "REBOOTING", "REBOOTING_ERROR", "RESERVED", "REDEPLOYING_HOSTS", "REDEPLOYING_HOSTS_ERROR", "RELEASE_REQUESTED", "RELEASING", "RELEASING_SCENARIO_ERROR", "COMPLETE", "UNKNOWN", "CANCELED", "INVALID_STATE_ERROR", "FAP_SERVICE_COMMUNICATIONS_ERROR", "INVALID_REQUEST_ERROR", "REDEPLOYING_HOSTS", "REDEPLOYING_HOSTS_ERROR"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and fap_status not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `fap_status` ({0}), must be one of {1}"  # noqa: E501

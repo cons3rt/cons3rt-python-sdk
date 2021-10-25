@@ -926,7 +926,7 @@ class FullVirtualizationRealm(object):
         :param remote_access_deployment_run_status: The remote_access_deployment_run_status of this FullVirtualizationRealm.  # noqa: E501
         :type: str
         """
-        allowed_values = ["UNKNOWN", "SCHEDULED", "SUBMITTED", "PROVISIONING_HOSTS", "HOSTS_PROVISIONED", "RESERVED", "RELEASE_REQUESTED", "RELEASING", "TESTING", "TESTED", "COMPLETED", "CANCELED"]  # noqa: E501
+        allowed_values = ["UNKNOWN", "SCHEDULED", "SUBMITTED", "PROVISIONING_HOSTS", "HOSTS_PROVISIONED", "RESERVED", "RELEASE_REQUESTED", "RELEASING", "TESTING", "TESTED", "REDEPLOYING_HOSTS", "COMPLETED", "CANCELED"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and remote_access_deployment_run_status not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `remote_access_deployment_run_status` ({0}), must be one of {1}"  # noqa: E501
@@ -980,7 +980,7 @@ class FullVirtualizationRealm(object):
         :param supported_features: The supported_features of this FullVirtualizationRealm.  # noqa: E501
         :type: list[str]
         """
-        allowed_values = ["USER_PASSWORD_UPDATE", "VIRT_MACHINE_NESTED_VIRTUALIZATION", "VIRT_MACHINE_SNAPSHOT", "VIRT_MACHINE_SUSPEND", "VIRT_REALM_ADD_NETWORK", "VIRT_REALM_ALLOCATION", "VIRT_REALM_APPLY_SECURITY", "VIRT_REALM_DEALLOCATION", "VIRT_REALM_DELETE_NETWORK", "VIRT_REALM_INSTANCE_TYPE_DRIVEN", "VIRT_REALM_REDEPLOY_BOUNDARY_PROTECTION", "VIRT_REALM_REFRESH_BOUNDARY_PROTECTION"]  # noqa: E501
+        allowed_values = ["USER_PASSWORD_UPDATE", "VIRT_MACHINE_NESTED_VIRTUALIZATION", "VIRT_MACHINE_REPROVISIONING", "VIRT_MACHINE_SNAPSHOT", "VIRT_MACHINE_SUSPEND", "VIRT_REALM_ADD_NETWORK", "VIRT_REALM_ALLOCATION", "VIRT_REALM_APPLY_SECURITY", "VIRT_REALM_DEALLOCATION", "VIRT_REALM_DELETE_NETWORK", "VIRT_REALM_INSTANCE_TYPE_DRIVEN", "VIRT_REALM_REDEPLOY_BOUNDARY_PROTECTION", "VIRT_REALM_REFRESH_BOUNDARY_PROTECTION"]  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 not set(supported_features).issubset(set(allowed_values))):  # noqa: E501
             raise ValueError(

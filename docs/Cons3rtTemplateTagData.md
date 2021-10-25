@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**cons3rt_site_id** | **str** |  | [optional] 
 **uuid** | **str** |  | [optional] 
 **virt_realm_template_name** | **str** |  | [optional] 
 **registered_in_this_environment** | **bool** |  | [optional] 

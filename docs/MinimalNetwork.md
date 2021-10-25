@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
 **isolated** | **bool** |  | [optional] 
+**boundary_ip_address** | **str** |  | [optional] 
 **cidr** | **str** |  | [optional] 
 **gateway** | **str** |  | [optional] 
 **identifier** | **str** |  | [optional] 

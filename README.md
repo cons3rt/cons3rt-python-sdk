@@ -131,31 +131,23 @@ Class | Method | HTTP request | Description
 *CloudsApi* | [**add_project**](docs/CloudsApi.md#add_project) | **PUT** /api/virtualizationrealms/{id}/projects | Assign Project
 *CloudsApi* | [**allocate_virtualization_realm**](docs/CloudsApi.md#allocate_virtualization_realm) | **POST** /api/clouds/{id}/virtualizationrealms/allocate | Allocate Virtualization Realm
 *CloudsApi* | [**assign_managing_team**](docs/CloudsApi.md#assign_managing_team) | **PUT** /api/clouds/{id}/virtualizationrealms/{virtualizationRealmId}/team | Assign Virtualization Realm-managing Team
-*CloudsApi* | [**create_bucket**](docs/CloudsApi.md#create_bucket) | **POST** /api/clouds/{id}/buckets | 
 *CloudsApi* | [**deallocate_virt_realm**](docs/CloudsApi.md#deallocate_virt_realm) | **DELETE** /api/clouds/{id}/virtualizationrealms/allocate | De-allocate Virtualization Realm
-*CloudsApi* | [**delete_bucket**](docs/CloudsApi.md#delete_bucket) | **DELETE** /api/clouds/{id}/buckets/{bucket_id} | 
 *CloudsApi* | [**delete_cloud**](docs/CloudsApi.md#delete_cloud) | **DELETE** /api/clouds/{id} | Delete Cloud
-*CloudsApi* | [**download_file_from_bucket**](docs/CloudsApi.md#download_file_from_bucket) | **GET** /api/clouds/{id}/buckets/{bucket_id}/download | Download File From Bucket
 *CloudsApi* | [**enable_maintence_mode**](docs/CloudsApi.md#enable_maintence_mode) | **PUT** /api/clouds/{id}/maintenance | Update Maintenance Mode
-*CloudsApi* | [**get_bucket**](docs/CloudsApi.md#get_bucket) | **GET** /api/clouds/{id}/buckets/{bucket_id} | 
-*CloudsApi* | [**get_bucket_listing**](docs/CloudsApi.md#get_bucket_listing) | **GET** /api/clouds/{id}/buckets/{bucket_id}/listing | 
 *CloudsApi* | [**get_cloud**](docs/CloudsApi.md#get_cloud) | **GET** /api/clouds/{id} | Retrieve Cloud
 *CloudsApi* | [**get_cloud_resources**](docs/CloudsApi.md#get_cloud_resources) | **GET** /api/clouds/{id}/resources | Retrieve Cloud Resources
 *CloudsApi* | [**get_clouds**](docs/CloudsApi.md#get_clouds) | **GET** /api/clouds | List Clouds
 *CloudsApi* | [**get_default_network**](docs/CloudsApi.md#get_default_network) | **GET** /api/clouds/defaultnetwork | Retrieve Default Network
 *CloudsApi* | [**get_edge_gateway_i_ps**](docs/CloudsApi.md#get_edge_gateway_i_ps) | **GET** /api/clouds/{id}/edgegateways | List Edge Gateways
-*CloudsApi* | [**list_buckets**](docs/CloudsApi.md#list_buckets) | **GET** /api/clouds/{id}/buckets | 
 *CloudsApi* | [**list_virt_realms_in_cloud**](docs/CloudsApi.md#list_virt_realms_in_cloud) | **GET** /api/clouds/{id}/virtualizationrealms | List Virtualization Realms
 *CloudsApi* | [**register_cloud**](docs/CloudsApi.md#register_cloud) | **POST** /api/clouds | Create Cloud
 *CloudsApi* | [**register_virtualization_realm**](docs/CloudsApi.md#register_virtualization_realm) | **POST** /api/clouds/{id}/virtualizationrealms | Register Virtualization Realm
 *CloudsApi* | [**remove_virt_realm**](docs/CloudsApi.md#remove_virt_realm) | **DELETE** /api/clouds/{id}/virtualizationrealms | Unregister Virtualization Realm
 *CloudsApi* | [**unassign_managing_team**](docs/CloudsApi.md#unassign_managing_team) | **DELETE** /api/clouds/{id}/virtualizationrealms/{virtualizationRealmId}/team | Unassign Manager from Team
-*CloudsApi* | [**update_bucket**](docs/CloudsApi.md#update_bucket) | **PUT** /api/clouds/{id}/buckets/{bucket_id} | 
 *CloudsApi* | [**update_cloud**](docs/CloudsApi.md#update_cloud) | **PUT** /api/clouds/{id} | Update Cloud Content
 *CloudsApi* | [**update_virt_realm**](docs/CloudsApi.md#update_virt_realm) | **PUT** /api/clouds/{id}/virtualizationrealms | Update Virtualization Realm
 *CloudsApi* | [**update_virtualization_realm**](docs/CloudsApi.md#update_virtualization_realm) | **PUT** /api/virtualizationrealms/{id} | Update Virtualization Realm
 *CloudsApi* | [**update_virtualization_realm_maximum_impact_level**](docs/CloudsApi.md#update_virtualization_realm_maximum_impact_level) | **PUT** /api/clouds/{id}/impactlevel | Update Impact Level
-*CloudsApi* | [**upload_file_to_bucket**](docs/CloudsApi.md#upload_file_to_bucket) | **POST** /api/clouds/{id}/buckets/{bucket_id} | Upload File to Bucket
 *CompositionsApi* | [**delete_composition**](docs/CompositionsApi.md#delete_composition) | **DELETE** /api/compositions/{id} | Delete Composition
 *CompositionsApi* | [**get_composition**](docs/CompositionsApi.md#get_composition) | **GET** /api/compositions/{id} | Retrieve Composition
 *CompositionsApi* | [**list_compositions**](docs/CompositionsApi.md#list_compositions) | **GET** /api/compositions | List all Compositions
@@ -166,7 +158,6 @@ Class | Method | HTTP request | Description
 *ContainerAssetsApi* | [**add_trusted_project**](docs/ContainerAssetsApi.md#add_trusted_project) | **PUT** /api/assets/{id}/addtrustedproject | Assign Trusted Project to Asset
 *ContainerAssetsApi* | [**delete_asset**](docs/ContainerAssetsApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete asset
 *ContainerAssetsApi* | [**download**](docs/ContainerAssetsApi.md#download) | **GET** /api/assets/{id}/download | Download Asset
-*ContainerAssetsApi* | [**download_file_from_bucket**](docs/ContainerAssetsApi.md#download_file_from_bucket) | **GET** /api/clouds/{id}/buckets/{bucket_id}/download | Download File From Bucket
 *ContainerAssetsApi* | [**get_container**](docs/ContainerAssetsApi.md#get_container) | **GET** /api/containers/{id} | Retrieve Container Asset
 *ContainerAssetsApi* | [**get_container_assets**](docs/ContainerAssetsApi.md#get_container_assets) | **GET** /api/containers | List all Containers
 *ContainerAssetsApi* | [**get_container_assets_expanded**](docs/ContainerAssetsApi.md#get_container_assets_expanded) | **GET** /api/containers/expanded | List all Containers, including Project Assets
@@ -174,6 +165,7 @@ Class | Method | HTTP request | Description
 *ContainerAssetsApi* | [**list_dependent_assets**](docs/ContainerAssetsApi.md#list_dependent_assets) | **GET** /api/assets/{id}/dependent | List all Dependent Assets
 *ContainerAssetsApi* | [**remove_trusted_project**](docs/ContainerAssetsApi.md#remove_trusted_project) | **PUT** /api/assets/{id}/removetrustedproject | Unassign Trusted Project from Asset
 *ContainerAssetsApi* | [**submit_asset_to_submission_service**](docs/ContainerAssetsApi.md#submit_asset_to_submission_service) | **POST** /api/containers/{id}/submit/{submission_service_id} | Submit Container to the Project&#39;s Submission Service
+*ContainerAssetsApi* | [**submit_bucket_resource_to_submission_service**](docs/ContainerAssetsApi.md#submit_bucket_resource_to_submission_service) | **POST** /api/buckets/{id}/submit/{submission_service_id} | Submit Bucket Resource to the Project&#39;s Submission Service
 *ContainerAssetsApi* | [**update_asset**](docs/ContainerAssetsApi.md#update_asset) | **PUT** /api/assets/{id}/update | Update Asset
 *ContainerAssetsApi* | [**update_asset_content**](docs/ContainerAssetsApi.md#update_asset_content) | **PUT** /api/assets/{id}/updatecontent | Update Asset Content
 *ContainerAssetsApi* | [**update_asset_state**](docs/ContainerAssetsApi.md#update_asset_state) | **PUT** /api/assets/{id}/updatestate | Update State
@@ -182,7 +174,10 @@ Class | Method | HTTP request | Description
 *ContainerAssetsApi* | [**update_instance_limit**](docs/ContainerAssetsApi.md#update_instance_limit) | **PUT** /api/assets/{id}/limit | Update Instance Limit
 *ContainerAssetsApi* | [**update_offline_status**](docs/ContainerAssetsApi.md#update_offline_status) | **PUT** /api/assets/{id}/offline | Update Offline Status
 *DeploymentRunsApi* | [**add_category_to_deployment_run**](docs/DeploymentRunsApi.md#add_category_to_deployment_run) | **PUT** /api/categories/{id}/run | Assign Category to Run
+*DeploymentRunsApi* | [**create_identity**](docs/DeploymentRunsApi.md#create_identity) | **POST** /api/drs/{id}/host/{hostid}/identity | Create a host identity
 *DeploymentRunsApi* | [**delete_deployment_run**](docs/DeploymentRunsApi.md#delete_deployment_run) | **DELETE** /api/drs/{id} | Delete Deployment Run
+*DeploymentRunsApi* | [**delete_identity**](docs/DeploymentRunsApi.md#delete_identity) | **DELETE** /api/drs/{id}/host/{hostid}/identity | Delete host identity
+*DeploymentRunsApi* | [**delete_identity_by_id**](docs/DeploymentRunsApi.md#delete_identity_by_id) | **DELETE** /api/drs/{id}/host/{hostid}/identity/{username} | Deletes identity for specified user
 *DeploymentRunsApi* | [**download_deployment_run_test_report**](docs/DeploymentRunsApi.md#download_deployment_run_test_report) | **GET** /api/drs/{id}/downloadreport | Download Report
 *DeploymentRunsApi* | [**download_host**](docs/DeploymentRunsApi.md#download_host) | **GET** /api/drs/{id}/downloadhost | Download Host
 *DeploymentRunsApi* | [**get_deployment_run**](docs/DeploymentRunsApi.md#get_deployment_run) | **GET** /api/drs/{id} | Retrieve Deployment Run
@@ -193,9 +188,12 @@ Class | Method | HTTP request | Description
 *DeploymentRunsApi* | [**get_host_access**](docs/DeploymentRunsApi.md#get_host_access) | **GET** /api/drs/{id}/host/{hostid}/access | List Host Access Logs
 *DeploymentRunsApi* | [**get_host_configuration_metrics**](docs/DeploymentRunsApi.md#get_host_configuration_metrics) | **GET** /api/projects/{id}/metrics/hostconfiguration | Retrieve Metrics
 *DeploymentRunsApi* | [**get_host_instance_types**](docs/DeploymentRunsApi.md#get_host_instance_types) | **GET** /api/drs/{id}/host/{hostid}/resize | List available instance types for host
+*DeploymentRunsApi* | [**get_identities**](docs/DeploymentRunsApi.md#get_identities) | **GET** /api/drs/{id}/host/{hostid}/identities | Get Host Identities
+*DeploymentRunsApi* | [**get_identity**](docs/DeploymentRunsApi.md#get_identity) | **GET** /api/drs/{id}/host/{hostid}/identity | Get Host Identity For User
 *DeploymentRunsApi* | [**perform_host_action**](docs/DeploymentRunsApi.md#perform_host_action) | **PUT** /api/drs/{id}/hostaction | Execute Host Action
 *DeploymentRunsApi* | [**publish_deployment_run**](docs/DeploymentRunsApi.md#publish_deployment_run) | **POST** /api/drs/{id}/publish | Publish Deployment Run
 *DeploymentRunsApi* | [**redeploy_container_asset**](docs/DeploymentRunsApi.md#redeploy_container_asset) | **PUT** /api/drs/{id}/host/{hostid}/container | Re-deploy Container Asset
+*DeploymentRunsApi* | [**redeploy_deployment_run_hosts**](docs/DeploymentRunsApi.md#redeploy_deployment_run_hosts) | **PUT** /api/drs/{id}/redeployhosts | Redeploy Deployment Run Hosts
 *DeploymentRunsApi* | [**relaunch_deployment_run**](docs/DeploymentRunsApi.md#relaunch_deployment_run) | **PUT** /api/drs/{id}/rerun | Relaunch Deployment Run
 *DeploymentRunsApi* | [**release_deployment_run**](docs/DeploymentRunsApi.md#release_deployment_run) | **PUT** /api/drs/{id}/release | Release Deployment Run
 *DeploymentRunsApi* | [**remove_category_from_deployment_run**](docs/DeploymentRunsApi.md#remove_category_from_deployment_run) | **DELETE** /api/categories/{id}/run | Unassign Category from deployment run
@@ -219,7 +217,6 @@ Class | Method | HTTP request | Description
 *DeploymentsApi* | [**get_deployments**](docs/DeploymentsApi.md#get_deployments) | **GET** /api/deployments | List Deployments
 *DeploymentsApi* | [**get_deployments_expanded**](docs/DeploymentsApi.md#get_deployments_expanded) | **GET** /api/deployments/expanded | List all Deployments, including Project Assets
 *DeploymentsApi* | [**get_valid_networks_for_virtualization_realm**](docs/DeploymentsApi.md#get_valid_networks_for_virtualization_realm) | **GET** /api/deployments/{id}/networks/{virtualizationRealmId} | List Virtualization Realm Networks
-*DeploymentsApi* | [**itar_restrict_asset**](docs/DeploymentsApi.md#itar_restrict_asset) | **PUT** /api/assets/{id}/setitar | Set Asset Export Restriction
 *DeploymentsApi* | [**launch_deployment**](docs/DeploymentsApi.md#launch_deployment) | **POST** /api/deployments/{id}/launch | Launch Deployment
 *DeploymentsApi* | [**list_dependent_assets**](docs/DeploymentsApi.md#list_dependent_assets) | **GET** /api/assets/{id}/dependent | List all Dependent Assets
 *DeploymentsApi* | [**list_options**](docs/DeploymentsApi.md#list_options) | **GET** /api/deployments/{id}/options | List Run Options
@@ -233,6 +230,12 @@ Class | Method | HTTP request | Description
 *DeploymentsApi* | [**update_impact_level**](docs/DeploymentsApi.md#update_impact_level) | **PUT** /api/assets/{id}/impactlevel | Update Impact Level
 *DeploymentsApi* | [**update_instance_limit**](docs/DeploymentsApi.md#update_instance_limit) | **PUT** /api/assets/{id}/limit | Update Instance Limit
 *DeploymentsApi* | [**update_offline_status**](docs/DeploymentsApi.md#update_offline_status) | **PUT** /api/assets/{id}/offline | Update Offline Status
+*DownloadApi* | [**download_file_from_bucket**](docs/DownloadApi.md#download_file_from_bucket) | **GET** /api/buckets/{id}/download | Download File From Bucket
+*IdentitiesApi* | [**create_identity**](docs/IdentitiesApi.md#create_identity) | **POST** /api/drs/{id}/host/{hostid}/identity | Create a host identity
+*IdentitiesApi* | [**delete_identity**](docs/IdentitiesApi.md#delete_identity) | **DELETE** /api/drs/{id}/host/{hostid}/identity | Delete host identity
+*IdentitiesApi* | [**delete_identity_by_id**](docs/IdentitiesApi.md#delete_identity_by_id) | **DELETE** /api/drs/{id}/host/{hostid}/identity/{username} | Deletes identity for specified user
+*IdentitiesApi* | [**get_identities**](docs/IdentitiesApi.md#get_identities) | **GET** /api/drs/{id}/host/{hostid}/identities | Get Host Identities
+*IdentitiesApi* | [**get_identity**](docs/IdentitiesApi.md#get_identity) | **GET** /api/drs/{id}/host/{hostid}/identity | Get Host Identity For User
 *ImportApi* | [**upload_file**](docs/ImportApi.md#upload_file) | **POST** /api/import | Import a New Asset
 *ProjectsApi* | [**add_project_member**](docs/ProjectsApi.md#add_project_member) | **PUT** /api/projects/{id}/members | Assign Project Member
 *ProjectsApi* | [**add_role_to_project_member**](docs/ProjectsApi.md#add_role_to_project_member) | **PUT** /api/projects/{id}/members/roles | Assign Role to Member
@@ -267,7 +270,6 @@ Class | Method | HTTP request | Description
 *ScenariosApi* | [**get_scenario**](docs/ScenariosApi.md#get_scenario) | **GET** /api/scenarios/{id} | Retrieve Scenario
 *ScenariosApi* | [**get_scenarios**](docs/ScenariosApi.md#get_scenarios) | **GET** /api/scenarios | List Scenarios
 *ScenariosApi* | [**get_scenarios_expanded**](docs/ScenariosApi.md#get_scenarios_expanded) | **GET** /api/scenarios/expanded | List all Scenarios, including Project Assets
-*ScenariosApi* | [**itar_restrict_asset**](docs/ScenariosApi.md#itar_restrict_asset) | **PUT** /api/assets/{id}/setitar | Set Asset Export Restriction
 *ScenariosApi* | [**list_dependent_assets**](docs/ScenariosApi.md#list_dependent_assets) | **GET** /api/assets/{id}/dependent | List all Dependent Assets
 *ScenariosApi* | [**publish_scenario_to_composition**](docs/ScenariosApi.md#publish_scenario_to_composition) | **POST** /api/scenarios/{id}/publish | Publish Scenario
 *ScenariosApi* | [**quick_build**](docs/ScenariosApi.md#quick_build) | **PUT** /api/scenarios/{id}/launch | Launch Scenario
@@ -282,7 +284,6 @@ Class | Method | HTTP request | Description
 *SoftwareAssetsApi* | [**add_trusted_project**](docs/SoftwareAssetsApi.md#add_trusted_project) | **PUT** /api/assets/{id}/addtrustedproject | Assign Trusted Project to Asset
 *SoftwareAssetsApi* | [**delete_asset**](docs/SoftwareAssetsApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete asset
 *SoftwareAssetsApi* | [**download**](docs/SoftwareAssetsApi.md#download) | **GET** /api/assets/{id}/download | Download Asset
-*SoftwareAssetsApi* | [**download_file_from_bucket**](docs/SoftwareAssetsApi.md#download_file_from_bucket) | **GET** /api/clouds/{id}/buckets/{bucket_id}/download | Download File From Bucket
 *SoftwareAssetsApi* | [**get_software**](docs/SoftwareAssetsApi.md#get_software) | **GET** /api/software/{id} | Retrieve Software Asset
 *SoftwareAssetsApi* | [**get_software_set**](docs/SoftwareAssetsApi.md#get_software_set) | **GET** /api/software | List Software Assets
 *SoftwareAssetsApi* | [**get_software_set_expanded**](docs/SoftwareAssetsApi.md#get_software_set_expanded) | **GET** /api/software/expanded | List all Software Assets, including Project Assets
@@ -302,6 +303,16 @@ Class | Method | HTTP request | Description
 *SoftwareBundlesApi* | [**get_software_asset_bundle_expanded**](docs/SoftwareBundlesApi.md#get_software_asset_bundle_expanded) | **GET** /api/software/bundles/expanded | List all Software Bundles, including Project Assets
 *SoftwareBundlesApi* | [**get_software_bundle**](docs/SoftwareBundlesApi.md#get_software_bundle) | **GET** /api/software/bundles/{id} | Retrieve Software Bundle
 *SoftwareBundlesApi* | [**get_software_bundles**](docs/SoftwareBundlesApi.md#get_software_bundles) | **GET** /api/software/bundles | List Software Bundles
+*StorageApi* | [**create_bucket**](docs/StorageApi.md#create_bucket) | **POST** /api/buckets | Create Storage Bucket
+*StorageApi* | [**delete_bucket**](docs/StorageApi.md#delete_bucket) | **DELETE** /api/buckets/{id} | Delete Storage Buckets
+*StorageApi* | [**download_file_from_bucket**](docs/StorageApi.md#download_file_from_bucket) | **GET** /api/buckets/{id}/download | Download File From Bucket
+*StorageApi* | [**get_bucket**](docs/StorageApi.md#get_bucket) | **GET** /api/buckets/{id} | Retrieve Storage Buckets
+*StorageApi* | [**get_bucket_listing**](docs/StorageApi.md#get_bucket_listing) | **GET** /api/buckets/{id}/listing | List Bucket Contents
+*StorageApi* | [**list_available_clouds_for_buckets**](docs/StorageApi.md#list_available_clouds_for_buckets) | **GET** /api/buckets/clouds | List Clouds Available For Bucket Creation
+*StorageApi* | [**list_buckets**](docs/StorageApi.md#list_buckets) | **GET** /api/buckets | List Storage Buckets
+*StorageApi* | [**submit_bucket_resource_to_submission_service**](docs/StorageApi.md#submit_bucket_resource_to_submission_service) | **POST** /api/buckets/{id}/submit/{submission_service_id} | Submit Bucket Resource to the Project&#39;s Submission Service
+*StorageApi* | [**update_bucket**](docs/StorageApi.md#update_bucket) | **PUT** /api/buckets/{id} | Update Storage Buckets
+*StorageApi* | [**upload_file_to_bucket**](docs/StorageApi.md#upload_file_to_bucket) | **POST** /api/buckets/{id} | Upload File to Bucket
 *SystemAssetsApi* | [**create_system_asset**](docs/SystemAssetsApi.md#create_system_asset) | **POST** /api/systemassets | Create System Asset
 *SystemAssetsApi* | [**delete_system_asset**](docs/SystemAssetsApi.md#delete_system_asset) | **DELETE** /api/systemassets/{id} | Delete System Asset
 *SystemAssetsApi* | [**import_system_asset**](docs/SystemAssetsApi.md#import_system_asset) | **POST** /api/systemassets/{id}/import | Import System Asset
@@ -317,7 +328,6 @@ Class | Method | HTTP request | Description
 *SystemsApi* | [**get_system**](docs/SystemsApi.md#get_system) | **GET** /api/systems/{id} | Retrieve System
 *SystemsApi* | [**get_systems**](docs/SystemsApi.md#get_systems) | **GET** /api/systems | List Systems
 *SystemsApi* | [**get_systems_expanded**](docs/SystemsApi.md#get_systems_expanded) | **GET** /api/systems/expanded | List all Systems, including Project Assets
-*SystemsApi* | [**itar_restrict_asset**](docs/SystemsApi.md#itar_restrict_asset) | **PUT** /api/assets/{id}/setitar | Set Asset Export Restriction
 *SystemsApi* | [**list_dependent_assets**](docs/SystemsApi.md#list_dependent_assets) | **GET** /api/assets/{id}/dependent | List all Dependent Assets
 *SystemsApi* | [**quick_build1**](docs/SystemsApi.md#quick_build1) | **PUT** /api/systems/{id}/launch | Launch System
 *SystemsApi* | [**remove_trusted_project**](docs/SystemsApi.md#remove_trusted_project) | **PUT** /api/assets/{id}/removetrustedproject | Unassign Trusted Project from Asset
@@ -348,7 +358,6 @@ Class | Method | HTTP request | Description
 *TestAssetsApi* | [**add_trusted_project**](docs/TestAssetsApi.md#add_trusted_project) | **PUT** /api/assets/{id}/addtrustedproject | Assign Trusted Project to Asset
 *TestAssetsApi* | [**delete_asset**](docs/TestAssetsApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete asset
 *TestAssetsApi* | [**download**](docs/TestAssetsApi.md#download) | **GET** /api/assets/{id}/download | Download Asset
-*TestAssetsApi* | [**download_file_from_bucket**](docs/TestAssetsApi.md#download_file_from_bucket) | **GET** /api/clouds/{id}/buckets/{bucket_id}/download | Download File From Bucket
 *TestAssetsApi* | [**get_test_asset**](docs/TestAssetsApi.md#get_test_asset) | **GET** /api/testassets/{id} | Retrieve Test Asset
 *TestAssetsApi* | [**get_test_assets**](docs/TestAssetsApi.md#get_test_assets) | **GET** /api/testassets | List Test Assets
 *TestAssetsApi* | [**get_test_assets_expanded**](docs/TestAssetsApi.md#get_test_assets_expanded) | **GET** /api/testassets/expanded | List all Test Assets, including Project Assets
@@ -366,7 +375,7 @@ Class | Method | HTTP request | Description
 *UploadApi* | [**get_file_content**](docs/UploadApi.md#get_file_content) | **GET** /api/upload/content | Get File Content
 *UploadApi* | [**get_file_object**](docs/UploadApi.md#get_file_object) | **GET** /api/upload | Download File
 *UploadApi* | [**upload_file1**](docs/UploadApi.md#upload_file1) | **POST** /api/upload | Upload File
-*UploadApi* | [**upload_file_to_bucket**](docs/UploadApi.md#upload_file_to_bucket) | **POST** /api/clouds/{id}/buckets/{bucket_id} | Upload File to Bucket
+*UploadApi* | [**upload_file_to_bucket**](docs/UploadApi.md#upload_file_to_bucket) | **POST** /api/buckets/{id} | Upload File to Bucket
 *UsersApi* | [**create_user**](docs/UsersApi.md#create_user) | **POST** /api/users | Create a new user
 *UsersApi* | [**get_pending_users**](docs/UsersApi.md#get_pending_users) | **GET** /api/users/pending | List Pending Users
 *UsersApi* | [**get_users**](docs/UsersApi.md#get_users) | **GET** /api/users | List all Users
@@ -426,6 +435,7 @@ Class | Method | HTTP request | Description
  - [AbstractComponent](docs/AbstractComponent.md)
  - [AbstractCompositionStatus](docs/AbstractCompositionStatus.md)
  - [AbstractInstallation](docs/AbstractInstallation.md)
+ - [AbstractProviderClientConfiguration](docs/AbstractProviderClientConfiguration.md)
  - [AbstractRegisterCloudSpaceRequest](docs/AbstractRegisterCloudSpaceRequest.md)
  - [ActiveCompositionStatus](docs/ActiveCompositionStatus.md)
  - [ActiveCompositionStatusAllOf](docs/ActiveCompositionStatusAllOf.md)
@@ -442,6 +452,8 @@ Class | Method | HTTP request | Description
  - [Asset](docs/Asset.md)
  - [AwsClient](docs/AwsClient.md)
  - [AwsClientAllOf](docs/AwsClientAllOf.md)
+ - [AwsClientConfiguration](docs/AwsClientConfiguration.md)
+ - [AwsClientConfigurationAllOf](docs/AwsClientConfigurationAllOf.md)
  - [AwsCloud](docs/AwsCloud.md)
  - [AwsCloudAllOf](docs/AwsCloudAllOf.md)
  - [AwsCloudResources](docs/AwsCloudResources.md)
@@ -462,6 +474,8 @@ Class | Method | HTTP request | Description
  - [AzureRegisterCloudSpaceRequestAllOf](docs/AzureRegisterCloudSpaceRequestAllOf.md)
  - [AzureVirtualizationRealm](docs/AzureVirtualizationRealm.md)
  - [AzureVirtualizationRealmAllOf](docs/AzureVirtualizationRealmAllOf.md)
+ - [BaseCredentials](docs/BaseCredentials.md)
+ - [BaseIdentity](docs/BaseIdentity.md)
  - [BasicAppliance](docs/BasicAppliance.md)
  - [BasicAsset](docs/BasicAsset.md)
  - [BasicContainerAsset](docs/BasicContainerAsset.md)
@@ -484,6 +498,8 @@ Class | Method | HTTP request | Description
  - [Certificate](docs/Certificate.md)
  - [Cloud](docs/Cloud.md)
  - [CloudFeatures](docs/CloudFeatures.md)
+ - [CloudResourceAccessListing](docs/CloudResourceAccessListing.md)
+ - [CloudResourceObject](docs/CloudResourceObject.md)
  - [Composition](docs/Composition.md)
  - [CompositionHostOption](docs/CompositionHostOption.md)
  - [CompositionLaunchOptions](docs/CompositionLaunchOptions.md)
@@ -504,6 +520,7 @@ Class | Method | HTTP request | Description
  - [DeploymentHost](docs/DeploymentHost.md)
  - [DeploymentRunOptions](docs/DeploymentRunOptions.md)
  - [DeploymentRunOptionsForBindings](docs/DeploymentRunOptionsForBindings.md)
+ - [DeploymentScenario](docs/DeploymentScenario.md)
  - [Device](docs/Device.md)
  - [DeviceAllOf](docs/DeviceAllOf.md)
  - [Disk](docs/Disk.md)
@@ -529,6 +546,7 @@ Class | Method | HTTP request | Description
  - [FullDeployment](docs/FullDeployment.md)
  - [FullDeploymentAllOf](docs/FullDeploymentAllOf.md)
  - [FullDeploymentRun](docs/FullDeploymentRun.md)
+ - [FullDeploymentRunHost](docs/FullDeploymentRunHost.md)
  - [FullDevice](docs/FullDevice.md)
  - [FullDeviceAllOf](docs/FullDeviceAllOf.md)
  - [FullDisk](docs/FullDisk.md)
@@ -725,12 +743,15 @@ Class | Method | HTTP request | Description
  - [OpenStackCloudSpaceRequest](docs/OpenStackCloudSpaceRequest.md)
  - [OpenStackCloudSpaceRequestAllOf](docs/OpenStackCloudSpaceRequestAllOf.md)
  - [OpenStackVirtualizationRealm](docs/OpenStackVirtualizationRealm.md)
+ - [PathBasedSubmissionEndpoint](docs/PathBasedSubmissionEndpoint.md)
+ - [PathBasedSubmissionEndpointAllOf](docs/PathBasedSubmissionEndpointAllOf.md)
  - [PhysicalHost](docs/PhysicalHost.md)
  - [PhysicalHostAllOf](docs/PhysicalHostAllOf.md)
  - [PhysicalMachine](docs/PhysicalMachine.md)
  - [PocInfo](docs/PocInfo.md)
  - [PowerSchedule](docs/PowerSchedule.md)
  - [Project](docs/Project.md)
+ - [ProjectFeatures](docs/ProjectFeatures.md)
  - [ProjectLimits](docs/ProjectLimits.md)
  - [RecurringSchedule](docs/RecurringSchedule.md)
  - [RegisterTemplateObject](docs/RegisterTemplateObject.md)
@@ -739,8 +760,9 @@ Class | Method | HTTP request | Description
  - [RemoteAccessTemplate](docs/RemoteAccessTemplate.md)
  - [ResourceUsage](docs/ResourceUsage.md)
  - [ResourceUsageDTO](docs/ResourceUsageDTO.md)
+ - [RestIdObject](docs/RestIdObject.md)
+ - [S3SubmissionEndpoint](docs/S3SubmissionEndpoint.md)
  - [SFTPSubmissionEndpoint](docs/SFTPSubmissionEndpoint.md)
- - [SFTPSubmissionEndpointAllOf](docs/SFTPSubmissionEndpointAllOf.md)
  - [Scenario](docs/Scenario.md)
  - [ScenarioHost](docs/ScenarioHost.md)
  - [SecurityGroup](docs/SecurityGroup.md)

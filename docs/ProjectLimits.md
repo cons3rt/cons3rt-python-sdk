@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**gpu_type_maximums** | **dict(str, int)** |  | [optional] 
 **max_num_cpus** | **int** |  | 
 **max_num_gpus** | **int** |  | 
 **max_ram_in_megabytes** | **int** |  | 

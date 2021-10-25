@@ -53,6 +53,7 @@ class AbstractCloudSpaceRequest(object):
         'maximum_virtual_machines': 'int',
         'cidr': 'str',
         'num_availability_zones': 'int',
+        'power_on_maximum_delay': 'int',
         'power_on_minimum_delay': 'int',
         'subtype': 'str'
     }
@@ -62,6 +63,7 @@ class AbstractCloudSpaceRequest(object):
         'maximum_virtual_machines': 'maximumVirtualMachines',
         'cidr': 'cidr',
         'num_availability_zones': 'numAvailabilityZones',
+        'power_on_maximum_delay': 'powerOnMaximumDelay',
         'power_on_minimum_delay': 'powerOnMinimumDelay',
         'subtype': 'subtype'
     }
@@ -73,7 +75,7 @@ class AbstractCloudSpaceRequest(object):
         'AzureCloudSpaceRequest': 'AzureCloudSpaceRequest'
     }
 
-    def __init__(self, cloud_space_name=None, maximum_virtual_machines=None, cidr=None, num_availability_zones=None, power_on_minimum_delay=None, subtype=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cloud_space_name=None, maximum_virtual_machines=None, cidr=None, num_availability_zones=None, power_on_maximum_delay=None, power_on_minimum_delay=None, subtype=None, local_vars_configuration=None):  # noqa: E501
         """AbstractCloudSpaceRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class AbstractCloudSpaceRequest(object):
         self._maximum_virtual_machines = None
         self._cidr = None
         self._num_availability_zones = None
+        self._power_on_maximum_delay = None
         self._power_on_minimum_delay = None
         self._subtype = None
         self.discriminator = 'subtype'
@@ -93,6 +96,8 @@ class AbstractCloudSpaceRequest(object):
         self.cidr = cidr
         if num_availability_zones is not None:
             self.num_availability_zones = num_availability_zones
+        if power_on_maximum_delay is not None:
+            self.power_on_maximum_delay = power_on_maximum_delay
         if power_on_minimum_delay is not None:
             self.power_on_minimum_delay = power_on_minimum_delay
         self.subtype = subtype
@@ -196,6 +201,30 @@ class AbstractCloudSpaceRequest(object):
         """
 
         self._num_availability_zones = num_availability_zones
+
+    @property
+    def power_on_maximum_delay(self):
+        """Gets the power_on_maximum_delay of this AbstractCloudSpaceRequest.  # noqa: E501
+
+
+        :return: The power_on_maximum_delay of this AbstractCloudSpaceRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._power_on_maximum_delay
+
+    @power_on_maximum_delay.setter
+    def power_on_maximum_delay(self, power_on_maximum_delay):
+        """Sets the power_on_maximum_delay of this AbstractCloudSpaceRequest.
+
+
+        :param power_on_maximum_delay: The power_on_maximum_delay of this AbstractCloudSpaceRequest.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                power_on_maximum_delay is not None and power_on_maximum_delay < 0):  # noqa: E501
+            raise ValueError("Invalid value for `power_on_maximum_delay`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._power_on_maximum_delay = power_on_maximum_delay
 
     @property
     def power_on_minimum_delay(self):

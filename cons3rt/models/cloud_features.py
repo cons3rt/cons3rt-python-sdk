@@ -52,6 +52,7 @@ class CloudFeatures(object):
         'allocation_capable': 'bool',
         'bypass_scanning_enabled': 'bool',
         'deallocation_capable': 'bool',
+        'gpu_available': 'bool',
         'storage_service_enabled': 'bool'
     }
 
@@ -59,10 +60,11 @@ class CloudFeatures(object):
         'allocation_capable': 'allocationCapable',
         'bypass_scanning_enabled': 'bypassScanningEnabled',
         'deallocation_capable': 'deallocationCapable',
+        'gpu_available': 'gpuAvailable',
         'storage_service_enabled': 'storageServiceEnabled'
     }
 
-    def __init__(self, allocation_capable=None, bypass_scanning_enabled=None, deallocation_capable=None, storage_service_enabled=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allocation_capable=None, bypass_scanning_enabled=None, deallocation_capable=None, gpu_available=None, storage_service_enabled=None, local_vars_configuration=None):  # noqa: E501
         """CloudFeatures - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,6 +73,7 @@ class CloudFeatures(object):
         self._allocation_capable = None
         self._bypass_scanning_enabled = None
         self._deallocation_capable = None
+        self._gpu_available = None
         self._storage_service_enabled = None
         self.discriminator = None
 
@@ -80,6 +83,8 @@ class CloudFeatures(object):
             self.bypass_scanning_enabled = bypass_scanning_enabled
         if deallocation_capable is not None:
             self.deallocation_capable = deallocation_capable
+        if gpu_available is not None:
+            self.gpu_available = gpu_available
         if storage_service_enabled is not None:
             self.storage_service_enabled = storage_service_enabled
 
@@ -145,6 +150,27 @@ class CloudFeatures(object):
         """
 
         self._deallocation_capable = deallocation_capable
+
+    @property
+    def gpu_available(self):
+        """Gets the gpu_available of this CloudFeatures.  # noqa: E501
+
+
+        :return: The gpu_available of this CloudFeatures.  # noqa: E501
+        :rtype: bool
+        """
+        return self._gpu_available
+
+    @gpu_available.setter
+    def gpu_available(self, gpu_available):
+        """Sets the gpu_available of this CloudFeatures.
+
+
+        :param gpu_available: The gpu_available of this CloudFeatures.  # noqa: E501
+        :type: bool
+        """
+
+        self._gpu_available = gpu_available
 
     @property
     def storage_service_enabled(self):

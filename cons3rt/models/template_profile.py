@@ -52,12 +52,14 @@ class TemplateProfile(object):
         'additional_disks': 'list[Disk]',
         'cons3rt_agent_required': 'bool',
         'vgpu_required': 'bool',
+        'gpu_type': 'str',
         'requires_nested_virtualization': 'bool',
         'min_boot_disk_capacity': 'int',
         'min_num_cpus': 'int',
         'operating_system': 'str',
         'remote_access_required': 'bool',
         'min_ram': 'int',
+        'virt_realm_id': 'int',
         'virt_realm_template_name': 'str'
     }
 
@@ -65,16 +67,18 @@ class TemplateProfile(object):
         'additional_disks': 'additionalDisks',
         'cons3rt_agent_required': 'cons3rtAgentRequired',
         'vgpu_required': 'vgpuRequired',
+        'gpu_type': 'gpuType',
         'requires_nested_virtualization': 'requiresNestedVirtualization',
         'min_boot_disk_capacity': 'minBootDiskCapacity',
         'min_num_cpus': 'minNumCpus',
         'operating_system': 'operatingSystem',
         'remote_access_required': 'remoteAccessRequired',
         'min_ram': 'minRam',
+        'virt_realm_id': 'virtRealmId',
         'virt_realm_template_name': 'virtRealmTemplateName'
     }
 
-    def __init__(self, additional_disks=None, cons3rt_agent_required=None, vgpu_required=None, requires_nested_virtualization=None, min_boot_disk_capacity=None, min_num_cpus=None, operating_system=None, remote_access_required=None, min_ram=None, virt_realm_template_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, additional_disks=None, cons3rt_agent_required=None, vgpu_required=None, gpu_type=None, requires_nested_virtualization=None, min_boot_disk_capacity=None, min_num_cpus=None, operating_system=None, remote_access_required=None, min_ram=None, virt_realm_id=None, virt_realm_template_name=None, local_vars_configuration=None):  # noqa: E501
         """TemplateProfile - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,12 +87,14 @@ class TemplateProfile(object):
         self._additional_disks = None
         self._cons3rt_agent_required = None
         self._vgpu_required = None
+        self._gpu_type = None
         self._requires_nested_virtualization = None
         self._min_boot_disk_capacity = None
         self._min_num_cpus = None
         self._operating_system = None
         self._remote_access_required = None
         self._min_ram = None
+        self._virt_realm_id = None
         self._virt_realm_template_name = None
         self.discriminator = None
 
@@ -98,6 +104,8 @@ class TemplateProfile(object):
             self.cons3rt_agent_required = cons3rt_agent_required
         if vgpu_required is not None:
             self.vgpu_required = vgpu_required
+        if gpu_type is not None:
+            self.gpu_type = gpu_type
         if requires_nested_virtualization is not None:
             self.requires_nested_virtualization = requires_nested_virtualization
         if min_boot_disk_capacity is not None:
@@ -108,6 +116,8 @@ class TemplateProfile(object):
         if remote_access_required is not None:
             self.remote_access_required = remote_access_required
         self.min_ram = min_ram
+        if virt_realm_id is not None:
+            self.virt_realm_id = virt_realm_id
         if virt_realm_template_name is not None:
             self.virt_realm_template_name = virt_realm_template_name
 
@@ -173,6 +183,33 @@ class TemplateProfile(object):
         """
 
         self._vgpu_required = vgpu_required
+
+    @property
+    def gpu_type(self):
+        """Gets the gpu_type of this TemplateProfile.  # noqa: E501
+
+
+        :return: The gpu_type of this TemplateProfile.  # noqa: E501
+        :rtype: str
+        """
+        return self._gpu_type
+
+    @gpu_type.setter
+    def gpu_type(self, gpu_type):
+        """Sets the gpu_type of this TemplateProfile.
+
+
+        :param gpu_type: The gpu_type of this TemplateProfile.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["K80", "M10", "M60", "P40", "T4", "V100D"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and gpu_type not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `gpu_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(gpu_type, allowed_values)
+            )
+
+        self._gpu_type = gpu_type
 
     @property
     def requires_nested_virtualization(self):
@@ -257,7 +294,7 @@ class TemplateProfile(object):
         :param operating_system: The operating_system of this TemplateProfile.  # noqa: E501
         :type: str
         """
-        allowed_values = ["AMAZON_LINUX_2_LATEST_X64", "AMAZON_LINUX_LATEST_X64", "CENTOS_6_X64", "CENTOS_6_X86", "CENTOS_7_X64", "CENTOS_8_X64", "CORE_OS_1221_X64", "F5_BIGIP_X64", "FEDORA_23_X64", "FORTISIEM", "GENERIC_LINUX_X64", "GENERIC_WINDOWS_X64", "KALI_ROLLING_X64", "ORACLE_LINUX_6_X64", "ORACLE_LINUX_7_X64", "ORACLE_LINUX_8_X64", "OS_X_10", "OS_X_11", "PALO_ALTO_NETWORKS_PAN_OS_X64", "RASPBIAN", "RHEL_5_X64", "RHEL_5_X86", "RHEL_6_X64", "RHEL_6_X86", "RHEL_7_ATOMIC_HOST", "RHEL_7_PPCLE", "RHEL_7_X64", "RHEL_8_X64", "SOLARIS_11_X64", "UBUNTU_12_X64", "UBUNTU_14_X64", "UBUNTU_16_X64", "UBUNTU_18_X64", "UBUNTU_20_X64", "UBUNTU_CORE", "VYOS_1_1_X64", "VYOS_1_2_X64", "VYOS_1_3_X64", "WINDOWS_10_X64", "WINDOWS_7_X64", "WINDOWS_7_X86", "WINDOWS_8_X64", "WINDOWS_SERVER_2008_R2_X64", "WINDOWS_SERVER_2008_X64", "WINDOWS_SERVER_2012_R2_X64", "WINDOWS_SERVER_2012_X64", "WINDOWS_SERVER_2016_X64", "WINDOWS_SERVER_2019_X64", "WINDOWS_XP_X86"]  # noqa: E501
+        allowed_values = ["AMAZON_LINUX_2_LATEST_X64", "AMAZON_LINUX_LATEST_X64", "CENTOS_6_X64", "CENTOS_6_X86", "CENTOS_7_X64", "CENTOS_8_X64", "CORE_OS_1221_X64", "F5_BIGIP_X64", "FEDORA_23_X64", "FORTISIEM", "GENERIC_LINUX_X64", "GENERIC_WINDOWS_X64", "KALI_ROLLING_X64", "ORACLE_LINUX_6_X64", "ORACLE_LINUX_7_X64", "ORACLE_LINUX_8_X64", "OS_X_10", "OS_X_11", "PALO_ALTO_NETWORKS_PAN_OS_X64", "RASPBIAN", "RHEL_5_X64", "RHEL_5_X86", "RHEL_6_X64", "RHEL_6_X86", "RHEL_7_ATOMIC_HOST", "RHEL_7_PPCLE", "RHEL_7_X64", "RHEL_8_X64", "SOLARIS_11_X64", "UBUNTU_12_X64", "UBUNTU_14_X64", "UBUNTU_16_X64", "UBUNTU_18_X64", "UBUNTU_20_X64", "UBUNTU_CORE", "VYOS_1_1_X64", "VYOS_1_2_X64", "VYOS_1_3_X64", "VYOS_ROLLING_X64", "WINDOWS_10_X64", "WINDOWS_7_X64", "WINDOWS_7_X86", "WINDOWS_8_X64", "WINDOWS_SERVER_2008_R2_X64", "WINDOWS_SERVER_2008_X64", "WINDOWS_SERVER_2012_R2_X64", "WINDOWS_SERVER_2012_X64", "WINDOWS_SERVER_2016_X64", "WINDOWS_SERVER_2019_X64", "WINDOWS_SERVER_2019_CORE_X64", "WINDOWS_XP_X86"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and operating_system not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `operating_system` ({0}), must be one of {1}"  # noqa: E501
@@ -309,6 +346,27 @@ class TemplateProfile(object):
             raise ValueError("Invalid value for `min_ram`, must not be `None`")  # noqa: E501
 
         self._min_ram = min_ram
+
+    @property
+    def virt_realm_id(self):
+        """Gets the virt_realm_id of this TemplateProfile.  # noqa: E501
+
+
+        :return: The virt_realm_id of this TemplateProfile.  # noqa: E501
+        :rtype: int
+        """
+        return self._virt_realm_id
+
+    @virt_realm_id.setter
+    def virt_realm_id(self, virt_realm_id):
+        """Sets the virt_realm_id of this TemplateProfile.
+
+
+        :param virt_realm_id: The virt_realm_id of this TemplateProfile.  # noqa: E501
+        :type: int
+        """
+
+        self._virt_realm_id = virt_realm_id
 
     @property
     def virt_realm_template_name(self):

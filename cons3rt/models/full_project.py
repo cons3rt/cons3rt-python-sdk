@@ -52,13 +52,16 @@ class FullProject(object):
         'id': 'int',
         'name': 'str',
         'itar_restricted': 'bool',
+        'active_member_count': 'int',
         'created_at': 'int',
         'default_power_schedule': 'PowerSchedule',
+        'default_role': 'str',
         'default_virtualization_realm': 'MinimalVirtualizationRealm',
         'description': 'str',
+        'features': 'ProjectFeatures',
         'itar_comment': 'str',
         'limits': 'ProjectLimits',
-        'member_count': 'int',
+        'total_member_count': 'int',
         'owning_team': 'MinimalTeam',
         'is_private': 'bool',
         'trusted_projects': 'list[MinimalProject]',
@@ -73,13 +76,16 @@ class FullProject(object):
         'id': 'id',
         'name': 'name',
         'itar_restricted': 'itarRestricted',
+        'active_member_count': 'activeMemberCount',
         'created_at': 'createdAt',
         'default_power_schedule': 'defaultPowerSchedule',
+        'default_role': 'defaultRole',
         'default_virtualization_realm': 'defaultVirtualizationRealm',
         'description': 'description',
+        'features': 'features',
         'itar_comment': 'itarComment',
         'limits': 'limits',
-        'member_count': 'memberCount',
+        'total_member_count': 'totalMemberCount',
         'owning_team': 'owningTeam',
         'is_private': 'isPrivate',
         'trusted_projects': 'trustedProjects',
@@ -90,7 +96,7 @@ class FullProject(object):
         'virtualization_realms': 'virtualizationRealms'
     }
 
-    def __init__(self, id=None, name=None, itar_restricted=None, created_at=None, default_power_schedule=None, default_virtualization_realm=None, description=None, itar_comment=None, limits=None, member_count=None, owning_team=None, is_private=None, trusted_projects=None, resource_usage=None, submission_services=None, updated_at=None, members=None, virtualization_realms=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, itar_restricted=None, active_member_count=None, created_at=None, default_power_schedule=None, default_role=None, default_virtualization_realm=None, description=None, features=None, itar_comment=None, limits=None, total_member_count=None, owning_team=None, is_private=None, trusted_projects=None, resource_usage=None, submission_services=None, updated_at=None, members=None, virtualization_realms=None, local_vars_configuration=None):  # noqa: E501
         """FullProject - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -99,13 +105,16 @@ class FullProject(object):
         self._id = None
         self._name = None
         self._itar_restricted = None
+        self._active_member_count = None
         self._created_at = None
         self._default_power_schedule = None
+        self._default_role = None
         self._default_virtualization_realm = None
         self._description = None
+        self._features = None
         self._itar_comment = None
         self._limits = None
-        self._member_count = None
+        self._total_member_count = None
         self._owning_team = None
         self._is_private = None
         self._trusted_projects = None
@@ -121,20 +130,26 @@ class FullProject(object):
             self.name = name
         if itar_restricted is not None:
             self.itar_restricted = itar_restricted
+        if active_member_count is not None:
+            self.active_member_count = active_member_count
         if created_at is not None:
             self.created_at = created_at
         if default_power_schedule is not None:
             self.default_power_schedule = default_power_schedule
+        if default_role is not None:
+            self.default_role = default_role
         if default_virtualization_realm is not None:
             self.default_virtualization_realm = default_virtualization_realm
         if description is not None:
             self.description = description
+        if features is not None:
+            self.features = features
         if itar_comment is not None:
             self.itar_comment = itar_comment
         if limits is not None:
             self.limits = limits
-        if member_count is not None:
-            self.member_count = member_count
+        if total_member_count is not None:
+            self.total_member_count = total_member_count
         if owning_team is not None:
             self.owning_team = owning_team
         if is_private is not None:
@@ -218,6 +233,27 @@ class FullProject(object):
         self._itar_restricted = itar_restricted
 
     @property
+    def active_member_count(self):
+        """Gets the active_member_count of this FullProject.  # noqa: E501
+
+
+        :return: The active_member_count of this FullProject.  # noqa: E501
+        :rtype: int
+        """
+        return self._active_member_count
+
+    @active_member_count.setter
+    def active_member_count(self, active_member_count):
+        """Sets the active_member_count of this FullProject.
+
+
+        :param active_member_count: The active_member_count of this FullProject.  # noqa: E501
+        :type: int
+        """
+
+        self._active_member_count = active_member_count
+
+    @property
     def created_at(self):
         """Gets the created_at of this FullProject.  # noqa: E501
 
@@ -258,6 +294,33 @@ class FullProject(object):
         """
 
         self._default_power_schedule = default_power_schedule
+
+    @property
+    def default_role(self):
+        """Gets the default_role of this FullProject.  # noqa: E501
+
+
+        :return: The default_role of this FullProject.  # noqa: E501
+        :rtype: str
+        """
+        return self._default_role
+
+    @default_role.setter
+    def default_role(self, default_role):
+        """Sets the default_role of this FullProject.
+
+
+        :param default_role: The default_role of this FullProject.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["ADMINISTRATOR", "ASSET_RESTORER", "STATUS_READER", "UI_MACHINE", "TEST_TOOL", "MEMBER", "CONSUMER", "STANDARD", "SOFTWARE_DEVELOPER", "TEST_DEVELOPER", "ASSET_SHARER", "ASSET_PROMOTER", "POWER_SCHEDULE_UPDATER", "PROJECT_OWNER", "PROJECT_MANAGER", "PROJECT_MODERATOR", "REMOTE_ACCESS", "MAESTRO_MACHINE", "FAP_MACHINE", "SCHEDULER_MACHINE", "CONS3RT_MACHINE", "SOURCEBUILDER_MACHINE", "SYSTEM_ASSET_IMPORTER", "ASSET_CERTIFIER", "ASSET_UPLOADER"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and default_role not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `default_role` ({0}), must be one of {1}"  # noqa: E501
+                .format(default_role, allowed_values)
+            )
+
+        self._default_role = default_role
 
     @property
     def default_virtualization_realm(self):
@@ -302,6 +365,27 @@ class FullProject(object):
         self._description = description
 
     @property
+    def features(self):
+        """Gets the features of this FullProject.  # noqa: E501
+
+
+        :return: The features of this FullProject.  # noqa: E501
+        :rtype: ProjectFeatures
+        """
+        return self._features
+
+    @features.setter
+    def features(self, features):
+        """Sets the features of this FullProject.
+
+
+        :param features: The features of this FullProject.  # noqa: E501
+        :type: ProjectFeatures
+        """
+
+        self._features = features
+
+    @property
     def itar_comment(self):
         """Gets the itar_comment of this FullProject.  # noqa: E501
 
@@ -344,25 +428,25 @@ class FullProject(object):
         self._limits = limits
 
     @property
-    def member_count(self):
-        """Gets the member_count of this FullProject.  # noqa: E501
+    def total_member_count(self):
+        """Gets the total_member_count of this FullProject.  # noqa: E501
 
 
-        :return: The member_count of this FullProject.  # noqa: E501
+        :return: The total_member_count of this FullProject.  # noqa: E501
         :rtype: int
         """
-        return self._member_count
+        return self._total_member_count
 
-    @member_count.setter
-    def member_count(self, member_count):
-        """Sets the member_count of this FullProject.
+    @total_member_count.setter
+    def total_member_count(self, total_member_count):
+        """Sets the total_member_count of this FullProject.
 
 
-        :param member_count: The member_count of this FullProject.  # noqa: E501
+        :param total_member_count: The total_member_count of this FullProject.  # noqa: E501
         :type: int
         """
 
-        self._member_count = member_count
+        self._total_member_count = total_member_count
 
     @property
     def owning_team(self):

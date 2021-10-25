@@ -50,34 +50,39 @@ class Bucket(object):
     """
     openapi_types = {
         'cloud_resource_visibility': 'str',
-        'id': 'int',
+        'identifier': 'str',
         'name': 'str',
+        'cloud_id': 'int',
         'scanning_disabled': 'bool'
     }
 
     attribute_map = {
         'cloud_resource_visibility': 'cloudResourceVisibility',
-        'id': 'id',
+        'identifier': 'identifier',
         'name': 'name',
+        'cloud_id': 'cloudId',
         'scanning_disabled': 'scanningDisabled'
     }
 
-    def __init__(self, cloud_resource_visibility=None, id=None, name=None, scanning_disabled=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, cloud_resource_visibility=None, identifier=None, name=None, cloud_id=None, scanning_disabled=None, local_vars_configuration=None):  # noqa: E501
         """Bucket - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._cloud_resource_visibility = None
-        self._id = None
+        self._identifier = None
         self._name = None
+        self._cloud_id = None
         self._scanning_disabled = None
         self.discriminator = None
 
         self.cloud_resource_visibility = cloud_resource_visibility
-        if id is not None:
-            self.id = id
+        if identifier is not None:
+            self.identifier = identifier
         self.name = name
+        if cloud_id is not None:
+            self.cloud_id = cloud_id
         if scanning_disabled is not None:
             self.scanning_disabled = scanning_disabled
 
@@ -111,25 +116,25 @@ class Bucket(object):
         self._cloud_resource_visibility = cloud_resource_visibility
 
     @property
-    def id(self):
-        """Gets the id of this Bucket.  # noqa: E501
+    def identifier(self):
+        """Gets the identifier of this Bucket.  # noqa: E501
 
 
-        :return: The id of this Bucket.  # noqa: E501
-        :rtype: int
+        :return: The identifier of this Bucket.  # noqa: E501
+        :rtype: str
         """
-        return self._id
+        return self._identifier
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this Bucket.
+    @identifier.setter
+    def identifier(self, identifier):
+        """Sets the identifier of this Bucket.
 
 
-        :param id: The id of this Bucket.  # noqa: E501
-        :type: int
+        :param identifier: The identifier of this Bucket.  # noqa: E501
+        :type: str
         """
 
-        self._id = id
+        self._identifier = identifier
 
     @property
     def name(self):
@@ -153,6 +158,27 @@ class Bucket(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def cloud_id(self):
+        """Gets the cloud_id of this Bucket.  # noqa: E501
+
+
+        :return: The cloud_id of this Bucket.  # noqa: E501
+        :rtype: int
+        """
+        return self._cloud_id
+
+    @cloud_id.setter
+    def cloud_id(self, cloud_id):
+        """Sets the cloud_id of this Bucket.
+
+
+        :param cloud_id: The cloud_id of this Bucket.  # noqa: E501
+        :type: int
+        """
+
+        self._cloud_id = cloud_id
 
     @property
     def scanning_disabled(self):

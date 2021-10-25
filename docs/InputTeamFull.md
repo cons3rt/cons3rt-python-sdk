@@ -4,9 +4,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **asset_bundle_installer_enabled** | **bool** |  | [optional] 
+**asset_bypass_scanning_enabled** | **bool** |  | [optional] 
 **availability_zone_enabled** | **bool** |  | [optional] 
 **bypass_scanning_enabled** | **bool** |  | [optional] 
 **lead_user** | [**InputUser**](InputUser.md) |  | 
+**gpu_type_maximums** | **dict(str, int)** |  | [optional] 
 **icon** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
 **team_managers** | [**list[InputUser]**](InputUser.md) |  | 

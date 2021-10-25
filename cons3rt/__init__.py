@@ -1,7 +1,3 @@
-# coding: utf-8
-
-from __future__ import absolute_import
-
 """
    Copyright 2020 Jackpine Technologies Corporation
 
@@ -17,6 +13,10 @@ from __future__ import absolute_import
    See the License for the specific language governing permissions and
    limitations under the License.
 """
+# coding: utf-8
+
+# flake8: noqa
+
 """
 cons3rt - Copyright Jackpine Technologies Corp.
 
@@ -24,7 +24,7 @@ NOTE: This file is auto-generated. Do not edit the file manually.
 """
 
 
-# flake8: noqa
+from __future__ import absolute_import
 
 # import apis into sdk package
 from cons3rt.api.assets_api import AssetsApi
@@ -35,11 +35,14 @@ from cons3rt.api.compositions_api import CompositionsApi
 from cons3rt.api.container_assets_api import ContainerAssetsApi
 from cons3rt.api.deployment_runs_api import DeploymentRunsApi
 from cons3rt.api.deployments_api import DeploymentsApi
+from cons3rt.api.download_api import DownloadApi
+from cons3rt.api.identities_api import IdentitiesApi
 from cons3rt.api.import_api import ImportApi
 from cons3rt.api.projects_api import ProjectsApi
 from cons3rt.api.scenarios_api import ScenariosApi
 from cons3rt.api.software_assets_api import SoftwareAssetsApi
 from cons3rt.api.software_bundles_api import SoftwareBundlesApi
+from cons3rt.api.storage_api import StorageApi
 from cons3rt.api.system_assets_api import SystemAssetsApi
 from cons3rt.api.systems_api import SystemsApi
 from cons3rt.api.teams_api import TeamsApi
@@ -66,6 +69,7 @@ from cons3rt.models.abstract_cloud_space_request import AbstractCloudSpaceReques
 from cons3rt.models.abstract_component import AbstractComponent
 from cons3rt.models.abstract_composition_status import AbstractCompositionStatus
 from cons3rt.models.abstract_installation import AbstractInstallation
+from cons3rt.models.abstract_provider_client_configuration import AbstractProviderClientConfiguration
 from cons3rt.models.abstract_register_cloud_space_request import AbstractRegisterCloudSpaceRequest
 from cons3rt.models.active_composition_status import ActiveCompositionStatus
 from cons3rt.models.active_composition_status_all_of import ActiveCompositionStatusAllOf
@@ -82,6 +86,8 @@ from cons3rt.models.appliance import Appliance
 from cons3rt.models.asset import Asset
 from cons3rt.models.aws_client import AwsClient
 from cons3rt.models.aws_client_all_of import AwsClientAllOf
+from cons3rt.models.aws_client_configuration import AwsClientConfiguration
+from cons3rt.models.aws_client_configuration_all_of import AwsClientConfigurationAllOf
 from cons3rt.models.aws_cloud import AwsCloud
 from cons3rt.models.aws_cloud_all_of import AwsCloudAllOf
 from cons3rt.models.aws_cloud_resources import AwsCloudResources
@@ -102,6 +108,8 @@ from cons3rt.models.azure_register_cloud_space_request import AzureRegisterCloud
 from cons3rt.models.azure_register_cloud_space_request_all_of import AzureRegisterCloudSpaceRequestAllOf
 from cons3rt.models.azure_virtualization_realm import AzureVirtualizationRealm
 from cons3rt.models.azure_virtualization_realm_all_of import AzureVirtualizationRealmAllOf
+from cons3rt.models.base_credentials import BaseCredentials
+from cons3rt.models.base_identity import BaseIdentity
 from cons3rt.models.basic_appliance import BasicAppliance
 from cons3rt.models.basic_asset import BasicAsset
 from cons3rt.models.basic_container_asset import BasicContainerAsset
@@ -124,6 +132,8 @@ from cons3rt.models.category import Category
 from cons3rt.models.certificate import Certificate
 from cons3rt.models.cloud import Cloud
 from cons3rt.models.cloud_features import CloudFeatures
+from cons3rt.models.cloud_resource_access_listing import CloudResourceAccessListing
+from cons3rt.models.cloud_resource_object import CloudResourceObject
 from cons3rt.models.composition import Composition
 from cons3rt.models.composition_host_option import CompositionHostOption
 from cons3rt.models.composition_launch_options import CompositionLaunchOptions
@@ -144,6 +154,7 @@ from cons3rt.models.deployment_asset_metric import DeploymentAssetMetric
 from cons3rt.models.deployment_host import DeploymentHost
 from cons3rt.models.deployment_run_options import DeploymentRunOptions
 from cons3rt.models.deployment_run_options_for_bindings import DeploymentRunOptionsForBindings
+from cons3rt.models.deployment_scenario import DeploymentScenario
 from cons3rt.models.device import Device
 from cons3rt.models.device_all_of import DeviceAllOf
 from cons3rt.models.disk import Disk
@@ -169,6 +180,7 @@ from cons3rt.models.full_container_asset import FullContainerAsset
 from cons3rt.models.full_deployment import FullDeployment
 from cons3rt.models.full_deployment_all_of import FullDeploymentAllOf
 from cons3rt.models.full_deployment_run import FullDeploymentRun
+from cons3rt.models.full_deployment_run_host import FullDeploymentRunHost
 from cons3rt.models.full_device import FullDevice
 from cons3rt.models.full_device_all_of import FullDeviceAllOf
 from cons3rt.models.full_disk import FullDisk
@@ -365,12 +377,15 @@ from cons3rt.models.open_stack_cloud_resources_all_of import OpenStackCloudResou
 from cons3rt.models.open_stack_cloud_space_request import OpenStackCloudSpaceRequest
 from cons3rt.models.open_stack_cloud_space_request_all_of import OpenStackCloudSpaceRequestAllOf
 from cons3rt.models.open_stack_virtualization_realm import OpenStackVirtualizationRealm
+from cons3rt.models.path_based_submission_endpoint import PathBasedSubmissionEndpoint
+from cons3rt.models.path_based_submission_endpoint_all_of import PathBasedSubmissionEndpointAllOf
 from cons3rt.models.physical_host import PhysicalHost
 from cons3rt.models.physical_host_all_of import PhysicalHostAllOf
 from cons3rt.models.physical_machine import PhysicalMachine
 from cons3rt.models.poc_info import PocInfo
 from cons3rt.models.power_schedule import PowerSchedule
 from cons3rt.models.project import Project
+from cons3rt.models.project_features import ProjectFeatures
 from cons3rt.models.project_limits import ProjectLimits
 from cons3rt.models.recurring_schedule import RecurringSchedule
 from cons3rt.models.register_template_object import RegisterTemplateObject
@@ -379,8 +394,9 @@ from cons3rt.models.remote_access_session import RemoteAccessSession
 from cons3rt.models.remote_access_template import RemoteAccessTemplate
 from cons3rt.models.resource_usage import ResourceUsage
 from cons3rt.models.resource_usage_dto import ResourceUsageDTO
+from cons3rt.models.rest_id_object import RestIdObject
+from cons3rt.models.s3_submission_endpoint import S3SubmissionEndpoint
 from cons3rt.models.sftp_submission_endpoint import SFTPSubmissionEndpoint
-from cons3rt.models.sftp_submission_endpoint_all_of import SFTPSubmissionEndpointAllOf
 from cons3rt.models.scenario import Scenario
 from cons3rt.models.scenario_host import ScenarioHost
 from cons3rt.models.security_group import SecurityGroup

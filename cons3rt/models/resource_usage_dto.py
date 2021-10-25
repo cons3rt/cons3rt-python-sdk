@@ -49,44 +49,65 @@ class ResourceUsageDTO(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'gpu_type_usage': 'dict(str, int)',
         'num_cpus': 'int',
-        'num_gpus': 'int',
         'ram_in_megabytes': 'int',
         'storage_in_megabytes': 'int',
         'virtual_machines': 'int'
     }
 
     attribute_map = {
+        'gpu_type_usage': 'gpuTypeUsage',
         'num_cpus': 'numCpus',
-        'num_gpus': 'numGpus',
         'ram_in_megabytes': 'ramInMegabytes',
         'storage_in_megabytes': 'storageInMegabytes',
         'virtual_machines': 'virtualMachines'
     }
 
-    def __init__(self, num_cpus=None, num_gpus=None, ram_in_megabytes=None, storage_in_megabytes=None, virtual_machines=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, gpu_type_usage=None, num_cpus=None, ram_in_megabytes=None, storage_in_megabytes=None, virtual_machines=None, local_vars_configuration=None):  # noqa: E501
         """ResourceUsageDTO - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._gpu_type_usage = None
         self._num_cpus = None
-        self._num_gpus = None
         self._ram_in_megabytes = None
         self._storage_in_megabytes = None
         self._virtual_machines = None
         self.discriminator = None
 
+        if gpu_type_usage is not None:
+            self.gpu_type_usage = gpu_type_usage
         if num_cpus is not None:
             self.num_cpus = num_cpus
-        if num_gpus is not None:
-            self.num_gpus = num_gpus
         if ram_in_megabytes is not None:
             self.ram_in_megabytes = ram_in_megabytes
         if storage_in_megabytes is not None:
             self.storage_in_megabytes = storage_in_megabytes
         if virtual_machines is not None:
             self.virtual_machines = virtual_machines
+
+    @property
+    def gpu_type_usage(self):
+        """Gets the gpu_type_usage of this ResourceUsageDTO.  # noqa: E501
+
+
+        :return: The gpu_type_usage of this ResourceUsageDTO.  # noqa: E501
+        :rtype: dict(str, int)
+        """
+        return self._gpu_type_usage
+
+    @gpu_type_usage.setter
+    def gpu_type_usage(self, gpu_type_usage):
+        """Sets the gpu_type_usage of this ResourceUsageDTO.
+
+
+        :param gpu_type_usage: The gpu_type_usage of this ResourceUsageDTO.  # noqa: E501
+        :type: dict(str, int)
+        """
+
+        self._gpu_type_usage = gpu_type_usage
 
     @property
     def num_cpus(self):
@@ -108,27 +129,6 @@ class ResourceUsageDTO(object):
         """
 
         self._num_cpus = num_cpus
-
-    @property
-    def num_gpus(self):
-        """Gets the num_gpus of this ResourceUsageDTO.  # noqa: E501
-
-
-        :return: The num_gpus of this ResourceUsageDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._num_gpus
-
-    @num_gpus.setter
-    def num_gpus(self, num_gpus):
-        """Sets the num_gpus of this ResourceUsageDTO.
-
-
-        :param num_gpus: The num_gpus of this ResourceUsageDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._num_gpus = num_gpus
 
     @property
     def ram_in_megabytes(self):

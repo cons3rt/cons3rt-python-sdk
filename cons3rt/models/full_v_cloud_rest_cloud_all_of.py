@@ -49,37 +49,51 @@ class FullVCloudRestCloudAllOf(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'gpu_profile_types': 'list[str]',
         'hostname': 'str',
         'port': 'int',
         'protocol': 'str',
         'remote_access_internal_ip': 'str',
         'remote_access_port': 'int',
-        'username': 'str'
+        'username': 'str',
+        'vsphere_api_version': 'str',
+        'vsphere_host': 'str',
+        'vsphere_port': 'int'
     }
 
     attribute_map = {
+        'gpu_profile_types': 'gpuProfileTypes',
         'hostname': 'hostname',
         'port': 'port',
         'protocol': 'protocol',
         'remote_access_internal_ip': 'remoteAccessInternalIp',
         'remote_access_port': 'remoteAccessPort',
-        'username': 'username'
+        'username': 'username',
+        'vsphere_api_version': 'vsphereApiVersion',
+        'vsphere_host': 'vsphereHost',
+        'vsphere_port': 'vspherePort'
     }
 
-    def __init__(self, hostname=None, port=None, protocol=None, remote_access_internal_ip=None, remote_access_port=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, gpu_profile_types=None, hostname=None, port=None, protocol=None, remote_access_internal_ip=None, remote_access_port=None, username=None, vsphere_api_version=None, vsphere_host=None, vsphere_port=None, local_vars_configuration=None):  # noqa: E501
         """FullVCloudRestCloudAllOf - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._gpu_profile_types = None
         self._hostname = None
         self._port = None
         self._protocol = None
         self._remote_access_internal_ip = None
         self._remote_access_port = None
         self._username = None
+        self._vsphere_api_version = None
+        self._vsphere_host = None
+        self._vsphere_port = None
         self.discriminator = None
 
+        if gpu_profile_types is not None:
+            self.gpu_profile_types = gpu_profile_types
         if hostname is not None:
             self.hostname = hostname
         if port is not None:
@@ -92,6 +106,41 @@ class FullVCloudRestCloudAllOf(object):
             self.remote_access_port = remote_access_port
         if username is not None:
             self.username = username
+        if vsphere_api_version is not None:
+            self.vsphere_api_version = vsphere_api_version
+        if vsphere_host is not None:
+            self.vsphere_host = vsphere_host
+        if vsphere_port is not None:
+            self.vsphere_port = vsphere_port
+
+    @property
+    def gpu_profile_types(self):
+        """Gets the gpu_profile_types of this FullVCloudRestCloudAllOf.  # noqa: E501
+
+
+        :return: The gpu_profile_types of this FullVCloudRestCloudAllOf.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._gpu_profile_types
+
+    @gpu_profile_types.setter
+    def gpu_profile_types(self, gpu_profile_types):
+        """Sets the gpu_profile_types of this FullVCloudRestCloudAllOf.
+
+
+        :param gpu_profile_types: The gpu_profile_types of this FullVCloudRestCloudAllOf.  # noqa: E501
+        :type: list[str]
+        """
+        allowed_values = ["M10_0Q", "M10_1Q", "M10_2Q", "M10_4Q", "V100D_2Q", "V100D_4Q"]  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                not set(gpu_profile_types).issubset(set(allowed_values))):  # noqa: E501
+            raise ValueError(
+                "Invalid values for `gpu_profile_types` [{0}], must be a subset of [{1}]"  # noqa: E501
+                .format(", ".join(map(str, set(gpu_profile_types) - set(allowed_values))),  # noqa: E501
+                        ", ".join(map(str, allowed_values)))
+            )
+
+        self._gpu_profile_types = gpu_profile_types
 
     @property
     def hostname(self):
@@ -218,6 +267,75 @@ class FullVCloudRestCloudAllOf(object):
         """
 
         self._username = username
+
+    @property
+    def vsphere_api_version(self):
+        """Gets the vsphere_api_version of this FullVCloudRestCloudAllOf.  # noqa: E501
+
+
+        :return: The vsphere_api_version of this FullVCloudRestCloudAllOf.  # noqa: E501
+        :rtype: str
+        """
+        return self._vsphere_api_version
+
+    @vsphere_api_version.setter
+    def vsphere_api_version(self, vsphere_api_version):
+        """Sets the vsphere_api_version of this FullVCloudRestCloudAllOf.
+
+
+        :param vsphere_api_version: The vsphere_api_version of this FullVCloudRestCloudAllOf.  # noqa: E501
+        :type: str
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                vsphere_api_version is not None and len(vsphere_api_version) > 6):
+            raise ValueError("Invalid value for `vsphere_api_version`, length must be less than or equal to `6`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                vsphere_api_version is not None and len(vsphere_api_version) < 1):
+            raise ValueError("Invalid value for `vsphere_api_version`, length must be greater than or equal to `1`")  # noqa: E501
+
+        self._vsphere_api_version = vsphere_api_version
+
+    @property
+    def vsphere_host(self):
+        """Gets the vsphere_host of this FullVCloudRestCloudAllOf.  # noqa: E501
+
+
+        :return: The vsphere_host of this FullVCloudRestCloudAllOf.  # noqa: E501
+        :rtype: str
+        """
+        return self._vsphere_host
+
+    @vsphere_host.setter
+    def vsphere_host(self, vsphere_host):
+        """Sets the vsphere_host of this FullVCloudRestCloudAllOf.
+
+
+        :param vsphere_host: The vsphere_host of this FullVCloudRestCloudAllOf.  # noqa: E501
+        :type: str
+        """
+
+        self._vsphere_host = vsphere_host
+
+    @property
+    def vsphere_port(self):
+        """Gets the vsphere_port of this FullVCloudRestCloudAllOf.  # noqa: E501
+
+
+        :return: The vsphere_port of this FullVCloudRestCloudAllOf.  # noqa: E501
+        :rtype: int
+        """
+        return self._vsphere_port
+
+    @vsphere_port.setter
+    def vsphere_port(self, vsphere_port):
+        """Sets the vsphere_port of this FullVCloudRestCloudAllOf.
+
+
+        :param vsphere_port: The vsphere_port of this FullVCloudRestCloudAllOf.  # noqa: E501
+        :type: int
+        """
+
+        self._vsphere_port = vsphere_port
 
     def to_dict(self):
         """Returns the model properties as a dict"""

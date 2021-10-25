@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **offline** | **bool** |  | [optional] 
 **state** | **str** |  | [optional] 
 **visibility** | **str** |  | [optional] 
+**scenario_build_order** | **int** |  | [optional] 
 **scenario_hosts** | [**list[MinimalScenarioHost]**](MinimalScenarioHost.md) |  | [optional] 
 **prepare_scenario_configuration** | [**MinimalConfiguration**](MinimalConfiguration.md) |  | [optional] 
 **teardown_scenario_configuration** | [**MinimalConfiguration**](MinimalConfiguration.md) |  | [optional] 

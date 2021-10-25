@@ -3,15 +3,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**active_member_count** | **int** |  | [optional] 
 **created_at** | **int** |  | [optional] 
 **default_power_schedule** | [**PowerSchedule**](PowerSchedule.md) |  | [optional] 
+**default_role** | **str** |  | [optional] 
 **default_virtualization_realm** | [**VirtualizationRealm**](VirtualizationRealm.md) |  | [optional] 
 **description** | **str** |  | [optional] 
+**features** | [**ProjectFeatures**](ProjectFeatures.md) |  | [optional] 
 **id** | **int** |  | 
 **itar_comment** | **str** |  | [optional] 
 **itar_restricted** | **bool** |  | [optional] 
 **limits** | [**ProjectLimits**](ProjectLimits.md) |  | 
-**member_count** | **int** |  | [optional] 
+**total_member_count** | **int** |  | [optional] 
 **name** | **str** |  | [optional] 
 **owning_team** | [**Team**](Team.md) |  | [optional] 
 **is_private** | **bool** |  | [optional] 

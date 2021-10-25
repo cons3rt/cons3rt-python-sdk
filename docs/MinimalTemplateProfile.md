@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **additional_disks** | [**list[MinimalDisk]**](MinimalDisk.md) |  | [optional] 
 **cons3rt_agent_required** | **bool** |  | [optional] 
 **vgpu_required** | **bool** |  | [optional] 
+**gpu_type** | **str** |  | [optional] 
 **requires_nested_virtualization** | **bool** |  | [optional] 
 **remote_access_required** | **bool** |  | [optional] 
 

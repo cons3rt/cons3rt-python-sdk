@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**gpu_type_usage** | **dict(str, int)** |  | [optional] 
 **num_cpus** | **int** |  | [optional] 
-**num_gpus** | **int** |  | [optional] 
 **ram_in_megabytes** | **int** |  | [optional] 
 **storage_in_megabytes** | **int** |  | [optional] 
 **virtual_machines** | **int** |  | [optional] 

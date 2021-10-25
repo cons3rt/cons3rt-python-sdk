@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **maximum_virtual_machines** | **int** |  | [optional] 
 **cidr** | **str** |  | 
 **num_availability_zones** | **int** |  | [optional] 
+**power_on_maximum_delay** | **int** |  | [optional] 
 **power_on_minimum_delay** | **int** |  | [optional] 
 **subtype** | **str** |  | 
 

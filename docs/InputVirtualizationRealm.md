@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **password** | **str** |  | 
 **power_on_delay_base** | **int** |  | [optional] 
 **power_on_initial_delay_base** | **int** |  | [optional] 
+**power_on_maximum_delay** | **int** |  | [optional] 
 **power_on_minimum_delay** | **int** |  | [optional] 
 **remote_access_config** | [**RemoteAccessConfig**](RemoteAccessConfig.md) |  | [optional] 
 **state** | **str** |  | [optional] 

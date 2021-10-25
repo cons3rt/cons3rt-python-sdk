@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **external_ip_addresses** | **list[str]** |  | [optional] 
 **external_ip_source** | **str** |  | 
 **features** | [**CloudFeatures**](CloudFeatures.md) |  | [optional] 
+**gpu_types** | **list[str]** |  | [optional] 
 **linux_repository_url** | **str** |  | [optional] 
 **maximum_impact_level** | **str** |  | 
 **networks** | [**list[Network]**](Network.md) |  | [optional] 

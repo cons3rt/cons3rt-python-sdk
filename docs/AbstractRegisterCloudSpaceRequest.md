@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **maximum_storage_in_megabytes** | **int** |  | [optional] 
 **maximum_virtual_machines** | **int** |  | [optional] 
 **power_on_minimum_delay** | **int** |  | [optional] 
+**power_on_maximum_delay** | **int** |  | [optional] 
 **password** | **str** |  | 
 **power_on_initial_delay_base** | **int** |  | [optional] 
 **primary_network_name** | **str** |  | 

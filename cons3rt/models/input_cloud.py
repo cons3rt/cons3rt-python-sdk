@@ -56,6 +56,7 @@ class InputCloud(object):
         'cons3rt_network': 'Network',
         'external_ip_source': 'str',
         'features': 'CloudFeatures',
+        'gpu_types': 'list[str]',
         'linux_repository_url': 'str',
         'maximum_impact_level': 'str',
         'owning_team': 'InputTeam',
@@ -72,6 +73,7 @@ class InputCloud(object):
         'cons3rt_network': 'cons3rtNetwork',
         'external_ip_source': 'externalIpSource',
         'features': 'features',
+        'gpu_types': 'gpuTypes',
         'linux_repository_url': 'linuxRepositoryUrl',
         'maximum_impact_level': 'maximumImpactLevel',
         'owning_team': 'owningTeam',
@@ -87,7 +89,7 @@ class InputCloud(object):
         'InputAzureCloud': 'InputAzureCloud'
     }
 
-    def __init__(self, name=None, description=None, external_ip_addresses=None, additional_networks=None, cons3rt_network=None, external_ip_source=None, features=None, linux_repository_url=None, maximum_impact_level=None, owning_team=None, state=None, template_virtualization_realm=None, subtype=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, description=None, external_ip_addresses=None, additional_networks=None, cons3rt_network=None, external_ip_source=None, features=None, gpu_types=None, linux_repository_url=None, maximum_impact_level=None, owning_team=None, state=None, template_virtualization_realm=None, subtype=None, local_vars_configuration=None):  # noqa: E501
         """InputCloud - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -100,6 +102,7 @@ class InputCloud(object):
         self._cons3rt_network = None
         self._external_ip_source = None
         self._features = None
+        self._gpu_types = None
         self._linux_repository_url = None
         self._maximum_impact_level = None
         self._owning_team = None
@@ -120,6 +123,8 @@ class InputCloud(object):
         self.external_ip_source = external_ip_source
         if features is not None:
             self.features = features
+        if gpu_types is not None:
+            self.gpu_types = gpu_types
         if linux_repository_url is not None:
             self.linux_repository_url = linux_repository_url
         self.maximum_impact_level = maximum_impact_level
@@ -286,6 +291,35 @@ class InputCloud(object):
         """
 
         self._features = features
+
+    @property
+    def gpu_types(self):
+        """Gets the gpu_types of this InputCloud.  # noqa: E501
+
+
+        :return: The gpu_types of this InputCloud.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._gpu_types
+
+    @gpu_types.setter
+    def gpu_types(self, gpu_types):
+        """Sets the gpu_types of this InputCloud.
+
+
+        :param gpu_types: The gpu_types of this InputCloud.  # noqa: E501
+        :type: list[str]
+        """
+        allowed_values = ["K80", "M10", "M60", "P40", "T4", "V100D"]  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                not set(gpu_types).issubset(set(allowed_values))):  # noqa: E501
+            raise ValueError(
+                "Invalid values for `gpu_types` [{0}], must be a subset of [{1}]"  # noqa: E501
+                .format(", ".join(map(str, set(gpu_types) - set(allowed_values))),  # noqa: E501
+                        ", ".join(map(str, allowed_values)))
+            )
+
+        self._gpu_types = gpu_types
 
     @property
     def linux_repository_url(self):

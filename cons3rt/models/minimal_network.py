@@ -51,6 +51,7 @@ class MinimalNetwork(object):
     openapi_types = {
         'id': 'int',
         'isolated': 'bool',
+        'boundary_ip_address': 'str',
         'cidr': 'str',
         'gateway': 'str',
         'identifier': 'str',
@@ -61,6 +62,7 @@ class MinimalNetwork(object):
     attribute_map = {
         'id': 'id',
         'isolated': 'isolated',
+        'boundary_ip_address': 'boundaryIpAddress',
         'cidr': 'cidr',
         'gateway': 'gateway',
         'identifier': 'identifier',
@@ -68,7 +70,7 @@ class MinimalNetwork(object):
         'name': 'name'
     }
 
-    def __init__(self, id=None, isolated=None, cidr=None, gateway=None, identifier=None, network_function=None, name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, isolated=None, boundary_ip_address=None, cidr=None, gateway=None, identifier=None, network_function=None, name=None, local_vars_configuration=None):  # noqa: E501
         """MinimalNetwork - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +78,7 @@ class MinimalNetwork(object):
 
         self._id = None
         self._isolated = None
+        self._boundary_ip_address = None
         self._cidr = None
         self._gateway = None
         self._identifier = None
@@ -87,6 +90,8 @@ class MinimalNetwork(object):
             self.id = id
         if isolated is not None:
             self.isolated = isolated
+        if boundary_ip_address is not None:
+            self.boundary_ip_address = boundary_ip_address
         if cidr is not None:
             self.cidr = cidr
         if gateway is not None:
@@ -139,6 +144,27 @@ class MinimalNetwork(object):
         """
 
         self._isolated = isolated
+
+    @property
+    def boundary_ip_address(self):
+        """Gets the boundary_ip_address of this MinimalNetwork.  # noqa: E501
+
+
+        :return: The boundary_ip_address of this MinimalNetwork.  # noqa: E501
+        :rtype: str
+        """
+        return self._boundary_ip_address
+
+    @boundary_ip_address.setter
+    def boundary_ip_address(self, boundary_ip_address):
+        """Sets the boundary_ip_address of this MinimalNetwork.
+
+
+        :param boundary_ip_address: The boundary_ip_address of this MinimalNetwork.  # noqa: E501
+        :type: str
+        """
+
+        self._boundary_ip_address = boundary_ip_address
 
     @property
     def cidr(self):

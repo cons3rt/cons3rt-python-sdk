@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
-**allow_gpu_usage** | **bool** |  | [optional] 
 **max_num_cpus** | **int** |  | [optional] 
 **max_ram_in_megabytes** | **int** |  | [optional] 
 **state** | **str** |  | [optional] 

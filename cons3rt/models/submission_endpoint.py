@@ -65,7 +65,7 @@ class SubmissionEndpoint(object):
     }
 
     discriminator_value_class_map = {
-        'SFTPSubmissionEndpoint': 'SFTPSubmissionEndpoint',
+        'PathBasedSubmissionEndpoint': 'PathBasedSubmissionEndpoint',
         'DockerRegistrySubmissionEndpoint': 'DockerRegistrySubmissionEndpoint'
     }
 
@@ -174,7 +174,7 @@ class SubmissionEndpoint(object):
         :param type: The type of this SubmissionEndpoint.  # noqa: E501
         :type: str
         """
-        allowed_values = ["DockerRegistryEndpoint", "SFTPEndpoint"]  # noqa: E501
+        allowed_values = ["DockerRegistryEndpoint", "HttpPostEndpoint", "S3Endpoint", "SFTPEndpoint"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501

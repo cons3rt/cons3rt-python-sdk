@@ -52,6 +52,7 @@ class InputScenarioFull(object):
         'id': 'int',
         'name': 'str',
         'scenario_hosts': 'list[InputScenarioHost]',
+        'scenario_build_order': 'int',
         'prepare_scenario_configuration': 'InputConfiguration',
         'teardown_scenario_configuration': 'InputConfiguration'
     }
@@ -60,11 +61,12 @@ class InputScenarioFull(object):
         'id': 'id',
         'name': 'name',
         'scenario_hosts': 'scenarioHosts',
+        'scenario_build_order': 'scenarioBuildOrder',
         'prepare_scenario_configuration': 'prepareScenarioConfiguration',
         'teardown_scenario_configuration': 'teardownScenarioConfiguration'
     }
 
-    def __init__(self, id=None, name=None, scenario_hosts=None, prepare_scenario_configuration=None, teardown_scenario_configuration=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, scenario_hosts=None, scenario_build_order=None, prepare_scenario_configuration=None, teardown_scenario_configuration=None, local_vars_configuration=None):  # noqa: E501
         """InputScenarioFull - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class InputScenarioFull(object):
         self._id = None
         self._name = None
         self._scenario_hosts = None
+        self._scenario_build_order = None
         self._prepare_scenario_configuration = None
         self._teardown_scenario_configuration = None
         self.discriminator = None
@@ -83,6 +86,8 @@ class InputScenarioFull(object):
             self.name = name
         if scenario_hosts is not None:
             self.scenario_hosts = scenario_hosts
+        if scenario_build_order is not None:
+            self.scenario_build_order = scenario_build_order
         if prepare_scenario_configuration is not None:
             self.prepare_scenario_configuration = prepare_scenario_configuration
         if teardown_scenario_configuration is not None:
@@ -150,6 +155,27 @@ class InputScenarioFull(object):
         """
 
         self._scenario_hosts = scenario_hosts
+
+    @property
+    def scenario_build_order(self):
+        """Gets the scenario_build_order of this InputScenarioFull.  # noqa: E501
+
+
+        :return: The scenario_build_order of this InputScenarioFull.  # noqa: E501
+        :rtype: int
+        """
+        return self._scenario_build_order
+
+    @scenario_build_order.setter
+    def scenario_build_order(self, scenario_build_order):
+        """Sets the scenario_build_order of this InputScenarioFull.
+
+
+        :param scenario_build_order: The scenario_build_order of this InputScenarioFull.  # noqa: E501
+        :type: int
+        """
+
+        self._scenario_build_order = scenario_build_order
 
     @property
     def prepare_scenario_configuration(self):

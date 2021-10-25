@@ -50,9 +50,11 @@ class Team(object):
     """
     openapi_types = {
         'asset_bundle_installer_enabled': 'bool',
+        'asset_bypass_scanning_enabled': 'bool',
         'availability_zone_enabled': 'bool',
         'bypass_scanning_enabled': 'bool',
         'lead_user': 'User',
+        'gpu_type_maximums': 'dict(str, int)',
         'icon': 'str',
         'id': 'int',
         'managed_virtualization_realms': 'list[VirtualizationRealm]',
@@ -70,22 +72,24 @@ class Team(object):
         'name': 'str',
         'order_number': 'str',
         'owned_clouds': 'list[Cloud]',
-        'power_schedule_enabled': 'bool',
         'owned_projects': 'list[Project]',
         'contact_info': 'PocInfo',
+        'power_schedule_enabled': 'bool',
         'private': 'bool',
         'rdp_client_proxy_enabled': 'bool',
         'rdp_client_session_duration': 'int',
-        'state': 'str',
         'snapshot_enabled': 'bool',
+        'state': 'str',
         'valid_until': 'int'
     }
 
     attribute_map = {
         'asset_bundle_installer_enabled': 'assetBundleInstallerEnabled',
+        'asset_bypass_scanning_enabled': 'assetBypassScanningEnabled',
         'availability_zone_enabled': 'availabilityZoneEnabled',
         'bypass_scanning_enabled': 'bypassScanningEnabled',
         'lead_user': 'leadUser',
+        'gpu_type_maximums': 'gpuTypeMaximums',
         'icon': 'icon',
         'id': 'id',
         'managed_virtualization_realms': 'managedVirtualizationRealms',
@@ -103,27 +107,29 @@ class Team(object):
         'name': 'name',
         'order_number': 'orderNumber',
         'owned_clouds': 'ownedClouds',
-        'power_schedule_enabled': 'powerScheduleEnabled',
         'owned_projects': 'ownedProjects',
         'contact_info': 'contactInfo',
+        'power_schedule_enabled': 'powerScheduleEnabled',
         'private': 'private',
         'rdp_client_proxy_enabled': 'rdpClientProxyEnabled',
         'rdp_client_session_duration': 'rdpClientSessionDuration',
-        'state': 'state',
         'snapshot_enabled': 'snapshotEnabled',
+        'state': 'state',
         'valid_until': 'validUntil'
     }
 
-    def __init__(self, asset_bundle_installer_enabled=None, availability_zone_enabled=None, bypass_scanning_enabled=None, lead_user=None, icon=None, id=None, managed_virtualization_realms=None, team_managers=None, max_assets=None, max_managed_virtualization_realms=None, max_num_cpus=None, max_num_gpus=None, max_projects=None, max_ram_in_megabytes=None, max_shared_remote_access_sessions=None, max_storage_in_megabytes=None, max_users=None, max_virtual_machines=None, name=None, order_number=None, owned_clouds=None, power_schedule_enabled=None, owned_projects=None, contact_info=None, private=None, rdp_client_proxy_enabled=None, rdp_client_session_duration=None, state=None, snapshot_enabled=None, valid_until=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, asset_bundle_installer_enabled=None, asset_bypass_scanning_enabled=None, availability_zone_enabled=None, bypass_scanning_enabled=None, lead_user=None, gpu_type_maximums=None, icon=None, id=None, managed_virtualization_realms=None, team_managers=None, max_assets=None, max_managed_virtualization_realms=None, max_num_cpus=None, max_num_gpus=None, max_projects=None, max_ram_in_megabytes=None, max_shared_remote_access_sessions=None, max_storage_in_megabytes=None, max_users=None, max_virtual_machines=None, name=None, order_number=None, owned_clouds=None, owned_projects=None, contact_info=None, power_schedule_enabled=None, private=None, rdp_client_proxy_enabled=None, rdp_client_session_duration=None, snapshot_enabled=None, state=None, valid_until=None, local_vars_configuration=None):  # noqa: E501
         """Team - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._asset_bundle_installer_enabled = None
+        self._asset_bypass_scanning_enabled = None
         self._availability_zone_enabled = None
         self._bypass_scanning_enabled = None
         self._lead_user = None
+        self._gpu_type_maximums = None
         self._icon = None
         self._id = None
         self._managed_virtualization_realms = None
@@ -141,24 +147,28 @@ class Team(object):
         self._name = None
         self._order_number = None
         self._owned_clouds = None
-        self._power_schedule_enabled = None
         self._owned_projects = None
         self._contact_info = None
+        self._power_schedule_enabled = None
         self._private = None
         self._rdp_client_proxy_enabled = None
         self._rdp_client_session_duration = None
-        self._state = None
         self._snapshot_enabled = None
+        self._state = None
         self._valid_until = None
         self.discriminator = None
 
         if asset_bundle_installer_enabled is not None:
             self.asset_bundle_installer_enabled = asset_bundle_installer_enabled
+        if asset_bypass_scanning_enabled is not None:
+            self.asset_bypass_scanning_enabled = asset_bypass_scanning_enabled
         if availability_zone_enabled is not None:
             self.availability_zone_enabled = availability_zone_enabled
         if bypass_scanning_enabled is not None:
             self.bypass_scanning_enabled = bypass_scanning_enabled
         self.lead_user = lead_user
+        if gpu_type_maximums is not None:
+            self.gpu_type_maximums = gpu_type_maximums
         if icon is not None:
             self.icon = icon
         if id is not None:
@@ -192,20 +202,20 @@ class Team(object):
             self.order_number = order_number
         if owned_clouds is not None:
             self.owned_clouds = owned_clouds
-        if power_schedule_enabled is not None:
-            self.power_schedule_enabled = power_schedule_enabled
         if owned_projects is not None:
             self.owned_projects = owned_projects
         self.contact_info = contact_info
+        if power_schedule_enabled is not None:
+            self.power_schedule_enabled = power_schedule_enabled
         if private is not None:
             self.private = private
         if rdp_client_proxy_enabled is not None:
             self.rdp_client_proxy_enabled = rdp_client_proxy_enabled
         if rdp_client_session_duration is not None:
             self.rdp_client_session_duration = rdp_client_session_duration
-        self.state = state
         if snapshot_enabled is not None:
             self.snapshot_enabled = snapshot_enabled
+        self.state = state
         self.valid_until = valid_until
 
     @property
@@ -228,6 +238,27 @@ class Team(object):
         """
 
         self._asset_bundle_installer_enabled = asset_bundle_installer_enabled
+
+    @property
+    def asset_bypass_scanning_enabled(self):
+        """Gets the asset_bypass_scanning_enabled of this Team.  # noqa: E501
+
+
+        :return: The asset_bypass_scanning_enabled of this Team.  # noqa: E501
+        :rtype: bool
+        """
+        return self._asset_bypass_scanning_enabled
+
+    @asset_bypass_scanning_enabled.setter
+    def asset_bypass_scanning_enabled(self, asset_bypass_scanning_enabled):
+        """Sets the asset_bypass_scanning_enabled of this Team.
+
+
+        :param asset_bypass_scanning_enabled: The asset_bypass_scanning_enabled of this Team.  # noqa: E501
+        :type: bool
+        """
+
+        self._asset_bypass_scanning_enabled = asset_bypass_scanning_enabled
 
     @property
     def availability_zone_enabled(self):
@@ -293,6 +324,27 @@ class Team(object):
             raise ValueError("Invalid value for `lead_user`, must not be `None`")  # noqa: E501
 
         self._lead_user = lead_user
+
+    @property
+    def gpu_type_maximums(self):
+        """Gets the gpu_type_maximums of this Team.  # noqa: E501
+
+
+        :return: The gpu_type_maximums of this Team.  # noqa: E501
+        :rtype: dict(str, int)
+        """
+        return self._gpu_type_maximums
+
+    @gpu_type_maximums.setter
+    def gpu_type_maximums(self, gpu_type_maximums):
+        """Sets the gpu_type_maximums of this Team.
+
+
+        :param gpu_type_maximums: The gpu_type_maximums of this Team.  # noqa: E501
+        :type: dict(str, int)
+        """
+
+        self._gpu_type_maximums = gpu_type_maximums
 
     @property
     def icon(self):
@@ -681,27 +733,6 @@ class Team(object):
         self._owned_clouds = owned_clouds
 
     @property
-    def power_schedule_enabled(self):
-        """Gets the power_schedule_enabled of this Team.  # noqa: E501
-
-
-        :return: The power_schedule_enabled of this Team.  # noqa: E501
-        :rtype: bool
-        """
-        return self._power_schedule_enabled
-
-    @power_schedule_enabled.setter
-    def power_schedule_enabled(self, power_schedule_enabled):
-        """Sets the power_schedule_enabled of this Team.
-
-
-        :param power_schedule_enabled: The power_schedule_enabled of this Team.  # noqa: E501
-        :type: bool
-        """
-
-        self._power_schedule_enabled = power_schedule_enabled
-
-    @property
     def owned_projects(self):
         """Gets the owned_projects of this Team.  # noqa: E501
 
@@ -744,6 +775,27 @@ class Team(object):
             raise ValueError("Invalid value for `contact_info`, must not be `None`")  # noqa: E501
 
         self._contact_info = contact_info
+
+    @property
+    def power_schedule_enabled(self):
+        """Gets the power_schedule_enabled of this Team.  # noqa: E501
+
+
+        :return: The power_schedule_enabled of this Team.  # noqa: E501
+        :rtype: bool
+        """
+        return self._power_schedule_enabled
+
+    @power_schedule_enabled.setter
+    def power_schedule_enabled(self, power_schedule_enabled):
+        """Sets the power_schedule_enabled of this Team.
+
+
+        :param power_schedule_enabled: The power_schedule_enabled of this Team.  # noqa: E501
+        :type: bool
+        """
+
+        self._power_schedule_enabled = power_schedule_enabled
 
     @property
     def private(self):
@@ -809,6 +861,27 @@ class Team(object):
         self._rdp_client_session_duration = rdp_client_session_duration
 
     @property
+    def snapshot_enabled(self):
+        """Gets the snapshot_enabled of this Team.  # noqa: E501
+
+
+        :return: The snapshot_enabled of this Team.  # noqa: E501
+        :rtype: bool
+        """
+        return self._snapshot_enabled
+
+    @snapshot_enabled.setter
+    def snapshot_enabled(self, snapshot_enabled):
+        """Sets the snapshot_enabled of this Team.
+
+
+        :param snapshot_enabled: The snapshot_enabled of this Team.  # noqa: E501
+        :type: bool
+        """
+
+        self._snapshot_enabled = snapshot_enabled
+
+    @property
     def state(self):
         """Gets the state of this Team.  # noqa: E501
 
@@ -836,27 +909,6 @@ class Team(object):
             )
 
         self._state = state
-
-    @property
-    def snapshot_enabled(self):
-        """Gets the snapshot_enabled of this Team.  # noqa: E501
-
-
-        :return: The snapshot_enabled of this Team.  # noqa: E501
-        :rtype: bool
-        """
-        return self._snapshot_enabled
-
-    @snapshot_enabled.setter
-    def snapshot_enabled(self, snapshot_enabled):
-        """Sets the snapshot_enabled of this Team.
-
-
-        :param snapshot_enabled: The snapshot_enabled of this Team.  # noqa: E501
-        :type: bool
-        """
-
-        self._snapshot_enabled = snapshot_enabled
 
     @property
     def valid_until(self):

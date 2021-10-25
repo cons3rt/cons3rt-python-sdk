@@ -55,7 +55,6 @@ class VCloudRestCloudSpaceRequestAllOf(object):
         'password': 'str',
         'email_address': 'str',
         'external_network_name': 'str',
-        'maximum_cpu_mhz': 'int',
         'local_catalog_name': 'str',
         'vdc_network_quota': 'int'
     }
@@ -67,12 +66,11 @@ class VCloudRestCloudSpaceRequestAllOf(object):
         'password': 'password',
         'email_address': 'emailAddress',
         'external_network_name': 'externalNetworkName',
-        'maximum_cpu_mhz': 'maximumCpuMhz',
         'local_catalog_name': 'localCatalogName',
         'vdc_network_quota': 'vdcNetworkQuota'
     }
 
-    def __init__(self, provider_vdc_name=None, vdc_network_pool_name=None, username=None, password=None, email_address=None, external_network_name=None, maximum_cpu_mhz=None, local_catalog_name=None, vdc_network_quota=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, provider_vdc_name=None, vdc_network_pool_name=None, username=None, password=None, email_address=None, external_network_name=None, local_catalog_name=None, vdc_network_quota=None, local_vars_configuration=None):  # noqa: E501
         """VCloudRestCloudSpaceRequestAllOf - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,7 +82,6 @@ class VCloudRestCloudSpaceRequestAllOf(object):
         self._password = None
         self._email_address = None
         self._external_network_name = None
-        self._maximum_cpu_mhz = None
         self._local_catalog_name = None
         self._vdc_network_quota = None
         self.discriminator = None
@@ -101,8 +98,6 @@ class VCloudRestCloudSpaceRequestAllOf(object):
             self.email_address = email_address
         if external_network_name is not None:
             self.external_network_name = external_network_name
-        if maximum_cpu_mhz is not None:
-            self.maximum_cpu_mhz = maximum_cpu_mhz
         if local_catalog_name is not None:
             self.local_catalog_name = local_catalog_name
         if vdc_network_quota is not None:
@@ -233,30 +228,6 @@ class VCloudRestCloudSpaceRequestAllOf(object):
         """
 
         self._external_network_name = external_network_name
-
-    @property
-    def maximum_cpu_mhz(self):
-        """Gets the maximum_cpu_mhz of this VCloudRestCloudSpaceRequestAllOf.  # noqa: E501
-
-
-        :return: The maximum_cpu_mhz of this VCloudRestCloudSpaceRequestAllOf.  # noqa: E501
-        :rtype: int
-        """
-        return self._maximum_cpu_mhz
-
-    @maximum_cpu_mhz.setter
-    def maximum_cpu_mhz(self, maximum_cpu_mhz):
-        """Sets the maximum_cpu_mhz of this VCloudRestCloudSpaceRequestAllOf.
-
-
-        :param maximum_cpu_mhz: The maximum_cpu_mhz of this VCloudRestCloudSpaceRequestAllOf.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                maximum_cpu_mhz is not None and maximum_cpu_mhz < 0):  # noqa: E501
-            raise ValueError("Invalid value for `maximum_cpu_mhz`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._maximum_cpu_mhz = maximum_cpu_mhz
 
     @property
     def local_catalog_name(self):

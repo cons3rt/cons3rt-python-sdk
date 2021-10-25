@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**add_trusted_project**](ContainerAssetsApi.md#add_trusted_project) | **PUT** /api/assets/{id}/addtrustedproject | Assign Trusted Project to Asset
 [**delete_asset**](ContainerAssetsApi.md#delete_asset) | **DELETE** /api/assets/{id} | Delete asset
 [**download**](ContainerAssetsApi.md#download) | **GET** /api/assets/{id}/download | Download Asset
-[**download_file_from_bucket**](ContainerAssetsApi.md#download_file_from_bucket) | **GET** /api/clouds/{id}/buckets/{bucket_id}/download | Download File From Bucket
 [**get_container**](ContainerAssetsApi.md#get_container) | **GET** /api/containers/{id} | Retrieve Container Asset
 [**get_container_assets**](ContainerAssetsApi.md#get_container_assets) | **GET** /api/containers | List all Containers
 [**get_container_assets_expanded**](ContainerAssetsApi.md#get_container_assets_expanded) | **GET** /api/containers/expanded | List all Containers, including Project Assets
@@ -15,6 +14,7 @@ Method | HTTP request | Description
 [**list_dependent_assets**](ContainerAssetsApi.md#list_dependent_assets) | **GET** /api/assets/{id}/dependent | List all Dependent Assets
 [**remove_trusted_project**](ContainerAssetsApi.md#remove_trusted_project) | **PUT** /api/assets/{id}/removetrustedproject | Unassign Trusted Project from Asset
 [**submit_asset_to_submission_service**](ContainerAssetsApi.md#submit_asset_to_submission_service) | **POST** /api/containers/{id}/submit/{submission_service_id} | Submit Container to the Project&#39;s Submission Service
+[**submit_bucket_resource_to_submission_service**](ContainerAssetsApi.md#submit_bucket_resource_to_submission_service) | **POST** /api/buckets/{id}/submit/{submission_service_id} | Submit Bucket Resource to the Project&#39;s Submission Service
 [**update_asset**](ContainerAssetsApi.md#update_asset) | **PUT** /api/assets/{id}/update | Update Asset
 [**update_asset_content**](ContainerAssetsApi.md#update_asset_content) | **PUT** /api/assets/{id}/updatecontent | Update Asset Content
 [**update_asset_state**](ContainerAssetsApi.md#update_asset_state) | **PUT** /api/assets/{id}/updatestate | Update State
@@ -366,135 +366,6 @@ background = False # bool | Force the download to happen in the background (opti
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| ID of asset | 
- **background** | **bool**| Force the download to happen in the background | [optional] [default to False]
-
-### Return type
-
-**bool**
-
-### Authorization
-
-[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**202** | Accepted |  -  |
-**400** | Invalid ID supplied or asset is not the correct type |  -  |
-**404** | Asset not found |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **download_file_from_bucket**
-> bool download_file_from_bucket(id, bucket_id, file_name, background=background)
-
-Download File From Bucket
-
-Downloads the Asset in the form of a zip file. Download is only available for importable Asset types (i.e. Software, Test, and Container).<br> <br> Based on the background flag, the download will be done in the foreground (false), background (true), or in a location as determined by Asset size (default).<br> <br> If the background flag is set to true (or if no value for the background flag is provided), and the Asset is larger than the site threshold, the Asset will be prepared for download in the background.In that case, an email with a link to retrieve the Asset will be sent.If the Asset is larger than download threshold, it will be prepared for download in the background, and an email with a download link will be sent.
-
-### Example
-
-* Api Key Authentication (APIKeyHeader):
-```python
-from __future__ import print_function
-import time
-import cons3rt
-from cons3rt.rest import ApiException
-from pprint import pprint
-# Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_VALUE'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['token'] = 'Bearer'
-# Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_VALUE'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['username'] = 'Bearer'
-
-# Using a client certificate for authentication is required in some cases.
-# To use a "soft-token" such as an ECA, provide the path the PEM encoded
-# version of the certificate
-configuration.cert_file='/path/to/your/client_cert.pem'
-
-# If the key to the provided certificate is stored in a separate file,
-# provide the path to the keyfile and, optionally, the key password if
-# the key is encrypted
-configuration.key_file='/path/to/your/client_cert.key'
-configuration.key_password='keyfile_password' # optional
-
-# Enter a context with an instance of the API client
-with cons3rt.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = cons3rt.ContainerAssetsApi(api_client)
-    id = 'id_example' # str | ID of cloud
-bucket_id = 'bucket_id_example' # str | ID of bucket
-file_name = 'file_name_example' # str | The filename within the bucket to download
-background = False # bool | Force the download to happen in the background (optional) (default to False)
-
-    try:
-        # Download File From Bucket
-        api_response = api_instance.download_file_from_bucket(id, bucket_id, file_name, background=background)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling ContainerAssetsApi->download_file_from_bucket: %s\n" % e)
-```
-
-* Api Key Authentication (Username):
-```python
-from __future__ import print_function
-import time
-import cons3rt
-from cons3rt.rest import ApiException
-from pprint import pprint
-# Configure API key authorization: APIKeyHeader
-configuration.api_key['token'] = 'YOUR_VALUE'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['token'] = 'Bearer'
-# Configure API key authorization: Username
-configuration.api_key['username'] = 'YOUR_VALUE'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['username'] = 'Bearer'
-
-# Using a client certificate for authentication is required in some cases.
-# To use a "soft-token" such as an ECA, provide the path the PEM encoded
-# version of the certificate
-configuration.cert_file='/path/to/your/client_cert.pem'
-
-# If the key to the provided certificate is stored in a separate file,
-# provide the path to the keyfile and, optionally, the key password if
-# the key is encrypted
-configuration.key_file='/path/to/your/client_cert.key'
-configuration.key_password='keyfile_password' # optional
-
-# Enter a context with an instance of the API client
-with cons3rt.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = cons3rt.ContainerAssetsApi(api_client)
-    id = 'id_example' # str | ID of cloud
-bucket_id = 'bucket_id_example' # str | ID of bucket
-file_name = 'file_name_example' # str | The filename within the bucket to download
-background = False # bool | Force the download to happen in the background (optional) (default to False)
-
-    try:
-        # Download File From Bucket
-        api_response = api_instance.download_file_from_bucket(id, bucket_id, file_name, background=background)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling ContainerAssetsApi->download_file_from_bucket: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**| ID of cloud | 
- **bucket_id** | **str**| ID of bucket | 
- **file_name** | **str**| The filename within the bucket to download | 
  **background** | **bool**| Force the download to happen in the background | [optional] [default to False]
 
 ### Return type
@@ -895,7 +766,7 @@ Name | Type | Description  | Notes
 
 Set Asset Export Restriction
 
-Sets the Export Restriction of a single Asset with the given ID.<br> <br> Export Restriction can only be set if the owning Project is an ITAR-restricted Project.<br> <br> Setting an Export Restriction cannot be undone.
+Sets the Export Restriction of a single software asset, test asset or container asset with the given ID.<br> <br> Export Restriction can only be set if the owning Project is an ITAR-restricted Project.<br> <br> Setting an Export Restriction cannot be undone.
 
 ### Example
 
@@ -1372,6 +1243,134 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **400** | Invalid container ID or submission service ID supplied |  -  |
 **404** | Container not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **submit_bucket_resource_to_submission_service**
+> bool submit_bucket_resource_to_submission_service(id, submission_service_id, file_name, input_submission_service_for_asset_submission=input_submission_service_for_asset_submission)
+
+Submit Bucket Resource to the Project's Submission Service
+
+Publishes a resource in the specified bucket to the requested Submission Service.<br> <br> The requested Project Submission Service will act as a template. Credentials provided when submitting to the Service will override the Project Submission Service's credentials. However, neither the Host nor Port of the Service can be overridden.<br> <br> If the Service's endpoint is an SFTP Host, the Submission will only be able to override the remote path (i.e. if one has not already been defined in this default Submission Service).<br>
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ContainerAssetsApi(api_client)
+    id = 'id_example' # str | ID of the bucket to publish a resource from
+submission_service_id = 'submission_service_id_example' # str | ID of project submission service
+file_name = 'file_name_example' # str | The filename within the bucket to download
+input_submission_service_for_asset_submission = cons3rt.InputSubmissionServiceForAssetSubmission() # InputSubmissionServiceForAssetSubmission | Submission service override values (optional)
+
+    try:
+        # Submit Bucket Resource to the Project's Submission Service
+        api_response = api_instance.submit_bucket_resource_to_submission_service(id, submission_service_id, file_name, input_submission_service_for_asset_submission=input_submission_service_for_asset_submission)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ContainerAssetsApi->submit_bucket_resource_to_submission_service: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.ContainerAssetsApi(api_client)
+    id = 'id_example' # str | ID of the bucket to publish a resource from
+submission_service_id = 'submission_service_id_example' # str | ID of project submission service
+file_name = 'file_name_example' # str | The filename within the bucket to download
+input_submission_service_for_asset_submission = cons3rt.InputSubmissionServiceForAssetSubmission() # InputSubmissionServiceForAssetSubmission | Submission service override values (optional)
+
+    try:
+        # Submit Bucket Resource to the Project's Submission Service
+        api_response = api_instance.submit_bucket_resource_to_submission_service(id, submission_service_id, file_name, input_submission_service_for_asset_submission=input_submission_service_for_asset_submission)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ContainerAssetsApi->submit_bucket_resource_to_submission_service: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of the bucket to publish a resource from | 
+ **submission_service_id** | **str**| ID of project submission service | 
+ **file_name** | **str**| The filename within the bucket to download | 
+ **input_submission_service_for_asset_submission** | [**InputSubmissionServiceForAssetSubmission**](InputSubmissionServiceForAssetSubmission.md)| Submission service override values | [optional] 
+
+### Return type
+
+**bool**
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Invalid bucket ID or submission service ID supplied |  -  |
+**404** | Bucket or Resource not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

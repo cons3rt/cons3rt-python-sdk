@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **cons3rt_network** | [**Network**](Network.md) |  | [optional] 
 **external_ip_source** | **str** |  | 
 **features** | [**CloudFeatures**](CloudFeatures.md) |  | [optional] 
+**gpu_types** | **list[str]** |  | [optional] 
 **linux_repository_url** | **str** |  | [optional] 
 **maximum_impact_level** | **str** |  | 
 **owning_team** | [**InputTeam**](InputTeam.md) |  | 

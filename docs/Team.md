@@ -4,9 +4,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **asset_bundle_installer_enabled** | **bool** |  | [optional] 
+**asset_bypass_scanning_enabled** | **bool** |  | [optional] 
 **availability_zone_enabled** | **bool** |  | [optional] 
 **bypass_scanning_enabled** | **bool** |  | [optional] 
 **lead_user** | [**User**](User.md) |  | 
+**gpu_type_maximums** | **dict(str, int)** |  | [optional] 
 **icon** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
 **managed_virtualization_realms** | [**list[VirtualizationRealm]**](VirtualizationRealm.md) |  | [optional] 
@@ -24,14 +26,14 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **order_number** | **str** |  | [optional] 
 **owned_clouds** | [**list[Cloud]**](Cloud.md) |  | [optional] 
-**power_schedule_enabled** | **bool** |  | [optional] 
 **owned_projects** | [**list[Project]**](Project.md) |  | [optional] 
 **contact_info** | [**PocInfo**](PocInfo.md) |  | 
+**power_schedule_enabled** | **bool** |  | [optional] 
 **private** | **bool** |  | [optional] 
 **rdp_client_proxy_enabled** | **bool** |  | [optional] 
 **rdp_client_session_duration** | **int** |  | [optional] 
-**state** | **str** |  | 
 **snapshot_enabled** | **bool** |  | [optional] 
+**state** | **str** |  | 
 **valid_until** | **int** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

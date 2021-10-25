@@ -50,7 +50,6 @@ class FullTemplateSubscription(object):
     """
     openapi_types = {
         'id': 'int',
-        'allow_gpu_usage': 'bool',
         'max_num_cpus': 'int',
         'max_ram_in_megabytes': 'int',
         'state': 'str',
@@ -61,7 +60,6 @@ class FullTemplateSubscription(object):
 
     attribute_map = {
         'id': 'id',
-        'allow_gpu_usage': 'allowGpuUsage',
         'max_num_cpus': 'maxNumCpus',
         'max_ram_in_megabytes': 'maxRamInMegabytes',
         'state': 'state',
@@ -70,14 +68,13 @@ class FullTemplateSubscription(object):
         'template_uuid': 'templateUuid'
     }
 
-    def __init__(self, id=None, allow_gpu_usage=None, max_num_cpus=None, max_ram_in_megabytes=None, state=None, subscribing_virtualization_realm=None, template_registration=None, template_uuid=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, max_num_cpus=None, max_ram_in_megabytes=None, state=None, subscribing_virtualization_realm=None, template_registration=None, template_uuid=None, local_vars_configuration=None):  # noqa: E501
         """FullTemplateSubscription - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._id = None
-        self._allow_gpu_usage = None
         self._max_num_cpus = None
         self._max_ram_in_megabytes = None
         self._state = None
@@ -88,8 +85,6 @@ class FullTemplateSubscription(object):
 
         if id is not None:
             self.id = id
-        if allow_gpu_usage is not None:
-            self.allow_gpu_usage = allow_gpu_usage
         if max_num_cpus is not None:
             self.max_num_cpus = max_num_cpus
         if max_ram_in_megabytes is not None:
@@ -123,27 +118,6 @@ class FullTemplateSubscription(object):
         """
 
         self._id = id
-
-    @property
-    def allow_gpu_usage(self):
-        """Gets the allow_gpu_usage of this FullTemplateSubscription.  # noqa: E501
-
-
-        :return: The allow_gpu_usage of this FullTemplateSubscription.  # noqa: E501
-        :rtype: bool
-        """
-        return self._allow_gpu_usage
-
-    @allow_gpu_usage.setter
-    def allow_gpu_usage(self, allow_gpu_usage):
-        """Sets the allow_gpu_usage of this FullTemplateSubscription.
-
-
-        :param allow_gpu_usage: The allow_gpu_usage of this FullTemplateSubscription.  # noqa: E501
-        :type: bool
-        """
-
-        self._allow_gpu_usage = allow_gpu_usage
 
     @property
     def max_num_cpus(self):

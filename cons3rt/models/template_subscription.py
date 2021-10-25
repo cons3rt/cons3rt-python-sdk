@@ -49,7 +49,6 @@ class TemplateSubscription(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'allow_gpu_usage': 'bool',
         'id': 'int',
         'max_num_cpus': 'int',
         'max_ram_in_megabytes': 'int',
@@ -60,7 +59,6 @@ class TemplateSubscription(object):
     }
 
     attribute_map = {
-        'allow_gpu_usage': 'allowGpuUsage',
         'id': 'id',
         'max_num_cpus': 'maxNumCpus',
         'max_ram_in_megabytes': 'maxRamInMegabytes',
@@ -70,13 +68,12 @@ class TemplateSubscription(object):
         'template_uuid': 'templateUuid'
     }
 
-    def __init__(self, allow_gpu_usage=None, id=None, max_num_cpus=None, max_ram_in_megabytes=None, state=None, subscribing_virtualization_realm=None, template_registration=None, template_uuid=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, max_num_cpus=None, max_ram_in_megabytes=None, state=None, subscribing_virtualization_realm=None, template_registration=None, template_uuid=None, local_vars_configuration=None):  # noqa: E501
         """TemplateSubscription - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._allow_gpu_usage = None
         self._id = None
         self._max_num_cpus = None
         self._max_ram_in_megabytes = None
@@ -86,8 +83,6 @@ class TemplateSubscription(object):
         self._template_uuid = None
         self.discriminator = None
 
-        if allow_gpu_usage is not None:
-            self.allow_gpu_usage = allow_gpu_usage
         if id is not None:
             self.id = id
         if max_num_cpus is not None:
@@ -102,27 +97,6 @@ class TemplateSubscription(object):
             self.template_registration = template_registration
         if template_uuid is not None:
             self.template_uuid = template_uuid
-
-    @property
-    def allow_gpu_usage(self):
-        """Gets the allow_gpu_usage of this TemplateSubscription.  # noqa: E501
-
-
-        :return: The allow_gpu_usage of this TemplateSubscription.  # noqa: E501
-        :rtype: bool
-        """
-        return self._allow_gpu_usage
-
-    @allow_gpu_usage.setter
-    def allow_gpu_usage(self, allow_gpu_usage):
-        """Sets the allow_gpu_usage of this TemplateSubscription.
-
-
-        :param allow_gpu_usage: The allow_gpu_usage of this TemplateSubscription.  # noqa: E501
-        :type: bool
-        """
-
-        self._allow_gpu_usage = allow_gpu_usage
 
     @property
     def id(self):

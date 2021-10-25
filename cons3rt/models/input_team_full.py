@@ -50,9 +50,11 @@ class InputTeamFull(object):
     """
     openapi_types = {
         'asset_bundle_installer_enabled': 'bool',
+        'asset_bypass_scanning_enabled': 'bool',
         'availability_zone_enabled': 'bool',
         'bypass_scanning_enabled': 'bool',
         'lead_user': 'InputUser',
+        'gpu_type_maximums': 'dict(str, int)',
         'icon': 'str',
         'id': 'int',
         'team_managers': 'list[InputUser]',
@@ -79,9 +81,11 @@ class InputTeamFull(object):
 
     attribute_map = {
         'asset_bundle_installer_enabled': 'assetBundleInstallerEnabled',
+        'asset_bypass_scanning_enabled': 'assetBypassScanningEnabled',
         'availability_zone_enabled': 'availabilityZoneEnabled',
         'bypass_scanning_enabled': 'bypassScanningEnabled',
         'lead_user': 'leadUser',
+        'gpu_type_maximums': 'gpuTypeMaximums',
         'icon': 'icon',
         'id': 'id',
         'team_managers': 'teamManagers',
@@ -106,16 +110,18 @@ class InputTeamFull(object):
         'valid_until': 'validUntil'
     }
 
-    def __init__(self, asset_bundle_installer_enabled=None, availability_zone_enabled=None, bypass_scanning_enabled=None, lead_user=None, icon=None, id=None, team_managers=None, max_managed_virtualization_realms=None, max_num_cpus=None, max_num_gpus=None, max_projects=None, max_ram_in_megabytes=None, max_shared_remote_access_sessions=None, max_storage_in_megabytes=None, max_users=None, max_virtual_machines=None, name=None, order_number=None, contact_info=None, power_schedule_enabled=None, private=None, rdp_client_proxy_enabled=None, rdp_client_session_duration=None, snapshot_enabled=None, state=None, valid_until=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, asset_bundle_installer_enabled=None, asset_bypass_scanning_enabled=None, availability_zone_enabled=None, bypass_scanning_enabled=None, lead_user=None, gpu_type_maximums=None, icon=None, id=None, team_managers=None, max_managed_virtualization_realms=None, max_num_cpus=None, max_num_gpus=None, max_projects=None, max_ram_in_megabytes=None, max_shared_remote_access_sessions=None, max_storage_in_megabytes=None, max_users=None, max_virtual_machines=None, name=None, order_number=None, contact_info=None, power_schedule_enabled=None, private=None, rdp_client_proxy_enabled=None, rdp_client_session_duration=None, snapshot_enabled=None, state=None, valid_until=None, local_vars_configuration=None):  # noqa: E501
         """InputTeamFull - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._asset_bundle_installer_enabled = None
+        self._asset_bypass_scanning_enabled = None
         self._availability_zone_enabled = None
         self._bypass_scanning_enabled = None
         self._lead_user = None
+        self._gpu_type_maximums = None
         self._icon = None
         self._id = None
         self._team_managers = None
@@ -142,11 +148,15 @@ class InputTeamFull(object):
 
         if asset_bundle_installer_enabled is not None:
             self.asset_bundle_installer_enabled = asset_bundle_installer_enabled
+        if asset_bypass_scanning_enabled is not None:
+            self.asset_bypass_scanning_enabled = asset_bypass_scanning_enabled
         if availability_zone_enabled is not None:
             self.availability_zone_enabled = availability_zone_enabled
         if bypass_scanning_enabled is not None:
             self.bypass_scanning_enabled = bypass_scanning_enabled
         self.lead_user = lead_user
+        if gpu_type_maximums is not None:
+            self.gpu_type_maximums = gpu_type_maximums
         if icon is not None:
             self.icon = icon
         if id is not None:
@@ -207,6 +217,27 @@ class InputTeamFull(object):
         """
 
         self._asset_bundle_installer_enabled = asset_bundle_installer_enabled
+
+    @property
+    def asset_bypass_scanning_enabled(self):
+        """Gets the asset_bypass_scanning_enabled of this InputTeamFull.  # noqa: E501
+
+
+        :return: The asset_bypass_scanning_enabled of this InputTeamFull.  # noqa: E501
+        :rtype: bool
+        """
+        return self._asset_bypass_scanning_enabled
+
+    @asset_bypass_scanning_enabled.setter
+    def asset_bypass_scanning_enabled(self, asset_bypass_scanning_enabled):
+        """Sets the asset_bypass_scanning_enabled of this InputTeamFull.
+
+
+        :param asset_bypass_scanning_enabled: The asset_bypass_scanning_enabled of this InputTeamFull.  # noqa: E501
+        :type: bool
+        """
+
+        self._asset_bypass_scanning_enabled = asset_bypass_scanning_enabled
 
     @property
     def availability_zone_enabled(self):
@@ -272,6 +303,27 @@ class InputTeamFull(object):
             raise ValueError("Invalid value for `lead_user`, must not be `None`")  # noqa: E501
 
         self._lead_user = lead_user
+
+    @property
+    def gpu_type_maximums(self):
+        """Gets the gpu_type_maximums of this InputTeamFull.  # noqa: E501
+
+
+        :return: The gpu_type_maximums of this InputTeamFull.  # noqa: E501
+        :rtype: dict(str, int)
+        """
+        return self._gpu_type_maximums
+
+    @gpu_type_maximums.setter
+    def gpu_type_maximums(self, gpu_type_maximums):
+        """Sets the gpu_type_maximums of this InputTeamFull.
+
+
+        :param gpu_type_maximums: The gpu_type_maximums of this InputTeamFull.  # noqa: E501
+        :type: dict(str, int)
+        """
+
+        self._gpu_type_maximums = gpu_type_maximums
 
     @property
     def icon(self):

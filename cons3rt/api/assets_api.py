@@ -1,7 +1,5 @@
 # coding: utf-8
 
-from __future__ import absolute_import
-
 """
    Copyright 2020 Jackpine Technologies Corporation
 
@@ -23,6 +21,8 @@ cons3rt - Copyright Jackpine Technologies Corp.
 NOTE: This file is auto-generated. Do not edit the file manually.
 """
 
+
+from __future__ import absolute_import
 
 import re  # noqa: F401
 
@@ -511,7 +511,7 @@ class AssetsApi(object):
     def itar_restrict_asset(self, id, **kwargs):  # noqa: E501
         """Set Asset Export Restriction  # noqa: E501
 
-        Sets the Export Restriction of a single Asset with the given ID.<br> <br> Export Restriction can only be set if the owning Project is an ITAR-restricted Project.<br> <br> Setting an Export Restriction cannot be undone.  # noqa: E501
+        Sets the Export Restriction of a single software asset, test asset or container asset with the given ID.<br> <br> Export Restriction can only be set if the owning Project is an ITAR-restricted Project.<br> <br> Setting an Export Restriction cannot be undone.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.itar_restrict_asset(id, async_req=True)
@@ -536,7 +536,7 @@ class AssetsApi(object):
     def itar_restrict_asset_with_http_info(self, id, **kwargs):  # noqa: E501
         """Set Asset Export Restriction  # noqa: E501
 
-        Sets the Export Restriction of a single Asset with the given ID.<br> <br> Export Restriction can only be set if the owning Project is an ITAR-restricted Project.<br> <br> Setting an Export Restriction cannot be undone.  # noqa: E501
+        Sets the Export Restriction of a single software asset, test asset or container asset with the given ID.<br> <br> Export Restriction can only be set if the owning Project is an ITAR-restricted Project.<br> <br> Setting an Export Restriction cannot be undone.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.itar_restrict_asset_with_http_info(id, async_req=True)

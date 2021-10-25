@@ -49,6 +49,7 @@ class ProjectLimits(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'gpu_type_maximums': 'dict(str, int)',
         'max_num_cpus': 'int',
         'max_num_gpus': 'int',
         'max_ram_in_megabytes': 'int',
@@ -58,6 +59,7 @@ class ProjectLimits(object):
     }
 
     attribute_map = {
+        'gpu_type_maximums': 'gpuTypeMaximums',
         'max_num_cpus': 'maxNumCpus',
         'max_num_gpus': 'maxNumGpus',
         'max_ram_in_megabytes': 'maxRamInMegabytes',
@@ -66,12 +68,13 @@ class ProjectLimits(object):
         'valid_until': 'validUntil'
     }
 
-    def __init__(self, max_num_cpus=None, max_num_gpus=None, max_ram_in_megabytes=None, max_storage_in_megabytes=None, max_virtual_machines=None, valid_until=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, gpu_type_maximums=None, max_num_cpus=None, max_num_gpus=None, max_ram_in_megabytes=None, max_storage_in_megabytes=None, max_virtual_machines=None, valid_until=None, local_vars_configuration=None):  # noqa: E501
         """ProjectLimits - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._gpu_type_maximums = None
         self._max_num_cpus = None
         self._max_num_gpus = None
         self._max_ram_in_megabytes = None
@@ -80,6 +83,8 @@ class ProjectLimits(object):
         self._valid_until = None
         self.discriminator = None
 
+        if gpu_type_maximums is not None:
+            self.gpu_type_maximums = gpu_type_maximums
         self.max_num_cpus = max_num_cpus
         self.max_num_gpus = max_num_gpus
         self.max_ram_in_megabytes = max_ram_in_megabytes
@@ -87,6 +92,27 @@ class ProjectLimits(object):
         self.max_virtual_machines = max_virtual_machines
         if valid_until is not None:
             self.valid_until = valid_until
+
+    @property
+    def gpu_type_maximums(self):
+        """Gets the gpu_type_maximums of this ProjectLimits.  # noqa: E501
+
+
+        :return: The gpu_type_maximums of this ProjectLimits.  # noqa: E501
+        :rtype: dict(str, int)
+        """
+        return self._gpu_type_maximums
+
+    @gpu_type_maximums.setter
+    def gpu_type_maximums(self, gpu_type_maximums):
+        """Sets the gpu_type_maximums of this ProjectLimits.
+
+
+        :param gpu_type_maximums: The gpu_type_maximums of this ProjectLimits.  # noqa: E501
+        :type: dict(str, int)
+        """
+
+        self._gpu_type_maximums = gpu_type_maximums
 
     @property
     def max_num_cpus(self):

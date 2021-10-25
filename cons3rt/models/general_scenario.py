@@ -55,6 +55,7 @@ class GeneralScenario(object):
         'offline': 'bool',
         'state': 'str',
         'visibility': 'str',
+        'scenario_build_order': 'int',
         'scenario_hosts': 'list[MinimalScenarioHost]',
         'prepare_scenario_configuration': 'MinimalConfiguration',
         'teardown_scenario_configuration': 'MinimalConfiguration'
@@ -67,12 +68,13 @@ class GeneralScenario(object):
         'offline': 'offline',
         'state': 'state',
         'visibility': 'visibility',
+        'scenario_build_order': 'scenarioBuildOrder',
         'scenario_hosts': 'scenarioHosts',
         'prepare_scenario_configuration': 'prepareScenarioConfiguration',
         'teardown_scenario_configuration': 'teardownScenarioConfiguration'
     }
 
-    def __init__(self, id=None, name=None, description=None, offline=None, state=None, visibility=None, scenario_hosts=None, prepare_scenario_configuration=None, teardown_scenario_configuration=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, description=None, offline=None, state=None, visibility=None, scenario_build_order=None, scenario_hosts=None, prepare_scenario_configuration=None, teardown_scenario_configuration=None, local_vars_configuration=None):  # noqa: E501
         """GeneralScenario - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,6 +86,7 @@ class GeneralScenario(object):
         self._offline = None
         self._state = None
         self._visibility = None
+        self._scenario_build_order = None
         self._scenario_hosts = None
         self._prepare_scenario_configuration = None
         self._teardown_scenario_configuration = None
@@ -101,6 +104,8 @@ class GeneralScenario(object):
             self.state = state
         if visibility is not None:
             self.visibility = visibility
+        if scenario_build_order is not None:
+            self.scenario_build_order = scenario_build_order
         if scenario_hosts is not None:
             self.scenario_hosts = scenario_hosts
         if prepare_scenario_configuration is not None:
@@ -245,6 +250,27 @@ class GeneralScenario(object):
             )
 
         self._visibility = visibility
+
+    @property
+    def scenario_build_order(self):
+        """Gets the scenario_build_order of this GeneralScenario.  # noqa: E501
+
+
+        :return: The scenario_build_order of this GeneralScenario.  # noqa: E501
+        :rtype: int
+        """
+        return self._scenario_build_order
+
+    @scenario_build_order.setter
+    def scenario_build_order(self, scenario_build_order):
+        """Sets the scenario_build_order of this GeneralScenario.
+
+
+        :param scenario_build_order: The scenario_build_order of this GeneralScenario.  # noqa: E501
+        :type: int
+        """
+
+        self._scenario_build_order = scenario_build_order
 
     @property
     def scenario_hosts(self):

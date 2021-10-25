@@ -56,7 +56,11 @@ class InputVRAdminVirtualizationRealm(object):
         'cons3rt_network': 'InputVirtualizationRealmNetwork',
         'default_windows_domain_name': 'str',
         'description': 'str',
-        'name': 'str'
+        'name': 'str',
+        'power_on_delay_base': 'int',
+        'power_on_initial_delay_base': 'int',
+        'power_on_maximum_delay': 'int',
+        'power_on_minimum_delay': 'int'
     }
 
     attribute_map = {
@@ -67,7 +71,11 @@ class InputVRAdminVirtualizationRealm(object):
         'cons3rt_network': 'cons3rtNetwork',
         'default_windows_domain_name': 'defaultWindowsDomainName',
         'description': 'description',
-        'name': 'name'
+        'name': 'name',
+        'power_on_delay_base': 'powerOnDelayBase',
+        'power_on_initial_delay_base': 'powerOnInitialDelayBase',
+        'power_on_maximum_delay': 'powerOnMaximumDelay',
+        'power_on_minimum_delay': 'powerOnMinimumDelay'
     }
 
     discriminator_value_class_map = {
@@ -77,7 +85,7 @@ class InputVRAdminVirtualizationRealm(object):
         'InputVRAdminVCloudRestVirtualizationRealm': 'InputVRAdminVCloudRestVirtualizationRealm'
     }
 
-    def __init__(self, virtualization_realm_type=None, id=None, additional_networks=None, cidr=None, cons3rt_network=None, default_windows_domain_name=None, description=None, name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, virtualization_realm_type=None, id=None, additional_networks=None, cidr=None, cons3rt_network=None, default_windows_domain_name=None, description=None, name=None, power_on_delay_base=None, power_on_initial_delay_base=None, power_on_maximum_delay=None, power_on_minimum_delay=None, local_vars_configuration=None):  # noqa: E501
         """InputVRAdminVirtualizationRealm - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -91,6 +99,10 @@ class InputVRAdminVirtualizationRealm(object):
         self._default_windows_domain_name = None
         self._description = None
         self._name = None
+        self._power_on_delay_base = None
+        self._power_on_initial_delay_base = None
+        self._power_on_maximum_delay = None
+        self._power_on_minimum_delay = None
         self.discriminator = 'virtualization_realm_type'
 
         self.virtualization_realm_type = virtualization_realm_type
@@ -105,6 +117,14 @@ class InputVRAdminVirtualizationRealm(object):
             self.default_windows_domain_name = default_windows_domain_name
         self.description = description
         self.name = name
+        if power_on_delay_base is not None:
+            self.power_on_delay_base = power_on_delay_base
+        if power_on_initial_delay_base is not None:
+            self.power_on_initial_delay_base = power_on_initial_delay_base
+        if power_on_maximum_delay is not None:
+            self.power_on_maximum_delay = power_on_maximum_delay
+        if power_on_minimum_delay is not None:
+            self.power_on_minimum_delay = power_on_minimum_delay
 
     @property
     def virtualization_realm_type(self):
@@ -293,6 +313,96 @@ class InputVRAdminVirtualizationRealm(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def power_on_delay_base(self):
+        """Gets the power_on_delay_base of this InputVRAdminVirtualizationRealm.  # noqa: E501
+
+
+        :return: The power_on_delay_base of this InputVRAdminVirtualizationRealm.  # noqa: E501
+        :rtype: int
+        """
+        return self._power_on_delay_base
+
+    @power_on_delay_base.setter
+    def power_on_delay_base(self, power_on_delay_base):
+        """Sets the power_on_delay_base of this InputVRAdminVirtualizationRealm.
+
+
+        :param power_on_delay_base: The power_on_delay_base of this InputVRAdminVirtualizationRealm.  # noqa: E501
+        :type: int
+        """
+
+        self._power_on_delay_base = power_on_delay_base
+
+    @property
+    def power_on_initial_delay_base(self):
+        """Gets the power_on_initial_delay_base of this InputVRAdminVirtualizationRealm.  # noqa: E501
+
+
+        :return: The power_on_initial_delay_base of this InputVRAdminVirtualizationRealm.  # noqa: E501
+        :rtype: int
+        """
+        return self._power_on_initial_delay_base
+
+    @power_on_initial_delay_base.setter
+    def power_on_initial_delay_base(self, power_on_initial_delay_base):
+        """Sets the power_on_initial_delay_base of this InputVRAdminVirtualizationRealm.
+
+
+        :param power_on_initial_delay_base: The power_on_initial_delay_base of this InputVRAdminVirtualizationRealm.  # noqa: E501
+        :type: int
+        """
+
+        self._power_on_initial_delay_base = power_on_initial_delay_base
+
+    @property
+    def power_on_maximum_delay(self):
+        """Gets the power_on_maximum_delay of this InputVRAdminVirtualizationRealm.  # noqa: E501
+
+
+        :return: The power_on_maximum_delay of this InputVRAdminVirtualizationRealm.  # noqa: E501
+        :rtype: int
+        """
+        return self._power_on_maximum_delay
+
+    @power_on_maximum_delay.setter
+    def power_on_maximum_delay(self, power_on_maximum_delay):
+        """Sets the power_on_maximum_delay of this InputVRAdminVirtualizationRealm.
+
+
+        :param power_on_maximum_delay: The power_on_maximum_delay of this InputVRAdminVirtualizationRealm.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                power_on_maximum_delay is not None and power_on_maximum_delay < 0):  # noqa: E501
+            raise ValueError("Invalid value for `power_on_maximum_delay`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._power_on_maximum_delay = power_on_maximum_delay
+
+    @property
+    def power_on_minimum_delay(self):
+        """Gets the power_on_minimum_delay of this InputVRAdminVirtualizationRealm.  # noqa: E501
+
+
+        :return: The power_on_minimum_delay of this InputVRAdminVirtualizationRealm.  # noqa: E501
+        :rtype: int
+        """
+        return self._power_on_minimum_delay
+
+    @power_on_minimum_delay.setter
+    def power_on_minimum_delay(self, power_on_minimum_delay):
+        """Sets the power_on_minimum_delay of this InputVRAdminVirtualizationRealm.
+
+
+        :param power_on_minimum_delay: The power_on_minimum_delay of this InputVRAdminVirtualizationRealm.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                power_on_minimum_delay is not None and power_on_minimum_delay < 0):  # noqa: E501
+            raise ValueError("Invalid value for `power_on_minimum_delay`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._power_on_minimum_delay = power_on_minimum_delay
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

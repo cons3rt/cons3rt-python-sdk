@@ -64,6 +64,7 @@ class User(object):
         'organization': 'str',
         'project_count': 'int',
         'state': 'str',
+        'terms_of_service_accepted': 'bool',
         'username': 'str'
     }
 
@@ -83,10 +84,11 @@ class User(object):
         'organization': 'organization',
         'project_count': 'projectCount',
         'state': 'state',
+        'terms_of_service_accepted': 'termsOfServiceAccepted',
         'username': 'username'
     }
 
-    def __init__(self, created_at=None, updated_at=None, administered_clouds=None, administered_virt_realms=None, certificates=None, comment=None, default_project=None, email=None, firstname=None, id=None, lastname=None, log_entries=None, organization=None, project_count=None, state=None, username=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, created_at=None, updated_at=None, administered_clouds=None, administered_virt_realms=None, certificates=None, comment=None, default_project=None, email=None, firstname=None, id=None, lastname=None, log_entries=None, organization=None, project_count=None, state=None, terms_of_service_accepted=None, username=None, local_vars_configuration=None):  # noqa: E501
         """User - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -107,6 +109,7 @@ class User(object):
         self._organization = None
         self._project_count = None
         self._state = None
+        self._terms_of_service_accepted = None
         self._username = None
         self.discriminator = None
 
@@ -140,6 +143,8 @@ class User(object):
             self.project_count = project_count
         if state is not None:
             self.state = state
+        if terms_of_service_accepted is not None:
+            self.terms_of_service_accepted = terms_of_service_accepted
         if username is not None:
             self.username = username
 
@@ -463,6 +468,27 @@ class User(object):
             )
 
         self._state = state
+
+    @property
+    def terms_of_service_accepted(self):
+        """Gets the terms_of_service_accepted of this User.  # noqa: E501
+
+
+        :return: The terms_of_service_accepted of this User.  # noqa: E501
+        :rtype: bool
+        """
+        return self._terms_of_service_accepted
+
+    @terms_of_service_accepted.setter
+    def terms_of_service_accepted(self, terms_of_service_accepted):
+        """Sets the terms_of_service_accepted of this User.
+
+
+        :param terms_of_service_accepted: The terms_of_service_accepted of this User.  # noqa: E501
+        :type: bool
+        """
+
+        self._terms_of_service_accepted = terms_of_service_accepted
 
     @property
     def username(self):

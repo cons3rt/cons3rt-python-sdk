@@ -5,7 +5,10 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_category_to_deployment_run**](DeploymentRunsApi.md#add_category_to_deployment_run) | **PUT** /api/categories/{id}/run | Assign Category to Run
+[**create_identity**](DeploymentRunsApi.md#create_identity) | **POST** /api/drs/{id}/host/{hostid}/identity | Create a host identity
 [**delete_deployment_run**](DeploymentRunsApi.md#delete_deployment_run) | **DELETE** /api/drs/{id} | Delete Deployment Run
+[**delete_identity**](DeploymentRunsApi.md#delete_identity) | **DELETE** /api/drs/{id}/host/{hostid}/identity | Delete host identity
+[**delete_identity_by_id**](DeploymentRunsApi.md#delete_identity_by_id) | **DELETE** /api/drs/{id}/host/{hostid}/identity/{username} | Deletes identity for specified user
 [**download_deployment_run_test_report**](DeploymentRunsApi.md#download_deployment_run_test_report) | **GET** /api/drs/{id}/downloadreport | Download Report
 [**download_host**](DeploymentRunsApi.md#download_host) | **GET** /api/drs/{id}/downloadhost | Download Host
 [**get_deployment_run**](DeploymentRunsApi.md#get_deployment_run) | **GET** /api/drs/{id} | Retrieve Deployment Run
@@ -16,9 +19,12 @@ Method | HTTP request | Description
 [**get_host_access**](DeploymentRunsApi.md#get_host_access) | **GET** /api/drs/{id}/host/{hostid}/access | List Host Access Logs
 [**get_host_configuration_metrics**](DeploymentRunsApi.md#get_host_configuration_metrics) | **GET** /api/projects/{id}/metrics/hostconfiguration | Retrieve Metrics
 [**get_host_instance_types**](DeploymentRunsApi.md#get_host_instance_types) | **GET** /api/drs/{id}/host/{hostid}/resize | List available instance types for host
+[**get_identities**](DeploymentRunsApi.md#get_identities) | **GET** /api/drs/{id}/host/{hostid}/identities | Get Host Identities
+[**get_identity**](DeploymentRunsApi.md#get_identity) | **GET** /api/drs/{id}/host/{hostid}/identity | Get Host Identity For User
 [**perform_host_action**](DeploymentRunsApi.md#perform_host_action) | **PUT** /api/drs/{id}/hostaction | Execute Host Action
 [**publish_deployment_run**](DeploymentRunsApi.md#publish_deployment_run) | **POST** /api/drs/{id}/publish | Publish Deployment Run
 [**redeploy_container_asset**](DeploymentRunsApi.md#redeploy_container_asset) | **PUT** /api/drs/{id}/host/{hostid}/container | Re-deploy Container Asset
+[**redeploy_deployment_run_hosts**](DeploymentRunsApi.md#redeploy_deployment_run_hosts) | **PUT** /api/drs/{id}/redeployhosts | Redeploy Deployment Run Hosts
 [**relaunch_deployment_run**](DeploymentRunsApi.md#relaunch_deployment_run) | **PUT** /api/drs/{id}/rerun | Relaunch Deployment Run
 [**release_deployment_run**](DeploymentRunsApi.md#release_deployment_run) | **PUT** /api/drs/{id}/release | Release Deployment Run
 [**remove_category_from_deployment_run**](DeploymentRunsApi.md#remove_category_from_deployment_run) | **DELETE** /api/categories/{id}/run | Unassign Category from deployment run
@@ -150,6 +156,131 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **create_identity**
+> list[BaseIdentity] create_identity(id, hostid, cloud_resource_object)
+
+Create a host identity
+
+Creates an identity for the deployment run host with access to the resources requested by the user
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+hostid = 'hostid_example' # str | ID of host
+cloud_resource_object = [cons3rt.CloudResourceObject()] # list[CloudResourceObject] | The cloud resources to be accessed by the host identity
+
+    try:
+        # Create a host identity
+        api_response = api_instance.create_identity(id, hostid, cloud_resource_object)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->create_identity: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+hostid = 'hostid_example' # str | ID of host
+cloud_resource_object = [cons3rt.CloudResourceObject()] # list[CloudResourceObject] | The cloud resources to be accessed by the host identity
+
+    try:
+        # Create a host identity
+        api_response = api_instance.create_identity(id, hostid, cloud_resource_object)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->create_identity: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of deployment run | 
+ **hostid** | **str**| ID of host | 
+ **cloud_resource_object** | [**list[CloudResourceObject]**](CloudResourceObject.md)| The cloud resources to be accessed by the host identity | 
+
+### Return type
+
+[**list[BaseIdentity]**](BaseIdentity.md)
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Invalid deployment run ID, host id, or query parameter supplied |  -  |
+**404** | Deployment run or host not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_deployment_run**
 > bool delete_deployment_run(id, purge=purge)
 
@@ -269,6 +400,253 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **400** | Invalid deployment run ID supplied |  -  |
 **404** | Deployment run not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_identity**
+> bool delete_identity(id, hostid)
+
+Delete host identity
+
+Deletes the identity of a deployment run host.
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+hostid = 'hostid_example' # str | ID of host
+
+    try:
+        # Delete host identity
+        api_response = api_instance.delete_identity(id, hostid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->delete_identity: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+hostid = 'hostid_example' # str | ID of host
+
+    try:
+        # Delete host identity
+        api_response = api_instance.delete_identity(id, hostid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->delete_identity: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of deployment run | 
+ **hostid** | **str**| ID of host | 
+
+### Return type
+
+**bool**
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Invalid deployment run ID, host id, or query parameter supplied |  -  |
+**404** | Deployment run, host, or identity not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_identity_by_id**
+> list[BaseIdentity] delete_identity_by_id(id, hostid, username)
+
+Deletes identity for specified user
+
+Deletes an identity for a user specified by name
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+hostid = 'hostid_example' # str | ID of host
+username = 'username_example' # str | Username of the identity to be deleted
+
+    try:
+        # Deletes identity for specified user
+        api_response = api_instance.delete_identity_by_id(id, hostid, username)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->delete_identity_by_id: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+hostid = 'hostid_example' # str | ID of host
+username = 'username_example' # str | Username of the identity to be deleted
+
+    try:
+        # Deletes identity for specified user
+        api_response = api_instance.delete_identity_by_id(id, hostid, username)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->delete_identity_by_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of deployment run | 
+ **hostid** | **str**| ID of host | 
+ **username** | **str**| Username of the identity to be deleted | 
+
+### Return type
+
+[**list[BaseIdentity]**](BaseIdentity.md)
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Invalid deployment run ID, host id, or query parameter supplied |  -  |
+**404** | Deployment run, host, or identity not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1010,7 +1388,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_host**
-> MinimalDeploymentRunHost get_host(id, hostid)
+> FullDeploymentRunHost get_host(id, hostid)
 
 Retrieve Host
 
@@ -1111,7 +1489,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MinimalDeploymentRunHost**](MinimalDeploymentRunHost.md)
+[**FullDeploymentRunHost**](FullDeploymentRunHost.md)
 
 ### Authorization
 
@@ -1512,6 +1890,250 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_identities**
+> list[BaseIdentity] get_identities(id, hostid)
+
+Get Host Identities
+
+Returns a collection of identities for the deployment run host
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+hostid = 'hostid_example' # str | ID of host
+
+    try:
+        # Get Host Identities
+        api_response = api_instance.get_identities(id, hostid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_identities: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+hostid = 'hostid_example' # str | ID of host
+
+    try:
+        # Get Host Identities
+        api_response = api_instance.get_identities(id, hostid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_identities: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of deployment run | 
+ **hostid** | **str**| ID of host | 
+
+### Return type
+
+[**list[BaseIdentity]**](BaseIdentity.md)
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Invalid deployment run ID, host id, or query parameter supplied |  -  |
+**404** | Deployment run or host not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_identity**
+> list[CloudResourceAccessListing] get_identity(id, hostid)
+
+Get Host Identity For User
+
+Returns the deployment run host identity for the user, if one exists.
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+hostid = 'hostid_example' # str | ID of host
+
+    try:
+        # Get Host Identity For User
+        api_response = api_instance.get_identity(id, hostid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_identity: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+hostid = 'hostid_example' # str | ID of host
+
+    try:
+        # Get Host Identity For User
+        api_response = api_instance.get_identity(id, hostid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->get_identity: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of deployment run | 
+ **hostid** | **str**| ID of host | 
+
+### Return type
+
+[**list[CloudResourceAccessListing]**](CloudResourceAccessListing.md)
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Invalid deployment run ID, host id, or query parameter supplied |  -  |
+**404** | Deployment run or host not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **perform_host_action**
 > bool perform_host_action(id, deploymentrunhostid, action, cpu=cpu, ram=ram, instance_type_name=instance_type_name)
 
@@ -1889,6 +2511,128 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 **400** | Invalid deployment run ID, host ID, or installation ID supplied |  -  |
+**404** | Deployment run not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **redeploy_deployment_run_hosts**
+> bool redeploy_deployment_run_hosts(id, rest_id_object=rest_id_object)
+
+Redeploy Deployment Run Hosts
+
+Requests the redeploy of one or more deployment run hosts.
+
+### Example
+
+* Api Key Authentication (APIKeyHeader):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+rest_id_object = [cons3rt.RestIdObject()] # list[RestIdObject] | The collection of deployment run host ids to redeploy (optional)
+
+    try:
+        # Redeploy Deployment Run Hosts
+        api_response = api_instance.redeploy_deployment_run_hosts(id, rest_id_object=rest_id_object)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->redeploy_deployment_run_hosts: %s\n" % e)
+```
+
+* Api Key Authentication (Username):
+```python
+from __future__ import print_function
+import time
+import cons3rt
+from cons3rt.rest import ApiException
+from pprint import pprint
+# Configure API key authorization: APIKeyHeader
+configuration.api_key['token'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['token'] = 'Bearer'
+# Configure API key authorization: Username
+configuration.api_key['username'] = 'YOUR_VALUE'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['username'] = 'Bearer'
+
+# Using a client certificate for authentication is required in some cases.
+# To use a "soft-token" such as an ECA, provide the path the PEM encoded
+# version of the certificate
+configuration.cert_file='/path/to/your/client_cert.pem'
+
+# If the key to the provided certificate is stored in a separate file,
+# provide the path to the keyfile and, optionally, the key password if
+# the key is encrypted
+configuration.key_file='/path/to/your/client_cert.key'
+configuration.key_password='keyfile_password' # optional
+
+# Enter a context with an instance of the API client
+with cons3rt.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cons3rt.DeploymentRunsApi(api_client)
+    id = 'id_example' # str | ID of deployment run
+rest_id_object = [cons3rt.RestIdObject()] # list[RestIdObject] | The collection of deployment run host ids to redeploy (optional)
+
+    try:
+        # Redeploy Deployment Run Hosts
+        api_response = api_instance.redeploy_deployment_run_hosts(id, rest_id_object=rest_id_object)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DeploymentRunsApi->redeploy_deployment_run_hosts: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| ID of deployment run | 
+ **rest_id_object** | [**list[RestIdObject]**](RestIdObject.md)| The collection of deployment run host ids to redeploy | [optional] 
+
+### Return type
+
+**bool**
+
+### Authorization
+
+[APIKeyHeader](../README.md#APIKeyHeader), [Username](../README.md#Username)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Invalid deployment run ID or host IDs supplied |  -  |
 **404** | Deployment run not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

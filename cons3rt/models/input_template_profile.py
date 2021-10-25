@@ -57,7 +57,8 @@ class InputTemplateProfile(object):
         'requires_nested_virtualization': 'bool',
         'additional_disks': 'list[InputDisk]',
         'min_boot_disk_capacity': 'int',
-        'remote_access_required': 'bool'
+        'remote_access_required': 'bool',
+        'virt_realm_id': 'int'
     }
 
     attribute_map = {
@@ -69,10 +70,11 @@ class InputTemplateProfile(object):
         'requires_nested_virtualization': 'requiresNestedVirtualization',
         'additional_disks': 'additionalDisks',
         'min_boot_disk_capacity': 'minBootDiskCapacity',
-        'remote_access_required': 'remoteAccessRequired'
+        'remote_access_required': 'remoteAccessRequired',
+        'virt_realm_id': 'virtRealmId'
     }
 
-    def __init__(self, virt_realm_template_name=None, operating_system=None, min_num_cpus=None, min_ram=None, vgpu_required=None, requires_nested_virtualization=None, additional_disks=None, min_boot_disk_capacity=None, remote_access_required=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, virt_realm_template_name=None, operating_system=None, min_num_cpus=None, min_ram=None, vgpu_required=None, requires_nested_virtualization=None, additional_disks=None, min_boot_disk_capacity=None, remote_access_required=None, virt_realm_id=None, local_vars_configuration=None):  # noqa: E501
         """InputTemplateProfile - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +89,7 @@ class InputTemplateProfile(object):
         self._additional_disks = None
         self._min_boot_disk_capacity = None
         self._remote_access_required = None
+        self._virt_realm_id = None
         self.discriminator = None
 
         if virt_realm_template_name is not None:
@@ -105,6 +108,8 @@ class InputTemplateProfile(object):
             self.min_boot_disk_capacity = min_boot_disk_capacity
         if remote_access_required is not None:
             self.remote_access_required = remote_access_required
+        if virt_realm_id is not None:
+            self.virt_realm_id = virt_realm_id
 
     @property
     def virt_realm_template_name(self):
@@ -145,7 +150,7 @@ class InputTemplateProfile(object):
         :param operating_system: The operating_system of this InputTemplateProfile.  # noqa: E501
         :type: str
         """
-        allowed_values = ["AMAZON_LINUX_2_LATEST_X64", "AMAZON_LINUX_LATEST_X64", "CENTOS_6_X64", "CENTOS_6_X86", "CENTOS_7_X64", "CENTOS_8_X64", "CORE_OS_1221_X64", "F5_BIGIP_X64", "FEDORA_23_X64", "FORTISIEM", "GENERIC_LINUX_X64", "GENERIC_WINDOWS_X64", "KALI_ROLLING_X64", "ORACLE_LINUX_6_X64", "ORACLE_LINUX_7_X64", "ORACLE_LINUX_8_X64", "OS_X_10", "OS_X_11", "PALO_ALTO_NETWORKS_PAN_OS_X64", "RASPBIAN", "RHEL_5_X64", "RHEL_5_X86", "RHEL_6_X64", "RHEL_6_X86", "RHEL_7_ATOMIC_HOST", "RHEL_7_PPCLE", "RHEL_7_X64", "RHEL_8_X64", "SOLARIS_11_X64", "UBUNTU_12_X64", "UBUNTU_14_X64", "UBUNTU_16_X64", "UBUNTU_18_X64", "UBUNTU_20_X64", "UBUNTU_CORE", "VYOS_1_1_X64", "VYOS_1_2_X64", "VYOS_1_3_X64", "WINDOWS_10_X64", "WINDOWS_7_X64", "WINDOWS_7_X86", "WINDOWS_8_X64", "WINDOWS_SERVER_2008_R2_X64", "WINDOWS_SERVER_2008_X64", "WINDOWS_SERVER_2012_R2_X64", "WINDOWS_SERVER_2012_X64", "WINDOWS_SERVER_2016_X64", "WINDOWS_SERVER_2019_X64", "WINDOWS_XP_X86"]  # noqa: E501
+        allowed_values = ["AMAZON_LINUX_2_LATEST_X64", "AMAZON_LINUX_LATEST_X64", "CENTOS_6_X64", "CENTOS_6_X86", "CENTOS_7_X64", "CENTOS_8_X64", "CORE_OS_1221_X64", "F5_BIGIP_X64", "FEDORA_23_X64", "FORTISIEM", "GENERIC_LINUX_X64", "GENERIC_WINDOWS_X64", "KALI_ROLLING_X64", "ORACLE_LINUX_6_X64", "ORACLE_LINUX_7_X64", "ORACLE_LINUX_8_X64", "OS_X_10", "OS_X_11", "PALO_ALTO_NETWORKS_PAN_OS_X64", "RASPBIAN", "RHEL_5_X64", "RHEL_5_X86", "RHEL_6_X64", "RHEL_6_X86", "RHEL_7_ATOMIC_HOST", "RHEL_7_PPCLE", "RHEL_7_X64", "RHEL_8_X64", "SOLARIS_11_X64", "UBUNTU_12_X64", "UBUNTU_14_X64", "UBUNTU_16_X64", "UBUNTU_18_X64", "UBUNTU_20_X64", "UBUNTU_CORE", "VYOS_1_1_X64", "VYOS_1_2_X64", "VYOS_1_3_X64", "VYOS_ROLLING_X64", "WINDOWS_10_X64", "WINDOWS_7_X64", "WINDOWS_7_X86", "WINDOWS_8_X64", "WINDOWS_SERVER_2008_R2_X64", "WINDOWS_SERVER_2008_X64", "WINDOWS_SERVER_2012_R2_X64", "WINDOWS_SERVER_2012_X64", "WINDOWS_SERVER_2016_X64", "WINDOWS_SERVER_2019_X64", "WINDOWS_SERVER_2019_CORE_X64", "WINDOWS_XP_X86"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and operating_system not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `operating_system` ({0}), must be one of {1}"  # noqa: E501
@@ -310,6 +315,27 @@ class InputTemplateProfile(object):
         """
 
         self._remote_access_required = remote_access_required
+
+    @property
+    def virt_realm_id(self):
+        """Gets the virt_realm_id of this InputTemplateProfile.  # noqa: E501
+
+
+        :return: The virt_realm_id of this InputTemplateProfile.  # noqa: E501
+        :rtype: int
+        """
+        return self._virt_realm_id
+
+    @virt_realm_id.setter
+    def virt_realm_id(self, virt_realm_id):
+        """Sets the virt_realm_id of this InputTemplateProfile.
+
+
+        :param virt_realm_id: The virt_realm_id of this InputTemplateProfile.  # noqa: E501
+        :type: int
+        """
+
+        self._virt_realm_id = virt_realm_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""
