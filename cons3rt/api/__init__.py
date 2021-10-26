@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 """
    Copyright 2020 Jackpine Technologies Corporation
 
@@ -13,7 +14,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 """
-from __future__ import absolute_import
+
 
 # flake8: noqa
 

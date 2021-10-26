@@ -1,4 +1,5 @@
 # coding: utf-8
+from __future__ import absolute_import
 
 """
    Copyright 2020 Jackpine Technologies Corporation
